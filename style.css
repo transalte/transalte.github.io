@@ -26,9 +26,12 @@ body {
   font-size: 13px;
   line-height: 1.5rem;
   font-weight: lighter;
+
+}
+
+html>body {
   margin-left: 10%;
   margin-right: 10%;
-
 }
 
 /* Headings */
