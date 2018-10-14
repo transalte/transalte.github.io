@@ -1,0 +1,269 @@
+/**
+ * iA Writer Template “Serif”
+ *
+ * font-family: Helvetica
+ * font-size:   15px iPhone 5, 16px iPhone 6+, 17px iPad, 18px Mac, 19px
+ * line-height: 1.6316 (31px @ font-size: 19px)
+ * vert margin: 31px @ 1080px wide
+ */
+
+/* TOOLS → core.css */
+
+/* GENERIC */
+
+
+
+/* BASE */
+
+html {
+  font-family: "Helvetica", "Arial", Keyboard, Times, "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", serif; /* Times for Cyrillic, Hiragino to prevent Japanese displaying in Kaku */
+  font-size: 13px; /* Overridden by responsive font sizing */
+  line-height: 1.5rem;
+  font-weight: lighter;
+}
+
+body {
+  font-size: 13px;
+  line-height: 1.5rem;
+  font-weight: lighter;
+
+}
+
+html>body {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Headings */
+
+h1,h2,h3,h4,h5,h6, p {
+    font-family: Helvetica, Arial, Verdana, sans-serif;
+    font-weight: lighter;
+    letter-spacing: .1rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: grey;
+  text-align: right;
+  border-bottom: 1px solid #999;
+  font-size: 100%;
+  font-weight: lighter;
+  letter-spacing: .2rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 120%;
+  font-weight: normal;
+  text-align: left;
+  padding-top: 1.5rem;
+}
+
+h3 {
+  font-size: 120%;
+  font-weight: lighter;
+  letter-spacing: 0.05rem;
+  padding-top: 1.5rem;
+}
+
+h4 {
+  font-size: 110%;
+  font-weight: lighter;
+  padding-top: 1.5rem;
+}
+
+h5 {
+  font-size: 100%;
+  font-weight: bold;
+  padding-top: 1.5rem;
+}
+
+p {
+  font-size: 100%;
+  text-align: left;
+  font-weight: lighter;
+}
+
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  color: grey;
+
+}
+
+
+/* Lists */
+@media screen and (min-width: 760px) {
+  ul,
+  ol {
+    padding-left: calc((40 / 19) * 1em); /* 2.1053em = ~40px for font-size: 19px. em works better for RWD than % */
+  }
+}
+
+/* Use custom bullet for unordered lists */
+ul, li {
+  font-size: 100%;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+}
+
+ol>{list-style: }
+
+
+
+
+
+/* Indent ordered lists in blockquotes */
+blockquote ol,
+blockquote ul {
+  margin-left: calc((31 / 19) * -1em);
+}
+
+/* Blockquotes */
+blockquote {
+ border-left: 4px solid #999;
+ padding-left: 10px;
+ background-color: rgba(0,0,0,0.05);
+ padding-top: 0.1rem;
+ padding-bottom: 0.1rem;
+}
+
+blockquote em strong,
+blockquote strong em {
+  font-weight: lighter;
+}
+
+
+/* Tables */
+
+table {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 100%;
+  font-weight: lighter;
+  line-height: 1.5rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+table, th, td {
+  font-size: 100%;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+th {
+  font-weight: normal;
+  background-color: rgba(0,0,0,0.05);
+}
+
+img {
+  max-width: 90%;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+
+
+
+
+/* Print styles */
+/* font-size needs to be set here again otherwise responsive typography overrides it */
+@media print {
+  html {
+    font-size: 9.5pt;
+  }
+
+  body {
+    max-width: 100%;
+  }
+
+  h6 {
+    top: calc((3 / 16.4673) * 1em);
+    margin-bottom: calc((3.1 / 16.4673) * -1em);
+  }
+}
+
+/** OBJECTS → see core.css base styles for:
+ *  - Indent Paragraphs
+ *  - Footnotes
+ *  - Task lists
+ */
+
+/* Indent Paragraphs */
+.indent-paragraphs p + p {
+  text-indent: calc((21 / 19) * 1em); /* 1.1053em = 21px @ font-size: 19px */
+}
+
+
+/* Night Mode */
+
+/* Imitate sub-pixel line for narrow widths */
+
+/* First tweakpoint modifying core.css */
+@media screen and (min-width: 150px) {
+  .night-mode hr,
+  .night-mode caption,
+  .night-mode tbody th,
+  .night-mode td {
+    border-bottom-color: #888;
+  }
+
+  .night-mode tbody th,
+  .night-mode td {
+    border-top-color: #888;
+  }
+}
+
+/* Intended border color from 200px */
+@media screen and (min-width: 200px) {
+  .night-mode hr,
+  .night-mode caption,
+  .night-mode tbody th,
+  .night-mode td {
+    border-bottom-color: #dedede;
+  }
+
+  .night-mode tbody th,
+  .night-mode td {
+    border-top-color: #dedede;
+  }
+}
+
+/* Intended border color from 200px for OS X */
+@media screen and (min-width: 200px) and (min-device-width: 1152px) {
+  .night-mode hr,
+  .night-mode caption,
+  .night-mode tbody th,
+  .night-mode td {
+    border-bottom-color: #cccccc;
+  }
+
+  .night-mode tbody th,
+  .night-mode td {
+    border-top-color: #cccccc;
+  }
+}
+
+/* Footnotes */
+.footnotes {
+  font-size: calc((18 / 19) * 1em); /* 0.9474em = 18px @ font-size: 18px */
+  line-height: calc(31 / 18); /* 1.7222 = 31px @ font-size: 18px */
+}
+
+/* Task Lists */
+
+ol .task-list-item {
+  margin-left: -1em;
+  padding-left: 1em;
+}
+
+.task-list-item-checkbox {
+  width: 1.6316em; /* line-height */
+  height: 1.6316em; /* same as width */
+  background-position: 47% 39%; /* tweaks */
+}
