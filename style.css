@@ -26,6 +26,8 @@ body {
   font-size: 13px;
   line-height: 1.5rem;
   font-weight: lighter;
+  margin-left: 10%;
+  margin-right: 10%;
 
 }
 
@@ -262,4 +264,3 @@ ol .task-list-item {
   height: 1.6316em; /* same as width */
   background-position: 47% 39%; /* tweaks */
 }
-
