@@ -12,5 +12,5 @@
 
 * [Simple Delay](delays/simple-delay.md)
 * [Stereo Delays](delays/stereo-delays.md)
-* [Ping Pong](delays/pingpong.md)
+* [Ping Pong](delays/PingPong.md)
 
