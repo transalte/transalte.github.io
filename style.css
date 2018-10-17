@@ -17,7 +17,7 @@
 
 html {
   font-family: "Helvetica", "Arial", Keyboard, Times, "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", serif; /* Times for Cyrillic, Hiragino to prevent Japanese displaying in Kaku */
-  font-size: 13px; /* Overridden by responsive font sizing */
+  font-size: 14px; /* Overridden by responsive font sizing */
   line-height: 1.5rem;
   font-weight: lighter;
 }
