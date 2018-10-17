@@ -2,8 +2,6 @@
 
 \*\*\*\*
 
-{% tabs %}
-{% tab title="Objects" %}
 * delay~
 * tapin~
 * tapout~
@@ -12,6 +10,4 @@
 * flonum
 * append
 * line~
-{% endtab %}
-{% endtabs %}
 
