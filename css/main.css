@@ -1,25 +1,10 @@
-/**
- * iA Writer Template “Serif”
- *
- * font-family: Helvetica
- * font-size:   15px iPhone 5, 16px iPhone 6+, 17px iPad, 18px Mac, 19px
- * line-height: 1.6316 (31px @ font-size: 19px)
- * vert margin: 31px @ 1080px wide
- */
-
-/* TOOLS → core.css */
-
-/* GENERIC */
-
-
-
-/* BASE */
 
 html {
   font-family: "Helvetica", "Arial", Keyboard, Times, "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", serif; /* Times for Cyrillic, Hiragino to prevent Japanese displaying in Kaku */
   font-size: 14px; /* Overridden by responsive font sizing */
   line-height: 1.5rem;
   font-weight: lighter;
+backfround-color: rgba(0,0,0,0.05);
 }
 
 body {
@@ -30,8 +15,8 @@ body {
 }
 
 html>body {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 /* Headings */
@@ -47,7 +32,7 @@ h1 {
   color: grey;
   text-align: right;
   border-bottom: 1px solid #999;
-  font-size: 100%;
+  font-size: 150%;
   font-weight: lighter;
   letter-spacing: .2rem;
   margin-bottom: 2rem;
