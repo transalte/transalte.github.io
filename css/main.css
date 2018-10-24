@@ -1,7 +1,6 @@
 body { 
 margin-left: 10%;
 margin-right: 10%;
-font-size: 36px;
 line-height: 1.5em;
 }
 
@@ -13,6 +12,7 @@ letter-spacing: .1rem;
 
 p {
 text-align: justify; 
+font-size: 36px;
 text-justify: inter-word;
 }
 
