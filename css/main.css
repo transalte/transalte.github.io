@@ -1,7 +1,7 @@
 html>body { 
 margin-left: 10%;
 margin-right: 10%;
-font-size: 19px;
+font-size: 14px;
 line-height: 1.5em;
 }
 
@@ -14,7 +14,7 @@ letter-spacing: .1rem;
 p {
 text-align: justify; 
 text-justify: inter-word;
-font-size: 100%;
+font-size: 14px;
 }
 
 
