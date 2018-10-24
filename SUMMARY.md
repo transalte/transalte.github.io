@@ -1,7 +1,10 @@
 # Table of contents
 
-* [Delays](README.md)
+## Introduction
+
 * [What Is Max For Live?](what-is-max-for-live.md)
+
+## Basic Filter
 
 ## Distortion
 
@@ -17,4 +20,3 @@
 ## Introduction
 
 * [What is Max For Live?](introduction/what-is-max-for-live.md)
-
