@@ -42,10 +42,9 @@ font-size: .875rem;
 h1 {
 
 text-transform: uppercase;
-color: darkblue;
-text-align: center;
-border-bottom: 1px solid #999;
-font-size: 1rem;
+color: grey;
+text-align: left;
+font-size: 1.2rem;
 }
 
 h2 {
@@ -54,11 +53,13 @@ text-align: left;
 font-weight: normal;
 }
 
-h3 {font-size: 120%;
+h3 {
+font-size: 120%;
 font-weight: lighter;
 }
 
-h4 {font-size: 100%;
+h4 {
+font-size: 100%;
 font-weight: bold;
 }
 
@@ -104,14 +105,14 @@ color: grey;
 
 /* Style the links inside the navigation bar */
 .topnav a {
-    float: left;
+    float: right;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-family: Helvetica;
     font-weight: lighter;
-    font-size: 100%;
+    font-size: .875rem;
 }
 
 /* Change the color of links on hover */
