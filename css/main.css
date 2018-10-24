@@ -4,7 +4,7 @@ html {
   font-size: 14px; /* Overridden by responsive font sizing */
   line-height: 1.5rem;
   font-weight: lighter;
-backfround-color: rgba(0,0,0,0.05);
+background-color: rgba(0,0,0,0.05);
 }
 
 body {
