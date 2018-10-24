@@ -13,19 +13,19 @@ letter-spacing: .1rem;
 
 p {
 text-align: justify; 
-font-size: .875rem;
+font-size: 1rem;
 text-justify: inter-word;
 }
 
 
 ul {
-font-size: 100%;
+font-size: 1rem;
 font-weight: lighter;
 letter-spacing: 0.1rem;
 }
 
 li { 
-font-size: 100%;
+font-size: 1rem;
 font-weight: lighter;
 letter-spacing: 0.1rem;
 }
