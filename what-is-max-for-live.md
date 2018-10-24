@@ -10,7 +10,7 @@
 
 In this module, you will learn the visual programming language **Max For Live** \(M4L\) by building a number of devices that can be put to use in a Live session. Max is an enormous sand-box of a program with such a wide range of applications that it would be impossible to cover every detail of the 1000-odd objects and their possibilities from start to finish in a single course. The aim here is to provide you with the fundamentals of the application so that you can understand the key aspects of how Max works.
 
-> Although the focushere is on **Max For Live**, some familiarity with Ableton Live will help greatly; it is recommended that you read the following information \[[https://www.ableton.com/en/manual/live-concepts/](https://www.ableton.com/en/manual/live-concepts/)\] to bring yourself up to speed.
+> Although the focus here is on **Max For Live**, some familiarity with Ableton Live will help greatly; it is recommended that you read the following information \[[https://www.ableton.com/en/manual/live-concepts/](https://www.ableton.com/en/manual/live-concepts/)\] to bring yourself up to speed.
 
 The documentation that comes with Max is very detailed and provides clear examples of how the individual objects work, but at times the documentation can sometimes lack the context needed in order to fully understand how certain objects would tie in with your own ideas. By working through step-by-step examples in class and reverse engineering complete devices you will understand how the various objects and concepts within the programme work. Some of the effects \(referred to as ‘devices’ in M4L\) covered in the module may be familiar, however, it is expected that students will be adding in more controls, features and flexibility than you may find in existing effects. Seeing how such effects are built will allow you start thinking about how you can expand one to meet your own needs.
 
@@ -26,7 +26,7 @@ In this module we will be creating Audio Effects.
 
 1. With Live open, create a new audio track and drag in an audio clip of your choice.
 2. Add a Max Audio Effect device onto the track by dragging the template from the **Live Browser**.
-3. Click the edit button on the new device \(third icon from the top right of the device\). 
+3. Click the edit button on the new device \(third icon from the top right of the device\).
 
 This will open the **Max Editor** in a new window complete with the default contents for this type of device. This is the window where all devices are created and edited:
 
@@ -71,12 +71,12 @@ The first device will be a straightforward stereo filter with selectable filter 
 ### Stage 01: Input Meters
 
 1. Re-open your saved patch if closed.
-2. Place the mouse cursor over an area where there are no objects and press the n key. This will bring up a new object that is empty and is waiting for you to type the name of an object into it. 
-3. Press L and you will see Max attempt to auto-complete your entry; the object to locate is the live.meter~ object. Once you hit enter, it should appear on the patch. 
+2. Place the mouse cursor over an area where there are no objects and press the n key. This will bring up a new object that is empty and is waiting for you to type the name of an object into it.
+3. Press L and you will see Max attempt to auto-complete your entry; the object to locate is the live.meter~ object. Once you hit enter, it should appear on the patch.
 4. Move the meter to the right of the plugin~ object by dragging it with the mouse.
-5. Hold down the alt key on your keyboard, click and drag with the mouse to the right to create another copy. 
+5. Hold down the alt key on your keyboard, click and drag with the mouse to the right to create another copy.
 6. Click and drag from the bottom left outlet of plugin~ to the almost invisible inlet on the top of the left live.meter~ object. Hover over this inlet for a description.
-7. Do this same again but from the bottom right outlet of plugin~ to the duplicated live.meter~. 
+7. Do this same again but from the bottom right outlet of plugin~ to the duplicated live.meter~.
 8. If you play the clip in Live you should see the meters reacting to the audio.
 
 /live.meters.png
@@ -161,7 +161,7 @@ From an end-user point of view these number boxes aren’t the most ergonomic to
 
 The left dial by default will send values from 0 to 127 to the **svf~**, this is fairly useless for a filter so we will fix this by changing some values the inspector.
 
-1. Open the **Inspector** for the **live.dial**. 
+1. Open the **Inspector** for the **live.dial**.
 2. Under the **Parameters** subsection change the **Type** from **Int \(0-255\)** to **Float**. When set as **Int**, we are capped at values between 0-255, with **Float** this limit is removed.
 3. Change the **Range/Enum** to 20. 20000. \(remember the period after the numbers and the space between those two values\)
 4. Change the **Unit Style** to **Hertz**.
@@ -253,7 +253,7 @@ To get around this misalignment of values a **+** object between the **live.menu
 /menu\_selector.png
 
 ```text
-Remember two things, we are not dealing with  signal here so there is no tilde after the **+** sign. 
+Remember two things, we are not dealing with  signal here so there is no tilde after the **+** sign.
 ```
 
 Now, an output of 0 from the **live.menu** triggers a 1 on **selector~** which lets the lowpass through, and so on. The menu selections now match up with the filter outputs of the selector~ object:
@@ -277,7 +277,7 @@ You will see a blank patch. This is because we need to add our UI controls to th
 
 To make objects visible in the UI:
 
-1. Come out of **Presentation Mode** \(click the icon or shortcut again\) 
+1. Come out of **Presentation Mode** \(click the icon or shortcut again\)
 2. Click on the object you want to see in the UI to select them and then right-click to bring up the context menu and select **Add to Presentation**. The object should have a red outline on it now indicating it’s now active in the **Presentation Mode**
 3. Do this for all the relevant UI controls objects. The keyboard shortcut for this is **cmd+shift+p** after selecting the object
 
@@ -285,8 +285,8 @@ Go back to **Presentation Mode** to see the object\(s\) with no patch cords visi
 
 The very final step is to make the UI visible to Live:
 
-1. Right-click on an empty area \(make sure you have not clicked on any objects\) of the patcher when in Presentation Mode and select Patcher Inspector from the context menu that pops up. 
-2. Under the View heading in the Inspector, check the box to the right of ‘Open in Presentation’ and save your patch. 
+1. Right-click on an empty area \(make sure you have not clicked on any objects\) of the patcher when in Presentation Mode and select Patcher Inspector from the context menu that pops up.
+2. Under the View heading in the Inspector, check the box to the right of ‘Open in Presentation’ and save your patch.
 
 Back in Live, the devices UI should now contain all of the objects you added to the Presentation.
 
@@ -357,4 +357,3 @@ Remember, that if an object is to be seen in the UI, it cannot be inside a sub-p
 Save your patch again and take a copy.
 
 **END OF LAB**
-
