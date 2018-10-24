@@ -172,12 +172,14 @@ Connect a **live.dial** to **svf~** as follows:
 
 The left dial by default will send values from 0 to 127 to the **svf~**, this is fairly useless for a filter so we will fix this by changing some values the inspector.
 
-	1. Open the **Inspector** for the **live.dial**.
-	2. Under the **Parameters** subsection change the **Type** from **Int (0-255)** to **Float**. When set as **Int**, we are capped at values between 0-255, with **Float** this limit is removed.
-	3. Change the **Range/Enum** to 20. 20000. (remember the period after the numbers and the space between those two values)
-	4. Change the **Unit Style** to **Hertz**.
-	5. Change the **Short Name** to **Freq** - this changes the UI text
-	6. Change the **Long Name** to **“Filter Frequency”** - this is the text allocated to the envelope names in Ableton Live and as the name contains a space you must include the quotation marks
+
+1. Open the **Inspector** for the **live.dial**.
+2. Under the **Parameters** subsection change the **Type** from **Int (0-255)** to **Float**. When set as **Int**, we are capped at values between 0-255, with **Float** this limit is removed.
+3. Change the **Range/Enum** to 20. 20000. (remember the period after the numbers and the space between those two values)
+4. Change the **Unit Style** to **Hertz**.
+5. Change the **Short Name** to **Freq** - this changes the UI text
+6. Change the **Long Name** to **“Filter Frequency”** - this is the text allocated to the envelope names in Ableton Live and as the name contains a space you must include the quotation marks
+
 
 If you jump back into the main patch, the dial should now run from 20 to 20kHz albeit very hard to fine-tune the more useful lower values. To skew the distribution of the numbers across the dial, open the the Inspector again and set **Exponent** to **3.3333** - this will make the dials more user friendly.
 
