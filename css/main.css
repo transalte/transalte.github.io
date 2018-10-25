@@ -101,6 +101,7 @@ color: grey;
 .topnav {
     background-color: white;
     overflow: hidden;
+        border-bottom: 1px solid #999;
 }
 
 /* Style the links inside the navigation bar */
@@ -108,8 +109,8 @@ color: grey;
     float: right;
     color: grey;
     text-align: center;
-    border-bottom: 1px solid #999;
-    padding: 14px 16px;
+
+    padding: 5px 5px;
     text-decoration: none;
     font-family: Helvetica;
     font-weight: lighter;
