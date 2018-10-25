@@ -9,7 +9,7 @@ font-size: 100%;
 h1, h2, h3, h4, p {
 font-family: 'Helvetica', serif;
 font-weight: lighter;
-letter-spacing: .1rem; 
+letter-spacing: .1rem;
 }
 
 p {
@@ -101,7 +101,6 @@ color: grey;
 .topnav {
     background-color: white;
     overflow: hidden;
-border-bottom: 1px solid black;
 }
 
 /* Style the links inside the navigation bar */
