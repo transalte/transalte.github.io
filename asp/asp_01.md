@@ -1,3 +1,9 @@
+---
+title: Audio Signal Processing
+category: asp
+order: 2
+sidebar: toc
+---
 
 # Introduction to Max/Max For Live
 
