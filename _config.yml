@@ -5,3 +5,5 @@ collections-dir: _docs
 
 collections:
   - docs
+    output: true
+    permalink: :slug/
