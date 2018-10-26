@@ -3,7 +3,6 @@ title: Audio Signal Processing
 layout: asp
 category: asp
 order: 2
-sidebar: toc
 ---
 
 # Introduction to Max/Max For Live

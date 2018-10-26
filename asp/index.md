@@ -3,7 +3,6 @@ layout: asp
 title: Audio Signal Processing
 category: asp
 order: 1
-sidebar: toc
 ---
 
 <p> This is the content here </p>
