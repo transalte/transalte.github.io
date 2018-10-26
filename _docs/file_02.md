@@ -4,4 +4,4 @@ category: getting-started
 order: 2
 ---
 
-This is sample 2 file
+**This is sample 2 file**
