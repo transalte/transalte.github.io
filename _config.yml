@@ -4,4 +4,4 @@ permalink: /blog/:year/:month/:day/:title
 collections-dir: _docs
 
 collections:
-  - _docs
+  - docs
