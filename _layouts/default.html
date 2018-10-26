@@ -22,16 +22,17 @@ title: Blogging Like a Hacker
 					<a href="/asp/">ASP . </a>
 					<a href="/index.html">HOME . </a>
 				</div>
+				<ul>
+						{% for item in site.data.samplelist[page.sidebar] %}
+							<li><a href="{{ item.url }}">{{ item.title }}</a></li>
+						{% endfor %}
+				</ul>
 
 			</nav>
 
 			<div class="container">
 
-				<ul>
-				    {% for item in site.data.samplelist[page.sidebar] %}
-				      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-				    {% endfor %}
-				</ul>
+
 
 			{{ content }}
 
