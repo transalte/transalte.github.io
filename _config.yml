@@ -1,6 +1,6 @@
 name: Transalte
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+permalink:        :slug/
 collections-dir: _docs
 
 collections:
