@@ -1,5 +1,5 @@
 ---
-title: Front page
+title: TRANSALTE
 sidebar: toc
 ---
 
