@@ -7,6 +7,15 @@
 			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
 		</head>
 		<body>
+
+			<ul>
+			    {% for doc in site.asp.docs %}
+			      {% if doc.category == "ASP" %}
+			        <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+			      {% endif %}
+			    {% endfor %}
+			</ul>
+
 			<h2>TRANSALTE</h2>
 
 			<nav>
@@ -20,13 +29,7 @@
 
 <p>{{ page.title }}</p>
 
-<ul>
-    {% for doc in site.asp.docs %}
-      {% if doc.category == "ASP" %}
-        <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-</ul>
+
 
 
 
