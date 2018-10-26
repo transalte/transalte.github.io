@@ -1,6 +1,6 @@
 ---
-  title: Front page
-  sidebar: toc
+title: Front page
+sidebar: toc
 ---
 
 ## Header 02
