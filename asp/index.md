@@ -1,7 +1,7 @@
 ---
-	title: My page
-	sidebar: toc
-	---
+title: My page
+sidebar: toc
+---
 
 Header One
 ===
