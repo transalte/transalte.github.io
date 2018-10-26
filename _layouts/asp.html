@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+	<html>
+		<head>
+			<title>{{ page.title }}</title>
+			<!-- link to main stylesheet -->
+			<link rel="stylesheet" type="text/css" href="/css/main.css">
+		</head>
+		<body>
+			<h4>TRANSALTE</h4>
+
+			<nav>
+				<div class="topnav">
+				  <a href="/contact">CONTACT</a>
+				  <a href="/about/">ABOUT . </a>
+					<a href="/asp/">ASP . </a>
+					<a href="/index.html">HOME . </a>
+				</div>
+			</nav>
+
+<p>{{ page.title }}</p>
+<h3>Getting Started</h3>
+<ul>
+    {% for doc in site.docs %}
+      {% if doc.category == "getting-started" %}
+        <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+</ul>
+
+			<div class="container">
+
+			{{ content }}
+
+			</div><!-- /.container -->
+			<footer>
+	    			Footer content is now here</footer>
+		</body>
+	</html>
