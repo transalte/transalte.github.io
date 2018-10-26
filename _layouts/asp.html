@@ -21,7 +21,7 @@
 <p>{{ page.title }}</p>
 
 <ul>
-    {% for doc in site.docs %}
+    {% for doc in site.asp.docs %}
       {% if doc.category == "asp" %}
         <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
       {% endif %}
