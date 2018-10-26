@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TRANSALTE
+title: Welcome.
 ---
 
 # Header 01
