@@ -8,6 +8,7 @@
 		</head>
 		<body>
 			<h4>TRANSALTE</h4>
+			<p>{{ page.title }}</p>
 			<nav>
 				<div class="topnav">
 				  <a href="/contact">CONTACT</a>
@@ -22,9 +23,9 @@
 			<div class="container">
 
 				<ul>
-						{% for item in site.data.samplelist[page.sidebar] %}
-							<li><a href="{{ item.url }}">{{ item.title }}</a></li>
-						{% endfor %}
+				    {% for item in site.data.samplelist[page.sidebar] %}
+				      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+				    {% endfor %}
 				</ul>
 
 			{{ content }}
