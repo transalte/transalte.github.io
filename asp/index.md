@@ -1,4 +1,7 @@
-
+---
+	title: My page
+	sidebar: toc
+	---
 
 Header One
 ===
