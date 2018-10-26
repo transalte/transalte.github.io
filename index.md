@@ -4,6 +4,7 @@ title: TRANSALTE
 sidebar: toc
 ---
 
+# Header 01
 ## Header 02
 
 This is the normal text here.
