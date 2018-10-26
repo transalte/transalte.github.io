@@ -18,6 +18,15 @@
 
 <p>{{ page.title }}</p>
 
+<h3>Getting Started</h3>
+<ul>
+    {% for doc in site.docs %}
+      {% if doc.category == "getting-started" %}
+        <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+</ul>
+
 
 			<div class="container">
 
