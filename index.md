@@ -1,7 +1,6 @@
 ---
 layout: default
 title: TRANSALTE
-sidebar: toc
 ---
 
 # Header 01
