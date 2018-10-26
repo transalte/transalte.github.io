@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Audio Signal Processing
-category: asp
+category: ASP
 order: 2
 ---
 
