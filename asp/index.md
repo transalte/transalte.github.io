@@ -1,4 +1,13 @@
+---
+	title: My page
+	sidebar: toc
+	---
 
+<ul>
+{% for item in site.data.samplelist[page.sidebar] %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+</ul>
 
 Header One
 ===
@@ -57,6 +66,3 @@ An inline footnote[^inline footnote content]
 A referenced footnote [^pizza]
 
 [^pizza]: Referenced footnote content
-
-
-
