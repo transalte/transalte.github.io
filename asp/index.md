@@ -9,7 +9,7 @@ order: 1
 
 <h3>Getting Started</h3>
 <ul>
-    {% for doc in site.asp %}
+    {% for doc in site %}
       {% if doc.category == "asp" %}
         <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
       {% endif %}
