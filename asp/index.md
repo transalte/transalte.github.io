@@ -1,6 +1,6 @@
 ---
 	title: My page
-	sidebar: toc
+	sidebar: toc   
 	---
 
 <ul>
