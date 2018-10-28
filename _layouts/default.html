@@ -17,35 +17,28 @@
 			</nav>
 
 <div class="row">
-  <div class="sidecolumn">
-
-
-		<h3>Getting Started</h3>
-		<ul>
+  	<div class="sidecolumn">
+			<h3>Getting Started</h3>
+			<ul>
     	{% for doc in site.docs %}
       	{% if doc.category == "getting-started" %}
         	<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
       	{% endif %}
     	{% endfor %}
-		</ul>
+			</ul>
+		</div>
 
-</div>
+		<div class="maincolumn">
+				<div class="container">
+					{{ content }}
+				</div><!-- /.container -->
 
-<div class="maincolumn">
-
-			<div class="container">
-
-
-			{{ content }}
-
-			</div><!-- /.container -->
-
-</div>
-	<div class="footerColumn"
+			</div>
+		<div class="footerColumn"
 				<footer>
-	    				<p>default footer here</p>
-						</footer>
-					</div>
+	    			<p>default footer here</p>
+				</footer>
+		</div>
 </div>
 		</body>
 	</html>
