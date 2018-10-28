@@ -135,14 +135,14 @@ color: grey;
 
 .sidecolumn {
     flex: 20%;
-    background-color: darkgrey;
+    background-color: rgba(0,0,0,0.05);
     padding: 20px;
+    border-right: 1px solid black;
 }
 
 .maincolumn {
 
 flex: 80%;
-background-color: lightgrey;
 padding: 20px;
 
 }
