@@ -131,13 +131,13 @@ color: grey;
 
 .row {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .sidecolumn {
     flex: 20%;
     background-color: rgba(0,0,0,0.05);
     padding: 20px;
-    border-right: 1px solid black;
 }
 
 .maincolumn {
@@ -148,6 +148,11 @@ padding: 20px;
 }
 
 .footerColumn {
-  flex: 100%;
   padding: 20px;
 }
+
+/* For Resposive Layout */
+@media screen and (max-width: 700px) {
+    .row, .navbar {
+        flex-direction: column;
+    }
