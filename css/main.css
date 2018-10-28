@@ -1,6 +1,6 @@
 body {
-margin-left: 15%;
-margin-right: 15%;
+margin-left: 5%;
+margin-right: 5%;
 line-height: 1.5em;
 font-family: 'Helvetica', serif;
 font-size: 100%;
@@ -129,4 +129,20 @@ color: grey;
     color: white;
 }
 
+.row {
+    display: flex;
+}
 
+.sidecolumn {
+    flex: 20%;
+    background-color: darkgrey;
+    padding: 20px;
+}
+
+.maincolumn {
+
+flex: 80%;
+background-color: lightgrey;
+padding: 20px;
+
+}

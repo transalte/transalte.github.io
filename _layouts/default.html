@@ -16,7 +16,9 @@
 				</div>
 			</nav>
 
-<p>{{ page.title }}</p>
+<div class="row">
+  <div class="sidecolumn">
+
 
 <h3>Getting Started</h3>
 <ul>
@@ -27,20 +29,18 @@
     {% endfor %}
 </ul>
 
+</div>
+
+<div class="maincolumn">
 
 			<div class="container">
 
-				<ul>
-						{% for doc in site.asp %}
-							{% if doc.category == "ASP" %}
-								<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
-							{% endif %}
-						{% endfor %}
-				</ul>
 
 			{{ content }}
 
 			</div><!-- /.container -->
+
+</div>
 			<footer>
 	    			<p>default footer here</p>
 			</footer>
