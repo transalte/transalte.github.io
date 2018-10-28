@@ -129,7 +129,6 @@ color: grey;
 
 .row {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .sidecolumn {
