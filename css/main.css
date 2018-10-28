@@ -2,8 +2,6 @@ body {
 line-height: 1.5em;
 font-family: 'Helvetica', serif;
 font-size: 100%;
-margin-left: 5%;
-margin-right: 5%;
 }
 
 h1, h2, h3, h4, p {
@@ -136,7 +134,7 @@ color: grey;
 
 .sidecolumn {
     flex: 20%;
-    */padding: 20px;*/
+    padding: 20px;
 }
 
 .maincolumn {
