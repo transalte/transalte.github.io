@@ -4,6 +4,6 @@ permalink:        :slug/
 collections-dir: _docs
 
 collections:
-  docs
+  - docs
   output: true
   permalink: /:collection/:name
