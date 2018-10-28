@@ -6,4 +6,4 @@ collections-dir: _docs
 collections:
    - docs
   output: true
-  permalink: /:collection/:name
+  permalink: /:collection/:name 
