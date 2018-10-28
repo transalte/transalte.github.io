@@ -136,7 +136,6 @@ color: grey;
 
 .sidecolumn {
     flex: 20%;
-    background-color: rgba(0,0,0,0.05);
     padding: 20px;
 }
 
@@ -152,7 +151,7 @@ padding: 20px;
 }
 
 /* For Resposive Layout */
-@media screen and (max-width: 700px) {
-    .row, .navbar {
+@media screen and (max-width: 1400px) {
+    .row, {
         flex-direction: column;
     }
