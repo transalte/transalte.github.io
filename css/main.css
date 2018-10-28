@@ -146,3 +146,8 @@ flex: 80%;
 padding: 20px;
 
 }
+
+.footerColumn {
+  flex: 100%;
+  padding: 20px;
+}
