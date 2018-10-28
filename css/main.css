@@ -148,8 +148,9 @@ padding: 20px;
   padding: 20px;
 }
 
-/* For Resposive Layout */
+/* For Resposive Layout
 @media screen and (max-width: 1400px) {
     .row, {
         flex-direction: column;
     }
+    */
