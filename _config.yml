@@ -3,5 +3,5 @@ markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title:output_ext
 collections-dir: _docs
 collections:
-   - docs
+ - docs
 output: true
