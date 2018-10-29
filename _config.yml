@@ -1,12 +1,7 @@
 name: Transalte
 markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title:output_ext
-
+collections-dir: _docs
 collections:
-<<<<<<< HEAD
   docs:
     output: true
-=======
- - docs
-output: true
->>>>>>> c3a7b40abf4d827e1ad92536dfe32425ba4eb9fe
