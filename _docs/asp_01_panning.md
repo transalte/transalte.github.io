@@ -26,7 +26,6 @@ In the example below, the patch is much simplified and works with an audio signa
 
 ### Compressed Code
 
-><pre><code>
 ----------begin_max5_patcher----------
 1341.3oc2Y80iiZCD+4jOEQ7X61H9ef9V+.bRUpOt5TjC3v5qFajwr2t8zce
 1qw1.1DHgsJI6d8EvLyX6Y94YFa77s0qbNPeAV6r42273lUq915UqjjZIrR+
@@ -59,4 +58,3 @@ mbc0SoUTVe8V1FjZ0uFNsfAxQ5aMoOFdX8ZnLPpxEJjbpyF4TJVHPliQ6B8Z
 yAPWlUUYSNSMVeSWueAld.f0WdeuOy4tq+gBBbZwMknp8A2T05bbbhthmmlt
 J1bu341PHb3PCVS7nR+0NIiJ42nx8cZo9luLeiKwmXl+95+0uzaZC
 -----------end_max5_patcher-----------
-</code></pre>
