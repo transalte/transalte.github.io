@@ -44,12 +44,12 @@ html>body {
 }
 
 .sidecolumn {
-    flex: 20%;
+    flex: 10%;
     padding: 20px;
 }
 
 .maincolumn {
-    flex: 80%;
+    flex: 90%;
     padding: 20px;
 
 }
@@ -69,6 +69,8 @@ body {
 line-height: 1.5em;
 font-family: 'Helvetica', serif;
 background-color: whitesmoke;
+margin-left: 10%;
+margin-right: 10%;
 }
 
 h1, h2, h3, h4, p {
