@@ -2,8 +2,8 @@
 
 * { box-sizing: border-box;}
 
-body>html {
-    font-size: 5px;
+html>body {
+    font-size: 12px;
     font-family: Helvetica;
     font-weight: lighter;
 }
