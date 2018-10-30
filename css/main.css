@@ -1,6 +1,12 @@
 /* STRUCTURE */
 
 * { box-sizing: border-box;}
+body>html {
+  font-size: 14px;
+  font-family: Helvetica;
+  font-weight: lighter;
+  
+}
 
 .topnav {
     background-color: white;
@@ -59,7 +65,7 @@
 
 /* TYPOGRAPHY */
 
-body>html {font-size: 14px;}
+
 
 body {
 line-height: 1.5em;
