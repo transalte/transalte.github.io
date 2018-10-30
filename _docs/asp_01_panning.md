@@ -3,7 +3,6 @@ layout: asp
 title: Panning
 category: ASP
 order: 3
-permalink: /panning/
 tag: panning, stereo, mono
 ---
 
