@@ -101,7 +101,8 @@ html>body {
 
 .footerColumn {
     padding: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    text-align: center;
+    font-size: 75%;
 }
 
 
