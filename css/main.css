@@ -24,7 +24,7 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: #EEEEE;
     color: black;
 }
 
@@ -66,6 +66,7 @@ padding: 20px;
 
 
 /* TYPOGRAPHY */
+
 body {
 line-height: 1.5em;
 font-family: 'Helvetica', serif;
