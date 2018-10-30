@@ -47,7 +47,7 @@ html>body {
 
 /* Style the links inside the navigation bar */
 .sidenav a {
-    padding: 5px 5px;
+    padding: 0px 0px;
     text-decoration: none;
     font-family: Helvetica;
     font-weight: lighter;
