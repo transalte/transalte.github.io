@@ -2,10 +2,9 @@
 
 * { box-sizing: border-box;}
 body>html {
-  font-size: 14px;
-  font-family: Helvetica;
-  font-weight: lighter;
-  
+    font-size: 12px;
+    font-family: Helvetica;
+    font-weight: lighter;
 }
 
 .topnav {
@@ -42,7 +41,6 @@ body>html {
 .row {
     display: flex;
     flex-wrap: wrap;
-}
 }
 
 .sidecolumn {
@@ -133,16 +131,15 @@ font-weight: bold;
 }
 
 table {
-border-collapse: collapse;
-width: 100%;
-font-weight: lighter;
-font-size: .875rem;
+  border-collapse: collapse;
+  width: 100%;
+  font-weight: lighter;
+  font-size: 100%;
 }
 
 table, th, td {
     border: 1px solid black;
     font-size: .875rem;
-
 }
 
 th, td {
