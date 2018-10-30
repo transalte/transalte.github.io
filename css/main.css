@@ -55,12 +55,7 @@
     border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-/* For Resposive Layout     */
 
-@media screen and (max-width: 700px) {
-    .row, {
-        flex-direction: column;
-    }
 
 /* TYPOGRAPHY */
 
@@ -72,7 +67,6 @@ font-family: 'Helvetica', serif;
 font-size: 100%;
 margin-left: 10%;
 margin-right: 10%;
-font-size: 14px;
 }
 
 h1, h2, h3, h4, p {
