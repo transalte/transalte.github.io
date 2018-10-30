@@ -1,6 +1,6 @@
 ---
+Title: Panning
 layout: asp
-title: Panning
 category: ASP
 order: 3
 tag: panning, stereo, mono
