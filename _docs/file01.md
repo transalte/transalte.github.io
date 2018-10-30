@@ -8,3 +8,5 @@ tag:
 ---
 
 This is the sample 1 file
+
+![studio](assets/img/01.jpg)
