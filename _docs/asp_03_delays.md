@@ -5,6 +5,10 @@ category: ASP
 order: 4
 ---
 
+* This will become a table of contents (this text will be scraped).
+{:toc}
+
+
 # Delay Overview
 
 While there are a number of different types of delays, they are all based around the same concept; a signal comes in and passes through to the output while it is also sent through a delay block to be joined with the dry signal.
