@@ -6,7 +6,6 @@ html>body {
     font-size: 12px;
     font-family: Helvetica;
     font-weight: lighter;
-    background-color: whitesmoke;
 }
 
 .topnav {
@@ -70,8 +69,7 @@ html>body {
 body {
 line-height: 1.5em;
 font-family: 'Helvetica', serif;
-margin-left: 10%;
-margin-right: 10%;
+background-color: lightgrey;
 }
 
 h1, h2, h3, h4, p {
