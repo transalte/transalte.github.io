@@ -1,3 +1,70 @@
+/* STRUCTURE */
+
+* { box-sizing: border-box;}
+
+
+.topnav {
+    background-color: white;
+    overflow: hidden;
+        border-bottom: 1px solid #999;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    color: grey;
+    text-align: center;
+
+    padding: 5px 5px;
+    text-decoration: none;
+    font-family: Helvetica;
+    font-weight: lighter;
+    font-size: .875rem;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.row {
+    display: flex;
+}
+
+.sidecolumn {
+    flex: 20%;
+    padding: 20px;
+}
+
+.maincolumn {
+
+flex: 80%;
+padding: 20px;
+
+}
+
+.footerColumn {
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* For Resposive Layout
+@media screen and (max-width: 1400px) {
+    .row, {
+        flex-direction: column;
+    }
+    */
+
+
+
+/* TYPOGRAPHY */
 body {
 line-height: 1.5em;
 font-family: 'Helvetica', serif;
@@ -96,63 +163,3 @@ font-weight: lighter;
 font-style: italic;
 color: grey;
 }
-
-
-.topnav {
-    background-color: white;
-    overflow: hidden;
-        border-bottom: 1px solid #999;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: right;
-    color: grey;
-    text-align: center;
-
-    padding: 5px 5px;
-    text-decoration: none;
-    font-family: Helvetica;
-    font-weight: lighter;
-    font-size: .875rem;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.row {
-    display: flex;
-}
-
-.sidecolumn {
-    flex: 20%;
-    padding: 20px;
-}
-
-.maincolumn {
-
-flex: 80%;
-padding: 20px;
-
-}
-
-.footerColumn {
-  padding: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-/* For Resposive Layout
-@media screen and (max-width: 1400px) {
-    .row, {
-        flex-direction: column;
-    }
-    */
