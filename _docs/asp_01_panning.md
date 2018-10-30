@@ -14,7 +14,7 @@ Panning can be achieved a number of ways in M4L, there are the **M4L.pan1~** and
 
 In the example below, the patch is much simplified and works with an audio signal controlling the panning position.
 
-![Mono Pan](images/panMono.png "Audio Rate Control Panning Patch")
+![Mono Pan (Audio Signal)](images/panMono.png)
 
 ### List of Objects:
 * line~
