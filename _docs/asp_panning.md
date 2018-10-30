@@ -2,7 +2,7 @@
 layout: asp
 title: Panning
 category: ASP
-order: 2
+order: 3
 permalink: /panning/
 tag: panning, stereo, mono
 ---
