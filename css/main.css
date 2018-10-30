@@ -61,7 +61,7 @@ html>body {
 
 /* Change the color of links on hover */
 .sidenav a:hover {
-    color: black;
+    color: red;
 }
 
 .sidenav a:visited {
