@@ -1,5 +1,5 @@
 ---
-Title: MX
+Title: What Is Max For Live?
 layout: asp
 category: ASP
 order: 3
