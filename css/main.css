@@ -44,7 +44,6 @@ html>body {
 
 .sidenav {
     overflow: hidden;
-    background-color: lightgrey;
 }
 
 /* Style the links inside the navigation bar */
@@ -64,7 +63,10 @@ html>body {
 
 /* Change the color of links on hover */
 .sidenav a:hover {
-    background-color: #e5e5e5e5;
+    color: black;
+}
+
+.sidenav a:visited {
     color: black;
 }
 
@@ -73,6 +75,8 @@ html>body {
     background-color: #4CAF50;
     color: white;
 }
+
+
 
 
 
