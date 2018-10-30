@@ -1,6 +1,6 @@
 ---
 Title: MX
-layout: default
+layout: asp
 category: getting-started
 order: 3
 ---
