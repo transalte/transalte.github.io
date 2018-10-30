@@ -1,8 +1,9 @@
 /* STRUCTURE */
 
 * { box-sizing: border-box;}
+
 body>html {
-    font-size: 10px;
+    font-size: 5px;
     font-family: Helvetica;
     font-weight: lighter;
 }
