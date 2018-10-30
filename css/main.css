@@ -55,12 +55,13 @@ padding: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-/* For Resposive Layout
-@media screen and (max-width: 1400px) {
+/* For Resposive Layout     */
+
+@media screen and (max-width: 700px) {
     .row, {
         flex-direction: column;
     }
-    */
+
 
 
 
