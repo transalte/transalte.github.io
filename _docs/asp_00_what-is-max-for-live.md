@@ -5,7 +5,7 @@ category: ASP
 order: 1
 ---
 
-## What Is Max For Live?
+# What Is Max For Live?
 ![Max 8](https://fistpumpers.com/wp-content/uploads/2017/11/Cycling-74-announce-Max-8.jpg)
 
 In this module, you will learn the visual programming language **Max For Live** (M4L) by building a number of devices that can be put to use in a Live session. Max is an enormous sand-box of a program with such a wide range of applications that it would be impossible to cover every detail of the 1000-odd objects and their possibilities from start to finish in a single course. The aim here is to provide you with the fundamentals of the application so that you can understand the key aspects of how Max works.
