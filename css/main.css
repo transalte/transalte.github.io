@@ -42,13 +42,13 @@ html>body {
 
 .sidenav {
     overflow: hidden;
-    background-color: grey;
+    background-color: lightgrey;
 }
 
 /* Style the links inside the navigation bar */
 .sidenav a {
     float: right;
-    color: grey;
+    color: white;
     text-align: center;
 
     padding: 5px 5px;
@@ -60,7 +60,7 @@ html>body {
 
 /* Change the color of links on hover */
 .sidenav a:hover {
-    background-color: #EEEEE;
+    background-color: blue;
     color: black;
 }
 
