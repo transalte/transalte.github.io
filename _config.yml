@@ -5,3 +5,10 @@ collections-dir: _docs
 collections:
   docs:
     output: true
+
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
