@@ -6,6 +6,7 @@ html>body {
     font-size: 14px;
     font-family: Helvetica;
     font-weight: lighter;
+    color: darkgrey;
 }
 
 .topnav {
@@ -49,11 +50,10 @@ html>body {
 
 /* Style the links inside the navigation bar */
 .sidenav a {
-    color: white;
     padding: 5px 5px;
     text-decoration: none;
     font-family: Helvetica;
-    font-weight: bold;
+    font-weight: lighter;
     font-size: 80%;
 }
 
