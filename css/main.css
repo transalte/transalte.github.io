@@ -40,6 +40,8 @@ html>body {
 
 
 
+
+
 .sidenav {
     overflow: hidden;
     background-color: lightgrey;
@@ -51,8 +53,8 @@ html>body {
     padding: 5px 5px;
     text-decoration: none;
     font-family: Helvetica;
-    font-weight: lighter;
-    font-size: .875rem;
+    font-weight: bold;
+    font-size: 80%;
 }
 
 .sidenav ul {
@@ -72,6 +74,11 @@ html>body {
     background-color: #4CAF50;
     color: white;
 }
+
+
+
+
+
 
 .row {
     display: flex;
