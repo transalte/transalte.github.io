@@ -33,18 +33,6 @@
 			</ul>
 
 
-
-			<ul>
-{% assign sorted_pages = site.pages | sort: 'title' %}
-{% for page in sorted_pages %}
-{% for tag in page.tags %}
-{% if tag == "ASP" %}
-<li><a href="{{ page.url | remove: "/" }}">{{page.title}}</a></li>
-{% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
-
 		</div>
 
 		<div class="maincolumn">
