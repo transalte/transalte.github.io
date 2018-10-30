@@ -64,6 +64,8 @@
 
 /* TYPOGRAPHY */
 
+body>html {font-size: 14px;}
+
 body {
 line-height: 1.5em;
 font-family: 'Helvetica', serif;
