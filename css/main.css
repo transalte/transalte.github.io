@@ -57,6 +57,8 @@ html>body {
     font-size: .875rem;
 }
 
+.sidenav ul {list-style-type: none;}
+
 /* Change the color of links on hover */
 .sidenav a:hover {
     background-color: blue;
