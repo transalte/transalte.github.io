@@ -3,6 +3,7 @@ layout: asp
 Title: Routing In Max
 category: ASP
 order: 4
+permalink: /routing/
 ---
 
 ## Routing in Max is possible by using the following objects:
