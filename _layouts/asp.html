@@ -1,44 +1,68 @@
 <!DOCTYPE html>
-
 	<html>
 		<head>
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+
+			<title>{{ page.title }}</title>
 		</head>
 		<body>
-
-			<ul>
-			    {% for doc in site.asp %}
-			      {% if doc.category == "ASP" %}
-			        <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
-			      {% endif %}
-			    {% endfor %}
-			</ul>
-
-			<h2>TRANSALTE</h2>
+			<p>TRANSALTE</p>
 
 			<nav>
 				<div class="topnav">
 				  <a href="/contact">CONTACT</a>
 				  <a href="/about/">ABOUT . </a>
+					<a href="/aasp/">AASP . </a>
 					<a href="/asp/">ASP . </a>
 					<a href="/index.html">HOME . </a>
 				</div>
 			</nav>
 
-<p>{{ page.title }}</p>
+
+<!-- main contatinger row here -->
+<div class="row">
+  	<div class="sidecolumn">
+
+			<h4>Getting Started</h4>
+			<ul>
+    	{% for doc in site.docs %}
+      	{% if doc.category == "ASP" %}
+        	<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+      	{% endif %}
+    	{% endfor %}
+			</ul>
 
 
 
+			<ul>
+{% assign sorted_pages = site.pages | sort: 'title' %}
+{% for page in sorted_pages %}
+{% for tag in page.tags %}
+{% if tag == "ASP" %}
+<li><a href="{{ page.url | remove: "/" }}">{{page.title}}</a></li>
+{% endif %}
+{% endfor %}
+{% endfor %}
+</ul>
+
+		</div>
+
+		<div class="maincolumn">
 
 
+					{{ content }}
 
-			{{ content }}
 
-			</div><!-- /.container -->
-			<footer>
-			</p>This is the asp layout</p>
+		</div>
+
+</div>
+
+<div class="footerColumn"
+
+		<footer>
+		<p>asp layout here default footer here</p>
 		</footer>
-		</body>
-	</html>
+
+</div>
+</body>
+</html>
