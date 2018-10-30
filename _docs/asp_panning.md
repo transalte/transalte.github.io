@@ -1,6 +1,6 @@
 ---
 layout: asp
-Title: Panning
+title: Panning
 category: ASP
 order: 2
 permalink: /panning/

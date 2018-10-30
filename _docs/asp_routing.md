@@ -1,6 +1,6 @@
 ---
 layout: asp
-Title: Routing In Max
+title: Routing In Max
 category: ASP
 order: 4
 permalink: /routing/
