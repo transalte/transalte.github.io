@@ -47,7 +47,7 @@ html>body {
 
 /* Style the links inside the navigation bar */
 .sidenav a {
-    float: right;
+    float: left;
     color: white;
     text-align: left;
     padding: 5px 5px;
