@@ -49,8 +49,7 @@ html>body {
 .sidenav a {
     float: right;
     color: white;
-    text-align: center;
-
+    text-align: left;
     padding: 5px 5px;
     text-decoration: none;
     font-family: Helvetica;
