@@ -5,7 +5,7 @@ category: ASP
 order: 1
 ---
 
-![Max 9](https://fistpumpers.com/wp-content/uploads/2017/11/Cycling-74-announce-Max-8.jpg)
+![Max 8](https://fistpumpers.com/wp-content/uploads/2017/11/Cycling-74-announce-Max-8.jpg)
 
 
 ## What Is Max For Live?
