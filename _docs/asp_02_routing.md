@@ -18,10 +18,10 @@ permalink: /routing/
 
 For a simple bypass between a dry and an affected signal, selector~ can be used to switch between the two signal streams:
 
-## selector~
+### selector~
 
-## matrix~
+### matrix~
 
-## send/receive
+### send/receive
 
-## send~/receive~
+### send~/receive~
