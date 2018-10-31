@@ -1,5 +1,5 @@
 ---
-title: Panning
+title: PANNING
 layout: content
 category: ASP
 order: 3

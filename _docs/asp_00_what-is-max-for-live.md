@@ -1,5 +1,5 @@
 ---
-title: What Is Max For Live?
+title: WHAT IS MAX?
 layout: content
 category: ASP
 order: 1
