@@ -1,5 +1,5 @@
 ---
-layout: asp
+layout: content
 title: Routing
 category: ASP
 order: 2

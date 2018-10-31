@@ -1,6 +1,6 @@
 ---
 title: Delays
-layout: asp
+layout: content
 category: ASP
 order: 4
 ---

@@ -1,6 +1,6 @@
 ---
 title: What Is Max For Live?
-layout: asp
+layout: content
 category: ASP
 order: 1
 ---
