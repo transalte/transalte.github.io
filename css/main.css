@@ -9,8 +9,7 @@ html>body {
 }
 
 .header {
-  background-color: yellow;
-
+display: inline;
 }
 
 .topnav {
