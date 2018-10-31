@@ -27,34 +27,29 @@
 <!-- main contatinger row here -->
 <div class="row">
   	<div class="sidecolumn">
-			<p>SECTIONS</p>
-
-			<div class="sidenav">
-				<ul>
-				{% for doc in site.docs %}
-	      	{% if doc.category == "ASP" %}
-	        	<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
-	      	{% endif %}
-	    	{% endfor %}
-			</ul>
-			</div>
 
 		</div>
 
 
 		<div class="maincolumn">
 					{{ content }}
+
+					<div class="sidenav">
+						<ul>
+						{% for doc in site.docs %}
+			      	{% if doc.category == "ASP" %}
+			        	<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+			      	{% endif %}
+			    	{% endfor %}
+					</ul>
+					</div>
 		</div>
 
 
 </div>
 
 <div class="rightcolumn">
-	<p>CONTENTS</p>
-	<div class="sidenav">
 
-		{% include toc.html html=content h_min=2 h_max=3 class=sidenav %}
-	</div>
 </div>
 
 
