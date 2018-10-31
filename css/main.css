@@ -116,12 +116,10 @@ html>body {
     padding: 20px;
     padding-top: 0;
     border-left: 1px solid rgba(0, 0, 0, 0.125);
-    border-right: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 
 .rightcolumn {
-  flex: 10%;
   padding-top: 20px;
   padding-left: 20px;
 }
