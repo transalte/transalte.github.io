@@ -103,6 +103,8 @@ html>body {
 
 }
 
+.maincolumn ul {background-color: blue;}
+
 .rightcolumn {
   flex: 10%;
   background-color: yellow;
@@ -145,7 +147,6 @@ ul {
 font-size: .875rem;
 font-weight: lighter;
 letter-spacing: 0.1rem;
-background-color: lightyellow;
 }
 
 li {
