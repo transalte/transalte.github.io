@@ -9,7 +9,7 @@ html>body {
 }
 
 .header {
-display: inline;
+display: inline-block;
 }
 
 .topnav {
