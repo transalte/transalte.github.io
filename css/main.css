@@ -30,7 +30,7 @@ html>body {
     text-decoration: none;
     font-family: Helvetica;
     font-weight: lighter;
-    font-size: .875rem;
+    font-size: 100%;
 }
 
 /* Change the color of links on hover */
