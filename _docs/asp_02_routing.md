@@ -22,6 +22,8 @@ For a simple bypass between a dry and an affected signal, selector~ can be used 
 
 ![selector~ bypass example](/assets/img/bypass_example.png)
 
+#### Caution Points
+
 ### [matrix~]
 
 
