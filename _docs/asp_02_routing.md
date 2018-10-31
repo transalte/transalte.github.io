@@ -22,9 +22,9 @@ For a simple bypass between a dry and an affected signal, selector~ can be used 
 
 ![selector~ bypass example](/assets/img/bypass_example.png)
 
-### matrix~
+### [matrix~]
 
 
-### send/receive
+### [send] / [receive]
 
-### send~/receive~
+### [send~] & [receive~]
