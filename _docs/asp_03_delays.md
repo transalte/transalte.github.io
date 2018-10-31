@@ -3,6 +3,7 @@ title: Delays
 layout: content
 category: ASP
 order: 4
+permalink: /delays/
 ---
 
 # Delay Effects

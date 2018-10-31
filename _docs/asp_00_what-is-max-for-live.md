@@ -3,6 +3,7 @@ title: What Is Max For Live?
 layout: content
 category: ASP
 order: 1
+permalink: /intro/
 ---
 
 # What Is Max For Live?

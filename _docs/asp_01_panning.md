@@ -4,6 +4,7 @@ layout: content
 category: ASP
 order: 3
 tag: panning, stereo, mono
+permalink: /panning/
 ---
 
 
