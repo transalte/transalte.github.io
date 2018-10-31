@@ -120,6 +120,7 @@ html>body {
     font-size: 90%;
     color: black;
     text-align: left;
+    padding-left: 0px;
 }
 
 .footerColumn {
