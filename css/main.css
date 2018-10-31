@@ -11,6 +11,8 @@ html>body {
 .header {
   display: grid;
   grid-template-columns: 20% 80%
+  position: sticky;
+  top: 0;
 }
 
 .header>div {
