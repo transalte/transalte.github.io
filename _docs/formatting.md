@@ -2,7 +2,7 @@
 title: Formatting Demo
 layout: content
 category: ASP
-order: 10
+order: 5
 permalink: /formatting/
 ---
 
