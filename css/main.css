@@ -3,9 +3,14 @@
 * { box-sizing: border-box;}
 
 html>body {
-    font-size: 14px;
+    font-size: 12px;
     font-family: Helvetica;
     font-weight: lighter;
+}
+
+.header {
+  background-color: yellow;
+
 }
 
 .topnav {
