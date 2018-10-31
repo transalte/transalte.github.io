@@ -7,9 +7,6 @@ order: 4
 
 # Delay Effects
 
-* This will become a table of contents (this text will be scraped).
-{:toc}
-
 While there are a number of different types of delays, they are all based around the same concept; a signal comes in and passes through to the output while it is also sent through a delay block to be joined with the dry signal.
 
 What happens in the delay circuit is where the differences lie. Standard controls found on these effects are **delay time**, **feedback**, **mix/blend**, and depending on the signal flow (topology) the output can vary wildly between one design and another.
