@@ -51,6 +51,7 @@ html>body {
     font-family: Helvetica;
     font-weight: normal;
     font-size: 90%;
+    text-algn: right;
 }
 
 .sidenav ul {
