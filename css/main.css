@@ -90,6 +90,7 @@ html>body {
     flex: 10%;
     padding: 20px;
     padding-left: 0;
+    position: fixed;
 
 }
 
