@@ -78,12 +78,7 @@ html>body {
 
 
 
-.rightcolumn ul {
-    list-style-type: none;
-    text-decoration: none;
-    font-size: 90%;
-    color: black;
-    }
+
 
 
 
@@ -117,6 +112,14 @@ html>body {
   flex: 10%;
   padding-top: 0;
   padding-left: 20px;
+}
+
+.rightcolumn ul {
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 90%;
+    color: black;
+    text-align: left;
 }
 
 .footerColumn {
