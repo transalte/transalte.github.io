@@ -21,10 +21,12 @@ In the example below, the patch is much simplified and works with an audio signa
 * inlet / outlet
 * live.dial
 
-## How It Works
+## Patch Screengrab
 
 ![MonoPan](/assets/img/panMono.png "CAProTools ION")
 
+## How It Works
 
+This method of panning does not simply adjust the level of a sound being sent to either channel. The iclusion of the [cycle~] object allos the user to select the midway point of the 'panning' i.e dead centre, and the volume of each channel is sitting at a linear gain of 0.707 on either side. This ensures that the perceived volume of the audio does not get louder as it 'moves' through the stereo image. 
 
 ### Compressed Code
