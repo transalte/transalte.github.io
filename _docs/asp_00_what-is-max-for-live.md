@@ -1,5 +1,5 @@
 ---
-title: WHAT IS MAX?
+title: What Is Max?
 layout: content
 category: ASP
 order: 1

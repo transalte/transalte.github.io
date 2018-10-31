@@ -1,5 +1,5 @@
 ---
-title: DELAYS
+title: Delays
 layout: content
 category: ASP
 order: 4
