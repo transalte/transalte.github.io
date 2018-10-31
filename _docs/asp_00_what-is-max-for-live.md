@@ -4,6 +4,7 @@ layout: content
 category: ASP
 order: 1
 permalink: /intro/
+summary: Max is a blah blah blah
 ---
 
 # What Is Max For Live?
