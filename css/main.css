@@ -80,16 +80,12 @@ html>body {
 
 .rightcolumn ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     text-decoration: none;
-    font-family: Helvetica;
-    font-weight: normal;
     font-size: 90%;
     text-align: right;
     color: black;
     }
-}
+
 
 
 
