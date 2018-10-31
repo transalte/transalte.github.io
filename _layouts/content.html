@@ -30,13 +30,11 @@
 			<p>SECTIONS</p>
 
 			<div class="sidenav">
-				<ul>
-				{% for doc in site.docs %}
-	      	{% if doc.category == "ASP" %}
-	        	<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
-	      	{% endif %}
-	    	{% endfor %}
-			</ul>
+				<p>CONTENTS</p>
+				<div class="sidenav">
+
+					{% include toc.html html=content h_min=2 class=sidenav %}
+				</div>
 			</div>
 
 		</div>
