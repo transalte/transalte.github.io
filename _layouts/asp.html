@@ -8,7 +8,7 @@
 		<body>
 
 <div class="header">
-	<div class="item1"><p>TRANSALTE</p></div>
+	<div class="item1"><p>TRANSALTE~</p></div>
   <div class="item2">
 		<nav>
 			<div class="topnav">
@@ -46,17 +46,18 @@
 					{{ content }}
 		</div>
 
-		<div class="rightcolumn">
-			<p>CONTENTS</p>
-			<div class="sidenav">
-
-				{% include toc.html html=content h_min=2 class=sidenav %}
-			</div>
-		</div>
-
-
 
 </div>
+
+<div class="rightcolumn">
+	<p>CONTENTS</p>
+	<div class="sidenav">
+
+		{% include toc.html html=content h_min=2 class=sidenav %}
+	</div>
+</div>
+
+
 
 <div class="footerColumn"
 
