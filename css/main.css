@@ -52,6 +52,7 @@ html>body {
     font-weight: normal;
     font-size: 90%;
     text-align: right;
+    color: black;
 }
 
 .sidenav ul {
@@ -103,7 +104,6 @@ html>body {
 
 }
 
-.maincolumn ul {background-color: blue;}
 
 .rightcolumn {
   flex: 10%;
