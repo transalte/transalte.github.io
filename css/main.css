@@ -2,20 +2,15 @@
 
 * { box-sizing: border-box;}
 
-/*html>body {
+html>body {
     font-size: 13px;
     font-family: Helvetica;
     font-weight: lighter;
-}*/
-
-html {  font-size: calc(.5em + 1vw);
-  line-height: calc(1em + 1vw);}
-
-  @media only screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
 }
+
+/*html {  font-size: calc(.5em + 1vw);
+  line-height: calc(1em + 1vw);}*/
+
 
 .header {
   display: grid;
