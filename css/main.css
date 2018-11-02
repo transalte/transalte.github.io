@@ -8,6 +8,9 @@ html>body {
     font-weight: lighter;
 }
 
+html {  font-size: calc(.5em + 1vw);
+  line-height: calc(1em + 1vw);}
+
 .header {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -136,7 +139,7 @@ letter-spacing: .1rem;
 p {
 text-align: justify;
 text-justify: inter-word;
-font-size: 100%;
+font-size: 1em;
 }
 
 
