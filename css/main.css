@@ -11,6 +11,12 @@
 html {  font-size: calc(.5em + 1vw);
   line-height: calc(1em + 1vw);}
 
+  @media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
 .header {
   display: grid;
   grid-template-columns: 20% 80%;
