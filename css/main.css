@@ -2,11 +2,11 @@
 
 * { box-sizing: border-box;}
 
-html>body {
+/*html>body {
     font-size: 13px;
     font-family: Helvetica;
     font-weight: lighter;
-}
+}*/
 
 html {  font-size: calc(.5em + 1vw);
   line-height: calc(1em + 1vw);}
@@ -123,7 +123,6 @@ html {  font-size: calc(.5em + 1vw);
 
 
 body {
-line-height: 1.5em;
 font-family: 'Helvetica', serif;
 background-color: whitesmoke;
 margin-left: 10%;
