@@ -9,9 +9,9 @@ html {
 }
 
 body {
-  padding-left: 10vw;
-  padding-right: 10vw;
-  background-color: whitesmoke;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  background-color: lightblue;
 }
 
 @media screen and (min-width: 320px) {
