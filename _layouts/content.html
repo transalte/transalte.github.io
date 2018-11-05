@@ -6,16 +6,32 @@
 			<title>{{ page.title }}</title>
 		</head>
 		<body>
- 
+
 <div class="grid-container">
-		<div class="item1"><p>TRANSALTE~></div>
+		<div class="item1">
+			<p>TRANSALTE~</p>
+			<nav>
+				<div class="topnav">
+					<a href="/contact">CONTACT</a>
+					<a href="/about/">ABOUT . </a>
+					<a href="/asp/">ASP . </a>
+					<a href="/index.html">HOME . </a>
+				</div>
+			</nav>
+		</div>
+
 	  <div class="item2">	<p>{{ page.title }}</p> 	{% include toc.html html=content h_min=2 h_max=3 class=sidenav %}</div>
-	  <div class="item3">{{ content }}</div>
-	  <div class="item4">Right</div>
-	  <div class="item5">Footer</div>
+
+		<div class="item3">{{ content }}</div>
+
+		<div class="item4">Right</div>
+
+		<div class="item5">Footer</div>
+
 </div>
 
 
+<!-- OLD CODE
 
 <div class="header">
 	<div class="item1"><p>TRANSALTE~</p></div>
@@ -34,7 +50,7 @@
 
 
 
-<!-- main contatinger row here -->
+<!-- main contatinger row here
 <div class="row">
   	<div class="sidecolumn">
 
@@ -67,5 +83,7 @@
 		</footer>
 
 </div>
+
+-->
 </body>
 </html>
