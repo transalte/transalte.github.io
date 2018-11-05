@@ -112,9 +112,9 @@ color: whitesmoke;
     text-decoration: none;
     font-family: Helvetica;
     font-weight: normal;
-    font-size: 90%;
+    font-size: 1rem;
     text-align: right;
-    color: black;
+    color: whitesmoke;
 }
 
 .sidenav ul {
@@ -129,7 +129,7 @@ color: whitesmoke;
 }
 
 .sidenav a:visited {
-    color: black;
+    color: whitesmoke;
 }
 
 /* Add a color to the active/current link */
