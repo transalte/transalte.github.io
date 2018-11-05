@@ -51,9 +51,9 @@ body {
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header header header header header header'
-    'menu main main main main right'
-    'footer footer footer footer footer footer';
+    'header header header header header'
+    'menu main main main main'
+    'footer footer footer footer footer';
 }
 .grid-container > div {
   padding: 20px;}
