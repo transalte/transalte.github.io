@@ -37,7 +37,7 @@ body {
 .item2 {
 	grid-area: menu;
 	border-right: solid 1px lightgrey;
-  min-width: 10vw;
+  max-width: 2vw;
 }
 
 .item3 {
