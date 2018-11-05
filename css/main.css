@@ -9,14 +9,14 @@ html {
 }
 
 body {
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
   background-color: whitesmoke;
 }
 
 @media screen and (min-width: 320px) {
   html {
-    font-size: calc(14px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
   }
 }
 @media screen and (min-width: 1000px) {
