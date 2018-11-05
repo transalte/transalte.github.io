@@ -41,7 +41,6 @@ body {
 
 .item3 {
 	grid-area: main;
-	border-right: solid 1px lightgrey;
 }
 
 .item4 { grid-area: right; }
