@@ -2,23 +2,67 @@
 
 * { box-sizing: border-box;}
 
-html>body {
+html {
     font-size: 13px;
     font-family: Helvetica;
     font-weight: lighter;
 }
 
-/*html {  font-size: calc(.5em + 1vw);
-  line-height: calc(1em + 1vw);}*/
-
-
-.header {
-  display: grid;
-  grid-template-columns: 20% 80%;
+body {
+  padding-left: 1rem;
+  background-color: whitesmoke;
 }
 
-.header>div {
-  text-align: center;
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(14px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+
+/* GRID CONFIGURATION */
+
+
+.item1 {
+	grid-area: header;
+	text-align: left;
+}
+
+.item2 {
+	grid-area: menu;
+	border-right: solid 1px black;
+}
+
+.item3 {
+	grid-area: main;
+	border-right: solid 1px black;
+}
+
+.item4 { grid-area: right; }
+
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main right'
+    'footer footer footer footer footer footer';
+}
+.grid-container > div {
+  padding: 20px;}
+
+/* Typography */
+
+h1, h2, h3, h4, p {
+font-family: 'Helvetica', serif;
+font-weight: lighter;
+letter-spacing: .1rem;
 }
 
 .topnav {
@@ -91,44 +135,12 @@ html>body {
 
 
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.sidecolumn {
-    flex: 10%;
-    padding: 20px;
-    padding-left: 0;
-
-}
-
-.maincolumn {
-    flex: 70%;
-    padding: 20px;
-    border-left: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-
-
-.footerColumn {
-    padding: 20px;
-    text-align: center;
-    font-size: 75%;
-}
 
 
 
 /* TYPOGRAPHY */
 
-
-
-body {
-font-family: 'Helvetica', serif;
-background-color: whitesmoke;
-margin-left: 10%;
-margin-right: 10%;
-}
 
 h1, h2, h3, h4, p {
 font-family: 'Helvetica', serif;
