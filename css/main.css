@@ -18,14 +18,13 @@ body {
   html {
     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
   }
-  body {
-    padding-left: 0vw;
-    padding-right: 0vw;
-  }
+}
+
+
 }
 @media screen and (min-width: 1000px) {
   html {
-    font-size: 16px;
+    font-size: 22px;
   }
 }
 
