@@ -20,11 +20,21 @@
 			</nav>
 		</div>
 
-	  <div class="item2">	<p>{{ page.title }}</p> 	{% include toc.html html=content h_min=2 h_max=3 class=sidenav %}</div>
+
+		<div class="item2">	<p>{{ page.title }}</p>
+			<div class="sidenav">
+					{% include toc.html html=content h_min=2 h_max=3 class=sidenav %}
+			</div>
+		</div>
+
 
 		<div class="item3">{{ content }}</div>
 
+
+
 		<div class="item4">Right</div>
+
+
 
 		<div class="item5">Footer</div>
 
