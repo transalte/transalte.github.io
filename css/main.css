@@ -99,6 +99,7 @@ letter-spacing: .1rem;
 
 .sidenav {
     overflow: hidden;
+    line-height: 1.5rem;
 }
 
 /* Style the links inside the navigation bar */
