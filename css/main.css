@@ -53,7 +53,7 @@ body {
     'header header header header header'
     'menu main main main main'
     'footer footer footer footer footer';
-  padding-top: 0;
+  padding: 0px;
 }
 .grid-container > div {
   padding: 20px;
