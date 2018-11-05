@@ -19,13 +19,9 @@ body {
     font-size: calc(14px + 6 * ((100vw - 320px) / 680));
   }
 }
-
-
-}
-
 @media screen and (min-width: 1000px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -155,18 +151,15 @@ letter-spacing: .1rem;
 p {
 text-align: justify;
 text-justify: inter-word;
-font-size: .875rem;
 }
 
 
 ul {
-font-size: .875rem;
 font-weight: lighter;
 letter-spacing: 0.1rem;
 }
 
 li {
-font-size: .875rem;
 font-weight: lighter;
 letter-spacing: 0.1rem;
 }
@@ -184,22 +177,18 @@ h1 {
 text-transform: uppercase;
 color: grey;
 text-align: left;
-font-size: 1.2rem;
 }
 
 h2 {
-font-size: 125%;
 text-align: left;
 font-weight: normal;
 }
 
 h3 {
-font-size: 120%;
 font-weight: lighter;
 }
 
 h4 {
-font-size: 100%;
 font-weight: bold;
 }
 
@@ -212,7 +201,7 @@ table {
 
 table, th, td {
     border: 1px solid black;
-    font-size: .875rem;
+    font-size: 1rem;
 }
 
 th, td {
