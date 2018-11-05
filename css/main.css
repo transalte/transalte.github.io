@@ -9,7 +9,8 @@ html {
 }
 
 body {
-  padding-left: 1rem;
+  padding-left: 2vw;
+  padding-right: 2vw;
   background-color: whitesmoke;
 }
 
