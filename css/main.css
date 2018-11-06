@@ -21,7 +21,7 @@ body {
 }
 @media screen and (min-width: 1000px) {
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -127,11 +127,11 @@ color: grey;
 .grid-container {
   display: grid;
   grid-template-areas:
-    'logo header header header header header'
-    'menu main main main main main'
-    'footer footer footer footer footer footer';
-  padding: 1rem
-padding-left: 0;
+    'logo header header header header'
+    'menu main main main main'
+    'footer footer footer footer footer';
+  padding: 5vw;
+  padding-top: 1vw;
 }
 
 .grid-container > div {
@@ -155,11 +155,9 @@ padding-left: 0;
 .item4 {
   grid-area: logo;
   padding: 1rem;
-background-color:gainsboro;
 }
 
-.item5 { grid-area: footer; 
-text-align-right;}
+.item5 { grid-area: footer; }
 
 
 
@@ -177,11 +175,11 @@ text-align-right;}
 /* Style the links inside the navigation bar */
 .topnav a {
     float: right;
-    color: black;
+    color: grey;
     text-align: center;
     padding: 5px 5px;
     text-decoration: none;
-    font-size: .75rem;
+    font-size: 100%;
 }
 
 /* Change the color of links on hover */
