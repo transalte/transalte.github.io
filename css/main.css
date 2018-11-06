@@ -29,6 +29,103 @@ body {
   }
 }
 
+/* TYPOGRAPHY */
+
+
+h1, h2, h3, h4, p {
+font-family: 'Source Sans Pro', sans-serif;
+font-weight: 300;
+letter-spacing: .1rem;
+}
+
+p {
+font-size: 1rem;
+line-height: 1.5rem;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .5rem;
+}
+
+
+ul {
+
+letter-spacing: 0.1rem;
+}
+
+li {
+
+letter-spacing: 0.1rem;
+}
+
+blockquote { border-left: 4px solid #999;
+padding-left: .5rem;
+padding-right: .5rem;
+background-color: rgba(0,0,0,0.05);
+font-size: 1rem;
+line-height: 1.5rem;
+}
+
+
+h1 {
+
+text-transform: uppercase;
+color: black;
+text-align: left;
+font-size: 1.3rem;
+}
+
+h2 {
+text-align: left;
+font-size: 1.2rem;
+}
+
+h3 {
+font-weight: lighter;
+font-size: 1.1rem;
+}
+
+h4 {
+font-weight: bold;
+font-size: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+table, th, td {
+    border: 1px solid black;
+    font-size: 1rem;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+th {background-color: rgba(0,0,0,0.05);}
+
+img {max-width: 100%;
+height: auto;
+margin-left: 1vw;
+margin-right: 1vw;
+
+}
+
+figcaption {
+text-align: center;
+font-weight: 300;
+font-style: italic;
+color: grey;
+}
+
+
 /* GRID CONFIGURATION */
 
 .grid-container {
@@ -139,106 +236,4 @@ body {
 .sidenav a.active {
     background-color: #4CAF50;
     color: dimgrey;
-}
-
-
-
-
-
-
-
-/* TYPOGRAPHY */
-
-
-h1, h2, h3, h4, p {
-font-family: 'Source Sans Pro', sans-serif;
-font-weight: 300;
-letter-spacing: .1rem;
-}
-
-p {
-font-size: 1rem;
-line-height: 1.5rem;
-}
-
-.logo {
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: .5rem;
-}
-
-
-ul {
-
-letter-spacing: 0.1rem;
-}
-
-li {
-
-letter-spacing: 0.1rem;
-}
-
-blockquote { border-left: 4px solid #999;
-padding-left: .5rem;
-padding-right: .5rem;
-background-color: rgba(0,0,0,0.05);
-font-size: 1rem;
-line-height: 1.5rem;
-}
-
-
-h1 {
-
-text-transform: uppercase;
-color: black;
-text-align: left;
-font-size: 1.3rem;
-}
-
-h2 {
-text-align: left;
-font-size: 1.2rem;
-}
-
-h3 {
-font-weight: lighter;
-font-size: 1.1rem;
-}
-
-h4 {
-font-weight: bold;
-font-size: 1rem;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-weight: lighter;
-  font-size: 1rem;
-}
-
-table, th, td {
-    border: 1px solid black;
-    font-size: 1rem;
-}
-
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-
-th {background-color: rgba(0,0,0,0.05);}
-
-img {max-width: 100%;
-height: auto;
-margin-left: 1vw;
-margin-right: 1vw;
-
-}
-
-figcaption {
-text-align: center;
-font-weight: 300;
-font-style: italic;
-color: grey;
 }
