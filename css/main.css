@@ -61,6 +61,7 @@ body {
 .item4 {
   grid-area: logo;
   border: 1px solid dimgrey;
+  padding: 1rem;
 }
 
 .item5 { grid-area: footer; }
