@@ -130,7 +130,7 @@ color: grey;
     'logo header header header header'
     'menu main main main main'
     'footer footer footer footer footer';
-  padding: 5rem;
+  padding: 5vw;
 }
 
 .grid-container > div {
