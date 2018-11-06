@@ -131,6 +131,7 @@ color: grey;
     'menu main main main main'
     'footer footer footer footer footer';
   padding: 5vw;
+  padding-top: 1vw;
 }
 
 .grid-container > div {
