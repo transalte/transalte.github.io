@@ -60,7 +60,7 @@ body {
 
 .item4 {
   grid-area: logo;
-  border: 1px solid dimgrey;
+
   padding: 1rem;
 }
 
@@ -88,7 +88,6 @@ color: dimgrey;
 
 .topnav {
     overflow: hidden;
-    border: 1px solid dimgrey;
 
 }
 
