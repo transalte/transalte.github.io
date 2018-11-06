@@ -123,6 +123,7 @@ color: dimgrey;
 .sidenav {
     overflow: hidden;
     line-height: 1.5rem;
+    text-align: right;
 }
 
 /* Style the links inside the navigation bar */
@@ -130,9 +131,8 @@ color: dimgrey;
     padding: 0px 0px;
     text-decoration: none;
     font-family: Helvetica;
-    font-weight: normal;
+    font-weight: lighter;
     font-size: 1rem;
-    text-align: right;
     color: dimgrey;
 }
 
