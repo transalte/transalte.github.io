@@ -130,7 +130,7 @@ color: grey;
     'logo header header header header header'
     'menu main main main main main'
     'footer footer footer footer footer footer';
-  padding: 5vw;
+  padding: 1vw;
   padding-top: 1vw;
 }
 
@@ -154,7 +154,6 @@ color: grey;
 
 .item4 {
   grid-area: logo;
-
   padding: 1rem;
 }
 
