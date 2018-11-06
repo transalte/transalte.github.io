@@ -13,8 +13,8 @@ html {
 }
 
 body {
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
   background-color: whitesmoke;
   padding-top: 0px;
 }
@@ -72,13 +72,7 @@ body {
 
 /* Typography */
 
-.rotate {
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
+
 
 
 
@@ -136,6 +130,7 @@ body {
 /* Change the color of links on hover */
 .sidenav a:hover {
     color: red;
+
 }
 
 .sidenav a:visited {
