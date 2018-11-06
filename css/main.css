@@ -125,7 +125,7 @@ color: grey;
 .grid-container {
   display: grid;
   grid-template-areas:
-    'logo header header header header'
+    'logo logo header header header'
     'menu main main main main'
     'footer footer footer footer footer';
   padding: 5vw;
