@@ -106,7 +106,7 @@ color: dimgrey;
 /* Add a color to the active/current link */
 .topnav a.active {
     background-color: #4CAF50;
-    color: white;
+    color: dimgrey;
 }
 
 
@@ -141,13 +141,13 @@ color: dimgrey;
 }
 
 .sidenav a:visited {
-    color: whitesmoke;
+    color: dimgrey;
 }
 
 /* Add a color to the active/current link */
 .sidenav a.active {
     background-color: #4CAF50;
-    color: white;
+    color: dimgrey;
 }
 
 
@@ -168,6 +168,12 @@ letter-spacing: .1rem;
 p {
 font-size: 1rem;
 line-height: 1.5rem;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: .5rem;
 }
 
 
