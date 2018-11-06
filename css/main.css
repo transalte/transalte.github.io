@@ -10,9 +10,9 @@ html {
 }
 
 body {
-  padding-left: 10vw;
-  padding-right: 10vw;
-  background-color: whitesmoke;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  background-color: #1a2930;
 }
 
 @media screen and (min-width: 320px) {
@@ -75,6 +75,7 @@ h1, h2, h3, h4, p {
 font-family: 'Helvetica', serif;
 font-weight: lighter;
 letter-spacing: .1rem;
+color: whitesmoke;
 }
 
 .topnav {
@@ -120,9 +121,9 @@ letter-spacing: .1rem;
     text-decoration: none;
     font-family: Helvetica;
     font-weight: normal;
-    font-size: 90%;
+    font-size: 1rem;
     text-align: right;
-    color: black;
+    color: whitesmoke;
 }
 
 .sidenav ul {
@@ -137,7 +138,7 @@ letter-spacing: .1rem;
 }
 
 .sidenav a:visited {
-    color: black;
+    color: whitesmoke;
 }
 
 /* Add a color to the active/current link */
@@ -162,8 +163,8 @@ letter-spacing: .1rem;
 }
 
 p {
-text-align: justify;
-text-justify: inter-word;
+font-size: 1rem;
+line-height: 1.5rem;
 }
 
 
@@ -178,10 +179,11 @@ letter-spacing: 0.1rem;
 }
 
 blockquote { border-left: 4px solid #999;
-padding-left: 10px;
-padding-right: 10px;
+padding-left: .5rem;
+padding-right: .5rem;
 background-color: rgba(0,0,0,0.05);
-font-size: .875rem;
+font-size: 1rem;
+line-height: 1.5rem;
 }
 
 
@@ -190,26 +192,29 @@ h1 {
 text-transform: uppercase;
 color: grey;
 text-align: left;
+font-size: 1.3rem;
 }
 
 h2 {
 text-align: left;
-font-weight: normal;
+font-size: 1.2rem;
 }
 
 h3 {
 font-weight: lighter;
+font-size: 1.1rem;
 }
 
 h4 {
 font-weight: bold;
+font-size: 1rem;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
   font-weight: lighter;
-  font-size: 100%;
+  font-size: 1rem;
 }
 
 table, th, td {
@@ -224,10 +229,10 @@ th, td {
 
 th {background-color: rgba(0,0,0,0.05);}
 
-img {max-width: 90%;
+img {max-width: 100%;
 height: auto;
-margin-left: 5%;
-margin-right: 5%;
+margin-left: 1vw;
+margin-right: 1vw;
 
 }
 
