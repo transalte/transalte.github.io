@@ -21,7 +21,7 @@ body {
 }
 @media screen and (min-width: 1000px) {
   html {
-    font-size: 14px;
+    font-size: 20px;
   }
 }
 
@@ -182,7 +182,7 @@ color: grey;
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #EEEEE;
+    background-color: red;
     color: black;
 }
 
