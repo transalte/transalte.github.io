@@ -51,7 +51,6 @@ body {
 
 .item2 {grid-area: menu;
 	border-right: solid 1px dimgrey;
-  background-color: #e6cf8b;
 }
 
 .item3 {
@@ -83,7 +82,7 @@ h1, h2, h3, h4, p {
 font-family: 'Helvetica', serif;
 font-weight: lighter;
 letter-spacing: .1rem;
-color: dimgrey;
+color: black;
 }
 
 .topnav {
@@ -130,7 +129,7 @@ color: dimgrey;
     text-decoration: none;
     font-family: Helvetica;
     font-weight: lighter;
-    font-size: 1rem;
+    font-size: .875rem;
     color: black;
 }
 
