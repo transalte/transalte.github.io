@@ -2,61 +2,76 @@
 	<html>
 		<head>
 			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
-
 			<title>{{ page.title }}</title>
 		</head>
 		<body>
 
-<div class="header">
-	<div class="item1"><p>TRANSALTE~</p></div>
-  <div class="item2">
-		<nav>
-			<div class="topnav">
-				<a href="/contact">CONTACT</a>
-				<a href="/about/">ABOUT . </a>
-				<a href="/asp/">ASP . </a>
-				<a href="/index.html">HOME . </a>
+<div class="grid-container">
+		<div class="item4">
+			<div class="logo">
+				TRANSALTE~
 			</div>
-		</nav>
+		</div>
+		<div class="item1">
+			<nav>
+				<div class="topnav">
+					<a href="/contact">CONTACT</a>
+					<a href="/about/">ABOUT . </a>
+					<a href="/asp/">ASP . </a>
+					<a href="/index.html">HOME . </a>
+				</div>
+			</nav>
+		</div>
+
+
+		<div class="item2">
+			<div class="sidenav">
+				<p>{{ page.title }}</p>
+					{% include toc.html html=content h_min=2 h_max=3 class=sidenav %}
+			</div>
+		</div>
+
+
+		<div class="item3">{{ content }}
+
+
+							<div class="sidenav">
+								<ul>
+								{% for doc in site.docs %}
+					      	{% if doc.category == "ASP" %}
+					        	<li><a href="{{ doc.url }}">{{ doc.title }}</a> <i>{{doc.summary}}</i></li>
+					      	{% endif %}
+					    	{% endfor %}
+							</ul>
+							</div>
+				</div>
+
+		</div>
+
+		<div class="item5">Footer</div>
+
+</div>
+
+<!--
+
+<div class="maincolumn">
+				{{ content }}
+
+				<div class="sidenav">
+					<ul>
+					{% for doc in site.docs %}
+						{% if doc.category == "ASP" %}
+							<li><a href="{{ doc.url }}">{{ doc.title }}</a> <i>{{doc.summary}}</i></li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+				</div>
 	</div>
-</div>
 
 
 
 
-<!-- main contatinger row here -->
-<div class="row">
-  	<div class="sidecolumn">
-<p>Keywords placeholder here.</p>
-		</div>
 
 
-		<div class="maincolumn">
-					{{ content }}
-
-					<div class="sidenav">
-						<ul>
-						{% for doc in site.docs %}
-			      	{% if doc.category == "ASP" %}
-			        	<li><a href="{{ doc.url }}">{{ doc.title }}</a> <i>{{doc.summary}}</i></li>
-			      	{% endif %}
-			    	{% endfor %}
-					</ul>
-					</div>
-		</div>
-
-
-</div>
-
-
-
-
-<div class="footerColumn"
-
-		<footer>
-		<p>asp layout here default footer here</p>
-		</footer>
-
-</div>
 </body>
 </html>
