@@ -43,14 +43,17 @@ body {
 	grid-area: main;
 }
 
-.item4 { grid-area: right; }
+.item4 {
+  grid-area: logo;
+  border: 1px solid dimgrey;
+}
 
 .item5 { grid-area: footer; }
 
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header header header header header'
+    'logo header header header header'
     'menu main main main main'
     'footer footer footer footer footer';
   padding: 0px;
