@@ -134,11 +134,11 @@ color: grey;
     'logo header header header header'
     'menu main main main main'
     'footer footer footer footer footer';
-  padding: 20px;
+  padding: 5rem;
 }
 
 .grid-container > div {
-  paddi
+  padding: 1rem;
 }
 
 
