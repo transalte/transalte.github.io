@@ -130,8 +130,8 @@ color: grey;
     'logo header header header header header'
     'menu main main main main main'
     'footer footer footer footer footer footer';
-  padding: 1vw;
-  padding-top: 1vw;
+  padding: 1rem
+padding-left: 0;
 }
 
 .grid-container > div {
