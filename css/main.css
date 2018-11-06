@@ -155,9 +155,11 @@ padding-left: 0;
 .item4 {
   grid-area: logo;
   padding: 1rem;
+background-color:gainsboro;
 }
 
-.item5 { grid-area: footer; }
+.item5 { grid-area: footer; 
+text-align-right;}
 
 
 
