@@ -29,6 +29,20 @@ body {
 
 /* GRID CONFIGURATION */
 
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'logo header header header header'
+    'menu main main main main'
+    'footer footer footer footer footer';
+  padding: 0px;
+}
+
+.grid-container > div {
+  padding: 20px;
+  padding-top: 0px;
+}
+
 
 .item1 {
 	grid-area: header;
@@ -51,18 +65,7 @@ body {
 
 .item5 { grid-area: footer; }
 
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'logo header header header header'
-    'menu main main main main'
-    'footer footer footer footer footer';
-  padding: 0px;
-}
-.grid-container > div {
-  padding: 20px;
-  padding-top: 0px;
-}
+
 
 /* Typography */
 
