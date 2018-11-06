@@ -175,11 +175,11 @@ padding-left: 0;
 /* Style the links inside the navigation bar */
 .topnav a {
     float: right;
-    color: grey;
+    color: black;
     text-align: center;
     padding: 5px 5px;
     text-decoration: none;
-    font-size: 100%;
+    font-size: .75rem;
 }
 
 /* Change the color of links on hover */
