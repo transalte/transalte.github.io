@@ -138,7 +138,7 @@ color: grey;
 }
 
 .grid-container > div {
-  padding: 0px;
+  padding: 1vw;
 }
 
 
@@ -153,7 +153,6 @@ color: grey;
 
 .item3 {
 	grid-area: main;
-  padding-left: 1vw;
 }
 
 .item4 {
