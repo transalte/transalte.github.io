@@ -5,7 +5,7 @@
 * { box-sizing: border-box;}
 
 html {
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
     line-height: 1.5rem;
 }
@@ -16,12 +16,12 @@ body {
 
 @media screen and (min-width: 320px) {
   html {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(14px + 6 * ((100vw - 320px) / 680));
   }
 }
 @media screen and (min-width: 1000px) {
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -125,7 +125,7 @@ color: grey;
 .grid-container {
   display: grid;
   grid-template-areas:
-    'logo header header header header'
+    'logo logo header header header'
     'menu main main main main'
     'footer footer footer footer footer';
   padding: 5vw;
