@@ -4,6 +4,7 @@ layout: content
 category: ASP
 order: 2
 permalink: /routing/
+summary: selector~, matrix~, gate~, send / receive, send~ / receive~ 
 ---
 
 # Routing

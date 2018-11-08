@@ -4,6 +4,7 @@ layout: content
 category: ASP
 order: 4
 permalink: /delays/
+summary: tapin~ / tapout~, delay~
 ---
 
 # Delay Effects

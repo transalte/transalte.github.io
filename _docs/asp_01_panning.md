@@ -5,6 +5,7 @@ category: ASP
 order: 3
 tag: panning, stereo, mono
 permalink: /panning/
+summary: stereo image manipulation
 ---
 
 
