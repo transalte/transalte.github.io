@@ -1,12 +1,23 @@
 ---
 layout: slide
-title: Title Goes Here
-description: A Quick Description
-theme: black
-transition: slide
+title: test
+excerpt: "test"
+theme: blood
+transition: convex
+tags: [presentation]
+category: presentation
 ---
+<section data-markdown>
+
+### Slide 1
+Slide 1 text.
+
+</section>
 
 <section data-markdown>
-## Overview
-Content goes here
+
+### Slide 2
+
+Slide 2 text.
+
 </section>
