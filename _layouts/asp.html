@@ -34,13 +34,13 @@
 
 		<div class="item3">{{ content }}
 
-				<p>ASP Related Articles</p>
+				<h2>ASP Related Articles</h2>
 
 							<div class="homenav">
 								<ul>
 								{% for doc in site.docs %}
 					      	{% if doc.category == "ASP" %}
-					        	<li><a href="{{ doc.url }}">{{ doc.title }}</a> <p>{{doc.summary}}</p></li>
+					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a></p> <p>{{doc.summary}}</p></li>
 					      	{% endif %}
 					    	{% endfor %}
 							</ul>
