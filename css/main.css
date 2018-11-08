@@ -22,7 +22,7 @@ body {
 
 @media screen and (min-width: 1000px) {
   html {
-    font-size: 14px;
+    font-size: 1rem;
   }
 }
 
