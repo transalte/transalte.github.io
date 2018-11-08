@@ -40,7 +40,7 @@
 								<ul>
 								{% for doc in site.docs %}
 					      	{% if doc.category == "ASP" %}
-					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a></p> <p>{{doc.summary}}</p></li>
+					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
 					      	{% endif %}
 					    	{% endfor %}
 							</ul>
