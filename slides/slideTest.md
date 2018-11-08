@@ -15,6 +15,9 @@ Slide 1 text.
 </section>
 
 <section data-markdown>
+  <textarea data-template>
+
+  </textarea>
 
 ### Slide 2
 
