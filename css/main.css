@@ -234,3 +234,41 @@ color: grey;
     background-color: #4CAF50;
     color: dimgrey;
 }
+
+/* home lists */
+
+.homenav {
+    overflow: hidden;
+    line-height: 1.5rem;
+}
+
+/* Style the links inside the navigation bar */
+.homenav a {
+    padding: 0px 0px;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 1rem;
+    color: black;
+}
+
+.homenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Change the color of links on hover */
+.homenav a:hover {
+    color: red;
+
+}
+
+.homenav a:visited {
+    color: dimgrey;
+}
+
+/* Add a color to the active/current link */
+.homenav a.active {
+    background-color: #4CAF50;
+    color: dimgrey;
+}

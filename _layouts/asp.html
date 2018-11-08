@@ -25,7 +25,7 @@
 
 
 		<div class="item2">
-			<div class="sidenav">
+			<div class="homenav">
 				<p>{{ page.title }}</p>
 					{% include toc.html html=content h_min=2 h_max=3 class=sidenav %}
 			</div>
@@ -35,11 +35,11 @@
 		<div class="item3">{{ content }}
 
 
-							<div class="sidenav">
+							<div class="homenav">
 								<ul>
 								{% for doc in site.docs %}
 					      	{% if doc.category == "ASP" %}
-					        	<li><h3><a href="{{ doc.url }}">{{ doc.title }}</a></h3> <i>{{doc.summary}}</i></li>
+					        	<li><a href="{{ doc.url }}">{{ doc.title }}</a><i>{{doc.summary}}</i></li>
 					      	{% endif %}
 					    	{% endfor %}
 							</ul>
