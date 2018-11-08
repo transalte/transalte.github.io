@@ -131,6 +131,7 @@ color: grey;
     'footer footer footer footer footer';
   padding: 5vw;
   padding-top: 1vw;
+  max-width: 75vw;
 }
 
 .grid-container > div {
