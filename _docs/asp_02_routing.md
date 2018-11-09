@@ -14,10 +14,8 @@ The main method of routing messages and signals in Max is via the standard fixed
 
 ### selector~ Object
 
-#### Screenshot
-TBC
 
-#### Patch Details
+#### selector~ Details
 In the example for `selector~`, the arguments are number of outlets, and the initially open outlet; `selector~ 4 1` would provide a 4-in and 1-out routing option with the first inlet being the initially active signal being passed through.
 
 To choose which signal passes through, an integer is sent to the `selector~` object; sending a 0 kills the signal, a 1 will let through the first input, 2 the second and so on.
