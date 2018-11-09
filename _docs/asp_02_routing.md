@@ -12,15 +12,15 @@ summary: selector~, matrix~, gate~, send / receive, send~ / receive~
 ## Overview
 The main method of routing messages and signals in Max is via the standard fixed point-to-point connections made with cords. However, there are a few options for making these connections more flexible and dynamic to allow for real-time user-controllable routing.
 
-### selector~ Object
+### selector~
 
 
-#### selector~ Details
+### Details
 In the example for `selector~`, the arguments are number of outlets, and the initially open outlet; `selector~ 4 1` would provide a 4-in and 1-out routing option with the first inlet being the initially active signal being passed through.
 
 To choose which signal passes through, an integer is sent to the `selector~` object; sending a 0 kills the signal, a 1 will let through the first input, 2 the second and so on.
 
-#### Common Mistakes and Fault Finding
+### Common Mistakes
 
 ## Cordless Connections
 ### Object List
@@ -33,20 +33,18 @@ For signals (audio):
 
 * `send~` and `receive~`
 
-### Screenshot
-TBC
 
-### Patch Details
+### Details
 Cordless connections allow the developer to re-use the same connections repeatedly without running long cord-runs across a patch. For each `send` there can be multiple `receive` objects related to it. For example, in a stereo filter patch there can be one `send` attached to a `live.dial` that transmits a cut-off frequency value to the filter. Instead of connecting the dial directly to the left and the right filters, there can be a `receive` object connect instead i.e `send ---freq` and two `receive ---freq` object, each connected to the appropriate filter inputs.
 
-#### Three Hyphens
-Common sense would say that if a dial is turned in a device, it should only have an affect in that device. However, in Max, cordless connections can travel between devices. For example, if a filter device was placed on every channel in Live, by turning the Cut Off dial, it would change the filter cut off on every channel. This has its uses, but to avoid this, the syntax for the `send` and `receive` objects, and their `~` counterparts must be changed. To restrict cordless connections to **within** there individual devices, place threes hyphens before the name such as `send ---cutOff` and `receive ---cutOff`. For signals, this would be `send~ ---cutOff` and `receive~ cutOff`.
+### Three Hyphens
+Common sense would suggest that if a dial is turned in a device, it should only have an affect in that device. However, in Max, cordless connections can travel between devices. For example, if a filter device was placed on every channel in Live, by turning the Cut Off dial, it would change the filter cut off on every channel. This has its uses, but to avoid this, the syntax for the `send` and `receive` objects, and their `~` counterparts must be changed. To restrict cordless connections to **within** there individual devices, place threes hyphens before the name such as `send ---cutOff` and `receive ---cutOff`. For signals, this would be `send~ ---cutOff` and `receive~ cutOff`.
 
 The three hyphens, add a random number to the front of the name that will not be used in any other devices present in the current Live session thus avoiding any 'cross-talk' between effects.
 
 > In the standalone verion of Max, the `---` should be replaced with `#0`.
 
-### Common Mistakes & Fault Finding
+### Common Mistakes
 Spelling mistakes in the name of objects are a regular source of error. Check for typos. Including a space in the name will also cause problems.
 
 Here is an example of the syntax that can be employed:
