@@ -18,12 +18,12 @@ For example, if a filter is placed in the feedback loop, the output can be simil
 The device being made in this section will be a basic delay, starting as a simple mono delay and ending up as a ping-pong filter delay with user controllable frequencies, filter types, delay times etc.
 
 ## Objects
-There are two objects that can be used to delay[^1] audio; **delay~** and a more useful pair of objects **tapin~** and **tapout~**.
+There are two objects that can be used to delay[^1] audio; `delay~`` and a more useful pair of objects `tapin~`` and ``**tapout~`.
 
-The main difference between the object(s) is that the audio output from **delay~** cannot be fed back into itself to create a feedback loop. Another feature of **delay~** is that the delay time can be set in samples as opposed to milliseconds with the **tapin~** and **tapout~** combo.
+The main difference between the object(s) is that the audio output from `delay~` cannot be fed back into itself to create a feedback loop. Another feature of `delay~` is that the delay time can be set in samples as opposed to milliseconds with the `tapin~` and `tapout~` combo.
 
 > At the standard rate of 44.1 kHz, there are 44,100 values describing the signal per second so these delays can verge towards being more of a phaser type effect at shorter delay values.
 
-With **tapin~** and **tapout~**, it is possible to setup a feedback loop for more interesting effects therefore these are the objects we will use for this exercise.
+With `tapin~` and `tapout~`, it is possible to setup a feedback loop for more interesting effects therefore these are the objects we will use for this exercise.
 
 [^1]: delay footnote
