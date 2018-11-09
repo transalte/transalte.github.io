@@ -12,10 +12,10 @@ summary: selector~, matrix~, gate~, send / receive, send~ / receive~
 ## Overview
 The main method of routing messages and signals in Max is via the standard fixed point-to-point connections made with cords. However, there are a few options for making these connections more flexible and dynamic to allow for real-time user-controllable routing.
 
-### Object: `selector~`
+### Object: selector~
 
 
-### `selector` Details
+### Details
 In the example for `selector~`, the arguments are number of outlets, and the initially open outlet; `selector~ 4 1` would provide a 4-in and 1-out routing option with the first inlet being the initially active signal being passed through.
 
 To choose which signal passes through, an integer is sent to the `selector~` object; sending a 0 kills the signal, a 1 will let through the first input, 2 the second and so on.
