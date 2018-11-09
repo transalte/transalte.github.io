@@ -40,6 +40,10 @@ font-size: 1rem;
 line-height: 1.5rem;
 }
 
+.code {font-size: 1rem;
+  color: black;
+}
+
 .logo {
   font-size: 1rem;
   font-weight: 400;
