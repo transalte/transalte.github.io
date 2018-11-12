@@ -12,7 +12,7 @@ summary: selector~, matrix~, gate~, send / receive, send~ / receive~
 ## Overview
 The main method of routing messages and signals in Max is via the standard fixed point-to-point connections made with cords. However, there are a few options for making these connections more flexible and dynamic to allow for real-time user-controllable routing.
 
-### Object: selector~
+## Object: selector~
 
 
 ### Details
@@ -20,10 +20,10 @@ In the example for `selector~`, the arguments are number of outlets, and the ini
 
 To choose which signal passes through, an integer is sent to the `selector~` object; sending a 0 kills the signal, a 1 will let through the first input, 2 the second and so on.
 
-### Common Mistakes
+## Common Mistakes
 
 ## Cordless Connections
-### Object List
+## Object List
 For messages:
 
 * `send` and `receieve`
@@ -34,7 +34,7 @@ For signals (audio):
 * `send~` and `receive~`
 
 
-### Details
+## Details
 Cordless connections allow the developer to re-use the same connections repeatedly without running long cord-runs across a patch. For each `send` there can be multiple `receive` objects related to it. For example, in a stereo filter patch there can be one `send` attached to a `live.dial` that transmits a cut-off frequency value to the filter. Instead of connecting the dial directly to the left and the right filters, there can be a `receive` object connect instead i.e `send ---freq` and two `receive ---freq` object, each connected to the appropriate filter inputs.
 
 ### Three Hyphens
