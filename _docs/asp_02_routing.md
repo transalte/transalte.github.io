@@ -13,7 +13,7 @@ summary: selector~, matrix~, gate~, send / receive, send~ / receive~
 The main method of routing messages and signals in Max is via the standard fixed point-to-point connections made with cords. However, there are a few options for making these connections more flexible and dynamic to allow for real-time user-controllable routing.
 
 ## Object: selector~
-Assign one of several inputs to an outlet.
+Assign one of several inputs to an outlet. The 'message' equivelant of `selector~` is `switch`.
 
 [online help file](https://docs.cycling74.com/max7/maxobject/selector~)
 
