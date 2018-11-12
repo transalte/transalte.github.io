@@ -50,7 +50,9 @@ line-height: 1.5rem;
 code {font-size: 1.2rem;
 color: black;
 background-color: lightgrey;
-border: 1px solid black;}
+border: 1px solid black;
+border-radius: 10px;
+}
 
 .logo {
   font-size: 1rem;
