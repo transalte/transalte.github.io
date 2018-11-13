@@ -7,23 +7,28 @@ permalink: /shortcuts/
 summary: A list of regular shortcuts in Max
 ---
 
-# Shortcuts
+# Shortcuts and Navigation
 
+## Keyboard Shortcuts
 
-**b**  button
+**b**:  button
 
-**c**  comment box
+**c**:  comment box
 
-**f**  float number box (decimals)
+**f**:  float number box (decimals)
 
-**i**  number box (integer / full number)
+**i**:  number box (integer / full number)
 
-**l**  new live object (lower case L)
+**l**:  new live object (lower case L)
 
-**m** message box
+**m**: message box
 
-**n**  new object
+**n**:  new object
 
-**t**  toggle
+**t**:  toggle
 
-**x**  shows these shortcuts
+**x**:  shows these shortcuts
+
+## Useful Shortcuts
+
+**Shift+cmd+p**: Add selected object(s) to presentation
