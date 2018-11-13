@@ -45,6 +45,19 @@
 					    	{% endfor %}
 							</ul>
 							</div>
+
+
+							<h2>ASP Lessons</h2>
+
+										<div class="homenav">
+											<ul>
+											{% for doc in site.docs %}
+								      	{% if doc.category == "asp_lessons" %}
+								        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
+								      	{% endif %}
+								    	{% endfor %}
+										</ul>
+										</div>
 				</div>
 
 		</div>

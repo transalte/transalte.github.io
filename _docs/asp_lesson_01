@@ -1,7 +1,7 @@
 ---
 title: First Device
 layout: content
-category: Lessons
+category: asp_lessons
 order: 1
 permalink: /firstdevice/
 summary: Building a basic filter.
