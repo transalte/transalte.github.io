@@ -45,7 +45,7 @@ This format of the inlet/outlet properties is the same for all objects within Ma
 
 > ObjectName:(DataFormat)(InputName/Description)
 
-If we refer back to the inlets and outlets of **svf~**, it tells us the following:
+If we refer back to the inlets and outlets of `svf~`, it tells us the following:
 
 
 |I/O|DataFormat|Name/Description|
@@ -110,12 +110,12 @@ Connect a **live.dial** to **svf~** as follows:
 
 The left dial by default will send values from 0 to 127 to the **svf~**, this is fairly useless for a filter so we will fix this by changing some values the inspector.
 
-	1. Open the **Inspector** for the **live.dial**.
-	2. Under the **Parameters** subsection change the **Type** from **Int (0-255)** to **Float**. When set as **Int**, we are capped at values between 0-255, with **Float** this limit is removed.
-	3. Change the **Range/Enum** to 20. 20000. (remember the period after the numbers and the space between those two values)
-	4. Change the **Unit Style** to **Hertz**.
-	5. Change the **Short Name** to **Freq** - this changes the UI text
-	6. Change the **Long Name** to **“Filter Frequency”** - this is the text allocated to the envelope names in Ableton Live and as the name contains a space you must include the quotation marks
+1. Open the **Inspector** for the **live.dial**.
+2. Under the **Parameters** subsection change the **Type** from **Int (0-255)** to **Float**. When set as **Int**, we are capped at values between 0-255, with **Float** this limit is removed.
+3. Change the **Range/Enum** to 20. 20000. (remember the period after the numbers and the space between those two values)
+4. Change the **Unit Style** to **Hertz**.
+5. Change the **Short Name** to **Freq** - this changes the UI text
+6. Change the **Long Name** to **“Filter Frequency”** - this is the text allocated to the envelope names in Ableton Live and as the name contains a space you must include the quotation marks
 
 If you jump back into the main patch, the dial should now run from 20 to 20kHz albeit very hard to fine-tune the more useful lower values. To skew the distribution of the numbers across the dial, open the the Inspector again and set **Exponent** to **3.3333** - this will make the dials more user friendly.
 
@@ -181,14 +181,14 @@ If you hover over the outlets, you will notice that the first gives us the ‘It
 
 To see what actually happens when you make a selection some basic fault finding can be applied by connecting **message boxes** to these outlets - this is a good technique to remember as you will have to fault find or monitor the outputs of objects regularly. To add in the **message boxes** press **m** on the keyboard.
 
-	There are two inlets on a **message box**, when data is connected to the first inlet, it is simply sent out out the only outlet of the object. When connected to the second inlet, the data is displayed but not sent.
+> There are two inlets on a **message box**, when data is connected to the first inlet, it is simply sent out out the only outlet of the object. When connected to the second inlet, the data is displayed but not sent.
 
 Using the right inlet of the message box allows us to see the message without sending it out. In the example above, the user has selected **three** from the menu; the index for this, from the first outlet, is showing as **2** even though it is the third item in the list. This is due to the index of all the items in the menu starting at **0**. The output from the second outlet is **three**, which is the symbol or text related to that index in the list.
 
 Combining **live.menu** and **selector**
 The first step is populate the **live.menu** with the filter types. Select the **live.menu** by clicking on it once and open up the Inspector for it (press the circled **i** in the right side of the patch border). Look under **Parameter** section for **Range/Enum** and replace the **one two three** text with the type of filters coming into the inlets of selector:
 
-	Low High Band Notch
+> Low High Band Notch
 
 If you cannot see the **Parameter** section, make sure that in the top section of the **Inspector** you are looking at **All** instead of Basic or **Layout** etc.
 
@@ -198,7 +198,7 @@ To get around this misalignment of values a **+** object between the **live.menu
 
 /menu_selector.png
 
-	Remember two things, we are not dealing with  signal here so there is no tilde after the **+** sign.
+> Remember two things, we are not dealing with  signal here so there is no tilde after the **+** sign.
 
 Now, an output of 0 from the **live.menu** triggers a 1 on **selector~** which lets the lowpass through, and so on. The menu selections now match up with the filter outputs of the selector~ object:
 
@@ -224,16 +224,16 @@ You will see a blank patch. This is because we need to add our UI controls to th
 
 To make objects visible in the UI:
 
-	1. Come out of **Presentation Mode** (click the icon or shortcut again)
-	2. Click on the object you want to see in the UI to select them and then right-click to bring up the context menu and select **Add to Presentation**. The object should have a red outline on it now indicating it’s now active in the **Presentation Mode**
-	3. Do this for all the relevant UI controls objects. The keyboard shortcut for this is **cmd+shift+p** after selecting the object
+1. Come out of **Presentation Mode** (click the icon or shortcut again)
+2. Click on the object you want to see in the UI to select them and then right-click to bring up the context menu and select **Add to Presentation**. The object should have a red outline on it now indicating it’s now active in the **Presentation Mode**
+3. Do this for all the relevant UI controls objects. The keyboard shortcut for this is **cmd+shift+p** after selecting the object
 
 Go back to **Presentation Mode** to see the object(s) with no patch cords visible. it is possible to reposition objects anywhere in the screen and, depending on the object, resize it with the handles at the bottom right that appear when hovering the mouse over that area.
 
 The very final step is to make the UI visible to Live:
 
-	1. Right-click on an empty area (make sure you have not clicked on any objects) of the patcher when in Presentation Mode and select Patcher Inspector from the context menu that pops up.
-	2. Under the View heading in the Inspector, check the box to the right of ‘Open in Presentation’ and save your patch.
+1. Right-click on an empty area (make sure you have not clicked on any objects) of the patcher when in Presentation Mode and select Patcher Inspector from the context menu that pops up.
+2. Under the View heading in the Inspector, check the box to the right of ‘Open in Presentation’ and save your patch.
 
 Back in Live, the devices UI should now contain all of the objects you added to the Presentation.
 
