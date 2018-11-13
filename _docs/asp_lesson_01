@@ -1,0 +1,16 @@
+---
+title: First Device
+layout: content
+category: Lessons
+order: 1
+permalink: /firstdevice/
+summary: Building a basic filter.
+---
+
+# Basic Filter
+
+This device will be a straightforward stereo filter with the followwing features:
+
+* selectable filter types
+* user controllable frequency and resonance parameters
+* all parameters visible and available for automation in Ableton Live
