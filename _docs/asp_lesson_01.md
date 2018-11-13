@@ -1,5 +1,5 @@
 ---
-title: First Device
+title: L01 - First Device
 layout: content
 category: asp_lessons
 order: 1
