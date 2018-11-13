@@ -18,12 +18,12 @@ This device will be a straightforward stereo filter with the followwing features
 ## Pt1. Input Meters
 
 1. Create a new Max For Live **Audio Effect** device
-2. Place the mouse cursor over an area where there are no objects and press the `n` key. This will bring up a new object that is empty and is waiting for you to type the name of an object into it.
-3. Press `L` and you will see Max attempt to auto-complete your entry; the object to locate is the `live.meter~` object. Once you hit enter, it should appear on the patch.
+2. Place the mouse cursor over an area where there are no objects and press the **n** key. This will bring up a new object that is empty and is waiting for you to type the name of an object into it.
+3. Press **L** and you will see Max attempt to auto-complete your entry; the object to locate is the `live.meter~` object. Once you hit enter, it should appear on the patch.
 4. Move the meter to the right of the `plugin~` object by dragging it with the mouse.
-5. Hold down the alt key on your keyboard, click and drag with the mouse to the right to create another copy.
+5. Hold down the **alt** key on your keyboard, click and drag with the mouse to the right to create another copy.
 6. Click and drag from the bottom left outlet of `plugin~` to the almost invisible inlet on the top of the left `live.meter~` object. Hover over this inlet for a description.
-7. Do this same again but from the bottom right outlet of plugin~ to the duplicated `live.meter~`.
+7. Do this same again but from the bottom right outlet of `plugin~` to the duplicated `live.meter~`.
 8. If you play an audio clip or intrument in Live you should see the meters reacting to the audio.
 
 ![live.meter~ object(s)](/assets/img/liveMeters.png)
@@ -32,8 +32,8 @@ This device will be a straightforward stereo filter with the followwing features
 
 This next object to add is the object that performs the actual filtering of the audio signal: `svf~`.
 
-1. Within the Max Editor, press '**n**' on your keyboard for a new object
-2. Press 's' on your keyboard to start the autocomplete, `svf~` may show up immediately and you can press enter on the keyboard to add it to the patch. If it doesn't show up, you can scroll through the list of objects beginning with '**s**' with the arrow keys until you find it or type in the rest of the objects name to filter out the unwanted objects.
+1. Within the Max Editor, press **n** on your keyboard for a new object
+2. Press **s** on your keyboard to start the autocomplete, `svf~` may show up immediately and you can press enter on the keyboard to add it to the patch. If it doesn't show up, you can scroll through the list of objects beginning with '**s**' with the arrow keys until you find it or type in the rest of the objects name to filter out the unwanted objects.
 
 ### Details of svf~
 
@@ -80,11 +80,11 @@ Due to the way this particular filter object is coded it is essentially four fil
 
 
 ## Connections and Controlling Values
-The **svf~** object only has one inlet for audio input meaning that is effectively a mono processor. To quickly get a proof-of-concept up and running the device will be built as a mono processor initially.
+The `svf~` object only has one inlet for audio input meaning that is effectively a mono processor. To quickly get a proof-of-concept up and running the device will be built as a mono processor initially.
 
 /filter02.png
 
-In the image above, the left and right outlets from **plugin**~ are connected to the first inlet of a ***~** object before being sent into the **svf~** object. This multiplication object combines both left and right signals together and then multiplies their amplitude by 0.5 - this halves the amplitude of the signal avoiding any clipping when we hear the signal on output after processing.
+In the image above, the left and right outlets from `plugin~` are connected to the first inlet of a `*~` object before being sent into the `svf~` object. This multiplication object combines both left and right signals together and then multiplies their amplitude by 0.5 - this halves the amplitude of the signal avoiding any clipping when we hear the signal on output after processing.
 
 > In Max, the amplitude of a signal is describes linearly i.e not in dB. When we multiply a signal by 1. (note the float) it's amplitude is unchanged; when multiplied by 0.5 it is halved. Multiply by 2. and the amplitude is doubled.
 
@@ -93,7 +93,7 @@ The first outlet of `svf~` (the Low-Pass outlet) is then connected to both the l
 The next stage is to add controls for the filter’s frequency and resonance parameters. There are a number of objects that can be utilised as controls for objects but during the prototype stage the quickest ones to use are the number objects; the float (shortcut **f** on the keyboard) and the integer (shortcut **i**) objects.
 
 ### Frequency
-By connecting either a float or integer number box to the second inlet of **svf~** you can control the cutoff frequency by entering the value into the box (when the patch is locked), or by clicking and holding on the number box and pushing the mouse/trackpad etc. up and down. **svf~** Keep in mind that although the **svf~** frequency runs from 20-20000Hz, the number box will permits figures above and below this being sent to the **svf~**.
+By connecting either a float or integer number box to the second inlet of`svf~` you can control the cutoff frequency by entering the value into the box (when the patch is locked), or by clicking and holding on the number box and pushing the mouse/trackpad etc. up and down. **svf~** Keep in mind that although the **svf~** frequency runs from 20-20000Hz, the number box will permits figures above and below this being sent to the **svf~**.
 
 ### Resonance
 For the Resonance control, we need to be more specific about the type of number box as it runs from 0. to 1. meaning that it expects a float so that we can enter 0.004 or 0.9745. Connect a float number box here. Be very careful to not go over 1. as the resonance may damage your hearing.
