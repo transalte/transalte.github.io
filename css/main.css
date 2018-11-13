@@ -65,11 +65,19 @@ border-radius: 5px;
 
 
 ul {
-  letter-spacing: 0.1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color:dimgrey;
+  font-weight: 200;
 }
 
 li {
-  letter-spacing: 0.1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color:dimgrey;
+  font-weight: 200;
 }
 
 blockquote {
