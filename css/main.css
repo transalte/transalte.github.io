@@ -47,6 +47,8 @@ p {
   font-family: 'Source Sans Pro', sans-serif;
 font-size: 1rem;
 line-height: 1.5rem;
+color:dimgrey;
+font-weight: 200;
 }
 
 code {font-size: 1rem;
