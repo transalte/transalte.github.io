@@ -118,7 +118,7 @@ th, td {
 
 th {background-color: rgba(0,0,0,0.05);}
 
-img {max-width: 90vw;
+img {max-width: 50%;
 height: auto;
 margin-left: 1vw;
 margin-right: 1vw;
@@ -204,9 +204,6 @@ color: grey;
     background-color: #4CAF50;
     color: black;
 }
-
-
-
 
 
 .sidenav {
