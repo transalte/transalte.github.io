@@ -25,7 +25,11 @@ In the example below, the patch is much simplified and works with an audio signa
 
 ### Patch Screengrab
 
-![MonoPan](/assets/img/panMono.png "CAProTools ION")
+
+![MonoPan](/assets/img/panMono.png)
+*caption here*
+
+
 
 ### How It Works
 
