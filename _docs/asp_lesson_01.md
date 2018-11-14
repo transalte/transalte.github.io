@@ -173,7 +173,8 @@ To populate the `live.menu` with the relevent filter types or `svf~`:
 
 1. Select the `live.menu` and open up the **Inspector**
 2. Look under **Parameter** section for **Range/Enum** and replace the **one two three** text with the type of filters coming into the inlets of selector: `Lowpass Highpass Bandpass Notch`
-3. If the **Parameter** section in **Inspector** is not visible, click **All** in the top section of the **Inpector** panel.
+
+> If the **Parameter** section in **Inspector** is not visible, click **All** in the top section of the **Inpector** panel.
 
 Making these changes will produce the following outcomes.
 
@@ -208,9 +209,9 @@ You will see a blank patch. This is because we need to add our UI controls to th
 
 To make objects visible in the UI:
 
-	1. Come out of **Presentation Mode** (click the icon or shortcut again)
-	2. Click on the object you want to see in the UI to select them and then right-click to bring up the context menu and select **Add to Presentation**. The object should have a red outline on it now indicating it’s now active in the **Presentation Mode**
-	3. Do this for all the relevant UI controls objects. The keyboard shortcut for this is **cmd+shift+p** after selecting the object
+1. Come out of **Presentation Mode** (click the icon or shortcut again)
+2. Click on the object you want to see in the UI to select them and then right-click to bring up the context menu and select **Add to Presentation**. The object should have a red outline on it now indicating it’s now active in the **Presentation Mode**
+3. Do this for all the relevant UI controls objects. The keyboard shortcut for this is **cmd+shift+p** after selecting the object
 
 Go back to **Presentation Mode** to see the object(s) with no patch cords visible. it is possible to reposition objects anywhere in the screen and, depending on the object, resize it with the handles at the bottom right that appear when hovering the mouse over that area.
 
@@ -225,6 +226,6 @@ As a final addition, add a **live.gain~** object to the patch that sits between 
 
 ![presentation mode](/assets/img/asp_pres03.png)
 
-In the screenshot below, some comment objects (press **c** on the keyboard to bring this up) have been added to act a labels for some of the objects.
+In the screenshot below, some `comment` objects (press **c** on the keyboard to bring this up) have been added to act a labels for some of the objects.
 
 ![presentation mode](/assets/img/asp_pres04.png)
