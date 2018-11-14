@@ -139,10 +139,10 @@ color: grey;
   display: grid;
   grid-template-areas:
     'logo logo header header header'
-    'menu main main main main'
-    'footer footer footer footer footer';
+    'menu main main main main';
   padding: 5vw;
   padding-top: 1vw;
+  padding-bottom: 0;
   max-width: 1000px;
 }
 
