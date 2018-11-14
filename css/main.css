@@ -129,7 +129,8 @@ img + em {
 font-weight: 300;
 font-style: italic;
 color: grey;
-display: block; text-align: center;
+display: block;
+text-align: center;
 }
 
 
