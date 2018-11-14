@@ -6,7 +6,7 @@
 * { box-sizing: border-box;}
 
 html {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
     line-height: 1.5rem;
 }
@@ -25,7 +25,6 @@ h1, h2, h3, h4 {
 font-family: 'Oswald', sans-serif;
 font-weight: 300;
 letter-spacing: .5rem;
-color: blue;
 }
 
 h1 {
@@ -33,6 +32,7 @@ h1 {
   text-align: left;
   font-size: 1.4rem;
   font-weight: 200;
+  color: orange;
 }
 
 h2 {
