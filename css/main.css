@@ -32,15 +32,14 @@ h1 {
   text-align: left;
   font-size: 1.4rem;
   font-weight: 200;
-  color: dimgrey;
+  color: grey;
 }
 
 h2 {
   text-align: left;
   font-size: 1.2rem;
   font-weight: 200;
-  text-transform: small-caps;
-  color: lightgrey;
+  color: grey;
 }
 
 h3 {
