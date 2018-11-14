@@ -72,22 +72,24 @@ Due to the way this particular filter object is coded it is essentially four fil
 
 The `svf~` object only has one inlet for audio input meaning that is effectively a mono processor. To quickly get a proof-of-concept up and running the device will be built as a mono processor initially.
 
-![Mono Filter](/assets/img/asp_filter02.png)*mono svf~ filter*
+![Mono Filter](/assets/img/asp_filter02.png)*Mono svf~ effect*
 
 In the image above, the left and right outlets from `plugin~` are connected to the first inlet of a `*~` object before being sent into the `svf~` object. This multiplication object combines both left and right signals together and then multiplies their amplitude by 0.5 - this halves the amplitude of the signal avoiding any clipping when we hear the signal on output after processing.
 
-> In Max, the amplitude of a signal is describes linearly i.e not in dB. When we multiply a signal by 1. (note the float) it's amplitude is unchanged; when multiplied by 0.5 it is halved. Multiply by 2. and the amplitude is doubled.
+> In Max, the amplitude of a signal is described linearly i.e not in dB. When we multiply a signal by 1. (note the float) it's amplitude is unchanged; when multiplied by 0.5 it is halved. Multiply by 2. and the amplitude is doubled.
 
-The first outlet of `svf~` (the Low-Pass outlet) is then connected to both the left and the right inlets of `plugout~`. The means that we are only processing the left channel of the incoming audio but are hearing it out of both the left and right channels after processing.
+The first outlet of `svf~` (the Low-Pass outlet) is then connected to both the left and the right inlets of `plugout~` sending the same signal to both the left and right channels, thus mono.
 
-The next stage is to add controls for the filter’s frequency and resonance parameters. There are a number of objects that can be utilised as controls for objects but during the prototype stage the quickest ones to use are the number objects; the float (shortcut **f** on the keyboard) and the integer (shortcut **i**) objects.
+## Controls
+The next stage is to add controls for the filter’s frequency and resonance parameters. There are a number of objects that can be utilised as controls for objects but during the prototype stage the quickest ones to use are the number objects; the `flonum` (shortcut **f** on the keyboard) and the `integer` (shortcut **i**) objects.
+
 
 ### Frequency
-By connecting either a float or integer number box to the second inlet of`svf~` you can control the cutoff frequency by entering the value into the box (when the patch is locked), or by clicking and holding on the number box and pushing the mouse/trackpad etc. up and down. **svf~** Keep in mind that although the **svf~** frequency runs from 20-20000Hz, the number box will permits figures above and below this being sent to the **svf~**.
+By connecting either a float or integer number box to the second inlet of`svf~` you can control the cutoff frequency by entering the value into the box (when the patch is locked), or by clicking and holding on the number box and pushing the mouse/trackpad etc. up and down. Keep in the audible range (20Hz to 20kHz) to hear the effect of the filter.
 
 ### Resonance
-For the Resonance control, we need to be more specific about the type of number box as it runs from 0. to 1. meaning that it expects a float so that we can enter 0.004 or 0.9745. Connect a float number box here. Be very careful to not go over 1. as the resonance may damage your hearing.
+For the Resonance control, use a `flonum` object as the resonance paramter runs from 0. to 1. meaning that it expects a float so that we can enter 0.004 or 0.9745. Be very careful to not go over 1. as the resonance may damage your hearing.
 
-/filter03.png
+![Filter Controls](/assets/img/asp_filter03.png)*Filter Controls*
 
-Once you have played an audio clip through this device and can hear the filter working save it as B00XXXXXXXX_filter. Note that the file extension for a Max For Live device is ***.amxd**.
+Once you have played an audio clip through this device and can hear the filter working save it. Note that the file extension for a Max For Live device is `*.amxd` when using **Max For Live** and not `*.maxpat` which would be for **standalone** Max.
