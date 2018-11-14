@@ -47,7 +47,8 @@ This is the *normal* **paragraph** text ~~here~~.
 |Joined here|More||
 
 ### Images
-![The Colonol](https://davidjrodger.files.wordpress.com/2015/05/marlon-brando-as-us-army-special-forces-colonel-walter-e-kurtz-apocalypse-now-as-based-on-joseph-conrads-heart-of-darkness-the-tyranny-of-corporate-enterprise.jpg "The Colonol")
+![The Colonol](https://davidjrodger.files.wordpress.com/2015/05/marlon-brando-as-us-army-special-forces-colonel-walter-e-kurtz-apocalypse-now-as-based-on-joseph-conrads-heart-of-darkness-the-tyranny-of-corporate-enterprise.jpg)
+*IMAGE CAPTION*
 
 
 An inline link: <http://www.bbc.co.uk>
