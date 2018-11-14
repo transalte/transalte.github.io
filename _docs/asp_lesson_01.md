@@ -229,3 +229,14 @@ As a final addition, add a **live.gain~** object to the patch that sits between 
 In the screenshot below, some `comment` objects (press **c** on the keyboard to bring this up) have been added to act a labels for some of the objects.
 
 ![presentation mode](/assets/img/asp_pres04.png)
+
+
+
+## Smoothing Controls
+There may be some audible clicks or jumps when changing the cut-off frequency abruptly either manually via the dial or through envelope automation in **Live**. This ‘tearing’ sound is due to the values changing abruptly from one value to another. The way to smooth the change from one frequency to another is to glide gradually between them over a short period time, preferably short enough so that the transition is not noticeable.
+
+To achievec this, make the follwing additions to the `live.dial` to `svf~` signal path:
+
+![Smoothing Signal with line~](/assets/img/asp_smooth02.png)*Value Smoothing*
+
+The **line~** object needs two pieces of information; what the next value to go to is, and, how long it will take to reach there. These values must be sent in that order. This is why the append object is added; it will append (add to the end) a number to the incoming message. In this example, everytime the value from the `live.dial` is changed, the number 15 will be appended to the end of that message. Therefore, the outcome is that it will take 15ms to reach the selected value.
