@@ -191,7 +191,6 @@ To get around this misalignment of values a `+` object between the `live.menu` a
 
 ![live.menu and selector](/assets/img/asp_menuSelector.png)*live.menu & selector~*
 
-> Remember two things, we are not dealing with  signal here so there is no tilde after the **+** sign.
 
 Now, an output of 0 from the `live.menu` triggers a 1 on `selector~` which lets the selected filter outputs through correctly.
 
