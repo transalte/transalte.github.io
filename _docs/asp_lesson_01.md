@@ -120,7 +120,6 @@ The dial should now run from 20 to 20kHz albeit very hard to fine-tune the more 
 
 For the second `live.dial`, for Resonance control, change the **Short** and **Long Names** to **Resonance**. Connect the right outlet (0. to 1. range) to the appropriate inlet on the `svf~` object.
 
-----
 
 ## Stereo Implementation
 
@@ -128,9 +127,9 @@ Making this patch stereo is a case of duplicating the existing filter section or
 
 There could be separate dials for left and right but at this point it is best to avoid overcooking such a basic device.
 
-![Stereo Filter](/assets/img/filter04.png)*Stereo Filter*
+![Stereo Filter](/assets/img/asp_filter04.png)*Stereo Filter*
 
 ## Cord Organisation
-Notice that in the example screenshot the cords look a bit tidier than in your patch. In the screenshot, the cords bend around the objects which make it tidier and easier to follow. To do this, click a cord (it will go blueish) and press **cmd+y.** You can then click and grab straight segments of the cord and move it about. The colour of the cords has also been changed, this makes it much easier to follow the signal paths. This is done by selecting a cord by clicking on it (shift and click others to add to the selection), right clicking on the cord and selecting Color from the context menu. 
+Notice that in the example screenshot the cords look a bit tidier than in your patch. In the screenshot, the cords bend around the objects which make it tidier and easier to follow. To do this, click a cord (it will go blueish) and press **cmd+y.** You can then click and grab straight segments of the cord and move it about. The colour of the cords has also been changed, this makes it much easier to follow the signal paths. This is done by selecting a cord by clicking on it (shift and click others to add to the selection), right clicking on the cord and selecting Color from the context menu.
 
 Keeping your patches organised like this is a good habit to adopt as early as possible for ease of following signal flow and finding errors. Also, when you eventually hit a brick wall with a patch, tidying it up can lead to a moment of zen while being distracted with the drudgery of aligning objects and cords…
