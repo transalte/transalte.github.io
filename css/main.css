@@ -126,10 +126,10 @@ img {display: block;
 }
 
 img + em {
-text-align: center;
 font-weight: 300;
 font-style: italic;
 color: grey;
+display: block; text-align: center;
 }
 
 
