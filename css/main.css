@@ -118,7 +118,7 @@ th, td {
 
 th {background-color: rgba(0,0,0,0.05);}
 
-img {max-width: 100%;
+img {max-width: 90vw;
 height: auto;
 margin-left: 1vw;
 margin-right: 1vw;
