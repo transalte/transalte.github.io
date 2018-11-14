@@ -15,8 +15,11 @@ body {
   background-color: white;
 }
 
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 5vw;
+}
 
-*/
 
 /* TYPOGRAPHY */
 
