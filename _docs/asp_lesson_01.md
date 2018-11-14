@@ -9,6 +9,7 @@ summary: Building a basic filter.
 
 # Basic Filter
 
+
 This device will be a straightforward stereo filter with the followwing features:
 
 * selectable filter types
@@ -26,7 +27,7 @@ This device will be a straightforward stereo filter with the followwing features
 7. Do this same again but from the bottom right outlet of `plugin~` to the duplicated `live.meter~`.
 8. If you play an audio clip or intrument in Live you should see the meters reacting to the audio.
 
-![live.meter~ object(s)](/assets/img/liveMeters.png)
+![metering](/assets/img/01.jpg)
 
 ## Pt2. The Filter
 
