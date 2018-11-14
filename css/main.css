@@ -32,14 +32,14 @@ h1 {
   text-align: left;
   font-size: 1.4rem;
   font-weight: 200;
-  color: grey;
+  color: black;
 }
 
 h2 {
   text-align: left;
   font-size: 1.2rem;
   font-weight: 200;
-  color: grey;
+  color: black;
 }
 
 h3 {
@@ -58,6 +58,7 @@ p {
   line-height: 1.5rem;
   font-weight: 300;
   letter-spacing: 0.1rem;
+  color: #767676;
 }
 
 code {font-size: 1rem;
@@ -77,14 +78,14 @@ ul {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 li {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 blockquote {
