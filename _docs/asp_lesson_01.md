@@ -35,7 +35,6 @@ This next object to add is the object that performs the actual filtering of the 
 1. Within the Max Editor, press **n** on your keyboard for a new object
 2. Press **s** on your keyboard to start the autocomplete, `svf~` may show up immediately and you can press enter on the keyboard to add it to the patch. If it doesn't show up, you can scroll through the list of objects beginning with '**s**' with the arrow keys until you find it or type in the rest of the objects name to filter out the unwanted objects.
 
-### Details of svf~
 
 The `svf~` object has three inlets at the top and four outlets at the bottom; when the mouse pointer is placed over them a comment box will appear providing details of the inlet, or outlets, properties. In this case, hovering over the top left inlet displays the following:
 
