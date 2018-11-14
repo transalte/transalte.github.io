@@ -125,7 +125,7 @@ img {display: block;
 
 }
 
-figcaption {
+img + em {
 text-align: center;
 font-weight: 300;
 font-style: italic;
@@ -148,7 +148,7 @@ color: grey;
 
 .grid-container > div {
   padding: 1rem;
-  padding-bottom: 0;
+  padding-bottom: 0rem;
 }
 
 
