@@ -10,7 +10,7 @@ summary: Building a basic filter.
 # Section Overview
 
 
-This device will be a straightforward stereo filter with the followwing features:
+This device will be a straight-forward stereo filter with the following features:
 
 * selectable filter types
 * user controllable frequency and resonance parameters
