@@ -133,3 +133,22 @@ There could be separate dials for left and right but at this point it is best to
 Notice that in the example screenshot the cords look a bit tidier than in your patch. In the screenshot, the cords bend around the objects which make it tidier and easier to follow. To do this, click a cord (it will go blueish) and press **cmd+y.** You can then click and grab straight segments of the cord and move it about. The colour of the cords has also been changed, this makes it much easier to follow the signal paths. This is done by selecting a cord by clicking on it (shift and click others to add to the selection), right clicking on the cord and selecting Color from the context menu.
 
 Keeping your patches organised like this is a good habit to adopt as early as possible for ease of following signal flow and finding errors. Also, when you eventually hit a brick wall with a patch, tidying it up can lead to a moment of zen while being distracted with the drudgery of aligning objects and cords…
+
+## Filter Type Selection
+As stated earlier, the `svf~` object has four outlets. The object that will allow the user to switch between these four signals is `selector~`.
+
+![selector~ object](/assets/img/asp_selector01.png)*selector~ object*
+
+From the screenshot above, the `selector~` object has two numbers after it’s name. These are *arguments* which configure the initial states of an object that may or may not be overridden by the user.
+
+In this case, the first argument dictates how many inlets the object will have (4 in this case), and the second argument dictates which of these inlets will be routed to the outlet when the patch initialises (loads for the first time).
+
+ When object's name is selected after calling up a new blank object (**n** on the keyboard) a dropdown menu is displayed when the spacebar is pressed as shown in the screenshot below. This menu will diplay a list of all the messages and arguments that are related to that object.
+
+ ![selector~ object](/assets/img/asp_selector02.png)*selector~ messages and arguments*
+
+ When `selector~` receives an integer in the first inlet, it routes the audio from the selected inlet to the outlet. Receiving **1** lets through the first signal inlet, **2** the second and so on. When it receives a **0** no signal is let through, effectively acting as a gate.
+
+Once the arguments are in place, add the `selector~` objects into the patch as follows:
+
+![selector~ object](/assets/img/asp_selector03.png)*selector~  configuration*
