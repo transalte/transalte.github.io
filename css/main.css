@@ -118,10 +118,10 @@ th, td {
 
 th {background-color: rgba(0,0,0,0.05);}
 
-img {max-width: 50vw;
-height: auto;
-margin-left: 1vw;
-margin-right: 1vw;
+img {display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 
 }
 
