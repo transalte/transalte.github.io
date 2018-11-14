@@ -93,3 +93,44 @@ For the Resonance control, use a `flonum` object as the resonance paramter runs 
 ![Filter Controls](/assets/img/asp_filter03.png)*Filter Controls*
 
 Once you have played an audio clip through this device and can hear the filter working save it. Note that the file extension for a Max For Live device is `*.amxd` when using **Max For Live** and not `*.maxpat` which would be for **standalone** Max.
+
+## Live UI Elements
+
+From an end-user point of view these number boxes aren’t the most ergonomic, or familiar for Live users. A more recognisable object to use instead is `live.dial`.
+
+When added to a patch the default range of the dial will be 0 to 127. This can be changed to suit whatever parameter is to be controlled via the **Inpector**.
+
+There are also two outlets on `live.dial`; the left outlet transmits the range shown on the dial. The right outlet sends out values from 0. and 1. regardless of the range of the dial.
+
+Connect a live.dial to svf~ as follows:
+
+![live.dial connections](/assets/img/asp_livedial01.png)*live.dial connections*
+
+The left dial by default will send values from 0 to 127 to the svf~, this is fairly useless for a filter so we will fix this by changing some values the inspector.
+
+1. Open the **Inspector** for the `live.dial`.
+2. Under the **Parameters** subsection change the **Type** from **Int (0-255)** to **Float**. When set as **Int**, we are capped at values between 0-255, with **Float** this limit is removed.
+3. Change the **Range/Enum** to 20. 20000. (remember the period after the numbers and the space between those two values)
+4. Change the **Unit Style** to **Hertz**.
+5. Change the **Short Name** to **Freq** - this changes the UI text
+6. Change the **Long Name** to **“Filter Frequency”** - this is the text allocated to the envelope names in Ableton Live and as the name contains a space you must include the quotation marks
+
+
+The dial should now run from 20 to 20kHz albeit very hard to fine-tune the more useful lower values. To skew the distribution of the numbers across the dial, open the the **Inspector** again and set **Exponent** to 3.3333 - this will weight the values at the lower end of the dial for more precision.
+
+For the second `live.dial`, for Resonance control, change the **Short** and **Long Names** to **Resonance**. Connect the right outlet (0. to 1. range) to the appropriate inlet on the `svf~` object.
+
+----
+
+## Stereo Implementation
+
+Making this patch stereo is a case of duplicating the existing filter section or creating another `svf~` object and connecting the **Freq** and **Res** controls to both filters in the appropriate inlets. Note that the patch now utilises note the **L** and **R** channels coming from `plugin~`.
+
+There could be separate dials for left and right but at this point it is best to avoid overcooking such a basic device.
+
+![Stereo Filter](/assets/img/filter04.png)*Stereo Filter*
+
+## Cord Organisation
+Notice that in the example screenshot the cords look a bit tidier than in your patch. In the screenshot, the cords bend around the objects which make it tidier and easier to follow. To do this, click a cord (it will go blueish) and press **cmd+y.** You can then click and grab straight segments of the cord and move it about. The colour of the cords has also been changed, this makes it much easier to follow the signal paths. This is done by selecting a cord by clicking on it (shift and click others to add to the selection), right clicking on the cord and selecting Color from the context menu. 
+
+Keeping your patches organised like this is a good habit to adopt as early as possible for ease of following signal flow and finding errors. Also, when you eventually hit a brick wall with a patch, tidying it up can lead to a moment of zen while being distracted with the drudgery of aligning objects and cords…
