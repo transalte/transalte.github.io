@@ -1,5 +1,5 @@
 ---
-title: L01 - First Device
+title: BASIC FILTER
 layout: content
 category: asp_lessons
 order: 1
@@ -59,13 +59,6 @@ If we refer back to the inlets and outlets of `svf~`, it tells us the following:
 |Inlet 3|signal or float|Resonance (0-1)|
 
 
-Translating Max into plain-speak, inlet 1 is the input for the filter and it expects either a signal (in this case it could be the audio from a synth or sample) or a **float** which is a fractional number.
-
-> You may have noticed that some of the inlets will accept float values as well as audio signals. This adds more flexibility in the types of control you can use, i.e a static value from a dial (data) or an oscillator (audio signal).
-> Another point to cover at this stage is the two types of numerical inputs in Max: Floats and Integers. Integers are full numbers i.e 1 or 47 and floats are values such as 20.5 or 100.25346. Floats will always have a decimal even if it is a full number such as 1. or 25. and even 0.
-
-Inlet 2, controls the cut-off frequency for the filter and can be done so by an audio signal or a number (float again). Inlet 3 is for controlling resonance and has a range of 0. to 1.The range of the filter is in Hz as expected.
-
 Looking at the outlets:
 
 |I/O|DataFormat|Name/Description|
@@ -75,14 +68,11 @@ Looking at the outlets:
 |Outlet 3|signal|Bandpass Output|
 |Outlet 4|signal|Notch Output|
 
-Due to the way this particular filter object is coded it is essentially four filters in one; each filter is constantly processing the incoming signal simultaneously and outputting a filtered signal. The user simply selects which filter they want to use by attaching a cord to that particular filter type's outlet.
+Due to the way this particular filter object is coded it is essentially four filters running simultaneously; each filter is constantly processing the incoming signal a filtered signal.
 
-
-
-## Connections and Controlling Values
 The `svf~` object only has one inlet for audio input meaning that is effectively a mono processor. To quickly get a proof-of-concept up and running the device will be built as a mono processor initially.
 
-/filter02.png
+![Mono Filter](/assets/img/asp_filter02.png)*mono svf~ filter*
 
 In the image above, the left and right outlets from `plugin~` are connected to the first inlet of a `*~` object before being sent into the `svf~` object. This multiplication object combines both left and right signals together and then multiplies their amplitude by 0.5 - this halves the amplitude of the signal avoiding any clipping when we hear the signal on output after processing.
 
