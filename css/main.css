@@ -51,10 +51,11 @@ p {
   font-weight: 200;
 }
 
-code {font-size: 1rem;
-color: black;
+code {font-size: .875rem;
+color: dimgrey;
 background-color: lightgrey;
-border-radius: 0px;
+border-radius: 1px;
+padding: 2px;
 }
 
 .logo {
