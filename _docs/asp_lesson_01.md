@@ -152,3 +152,80 @@ In this case, the first argument dictates how many inlets the object will have (
 Once the arguments are in place, add the `selector~` objects into the patch as follows:
 
 ![selector~ object](/assets/img/asp_selector03.png)*selector~  configuration*
+
+## Using Menus
+
+Using numbers for the filter selection will be fairly meaningless to the end-user so a better method is to use menus related to the parameters.
+
+Add a `live.menu` object to the patch and notice that the drop-down menu is already populated with the text ‘one’, ‘two’ and ‘three’.
+
+![live.menu object](/assets/img/asp_livemenu01.png)*live.menu object*
+
+If you hover over the outlets, the first outlet provides the ‘Item Index’ of the menu selection (0, 1, 2, 3 and so on) for each entry. The second outlet provides the ‘Selection Symbol’ ie. the actual text of the item chosen.
+
+|Item Number|Item Index|Item Symbol|
+|:------|------|------|
+|First|0|One|
+|Second|1|Two|
+|Three|2|Three|
+
+To populate the `live.menu` with the relevent filter types or `svf~`:
+
+1. Select the `live.menu` and open up the **Inspector**
+2. Look under **Parameter** section for **Range/Enum** and replace the **one two three** text with the type of filters coming into the inlets of selector: `Lowpass Highpass Bandpass Notch`
+3. If the **Parameter** section in **Inspector** is not visible, click **All** in the top section of the **Inpector** panel.
+
+Making these changes will produce the following outcomes.
+
+
+| Item Number | Item index | Item symbol |
+| ----------- | ---------- | ----------- |
+| First       | 0          | Lowpass     |
+| Second      | 1          | Highpass    |
+| Third       | 2          | Bandpass    |
+| Fourth      | 3          | Notch       |
+
+The issue here is that when the user selects **Lowpass** from the menu, it will output a **0** to the `selector~` and shut down the signal completely.
+
+To get around this misalignment of values a `+` object between the `live.menu` and the `selector~` object with the argument `1`.
+
+![live.menu and selector](/assets/img/asp_menuSelector.png)*live.menu & selector~*
+
+> Remember two things, we are not dealing with  signal here so there is no tilde after the **+** sign.
+
+Now, an output of 0 from the `live.menu` triggers a 1 on `selector~` which lets the selected filter outputs through correctly.
+
+## Presentation Mode
+
+At this stage, the patch is only controllable inside the **Max Editor**. Back in **Live**, the interface for the device most-likely will show the top section of the patch instead of a porperly designed user-interface (UI).
+
+![presentation mode](/assets/img/asp_pres01.png)
+
+Open up the device again and go into **Presentation Mode** by either clicking **drawing-board** icon at the bottom left of the patch’s window, going to **View > Presentation** in the main menu or pressing **alt+cmd+e.** See the screenshot below:
+
+![presentation mode](/assets/img/asp_pres02.png)
+
+You will see a blank patch. This is because we need to add our UI controls to this view of the patch.
+
+To make objects visible in the UI:
+
+	1. Come out of **Presentation Mode** (click the icon or shortcut again)
+	2. Click on the object you want to see in the UI to select them and then right-click to bring up the context menu and select **Add to Presentation**. The object should have a red outline on it now indicating it’s now active in the **Presentation Mode**
+	3. Do this for all the relevant UI controls objects. The keyboard shortcut for this is **cmd+shift+p** after selecting the object
+
+Go back to **Presentation Mode** to see the object(s) with no patch cords visible. it is possible to reposition objects anywhere in the screen and, depending on the object, resize it with the handles at the bottom right that appear when hovering the mouse over that area.
+
+The very final step is to make the UI visible to Live:
+
+	1. Right-click on an empty area (make sure you have not clicked on any objects) of the patcher when in Presentation Mode and select Patcher Inspector from the context menu that pops up.
+	2. Under the View heading in the Inspector, check the box to the right of ‘Open in Presentation’ and save your patch.
+
+Back in Live, the devices UI should now contain all of the objects you added to the Presentation.
+
+As a final addition, add a **live.gain~** object to the patch that sits between the output from the **selector~** objects and the **plugout~** as shown below; make sure that you change the **Short Name** and **Long Name** to something appropriate for the control in the **Inspector**, then add this to the UI via **Presentation Mode**
+
+![presentation mode](/assets/img/asp_pres03.png)
+
+In the screenshot below, some comment objects (press **c** on the keyboard to bring this up) have been added to act a labels for some of the objects.
+
+![presentation mode](/assets/img/asp_pres04.png)
