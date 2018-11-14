@@ -217,8 +217,8 @@ Go back to **Presentation Mode** to see the object(s) with no patch cords visibl
 
 The very final step is to make the UI visible to Live:
 
-	1. Right-click on an empty area (make sure you have not clicked on any objects) of the patcher when in Presentation Mode and select Patcher Inspector from the context menu that pops up.
-	2. Under the View heading in the Inspector, check the box to the right of ‘Open in Presentation’ and save your patch.
+1. Right-click on an empty area (make sure you have not clicked on any objects) of the patcher when in Presentation Mode and select Patcher Inspector from the context menu that pops up.
+2. Under the View heading in the Inspector, check the box to the right of ‘Open in Presentation’ and save your patch.
 
 Back in Live, the devices UI should now contain all of the objects you added to the Presentation.
 
