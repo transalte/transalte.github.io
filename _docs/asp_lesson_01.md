@@ -235,7 +235,7 @@ In the screenshot below, some `comment` objects (press **c** on the keyboard to 
 ## Smoothing Controls
 There may be some audible clicks or jumps when changing the cut-off frequency abruptly either manually via the dial or through envelope automation in **Live**. This ‘tearing’ sound is due to the values changing abruptly from one value to another. The way to smooth the change from one frequency to another is to glide gradually between them over a short period time, preferably short enough so that the transition is not noticeable.
 
-To achievec this, make the follwing additions to the `live.dial` to `svf~` signal path:
+To achieve this, make the following additions to the `live.dial` to `svf~` signal path:
 
 ![Smoothing Signal with line~](/assets/img/asp_smooth02.png)*Value Smoothing*
 
