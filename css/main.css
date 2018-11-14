@@ -170,7 +170,7 @@ color: grey;
 }
 
 .item2 {grid-area: menu;
-	border-right: solid 1px dimgrey;
+	border-right: solid 1px lightgrey;
 }
 
 .item3 {
