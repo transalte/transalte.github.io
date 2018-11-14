@@ -7,7 +7,7 @@ permalink: /firstdevice/
 summary: Building a basic filter.
 ---
 
-# Basic Filter
+# Section Overview
 
 
 This device will be a straightforward stereo filter with the followwing features:
