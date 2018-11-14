@@ -163,7 +163,7 @@ color: grey;
 .item3 {
 	grid-area: main;
   overflow-y: auto;
-  height: 100vh;
+  height: 90vh;
 }
 
 .item4 {
