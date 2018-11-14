@@ -41,6 +41,7 @@ h1, h2, h3, h4, {
 font-family: 'Oswald', sans-serif;
 font-weight: 300;
 letter-spacing: .1rem;
+color: #778889;
 }
 
 p {
@@ -89,7 +90,6 @@ blockquote {
 
 h1 {
   text-transform: uppercase;
-  color: black;
   text-align: left;
   font-size: 1.4rem;
   font-weight: 200;
@@ -99,6 +99,7 @@ h2 {
   text-align: left;
   font-size: 1.2rem;
   font-weight: 200;
+  text-transform: capitalize;
 }
 
 h3 {
