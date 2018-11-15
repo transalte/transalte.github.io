@@ -15,12 +15,6 @@ body {
   background-color: white;
 }
 
-@media screen and (min-width: 415px) {
-  html {
-    font-size: 22px;
-}
-
-}
 
 
 
@@ -36,7 +30,6 @@ color: grey;
 h1 {
   text-transform: uppercase;
   color: black;
-  font-size: 1.2rem;
 }
 
 h2 {
