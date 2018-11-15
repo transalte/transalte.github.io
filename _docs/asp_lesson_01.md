@@ -15,7 +15,7 @@ This lesson is an introduction to **Max For Live** covering the main mechanics o
 * user controllable frequency and resonance parameters
 * all parameters visible and available for automation in Ableton Live
 
-## Pt1. Input Meters
+## Pt.1 Input Meters
 
 1. Create a new Max For Live **Audio Effect** device
 2. Place the mouse cursor over an area where there are no objects and press the **n** key. This will bring up a new object that is empty and is waiting for you to type the name of an object into it.
@@ -28,7 +28,7 @@ This lesson is an introduction to **Max For Live** covering the main mechanics o
 
 ![live.meter~](/assets/img/liveMeters.png)
 
-## Pt2. The Filter
+## Pt.2 The Filter
 
 This next object to add is the object that performs the actual filtering of the audio signal: `svf~`.
 
