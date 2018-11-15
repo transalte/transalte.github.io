@@ -9,8 +9,7 @@ summary: Building a basic filter.
 
 # Section Overview
 
-
-This device will be a straight-forward stereo filter with the following features:
+This lesson is an introduction to **Max For Live** covering the main mechanics of the application by creating a complete device. This device will be a straight-forward stereo filter with the following features:
 
 * selectable filter types
 * user controllable frequency and resonance parameters
