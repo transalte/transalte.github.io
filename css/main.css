@@ -1,5 +1,4 @@
 @import url('//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700');
-@import url('//fonts.googleapis.com/css?family=Oswald:200,300');
 
 /* STRUCTURE */
 
@@ -22,7 +21,6 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-font-family: 'Oswald', sans-serif;
 font-weight: 200;
 letter-spacing: .2rem;
 color: grey;
@@ -39,7 +37,6 @@ h2 {
 
 
 p {
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 300;
@@ -60,7 +57,6 @@ padding: 2px;
 
 
 ul {
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 300;
@@ -68,7 +64,6 @@ ul {
 }
 
 li {
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 300;
