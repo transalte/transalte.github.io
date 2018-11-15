@@ -160,12 +160,11 @@ text-align: center;
 .item1 {
 	grid-area: header;
 	text-align: left;
-  padding-bottom: 2rem;
 }
 
-.item2 {grid-area: menu;
+.item2 {
+  grid-area: menu;
 	border-right: solid 1px lightgrey;
-  padding-bottom: 2rem;
 }
 
 .item3 {
@@ -177,7 +176,6 @@ text-align: center;
 .item4 {
   grid-area: logo;
   padding: 1rem;
-  padding-bottom: 2rem;
 }
 
 .item5 { grid-area: footer; }
