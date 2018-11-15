@@ -16,7 +16,6 @@ body {
 }
 
 
-
 /* TYPOGRAPHY */
 
 
@@ -159,6 +158,12 @@ img + em {
   margin-bottom: 2rem;
 }
 
+.item4 {
+  grid-area: logo;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
 .item2 {
   grid-area: menu;
 	border-right: solid 1px lightgrey;
@@ -168,12 +173,6 @@ img + em {
 	grid-area: main;
   overflow-y: auto;
   height: 80vh;
-}
-
-.item4 {
-  grid-area: logo;
-  padding: 1rem;
-  margin-bottom: 2rem;
 }
 
 .item5 { grid-area: footer; }
