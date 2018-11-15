@@ -62,6 +62,7 @@ p {
 code {font-size: 1rem;
 background-color: rgba(0,0,0,0.5)
 border-radius: 2px;
+border: 1px solid grey;
 padding: 2px;
 }
 
