@@ -146,12 +146,12 @@ text-align: center;
   padding: 5vw;
   padding-top: 1vw;
   padding-bottom: 0;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 .grid-container > div {
   padding: 1rem;
-  padding-bottom: 0rem;
+  padding-bottom: 0px;
 }
 
 
