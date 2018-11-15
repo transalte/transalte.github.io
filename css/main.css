@@ -28,6 +28,7 @@ color: grey;
 h1 {
   text-transform: uppercase;
   color: black;
+  font-size: 1.2rem;
 }
 
 h2 {
