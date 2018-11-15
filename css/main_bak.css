@@ -6,10 +6,9 @@
 * { box-sizing: border-box;}
 
 html {
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
     line-height: 1.5rem;
-    color: darkslategrey;
 }
 
 body {
@@ -21,22 +20,39 @@ body {
 /* TYPOGRAPHY */
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
 font-family: 'Oswald', sans-serif;
 font-weight: 200;
 letter-spacing: .2rem;
-color: grey;
 }
 
 h1 {
   text-transform: uppercase;
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 200;
   color: black;
 }
 
 h2 {
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 200;
   color: black;
+  margin-top: 2.4rem;
 }
 
+h3 {
+font-weight: 200;
+font-size: 1.1rem;
+margin-bottom: -1rem;
+margin-top: 2.2rem;
+}
+
+h4 {
+font-weight: bold;
+font-size: 1rem;
+}
 
 p {
   font-family: 'Source Sans Pro', sans-serif;
@@ -84,60 +100,41 @@ blockquote {
   line-height: 1.5rem;
 }
 
-.footnotes {
-	font-size: .875rem;
-	color: slategrey;
-}
-
-.footnote {
-	font-size: .875rem;
-	color: slategrey;
-}
 
 
-
-code {
-	background: whitesmoke;
-	padding: 2px;
-	border: 1px solid lightgrey;
-	border-radius: 5px;
-}
-
-blockquote {
-	border-left: 4px solid lightgrey;
-	padding-left: .5rem;
-}
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
+  font-weight: lighter;
+  font-size: 1rem;
 }
 
 table, th, td {
     border: 1px solid black;
-    font-weight: 200;
+    font-size: 1rem;
+}
+
+th, td {
     padding: 5px;
+    text-align: left;
 }
 
-th {
-	background-color: whitesmoke;
-	text-transform: uppercase;
-}
+th {background-color: rgba(0,0,0,0.05);}
 
-img {
-	max-width: 50%;
-	margin-left: 25%;
-	margin-right: 25%;
-	border: 1px solid grey;
-	padding: 10px;
-	box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+img {display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
 }
 
 img + em {
-	display: block;
-	text-align: center;
-	font-size: .75rem;
-	color: grey;
+font-weight: 300;
+font-style: italic;
+color: grey;
+display: block;
+text-align: center;
 }
 
 

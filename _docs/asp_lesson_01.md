@@ -26,7 +26,7 @@ This lesson is an introduction to **Max For Live** covering the main mechanics o
 7. Do this same again but from the bottom right outlet of `plugin~` to the duplicated `live.meter~`.
 8. If you play an audio clip or intrument in Live you should see the meters reacting to the audio.
 
-![live.meter~](/assets/img/liveMeters.png)
+![live.meter~](/assets/img/liveMeters.png)*livemeter*
 
 ## Pt.2 The Filter
 
