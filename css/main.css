@@ -160,6 +160,7 @@ text-align: center;
 .item1 {
 	grid-area: header;
 	text-align: left;
+  margin-bottom: 5rem;
 }
 
 .item2 {
@@ -176,6 +177,7 @@ text-align: center;
 .item4 {
   grid-area: logo;
   padding: 1rem;
+  margin-bottom: 5rem;
 }
 
 .item5 { grid-area: footer; }
