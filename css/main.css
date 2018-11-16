@@ -33,14 +33,17 @@ body {
 
 .item1 {
 	grid-area: logo;
+  background-color: yellow;
 }
 
-.item4 {
+.item2 {
   grid-area: header;
+  background-color: green;
 }
 
 .item3 {
   grid-area: sidenav;
+  background-color: blue;
 }
 
 .item4 {
@@ -48,10 +51,12 @@ body {
   /*overflow-y: auto;
   height: 80vh;
   margin-bottom: 2rem;*/
+  background-color: orange;
 }
 
 .item5 {
   grid-area: footer;
+  background-color: grey;
 }
 
 @media only screen (max-width: 600px) {
