@@ -23,6 +23,8 @@ body {
     'logo header header header header'
     'sidenav main main main main'
     'footer footer footer footer footer';
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 .grid-container > div {
