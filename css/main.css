@@ -61,7 +61,7 @@ body {
   background-color: grey;
 }
 
-@media only (max-width: 600px) {
+@media (max-width: 600px) {
       .grid-container {
             grid-template-areas:
               'logo header header header'
