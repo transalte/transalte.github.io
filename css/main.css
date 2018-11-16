@@ -36,6 +36,7 @@ body {
 
 .item1 {
 	grid-area: logo;
+  border-right: 1px solid dimgrey;
 }
 
 .item2 {
@@ -44,6 +45,7 @@ body {
 
 .item3 {
   grid-area: sidenav;
+  border-right: 1px solid dimgrey;
 }
 
 .item4 {
