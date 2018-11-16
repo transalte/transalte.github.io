@@ -50,7 +50,7 @@ body {
 .item4 {
 	grid-area: main;
   overflow-y: auto;
-  height: 100%;
+  height: 99%;
 }
 
 .item5 {
