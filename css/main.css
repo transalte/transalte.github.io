@@ -16,10 +16,23 @@ body {
 }
 
 @media only screen and (device-width: 414px) {
-    body {
+    body  {
         background-color: lightblue;
         font-size: 24px;
-    }
+          }
+
+      .grid-container {
+            display: grid;
+            grid-template-areas:
+              'logo logo header header header'
+              'menu'
+              'main main main main main';
+            padding: 5vw;
+            padding-top: 1vw;
+            padding-bottom: 0;
+            max-width: 1200px;
+          }
+
 }
 
 
