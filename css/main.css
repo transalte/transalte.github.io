@@ -25,12 +25,12 @@ body {
     'footer footer footer footer footer';
     margin-left: 10vw;
     margin-right: 10vw;
-    background-color: whitesmoke;
 }
 
 .grid-container > div {
   padding: 1rem;
   padding-bottom: 0px;
+  background-color: whitesmoke;
 }
 
 
