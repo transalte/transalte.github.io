@@ -201,6 +201,7 @@ img + em {
 	grid-area: main;
   overflow-y: auto;
   height: 80vh;
+  margin-bottom: 2rem;
 }
 
 .item5 { grid-area: footer; }
