@@ -71,6 +71,8 @@ body {
               'footer footer footer footer';
               margin: 0px;
           }
+          .topnav a {
+              float: left;}
 
 }
 
