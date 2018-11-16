@@ -7,36 +7,35 @@
 		<body>
 
 <div class="grid-container">
-		<div class="item4">
-			<div class="logo">
-				TRANSALTE~
-			</div>
-		</div>
 		<div class="item1">
-			<nav>
-				<div class="topnav">
-					<a href="/contact">CONTACT</a>
-					<a href="/about/">ABOUT . </a>
-					<a href="/asp/">ASP . </a>
-					<a href="/index.html">HOME . </a>
-				</div>
-			</nav>
+				<div class="logo">TRANSALTE~</div>
 		</div>
-
 
 		<div class="item2">
-			<div class="sidenav">
-				<p>{{ page.title }}</p>
-					{% include toc.html html=content h_min=1 h_max=2 class=sidenav %}
-			</div>
+				<nav>
+						<div class="topnav">
+							<a href="/contact">CONTACT</a>
+							<a href="/about/">ABOUT . </a>
+							<a href="/asp/">ASP . </a>
+							<a href="/index.html">HOME . </a>
+						</div>
+					</nav>
 		</div>
 
+		<div class="item3">
+				<div class="sidenav">
+					<p>{{ page.title }}</p>
+						{% include toc.html html=content h_min=1 h_max=2 class=sidenav %}
+					</div>
+		</div>
 
-		<div class="item3">{{ content }}</div>
-
+		<div class="item4">{{ content }}</div>
+		<div class="item4>">FOOTER</div>
 
 
 </div>
+
+
 
 
 </body>
