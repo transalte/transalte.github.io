@@ -64,7 +64,8 @@ body {
 @media (max-width: 600px) {
       .grid-container {
             grid-template-areas:
-              'logo header header header'
+              'logo logo logo logo'
+              'header header header header'
               'sidenav sidenav sidenav sidenav '
               'main main main main'
               'footer footer footer footer ';
