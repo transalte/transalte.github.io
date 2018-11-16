@@ -18,6 +18,7 @@ body {
 @media only screen and (device-width: 414px) {
     body {
         background-color: lightblue;
+        font-size: 24px;
     }
 }
 
