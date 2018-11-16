@@ -170,7 +170,7 @@ img + em {
     'menu main main main main';
   padding: 5vw;
   padding-top: 1vw;
-  padding-bottom: 0;
+  padding-bottom: 1vw;
   max-width: 1200px;
 }
 
