@@ -50,9 +50,8 @@ body {
 
 .item4 {
 	grid-area: main;
-  /*overflow-y: auto;
+  overflow-y: auto;
   height: 80vh;
-  margin-bottom: 2rem;*/
 }
 
 .item5 {
