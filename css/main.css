@@ -15,11 +15,12 @@ body {
   background-color: white;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (device-width: 414px) {
     body {
         background-color: lightblue;
     }
 }
+
 
 
 /* TYPOGRAPHY */
