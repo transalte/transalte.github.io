@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 /* GRID CONFIGURATION */
@@ -30,7 +30,7 @@ body {
 .grid-container > div {
   padding: 1rem;
   padding-bottom: 0px;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 
