@@ -55,7 +55,7 @@ body {
   grid-area: footer;
 }
 
-@media only screen (max-device-width: 480px) {
+@media (min-width:480px) {
       .grid-container {
             grid-template-areas:
               'logo logo logo logo'
@@ -67,7 +67,7 @@ body {
           }
           .topnav a {
               float: left;}
-html {font-size:24px;}
+body {font-size:24px;}
 
 }
 
