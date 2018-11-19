@@ -43,7 +43,7 @@ body {
 
 .item3 {
   grid-area: sidenav;
-  border-right: 1px solid dimgrey;
+  border-right: 1px solid lightgrey;
 }
 
 .item4 {
