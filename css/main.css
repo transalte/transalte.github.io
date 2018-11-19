@@ -55,7 +55,7 @@ body {
   grid-area: footer;
 }
 
-@media (max-width: 415px) {
+@media only screen (max-device-width: 480px) {
       .grid-container {
             grid-template-areas:
               'logo logo logo logo'
