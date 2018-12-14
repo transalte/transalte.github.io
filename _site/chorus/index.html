@@ -20,7 +20,11 @@
 						<ul>
   <li><a href="#overview">Overview</a>
     <ul>
-      <li><a href="#chorus-theory">Chorus Theory</a></li>
+      <li><a href="#chorus-theory">Chorus Theory</a>
+        <ul>
+          <li><a href="#audio-examples">Audio Examples</a></li>
+        </ul>
+      </li>
       <li><a href="#topologies">Topologies</a>
         <ul>
           <li><a href="#mono">Mono</a></li>
@@ -39,16 +43,34 @@
 		</div>
 
 		<div class="item4"><h1 id="overview">Overview</h1>
-<p>The chorus effect is a time-domain based effect that when applied to a signal gives the sound a ‘layered’ or ‘thickened’ sound. The sound of a chorus effect can occur naturally in choirs or orchestras where there can be multiple instruments producing the same sound. The effect itself comes from the subtle variations in pitch and time that occur from different performances and performers.</p>
+<p>The chorus effect is a time-domain based effect that when applied to a signal gives the sound a ‘layered’ or ‘thickened’ sound. An ‘organic’ chorus effect can occur naturally in choirs or orchestras where there are multiple similar sound sources playing simultaneously. The ‘thickening’ effect itself comes from the subtle variations in pitch and time that occur from the different performances and performers.</p>
 
-<p>In recording and mixing, the same effect can be produced by layering multiple recording recordings of the same material.</p>
-
-<h2 id="chorus-theory">Chorus Theory</h2>
-<p>A simple chorus can be created by modulating the delay-time paramter of a delay patch. When the time parameter of a <code class="highlighter-rouge">tapin~</code>/<code class="highlighter-rouge">tapout~</code> based delay patch is adjusted, the sound will pitch up or down as falling behind and returning to the original delay time. When this ‘wobbling’ sound is combined with the dry signal, the effect is the ‘shimmering’ or pulsing sound associated with the chorus sound.</p>
+<p>In recording and mixing, a similar effect can be produced by layering multiple recordings of the same material or by using chorus pedals, outboard or plugins.</p>
 
 <blockquote>
   <p>This lesson requires that the <a href="/delays">delay</a> and <a href="/lfos">LFO</a> lessons have been followed.</p>
 </blockquote>
+
+<h2 id="chorus-theory">Chorus Theory</h2>
+<p>In Max, a simple chorus can be created by modulating the delay-time parameter of a delay patch with an LFO. When the time parameter of a <code class="highlighter-rouge">tapin~</code>/<code class="highlighter-rouge">tapout~</code>-based delay patch is constantly adjusted, the sound will pitch up and down, falling behind and catching up with the original signal. When this ‘drifting’ sound is combined with the dry signal, the effect is the ‘shimmering’ or pulsing sound associated with the chorus sound. The core concept of the effect is shown in the image below:</p>
+
+<p><a href="/assets/img/ch_04.png"><img src="/assets/img/ch_04.png" alt="Chorus Diagram" /><em>Basic Chorus</em></a></p>
+
+<h3 id="audio-examples">Audio Examples</h3>
+
+<p>The example below, a dry guitar loop is heard followed by the chorus effect.</p>
+
+<audio controls="">
+  <source src="/assets/audio/chorus_gtr.mp3" type="audio/mpeg" />
+Your browser does not support the audio element.
+</audio>
+
+<p>In the following synth example<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, the chorus effect can be heard blending in with the dry over time:</p>
+
+<audio controls="">
+  <source src="/assets/audio/chorus_synth.mp3" type="audio/mpeg" />
+Your browser does not support the audio element.
+</audio>
 
 <h2 id="topologies">Topologies</h2>
 
@@ -68,7 +90,7 @@
   <p>Note that this LFO is non-synched, non-tempo relative and  unipolar. (see the <a href="/lfos">Modulation</a> section for a reminder)…</p>
 </blockquote>
 
-<p>What is happening in the patch is that the delay time paramater is being modulated by the LFO output so that it constantly fluxuates. Due to the way that the <code class="highlighter-rouge">tapout~</code> object is coded, when the delay time is changed it can cause a pitch change if the transition from one value ot the next is slow enough. The settings shown in the screenshot will give a basic in-offensive mono chorus effect. Adjust the Mix dial to hear the effect/dry balance.</p>
+<p>What is happening here is that the delay time paramater is being modulated by the LFO output so that it constantly fluxuates. Due to the way that the <code class="highlighter-rouge">tapout~</code> object is coded, when the delay time is changed it causes a pitch change if the transition from one value to the next is slow enough. The settings shown in the screenshot will give a basic in-offensive mono chorus effect. Adjust the Mix dial to hear the effect/dry balance.</p>
 
 <p>To hear the pitch/delay effect exagerated for a clearer understanding of the effect, change the parameters as follows:</p>
 
@@ -108,6 +130,16 @@
 <p><a href="/assets/img/ch_03a.png"><img src="/assets/img/ch_03a.png" alt="Stereo Chorus" /><em>Stereo Chorus</em></a></p>
 
 <h2 id="further-research">Further Research</h2>
+
+<p><a href="https://www.soundonsound.com/techniques/more-creative-synthesis-delays#top">More Creative Synthesis With Delays</a>: Article with some interesting points for effect modifications</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Taken from the <a href="#real-stereo">real stereo</a> example. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 </div>
 
 </div>

@@ -5,7 +5,7 @@
 * { box-sizing: border-box;}
 
 html{
-    font-size: 13px;
+    font-size: 12px;
     font-family: 'Roboto Mono', monospace;
     font-weight: 300;
     line-height: 1.5rem;
@@ -13,7 +13,7 @@ html{
 }
 
 body {
-  background-color: white;
+  background-color: whitesmoke;
   margin: 0px;
 }
 
@@ -40,18 +40,19 @@ body {
 .item1 {
 	grid-area: logo;
   height:10vh;
-  background-color: white;
+
 }
 
 .item2 {
   grid-area: header;
   height: 10vh;
   background-color: white;
+
 }
 
 .item3 {
   grid-area: sidenav;
-  border-right: 1px dashed lightgrey;
+  /*border-right: 1px dashed lightgrey;*/
   padding-right: 0rem;
   overflow-y: auto;
   height: 90vh;
@@ -157,7 +158,7 @@ pre > code {
   color: black;
 }
 
- 
+
 
 
 ul {
@@ -220,8 +221,8 @@ th {
 img {
 	display: block;
 	border: 1px solid grey;
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 400px;
+  max-height: 400px;
   margin: 0 auto;
 }
 
@@ -379,6 +380,7 @@ hr {
 
     .item2 {
       height: 100%;
+      background-color: whitesmoke;
     }
 
     .item3 {
