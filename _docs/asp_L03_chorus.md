@@ -67,13 +67,12 @@ To hear the pitch/delay effect exagerated for a clearer understanding of the eff
 You should hear the sound speeding up and down and changing in pitch accordingly. When the Mix paramater is set to 50, the 'drift' in pitch and timing from the original is clearly audible.
 
 ### Psuedo-Stereo
-By changing the mono delay circuit above into a ping-pong circuit, the chorus can also be turned easily into a psuedo-stereo effect:
+By changing the mono delay circuit above into a variation of a simple 'ping-pong' delay circuit, the chorus gain a psuedo-stereo characteristic:
 
 [![Psuedo-stereo Chorus](/assets/img/ch_02.png)*Psuedo-stereo Chorus*](/assets/img/ch_02.png)
 
-What is happening here is that the first delay-line (the one being modulated) is being sent out to `M4L.bal2~` object as before, but also being sent into a second delay-line (yellow cable) that is un-modulated but shares the same delay time from the **Delay/Offset** control.
+Here, the first delay-line (the delay being modulated) is being sent out to `M4L.bal2~` object as before, it is also being sent into a second un-modulated delay-line (yellow cable) that shares the same delay time from the **Delay/Offset** control.
 
-There should be a stereo quality to the chorus effect, however this is not a true stereo chorus
 
 ### Real Stereo
 Another topology option would be to have either the modulated signals on the left and right modulate inversely to each other. This requires inverting the output form the LFO so that as one delay paramater is falling the other is rising.

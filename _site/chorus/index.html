@@ -104,13 +104,11 @@ Your browser does not support the audio element.
 <p>You should hear the sound speeding up and down and changing in pitch accordingly. When the Mix paramater is set to 50, the ‘drift’ in pitch and timing from the original is clearly audible.</p>
 
 <h3 id="psuedo-stereo">Psuedo-Stereo</h3>
-<p>By changing the mono delay circuit above into a ping-pong circuit, the chorus can also be turned easily into a psuedo-stereo effect:</p>
+<p>By changing the mono delay circuit above into a variation of a simple ‘ping-pong’ delay circuit, the chorus gain a psuedo-stereo characteristic:</p>
 
 <p><a href="/assets/img/ch_02.png"><img src="/assets/img/ch_02.png" alt="Psuedo-stereo Chorus" /><em>Psuedo-stereo Chorus</em></a></p>
 
-<p>What is happening here is that the first delay-line (the one being modulated) is being sent out to <code class="highlighter-rouge">M4L.bal2~</code> object as before, but also being sent into a second delay-line (yellow cable) that is un-modulated but shares the same delay time from the <strong>Delay/Offset</strong> control.</p>
-
-<p>There should be a stereo quality to the chorus effect, however this is not a true stereo chorus</p>
+<p>Here, the first delay-line (the delay being modulated) is being sent out to <code class="highlighter-rouge">M4L.bal2~</code> object as before, it is also being sent into a second un-modulated delay-line (yellow cable) that shares the same delay time from the <strong>Delay/Offset</strong> control.</p>
 
 <h3 id="real-stereo">Real Stereo</h3>
 <p>Another topology option would be to have either the modulated signals on the left and right modulate inversely to each other. This requires inverting the output form the LFO so that as one delay paramater is falling the other is rising.</p>
