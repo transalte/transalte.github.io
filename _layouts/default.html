@@ -2,54 +2,82 @@
 	<html>
 		<head>
 			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
-
 			<title>{{ page.title }}</title>
 		</head>
 		<body>
-			<p>TRANSALTE</p>
-f
-			<nav>
-				<div class="topnav">
-				  <a href="/contact">CONTACT</a>
-				  <a href="/about/">ABOUT . </a>
-					<a href="/aasp/">AASP . </a>
-					<a href="/asp/">ASP . </a>
-					<a href="/index.html">HOME . </a>
-				</div>
-			</nav>
+
+<div class="grid-container">
 
 
-<!-- main contatinger row here -->
-<div class="row">
-  	<div class="sidecolumn">
-
-			<h4>Getting Started</h4>
-			<ul>
-    	{% for doc in site.docs %}
-      	{% if doc.category == "getting-started" %}
-        	<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
-      	{% endif %}
-    	{% endfor %}
-			</ul>
-
+		<div class="item1">
+			<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
 		</div>
 
-		<div class="maincolumn">
+
+		<div class="item2"></div>
 
 
-					{{ content }}
+			<div class="item3">
 
+
+			</div>
+
+		<div class="item4">
+
+<h1>About These Notes</h1>
+				<p>If you are new to Max / Max For Live, (or needing a refresh) it is recommended to read through the <b>Max Fundamentals</b> section. The <b>L09</b> section deals with creating <b>Audio Effect Devices</b> and <b>L10</b> covers instruments and sequencing.</p>
+
+
+				<h3>Max Fundamentals</h3>
+						<div class="homenav">
+								<ul>
+								{% for doc in site.docs %}
+					      	{% if doc.category == "Max" %}
+					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
+					      	{% endif %}
+					    	{% endfor %}</p>
+							</ul>
+							</div>
+
+
+
+				<h3>L09 Notes</h3>
+
+				<div class="homenav">
+					<ul>
+						{% for doc in site.docs %}
+						{% if doc.category == "asp_lessons" %}
+						<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
+						{% endif %}
+						{% endfor %}
+						</ul>
+						</div>
+
+				<h3>L10 Notes</h3>
+
+						<div class="homenav">
+								<ul>
+								{% for doc in site.docs %}
+					      	{% if doc.category == "aasp_lessons" %}
+					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
+					      	{% endif %}
+					    	{% endfor %}
+							</ul>
+							</div>
+
+<p>Why transalte?</p>
+<p>The name comes from a habitual typo from using the `translate` object.</p>
+		</div>
 
 		</div>
 
 </div>
 
-<div class="footerColumn"
 
-		<footer>
-		<p>default footer here</p>
-		</footer>
 
-</div>
+
+
+
+
 </body>
 </html>
