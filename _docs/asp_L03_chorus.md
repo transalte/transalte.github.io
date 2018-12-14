@@ -20,13 +20,13 @@ A simple chorus can be created by modulating the delay-time paramter of a delay 
 
 ## Topologies
 
-As with the delay effects, there are a number of different topologies that can be applied for a chorus effect. Each will give different qualities textures to the effect. 
+As with the delay effects, there are a number of different topologies that can be applied for a chorus effect. Each will give different qualities textures to the effect.
 
 ### Mono
 
 This first example below shows the effect theory in a very simplistic mono-chorus.
 
-[![Basic Mono Chorus](/assets/img/ch_01.png)*Basic Mono Chorus*](/assets/img/ch_01.png) 
+[![Basic Mono Chorus](/assets/img/ch_01.png)*Basic Mono Chorus*](/assets/img/ch_01.png)
 
 This patch contains two signal streams; the dry direct signal from `plugin~` and the processed mono signal that branches off from `plugin~` and passes through the `tapin~`/`tapout~` objects. The two streams are blended together with the standard `M4L.bal2~` object.
 
@@ -48,7 +48,7 @@ You should hear the sound speeding up and down and changing in pitch accordingly
 ### Psuedo-Stereo
 By changing the mono delay circuit above into a ping-pong circuit, the chorus can also be turned easily into a psuedo-stereo effect:
 
-[![Psuedo-stereo Chorus](/assets/img/ch_02.png)*Psuedo-stereo Chorus*](/assets/img/ch_02.png) 
+[![Psuedo-stereo Chorus](/assets/img/ch_02.png)*Psuedo-stereo Chorus*](/assets/img/ch_02.png)
 
 What is happening here is that the first delay-line (the one being modulated) is being sent out to `M4L.bal2~` object as before, but also being sent into a second delay-line (yellow cable) that is un-modulated but shares the same delay time from the **Delay/Offset** control.
 
@@ -57,28 +57,16 @@ There should be a stereo quality to the chorus effect, however this is not a tru
 ### Real Stereo
 Another topology option would be to have either the modulated signals on the left and right modulate inversely to each other. This requires inverting the output form the LFO so that as one delay paramater is falling the other is rising.
 
-The image below shows that by offsetting the output from `phasor~` by 0.5, it will be 180deg out of phase with an unadjusted output. 
+The image below shows that by offsetting the output from `phasor~` by 0.5, it will be 180deg out of phase with an unadjusted output.
+
+
+
+The red waveform is the 'offset' waveform and the green is the standard output.
+
+[![Phase Inversion](/assets/img/ch_03b.png)*Phase Inversion*](/assets/img/ch_03b.png)
 
 >Note that even though `cycle~` expects a phase from 0. to 1. if the range it receives it beyond that the values are simply wrapped. In this example, with the offset, the range is 0.5 to 1.5.
 
-The red waveform is the 'offset' waveform and the green is the standard output. 
-
-[![Phase Inversion](/assets/img/ch_03b.png)*Phase Inversion*](/assets/img/ch_03b.png) 
-
 To implement this in a patch;
 
-[![Stereo Chorus](/assets/img/ch_03a.png)*Stereo Chorus*](/assets/img/ch_03a.png) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[![Stereo Chorus](/assets/img/ch_03a.png)*Stereo Chorus*](/assets/img/ch_03a.png)
