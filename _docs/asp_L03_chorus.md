@@ -5,7 +5,7 @@ category: asp_lessons
 order: 2
 permalink: /chorus/
 summary: Creating chorus-related effects
-lastupdate: 03-12-2018
+lastupdate: 14-12-2018
 ---
 
 # Overview
