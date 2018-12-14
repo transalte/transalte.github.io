@@ -32,7 +32,7 @@ The selection occurs when an integer is sent to the first inlet. With the `selec
 
 ## One-to-Many
 
-### Gates
+### Gates 
 
 The `gate~` object, and its counterparts, are the 'one-to-many' equivilent of `selector~`. The arguments are similar i.e `gate~ 4` would create a gate with four outlets for the single input.
 
