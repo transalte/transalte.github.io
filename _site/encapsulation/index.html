@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+			<title>Encapsulation</title>
+		</head>
+		<body>
+
+<div class="grid-container">
+		<div class="item1">
+				<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
+
+		</div>
+
+		<div class="item2"></div>
+
+		<div class="item3">
+				<div class="sidenav">
+					<p>Encapsulation</p>
+						<ul>
+  <li><a href="#overview">Overview</a>
+    <ul>
+      <li><a href="#encapsulating">Encapsulating</a>
+        <ul>
+          <li><a href="#editing">Editing</a></li>
+          <li><a href="#inletoutlet-info">Inlet/Outlet Info</a></li>
+        </ul>
+      </li>
+      <li><a href="#issues">Issues</a></li>
+      <li><a href="#common-errors">Common Errors</a></li>
+    </ul>
+  </li>
+</ul>
+
+					</div>
+
+
+		</div>
+
+		<div class="item4"><h1 id="overview">Overview</h1>
+<p>Max patches can regulary become busy and hard-to-follow as they increase in complexity. One method of dealing with this is the concept of <em>encapsulation</em>, or, the creation of sub-patches within a patch.</p>
+
+<p>An example would be a complex LFO being ‘encapsulated’ from many objects and connections down to a single <code class="highlighter-rouge">p LFO</code> object. The screenshot below shows a basic LFO on the left with the encapsulated version on the right.</p>
+
+<p><a href="/assets/img/enc_01.png"><img src="/assets/img/enc_01.png" alt="Encapsulation LFO Example" /><em>Encapsulated LFO Example</em></a></p>
+
+<p>Encapsulation free’s up a lot of space making it easier to navigate a patch and also makes it easy to duplicate ‘blocks’ of code within a patch. In this example, any time the patch would require an LFO, the <code class="highlighter-rouge">p EncapsulatedLFO</code> sub-patch can simply be duplicated.</p>
+
+<hr />
+
+<h2 id="encapsulating">Encapsulating</h2>
+<p>Creating a sub-patch is straightforward; select all of the objects to be placed inside the sub-patch (in the majority of cases, non-UI objects) and from the Max menu, select <strong>Edit &gt; Encapsulate</strong>. The contents will be collapsed into a single object that begins with <code class="highlighter-rouge">p</code> to indicate this is a sub-patch. Any elements outside of the previous selection will be connected to automatically generated and numbered <code class="highlighter-rouge">inlet</code> and <code class="highlighter-rouge">outlet</code> objects within the patch.</p>
+
+<p><a href="/assets/img/encap_03.gif"><img src="/assets/img/encap_03.gif" alt="Encapusulating LFO" /><em>Encapsulating LFO</em></a></p>
+
+<blockquote>
+  <p>Note that in this example, the process was selecting all objects within the patch first, then de-selecting those objects that were to remain <em>outside</em> of the patch by <strong>shift+clicking</strong> them. Then the shortcut for encapsulation was used.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="editing">Editing</h3>
+<p>To open an encapsulated patch, lock the patch and double-click it. Alternatively, hold down <strong>Cmd</strong> and double-click.</p>
+
+<h3 id="inletoutlet-info">Inlet/Outlet Info</h3>
+<p>To provide information on the inlet and outlets of the sub-patch similar to when hovering over standard objects in Max:</p>
+
+<ol>
+  <li>Select the inlet or outlet object within the subpatch</li>
+  <li>Open the <strong>Inspector</strong></li>
+  <li>Under the <strong>Behaviour</strong> section look for <strong>Comment</strong> and enter the information to be shown when hovering over the inlet/outlet</li>
+</ol>
+
+<p><a href="/assets/img/enc_04.png"><img src="/assets/img/enc_04.png" alt="Inlet Naming from Inspector" /><em>Inlet Info from Inspector</em></a></p>
+
+<p>In this example, when hovering over the inlet, ‘<em>Waveform Select</em>’ is shown in the pop-up.</p>
+
+<hr />
+
+<h2 id="issues">Issues</h2>
+<p>Some re-arranging of the <code class="highlighter-rouge">inlet</code> and <code class="highlighter-rouge">outlet</code> objects may be required to re-order the connections. This can be done by clicking and dragging the inlets or outlets within the sub-patch left and right - the number will change to indicate the order. If there are missing inlets these can be added by creating a new <code class="highlighter-rouge">inlet</code> or <code class="highlighter-rouge">outlet</code> object.</p>
+
+<p>The gif below shows a new inlet being added for the triangle wave ‘slope’ control and the automatice re-numbering that happens:</p>
+
+<p><a href="/assets/img/encap_02.gif"><img src="/assets/img/encap_02.gif" alt="Inlets" /><em>Inlets and Re-arranging</em></a></p>
+
+<h2 id="common-errors">Common Errors</h2>
+<ul>
+  <li>UI elements left inside the encapsualted sub-patch</li>
+  <li>Long-names for thos elements not being adjusted (automation envelopes in Live would have a lot of similarly named parameters)</li>
+</ul>
+
+<hr />
+</div>
+
+</div>
+
+
+
+
+</body>
+</html>

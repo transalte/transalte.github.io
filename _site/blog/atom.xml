@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>Hank Quinlan's Blog</title>
+	<link href="http://hankquinlan.github.io/blog/atom.xml" rel="self"/>
+	<link href="http://hankquinlan.github.io/blog"/>
+	<updated>2018-12-14T12:23:46+00:00</updated>
+	<id>http://hankquinlan.github.io/blog</id>
+	<author>
+		<name>Hank Quinlan</name>
+		<email>hankquinlanhub@gmail.com</email>
+	</author>
+
+	
+		<entry>
+			<title>Hank Quinlan, Horrible Cop, Launches Site</title>
+			<link href="http://hankquinlan.github.io/2014/04/30/hank-quinlan-site-launched.html"/>
+			<updated>2014-04-30T00:00:00+01:00</updated>
+			<id>http://hankquinlan.github.io/2014/04/30/hank-quinlan-site-launched</id>
+			<content type="html">&lt;p&gt;Well. Finally got around to putting this old website together. Neat thing about it - powered by &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; and I can use Markdown to author my posts. It actually is a lot easier than I thought it was going to be.&lt;/p&gt;
+
+&lt;p&gt;this should be the editor &lt;a href=&quot;http://www.uws.ac.uk&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--stackedit_data:
+eyJoaXN0b3J5IjpbMTg4MTc4ODU0NF19
+--&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>Test</title>
+			<link href="http://hankquinlan.github.io/2014/04/30/TEST.html"/>
+			<updated>2014-04-30T00:00:00+01:00</updated>
+			<id>http://hankquinlan.github.io/2014/04/30/TEST</id>
+			<content type="html">&lt;h2 id=&quot;the-header-shouldnt-really-be-here&quot;&gt;The header shouldnt really be here&lt;/h2&gt;
+
+&lt;p&gt;This should be a thing here&lt;/p&gt;
+
+&lt;p&gt;thud ifd&lt;/p&gt;
+</content>
+		</entry>
+	
+
+</feed>

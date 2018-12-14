@@ -8,29 +8,22 @@
 
 <div class="grid-container">
 		<div class="item1">
-				<div class="logo">TRANSALTE~</div>
+				<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
+
 		</div>
 
-		<div class="item2">
-				<nav>
-						<div class="topnav">
-							<a href="/contact">CONTACT</a>
-							<a href="/about/">ABOUT . </a>
-							<a href="/asp/">ASP . </a>
-							<a href="/index.html">HOME . </a>
-						</div>
-					</nav>
-		</div>
+		<div class="item2"></div>
 
 		<div class="item3">
 				<div class="sidenav">
 					<p>{{ page.title }}</p>
-						{% include toc.html html=content h_min=1 h_max=2 class=sidenav %}
+						{% include toc.html html=content h_min=1 h_max=3 class=sidenav %}
 					</div>
+
+
 		</div>
 
 		<div class="item4">{{ content }}</div>
-		<div class="item5>">FOOTER</div>
 
 </div>
 

@@ -7,51 +7,26 @@
 		<body>
 
 <div class="grid-container">
-		<div class="item4">
-			<div class="logo">
-				TRANSALTE~
-			</div>
-		</div>
+		
+
 		<div class="item1">
-			<nav>
-				<div class="topnav">
-					<a href="/contact">CONTACT</a>
-					<a href="/about/">ABOUT . </a>
-					<a href="/asp/">ASP . </a>
-					<a href="/index.html">HOME . </a>
-				</div>
-			</nav>
+			<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
 		</div>
+		
+		
+		<div class="item2"></div>
 
 
-		<div class="item2">
-			<div class="homenav">
-				<p>{{ page.title }}</p>
-					{% include toc.html html=content h_min=2 h_max=3 class=sidenav %}
-			</div>
-		</div>
+			<div class="item3">
+				<h1>About These Notes</h1>
+				<p>If you are new to Max / Max For Live, (or needing a refresh) it is recommended to read through the <b>Max Fundamentals</b> section. The <b>L09</b> section deals with creating <b>Audio Effect Devices</b> and <b>L10</b> covers instruments and sequencing.</p>
+				
 
-
-		<div class="item3">{{ content }}
-
-			<h1>ASP Lessons</h1>
-
+				<h3>Max Fundamentals</h3>
 						<div class="homenav">
-							<ul>
-							{% for doc in site.docs %}
-								{% if doc.category == "asp_lessons" %}
-									<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
-								{% endif %}
-							{% endfor %}
-						</ul>
-						</div>
-
-				<h1>ASP Related Articles</h1>
-
-							<div class="homenav">
 								<ul>
 								{% for doc in site.docs %}
-					      	{% if doc.category == "ASP" %}
+					      	{% if doc.category == "Max" %}
 					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
 					      	{% endif %}
 					    	{% endfor %}
@@ -60,27 +35,39 @@
 
 
 
-				</div>
+				<h3>L09 Notes</h3>
+
+				<div class="homenav">
+					<ul>
+						{% for doc in site.docs %}
+						{% if doc.category == "asp_lessons" %}
+						<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
+						{% endif %}							
+						{% endfor %}
+						</ul>
+						</div>
+
+				<h3>L10 Notes</h3>
+
+						<div class="homenav">
+								<ul>
+								{% for doc in site.docs %}
+					      	{% if doc.category == "aasp_lessons" %}
+					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
+					      	{% endif %}
+					    	{% endfor %}
+							</ul>
+							</div>
+
+				
+			</div>
+
+		<div class="item4"></div>
 
 		</div>
 
 </div>
 
-<!--
-
-<div class="maincolumn">
-				{{ content }}
-
-				<div class="sidenav">
-					<ul>
-					{% for doc in site.docs %}
-						{% if doc.category == "ASP" %}
-							<li><a href="{{ doc.url }}">{{ doc.title }}</a> <i>{{doc.summary}}</i></li>
-						{% endif %}
-					{% endfor %}
-				</ul>
-				</div>
-	</div>
 
 
 

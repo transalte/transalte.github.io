@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+			<title>Max Time Formats</title>
+		</head>
+		<body>
+
+<div class="grid-container">
+		<div class="item1">
+				<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
+
+		</div>
+
+		<div class="item2"></div>
+
+		<div class="item3">
+				<div class="sidenav">
+					<p>Max Time Formats</p>
+						<ul>
+  <li><a href="#overview">Overview</a>
+    <ul>
+      <li><a href="#time-formats">Time Formats</a></li>
+      <li><a href="#conversion">Conversion</a></li>
+      <li><a href="#further-conversions">Further Conversions</a></li>
+    </ul>
+  </li>
+</ul>
+
+					</div>
+
+
+		</div>
+
+		<div class="item4"><h1 id="overview">Overview</h1>
+
+<p><strong>Max Time Formats</strong> are how Max describes time and there are two areas to consider:</p>
+
+<h2 id="time-formats">Time Formats</h2>
+
+<p><strong>Fixed Time Values</strong> - those which stay the same regardless of the tempo of the track ie. Milliseconds; Hours/Minutes/Seconds; Samples; Frequency (Hz). For example, a millisecond is always a millisecond if the tempo is 147 or 98BPM.</p>
+
+<p>and</p>
+
+<p><strong>Tempo-Relative Time Values</strong> - lengths of time which will change accordingly in relation to the tempo ie. Bars/Beats/Units (BBU); Ticks; Note Values. For example, 1 bar at 3BPM is obviously longer than 1 bar at 300BPM. Also, when using tempo-related time values, if the BPM of a project changes, so will the timing of the objects, i.e if a delay is controlled with BBU or note values, when the tempo changes, the delay times will change along with it to reflect the change of tempo.</p>
+
+<p>Notevalues are one of the most common tempo-relative time formats, the table below shows the syntax and what each symbol corresponds to:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Note Value</th>
+      <th style="text-align: left">Tempo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1nd</td>
+      <td style="text-align: left">Dotted whole note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1n</td>
+      <td style="text-align: left">Whole note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1nt</td>
+      <td style="text-align: left">Whole note triplet</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2nd</td>
+      <td style="text-align: left">Dotted half note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2n</td>
+      <td style="text-align: left">Half note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2nt</td>
+      <td style="text-align: left">Half note triplet</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4nd</td>
+      <td style="text-align: left">Dotted quarter note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4n</td>
+      <td style="text-align: left">Quarter note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4nt</td>
+      <td style="text-align: left">Quarter note triplet</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">8nd</td>
+      <td style="text-align: left">Dotted eighth note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">8n</td>
+      <td style="text-align: left">Eighth note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">8nt</td>
+      <td style="text-align: left">Eighth note triplet</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">16nd</td>
+      <td style="text-align: left">Dotted sixteenth note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">16n</td>
+      <td style="text-align: left">Sixteenth note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">16nt</td>
+      <td style="text-align: left">Sixteenth note triplet</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">32nd</td>
+      <td style="text-align: left">Dotted thirty-second note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">32n</td>
+      <td style="text-align: left">thirty-second note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">32nt</td>
+      <td style="text-align: left">thirty-second-note triplet</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">64nd</td>
+      <td style="text-align: left">Dotted sixty-fourth note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">64n</td>
+      <td style="text-align: left">Sixty-fourth note</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">128n</td>
+      <td style="text-align: left">One-hundred-twenty-eighth note</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="conversion">Conversion</h2>
+
+<p>Depending on the project, it may be necessary to have a user select a time in a tempo-relative format but the object being controlled only accepts milliseconds as a valid input format. This can happen when using <code class="highlighter-rouge">tapin~</code> and <code class="highlighter-rouge">tapout~</code> for a delay patch. To convert from one time-format to another the main object is <code class="highlighter-rouge">translate</code>:</p>
+
+<p>The <code class="highlighter-rouge">translate</code> object has two arguments; the incoming format and then the format to be outputted. Relating to the example given above, the user wishes to select a delay-time of 1/8th triplets (8nt in notevalue syntax) but the <code class="highlighter-rouge">tapout~</code> object only responds to milliseconds. The syntax for the <code class="highlighter-rouge">translate</code> object would be as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>translate notevalues ms
+</code></pre></div></div>
+
+<p>In the context of a delay patch, the object would be configured and connected as follows:</p>
+
+<p><a href="/assets/img/timeformats_02.png"><img src="/assets/img/timeformats_02.png" alt="Translate Example" /><em>Converting Notevalues to Milliseconds</em></a></p>
+
+<p>It is possible to convert between any timeformat which can create added flexability for creating devices. A few examples:</p>
+
+<ul>
+  <li>A synth where the envelope for the amplitude can be selected in tempo divisions instead of milliseconds to provide tighter sound design in regards to timing</li>
+  <li>A compressor or gate whereby the attack and release times are in tempo format instead of milliseconds</li>
+  <li>Delay times in Bars Beats and Units instead of 1/4, 1/8th etc.</li>
+</ul>
+
+<hr />
+
+<h2 id="further-conversions">Further Conversions</h2>
+
+<p>The patch below shows a few examples of conversions using multiple <code class="highlighter-rouge">translate</code> objects:</p>
+
+<p><a href="/assets/img/timeformats_01.png"><img src="/assets/img/timeformats_01.png" alt="Time Format Conversion" /><em>Time Format Conversion with translate</em></a></p>
+
+<hr />
+
+</div>
+
+</div>
+
+
+
+
+</body>
+</html>

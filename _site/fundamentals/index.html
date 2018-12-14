@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+			<title>Max Fundamentals</title>
+		</head>
+		<body>
+
+<div class="grid-container">
+		<div class="item1">
+				<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
+
+		</div>
+
+		<div class="item2"></div>
+
+		<div class="item3">
+				<div class="sidenav">
+					<p>Max Fundamentals</p>
+						<ul>
+  <li><a href="#max-overview">Max Overview</a>
+    <ul>
+      <li><a href="#the-basics">The Basics</a>
+        <ul>
+          <li><a href="#patches">Patches</a></li>
+          <li><a href="#data-formats">Data Formats</a></li>
+          <li><a href="#objects">Objects</a></li>
+        </ul>
+      </li>
+      <li><a href="#object-details">Object Details</a>
+        <ul>
+          <li><a href="#connecting-objects">Connecting Objects</a></li>
+          <li><a href="#attributes-and-arguments">Attributes and Arguments</a></li>
+          <li><a href="#help-files-and-details">Help Files and Details</a></li>
+        </ul>
+      </li>
+      <li><a href="#patch-cords">Patch Cords</a>
+        <ul>
+          <li><a href="#patch-organisation">Patch Organisation</a></li>
+        </ul>
+      </li>
+      <li><a href="#patcher-details">Patcher Details</a>
+        <ul>
+          <li><a href="#configuring-max-for-live">Configuring Max For Live</a></li>
+          <li><a href="#creating-devices">Creating Devices</a></li>
+        </ul>
+      </li>
+      <li><a href="#default-values">Default Values</a></li>
+    </ul>
+  </li>
+</ul>
+
+					</div>
+
+
+		</div>
+
+		<div class="item4"><h1 id="max-overview">Max Overview</h1>
+<p>Max is classed as a <a href="https://en.wikipedia.org/wiki/Visual_programming_language">visual programming language</a> for music and multimedia. It has been used in a number of areas for composition, performance and research purposes.</p>
+
+<p>Programmmes made in Max, refered to as <em>patches</em> are constructed by connecting objects within a <em>patcher</em>. These objects, which perform a range of different functions, are seen as boxes within the user-interface connected via inlets (at the top of the box) and outlets (at the bottom of the box) by ‘cords’.</p>
+
+<p>There are two versions of the programme; ‘<a href="https://www.cycling74.com">Max</a>’ and ‘<a href="https://www.ableton.com/en/live/max-for-live/">Max For Live</a>’ (currently both at V8.0.2 as of 29-11-2018)</p>
+
+<p>The difference between the versions as that ‘Max’ is a standalone product whearas ‘Max For Live’ runs <em>inside</em> Ableton Live and allows for the development of ‘devices’ that run similar to plugins within the Live environment.</p>
+
+<hr />
+
+<h2 id="the-basics">The Basics</h2>
+
+<h3 id="patches">Patches</h3>
+<p>Patches are the files that are generated from Max; a patch could be a filter, an instrument, an arpegiator, a synth, a sampler and so on. There are two main formats to be aware of:</p>
+
+<ul>
+  <li>*.maxpat</li>
+  <li>*.amxd</li>
+</ul>
+
+<p>If a patch is for use in the standalone version of Max, the format would be <strong>.maxpat</strong>. When developing for Max For Live, the file format is <strong>.amxd</strong>.</p>
+
+<p>Note that even though the file-format for a device built for Ableton Live is <strong>.amxd</strong>, that file can contain other ‘sub-patches’ that would be in the <strong>.maxpat</strong> format<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
+
+<p>Max patchers (from the standalone version) can also be converted into standalone executable files that can be run without the main programme being installed.</p>
+
+<h3 id="data-formats">Data Formats</h3>
+<p>There are six basic data formats that are utilised in Max that are transmitted between the objects.</p>
+
+<ul>
+  <li>Integers (full numbers)</li>
+  <li>Floats (numbers with a decimal point)</li>
+  <li>Symbols (text)</li>
+  <li>Lists (made of multiple Integers, Floats and/or Symbols)</li>
+  <li>Bangs (to trigger a function)</li>
+  <li>Signals (audio)</li>
+</ul>
+
+<h3 id="objects">Objects</h3>
+<p>As stated, the core functionality of Max is based on ‘objects’, the connections between them and the data being transmitted.</p>
+
+<p>Objects are boxes within the programme that perform functions. These can range from simple mathematical calculations to complex filtering or routing.</p>
+
+<p>As with any programme language, the key to learning Max is becoming familiar with that language and how the objects interact with each other and can be utilised to reach an end-goal.</p>
+
+<p>The majority of objects within Max have no graphical aspect. Unless the object’s purpose is specifically for the user-inteface, it will contain the objects’s name followed by ‘arguments’ and/or ‘attributes’. UI (user-interface) based objects can display numbers, sliders, dials, buttons, drop-down-menus sliders, number boxes, dials, table editors, pull-down menus, buttons, and other means of the end-user to interact with the patch.</p>
+
+<hr />
+
+<h2 id="object-details">Object Details</h2>
+
+<h3 id="connecting-objects">Connecting Objects</h3>
+
+<h4 id="standard-connections">Standard Connections</h4>
+<p>Click on the <em>inlet</em> or <em>outlet</em> of an object and drag the cord to the <em>inlet</em> or <em>outlet</em> of another object. Upon release, the connection will be made. If the connection is not made, this is an indication that the data being sent from one object to another is not valid for those particular objects.</p>
+
+<h3 id="attributes-and-arguments">Attributes and Arguments</h3>
+<p>Attributes for an object are settings or parameters that dictate how an object is to function. An attribute would change or set a function of the object and an argument would be the value attached.</p>
+
+<p>An example of this is the <code class="highlighter-rouge">metro</code> object configured as <code class="highlighter-rouge">metro @active 250</code>. This metro is configured to be automaticaly generate ‘bang’ upon load at a rate of one bang per 250ms. The ‘@’ indicates the attribute and the agrument is the integer.</p>
+
+<p>Another example of an arguments-only object is <code class="highlighter-rouge">selector~ 4 1</code>; in this instance the object will have 4 inlets with the first being active.</p>
+
+<h3 id="help-files-and-details">Help Files and Details</h3>
+
+<p>There are a number of ways to gain further insight into an objects properties and parameters. For each object, the <strong>Inspector</strong> can be opened which will detail all of the parameters, arguments and attributes associated with that object.</p>
+
+<p>The inspector can be opened by clicking an object to highlight it and pressing <strong>cmd + i</strong> (Mac) or <strong>something + i</strong> (Windows).</p>
+
+<p>The associated helpfile can be opened by <strong>Alt+clicking</strong> the object.</p>
+
+<p>Additionaly, hovering over an object’s middle-left area will show a yellow arrow. Pressing this will open up a contextual window that will show all the available details of messages that can be sent to the object as well as related arguments and attributes.</p>
+
+<p>Nb. A list of shortcuts can be found <a href="/shortcuts">here</a></p>
+
+<hr />
+
+<h2 id="patch-cords">Patch Cords</h2>
+
+<p>There are two types of cord in Max for connecting objects when building effects or instruments. Each are coloured differenctly according to the information being transmitted.</p>
+
+<ul>
+  <li>Signals (Audio): Hatched colors</li>
+  <li>Data (symbols, lists, numbers): solid</li>
+</ul>
+
+<h3 id="patch-organisation">Patch Organisation</h3>
+
+<p>Cord connections can be ‘angled’, or ‘segmented’ to make them easier to position and to avoid overlaps and making patches easier to follow. Simply click on a cord to highlight it and press <strong>cmd+y</strong>.</p>
+
+<p>For more options, right-clicking on a cord will display the contextual menu where there are options for deleting, aligning, routing (segmenting) and removing segments. It is also possible to change the colour of the cords. Cords can also be disabled and re-enabled from this menu.</p>
+
+<h4 id="selecting-multiple-cords">Selecting Multiple Cords</h4>
+
+<p>Option+click (Mac) or Alt+click (Win) and drag over a number of cords.</p>
+
+<hr />
+
+<h2 id="patcher-details">Patcher Details</h2>
+
+<h3 id="configuring-max-for-live">Configuring Max For Live</h3>
+
+<p>To configure Max For Live, if required, refer to the <a href="https://www.ableton.com/en/manual/max-for-live/#25-1-setting-up-max-for-live">help file</a> that comes with Live.</p>
+
+<h3 id="creating-devices">Creating Devices</h3>
+
+<p>When developing in <em>Max For Live</em>, patchers are referred to as devices and come in three ‘flavours’:</p>
+
+<ul>
+  <li>Audio Effects: Filters, delays, distortions, compression etc.</li>
+  <li>Midi Effects: Arpegiators, sequencers, MIDI manipulation etc.</li>
+  <li>Instruments: Synths, samplers, drum-machines etc.</li>
+</ul>
+
+<p>To initiate any of these use the Live Browser and open drag the appropriate template onto a track in Live.</p>
+
+<blockquote>
+  <p>If you are unfamiliar with Live, or need a refresh, read the Live Concepts document<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+</blockquote>
+
+<p>Press the <strong>Max Edit Button</strong> button to open the device in the Max Editor window to begin patching.</p>
+
+<p><img src="https://cdn-resources.ableton.com/80bA26cPQ1hEJDFjpUKntxfqdmG3ZykO/static/images/manual/en/MaxEditButton_opt.d23fd1779565.png" alt="Edit Device" /><em>Max Edit Button</em></p>
+
+<p>The patch will open with the default input and outputs for that particular device.</p>
+
+<p><img src="https://cdn-resources.ableton.com/80bA26cPQ1hEJDFjpUKntxfqdmG3ZykO/static/images/manual/en/MaxPatcher_opt.b62dba32d3e6.png" alt="Audio Effect Device" /><em>Default Audio Effect Template</em></p>
+
+<hr />
+
+<h2 id="default-values">Default Values</h2>
+<p>One issue with patches that utilise a lot of Live UI elements (and even standard Max UI objects) is that when the patch or device is first loaded, all the dials, menus, number boxes, tabs etc. all resort to the default (usually lowest) value. This can be problematic in a device with a filter for example whereby the first filter type is a lowpass and the minimum cut-off frequency on a dial is 20Hz - when the user opens the patch there will most likely be no sound as it is being filtered out.</p>
+
+<p>To solve this issue a default value can be defined for each UI object in the inspector. To enter a default value, or an initial value as Max refers to it:</p>
+
+<ol>
+  <li>Open the <strong>Inspector</strong> for the specific object and under the <strong>Parameter</strong> section look for the checkbox beside ‘<strong>Initial Enable’</strong> and click it.</li>
+  <li>The ‘<strong>Initial</strong>’ parameter is now available and a chosen value can be entered</li>
+</ol>
+
+<p>On a <code class="highlighter-rouge">live.dial</code>, the value can be entered directly. However, on <code class="highlighter-rouge">live.menu</code> or <code class="highlighter-rouge">live.tab</code>, the <em>index</em> value of the menu item must be entered.</p>
+
+<p>To avoid counting through the menu choices, it is easier to set the values on the UI elements themselves <em>then</em> enable the <strong>Initial Value</strong> checkbox, this will take the current value and add it to the Initial parameter.</p>
+
+<p>When applying these values to a <code class="highlighter-rouge">live.x</code>, object it also allows the user to hit the backspace button to return to that value in the Live Session.</p>
+
+<blockquote>
+  <p>Note that when a Live session is saved and reloaded, Live will replace the Initial Value with the last saved values</p>
+</blockquote>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>An example would be a synth using <code class="highlighter-rouge">poly~</code> or an effect using <code class="highlighter-rouge">bpatcher</code> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="https://www.ableton.com/en/manual/live-concepts/">https://www.ableton.com/en/manual/live-concepts/</a> “Live Concepts” <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+</div>
+
+</div>
+
+
+
+
+</body>
+</html>
