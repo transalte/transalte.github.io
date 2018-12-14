@@ -70,3 +70,5 @@ The red waveform is the 'offset' waveform and the green is the standard output.
 To implement this in a patch;
 
 [![Stereo Chorus](/assets/img/ch_03a.png)*Stereo Chorus*](/assets/img/ch_03a.png)
+
+## Further Research
