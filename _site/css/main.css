@@ -14,7 +14,8 @@ html{
 
 body {
   background-color: whitesmoke;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -39,29 +40,30 @@ body {
 
 .item1 {
 	grid-area: logo;
-  height:10vh;
-
+  height: 50px;
+  min-height: 50px;
 }
 
 .item2 {
   grid-area: header;
-  height: 10vh;
+  height: 50px;
+  min-height: 50px;
   background-color: white;
 
 }
 
 .item3 {
   grid-area: sidenav;
-  /*border-right: 1px dashed lightgrey;*/
   padding-right: 0rem;
   overflow-y: auto;
-  height: 90vh;
+  height: calc(100vh - 50px);
+  background-color: whitesmoke;
 }
 
 .item4 {
 	grid-area: main;
     overflow-y: auto;
-    height: 90vh;
+    height: calc(100vh - 50px);
     background-color: white;
 }
 
@@ -149,7 +151,7 @@ pre > code {
 .logo {
   font-size: 1rem;
   letter-spacing: .5rem;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   text-align: left;
 }
 
