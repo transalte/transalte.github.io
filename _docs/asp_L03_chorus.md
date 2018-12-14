@@ -86,7 +86,7 @@ The red waveform is the 'offset' waveform and the green is the standard output.
 
 [![Phase Inversion](/assets/img/ch_03b.png)*Phase Inversion*](/assets/img/ch_03b.png)
 
->Note that even though `cycle~` expects a phase from 0. to 1. if the range it receives it beyond that the values are simply wrapped. In this example, with the offset, the range is 0.5 to 1.5.
+>Note that even though `cycle~` expects a phase input from 0. to 1. if the values received are outwith that range the values are simply wrapped. In this example, with the offset, the range is 0.5 to 1.5 but the cycle continues regardless.
 
 To implement this in a patch;
 

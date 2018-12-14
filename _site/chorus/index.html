@@ -122,7 +122,7 @@ Your browser does not support the audio element.
 <p><a href="/assets/img/ch_03b.png"><img src="/assets/img/ch_03b.png" alt="Phase Inversion" /><em>Phase Inversion</em></a></p>
 
 <blockquote>
-  <p>Note that even though <code class="highlighter-rouge">cycle~</code> expects a phase from 0. to 1. if the range it receives it beyond that the values are simply wrapped. In this example, with the offset, the range is 0.5 to 1.5.</p>
+  <p>Note that even though <code class="highlighter-rouge">cycle~</code> expects a phase input from 0. to 1. if the values received are outwith that range the values are simply wrapped. In this example, with the offset, the range is 0.5 to 1.5 but the cycle continues regardless.</p>
 </blockquote>
 
 <p>To implement this in a patch;</p>
