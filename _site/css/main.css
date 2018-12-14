@@ -9,7 +9,7 @@ html{
     font-family: 'Roboto Mono', monospace;
     font-weight: 300;
     line-height: 1.5rem;
-    color: dimgrey;
+    color: black;
 }
 
 body {
@@ -26,8 +26,8 @@ body {
     'logo header header header header'
     'sidenav main main main main'
     'footer footer footer footer footer';
-    margin-right: 30vw;
-    margin-left: 0vw;
+    margin-right: 0vw;
+    margin-left: 10vw;
 }
 
 
@@ -40,7 +40,7 @@ body {
 .item1 {
 	grid-area: logo;
   height:10vh;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .item2 {
@@ -51,11 +51,10 @@ body {
 
 .item3 {
   grid-area: sidenav;
-  /*border-right: 1px dashed lightgrey;*/
+  border-right: 1px dashed lightgrey;
   padding-right: 0rem;
   overflow-y: auto;
   height: 90vh;
-  background-color: whitesmoke;
 }
 
 .item4 {
@@ -126,7 +125,7 @@ h4 {
 
 p {
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 code {
@@ -288,9 +287,9 @@ hr {
 .sidenav a {
     padding: 0px;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 300;
     font-size: .875rem;
-    color: grey;
+    color: black;
 }
 
 .sidenav ul {
@@ -304,19 +303,19 @@ hr {
 
 /* Change the color of links on hover */
 .sidenav a:hover {
-    color: grey;
+    color: red;
     text-decoration: underline;
 
 }
 
 .sidenav a:visited {
-    color: grey;
+    color: black;
 }
 
 /* Add a color to the active/current link */
 .sidenav a.active {
     background-color: #4CAF50;
-    color: grey;
+    color: black;
 }
 
 /* home lists */

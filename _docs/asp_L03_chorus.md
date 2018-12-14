@@ -14,7 +14,7 @@ The chorus effect is a time-domain based effect that when applied to a signal gi
 In recording and mixing, the same effect can be produced by layering multiple recording recordings of the same material.
 
 ## Chorus Theory
-A simple chorus can be created by modulating the delay-time paramter of a delay patch. When the time parameter of a `tapin~`/`tapout~` based delay patch is adjusted, the sound will pitch up or down as falling behind and returning to the original delay time. When this 'wobbling' sound is combined with the dry signal, the effect is the 'shimmering' or pulsing sound associsated with the chorus sound.
+A simple chorus can be created by modulating the delay-time paramter of a delay patch. When the time parameter of a `tapin~`/`tapout~` based delay patch is adjusted, the sound will pitch up or down as falling behind and returning to the original delay time. When this 'wobbling' sound is combined with the dry signal, the effect is the 'shimmering' or pulsing sound associated with the chorus sound.
 
 > This lesson requires that the [delay](/delays) and [LFO](/lfos) lessons have been followed.
 
@@ -57,7 +57,15 @@ There should be a stereo quality to the chorus effect, however this is not a tru
 ### Real Stereo
 Another topology option would be to have either the modulated signals on the left and right modulate inversely to each other. This requires inverting the output form the LFO so that as one delay paramater is falling the other is rising.
 
+The image below shows that by offsetting the output from `phasor~` by 0.5, it will be 180deg out of phase with an unadjusted output. 
+
+>Note that even though `cycle~` expects a phase from 0. to 1. if the range it receives it beyond that the values are simply wrapped. In this example, with the offset, the range is 0.5 to 1.5.
+
+The red waveform is the 'offset' waveform and the green is the standard output. 
+
 [![Phase Inversion](/assets/img/ch_03b.png)*Phase Inversion*](/assets/img/ch_03b.png) 
+
+To implement this in a patch;
 
 [![Stereo Chorus](/assets/img/ch_03a.png)*Stereo Chorus*](/assets/img/ch_03a.png) 
 

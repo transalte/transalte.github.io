@@ -43,7 +43,7 @@
 <p>In recording and mixing, the same effect can be produced by layering multiple recording recordings of the same material.</p>
 
 <h2 id="chorus-theory">Chorus Theory</h2>
-<p>A simple chorus can be created by modulating the delay-time paramter of a delay patch. When the time parameter of a <code class="highlighter-rouge">tapin~</code>/<code class="highlighter-rouge">tapout~</code> based delay patch is adjusted, the sound will pitch up or down as falling behind and returning to the original delay time. When this ‘wobbling’ sound is combined with the dry signal, the effect is the ‘shimmering’ or pulsing sound associsated with the chorus sound.</p>
+<p>A simple chorus can be created by modulating the delay-time paramter of a delay patch. When the time parameter of a <code class="highlighter-rouge">tapin~</code>/<code class="highlighter-rouge">tapout~</code> based delay patch is adjusted, the sound will pitch up or down as falling behind and returning to the original delay time. When this ‘wobbling’ sound is combined with the dry signal, the effect is the ‘shimmering’ or pulsing sound associated with the chorus sound.</p>
 
 <blockquote>
   <p>This lesson requires that the <a href="/delays">delay</a> and <a href="/lfos">LFO</a> lessons have been followed.</p>
@@ -92,7 +92,17 @@
 <h3 id="real-stereo">Real Stereo</h3>
 <p>Another topology option would be to have either the modulated signals on the left and right modulate inversely to each other. This requires inverting the output form the LFO so that as one delay paramater is falling the other is rising.</p>
 
+<p>The image below shows that by offsetting the output from <code class="highlighter-rouge">phasor~</code> by 0.5, it will be 180deg out of phase with an unadjusted output.</p>
+
+<blockquote>
+  <p>Note that even though <code class="highlighter-rouge">cycle~</code> expects a phase from 0. to 1. if the range it receives it beyond that the values are simply wrapped. In this example, with the offset, the range is 0.5 to 1.5.</p>
+</blockquote>
+
+<p>The red waveform is the ‘offset’ waveform and the green is the standard output.</p>
+
 <p><a href="/assets/img/ch_03b.png"><img src="/assets/img/ch_03b.png" alt="Phase Inversion" /><em>Phase Inversion</em></a></p>
+
+<p>To implement this in a patch;</p>
 
 <p><a href="/assets/img/ch_03a.png"><img src="/assets/img/ch_03a.png" alt="Stereo Chorus" /><em>Stereo Chorus</em></a></p>
 

@@ -11,7 +11,7 @@ lastupdate: 03-12-2018
 # Overview
 Signals and parameter values can be controlled and manipulated automatically in realtime through *modulation* instead of using automation or manually changing a control by hand. 
 
-A simple example of this can be found in a tremelo effect whereby the gain of a signal is manipulated in real-time (modulated in other words) via an LFO (Low Frequency Oscillator) to rise and fall rhythmically. The standard controls over the volume in such an effect would be the shape of the movement (the selected waveform), the speed of the movement (rate) adn the intensity (the depth). 
+A simple example of this can be found in a tremelo effect whereby the gain of a signal is manipulated in real-time (modulated in other words) via an LFO (Low Frequency Oscillator) to rise and fall rhythmically. The standard controls over the volume in such an effect would be the shape of the movement (the selected waveform), the speed of the movement (rate) and the intensity (the depth). 
 
 A similar example would be an *auto-pan* effect whereby the pan position of a sound appears to move from one channel to the other and back again automatically.
 
