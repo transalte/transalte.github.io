@@ -5,7 +5,7 @@
 * { box-sizing: border-box;}
 
 html{
-    font-size: 14px;
+    font-size: 12px;
     font-family: 'Roboto Mono', monospace;
     font-weight: 300;
     line-height: 1.5rem;
@@ -28,7 +28,8 @@ body {
     'sidenav main main main main'
     'footer footer footer footer footer';
     margin-right: 0vw;
-    margin-left: 10vw;
+    margin-left: 0vw;
+    background-color: white;
 }
 
 
@@ -42,6 +43,7 @@ body {
 	grid-area: logo;
   height: 50px;
   min-height: 50px;
+  background-color: whitesmoke;
 }
 
 .item2 {
@@ -61,10 +63,11 @@ body {
 }
 
 .item4 {
-	grid-area: main;
+	  grid-area: main;
     overflow-y: auto;
     height: calc(100vh - 50px);
     background-color: white;
+    width: 100ch;
 }
 
 /* LINKS */
@@ -394,5 +397,6 @@ hr {
     .item4 {
       grid-area: main;
       overflow: visible;height: 100%;
+      width: 100%;
 
 }

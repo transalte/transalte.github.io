@@ -21,7 +21,6 @@ The selector~/selector object permits a 'many-to-one' signal selection. The argu
 
 The selection occurs when an integer is sent to the first inlet. With the `selector~ 4 1` example, sending '1' to the object lets thorugh the first, and so on. Sending a '0' however will block all signals from passing through.
 
-#### Example Patch
 
 #### Common Errors
 
@@ -32,14 +31,9 @@ The selection occurs when an integer is sent to the first inlet. With the `selec
 
 ## One-to-Many
 
-### Gates 
+### Gates
 
 The `gate~` object, and its counterparts, are the 'one-to-many' equivilent of `selector~`. The arguments are similar i.e `gate~ 4` would create a gate with four outlets for the single input.
-
-`gate~` / `gate` / `ggate`
-
-
-#### Example Patch
 
 ---
 
@@ -47,17 +41,6 @@ The `gate~` object, and its counterparts, are the 'one-to-many' equivilent of `s
 
 ### matrix~
 
-Overview text here
-
-#### Example Patch
-
-#### Common Errors
-
-### router
-
-#### Example Patch
-
-#### Common Errors
 
 ---
 

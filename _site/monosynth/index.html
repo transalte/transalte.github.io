@@ -30,15 +30,8 @@
       </li>
       <li><a href="#envelopes">Envelopes</a>
         <ul>
-          <li><a href="#standard">Standard</a></li>
-          <li><a href="#exponential">Exponential</a></li>
-          <li><a href="#modulation">Modulation</a></li>
-        </ul>
-      </li>
-      <li><a href="#velocity">Velocity</a>
-        <ul>
-          <li><a href="#modulation-1">Modulation</a></li>
-          <li><a href="#sensitivity">Sensitivity</a></li>
+          <li><a href="#linear-envelopes">Linear Envelopes</a></li>
+          <li><a href="#exponential-envelopes">Exponential Envelopes</a></li>
         </ul>
       </li>
     </ul>
@@ -50,7 +43,7 @@
 
 		</div>
 
-		<div class="item4"><h1 id="overview">Overview</h1>
+		<div class="item4"><article><h1 id="overview">Overview</h1>
 
 <p>This lession is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.</p>
 
@@ -127,6 +120,8 @@ MIDI Note 127 = G9
 
 <p><a href="/assets/img/aasp_monosynth_05.png"><img src="/assets/img/aasp_monosynth_05.png" alt="Note Priority with ddg.mono" /><em>Note priority with ddg.mono</em></a></p>
 
+<hr />
+
 <h2 id="envelopes">Envelopes</h2>
 <p>The envelope of a sound is how it’s amplitude changes over time and is typically described via a the following stages; the attack, decay, sustain and release.</p>
 
@@ -134,7 +129,7 @@ MIDI Note 127 = G9
 
 <p>There are a number of ways to create an envelope in Max, each of varying levels of complexity and features. In this example, a standard Attack, Decay, Sustain, Release envelope will be implemented.</p>
 
-<h3 id="standard">Standard</h3>
+<h3 id="linear-envelopes">Linear Envelopes</h3>
 <p>The <code class="highlighter-rouge">adsr~</code> object is an envelope generator. There are five inlets, the first is allocated to starting the envelope and to what peak amplitide it should go to - this will be fed from the velocity data in the patch. The remaining inlets are for the Attack and Decay times, the sustain level, and the releaes time.</p>
 
 <p><a href="/assets/img/aasp_monosynth_08_adsr01.png"><img src="/assets/img/aasp_monosynth_08_adsr01.png" alt="adsr~ Object" /><em>adsr~ Object</em></a></p>
@@ -151,25 +146,25 @@ MIDI Note 127 = G9
 
 <p><a href="/assets/img/aasp_monosynth_09_env.png"><img src="/assets/img/aasp_monosynth_09_env.png" alt="adsr~ Envelope" /><em>adsr~ Envelope</em></a></p>
 
-<h3 id="exponential">Exponential</h3>
-<p>The output from <code class="highlighter-rouge">adsr~</code> is linear by design i.e straight lines between the stages. Exponential envelopes, i.e curved, can sound more natural and are better for persussive sounds in particular.</p>
+<h3 id="exponential-envelopes">Exponential Envelopes</h3>
+<p>The output from <code class="highlighter-rouge">adsr~</code> is linear by design i.e straight lines between the stages. Exponential envelopes, i.e curved, can sound more natural and are better for persussive sounds in particular:</p>
 
 <p><a href="/assets/img/aasp_monosynth_07_env.png"><img src="/assets/img/aasp_monosynth_07_env.png" alt="Exponential ADSR Envelope" /><em>Exponential ADSR Envelope</em></a></p>
 
-<p>A quick way to achieve this is to multiply the output of the <code class="highlighter-rouge">adsr~</code> envelope by itself:</p>
+<p>A quick way to achieve this is to multiply the output of the <code class="highlighter-rouge">adsr~</code> envelope by itself<sup id="fnref:exp"><a href="#fn:exp" class="footnote">1</a></sup>:</p>
 
 <p><a href="/assets/img/aasp_monosynth_11_env.png"><img src="/assets/img/aasp_monosynth_11_env.png" alt="Exponential adsr~ Envelope" /><em>Exponential adsr~ Envelope</em></a></p>
 
-<p>Note the change in the curve as the amplitude moves from one value to the next. This curvature would also be present in the attack stages of the envelope too. In this example above, the output from the envelopes are multiplied by themselves to increase the curve of the envelope. This can be useful for transient based sounds such as percussive elements.</p>
+<p>Note the change in the curve of the envelopes. This curvature would also be present in the attack stages of the envelope too. In this example above, the output from the envelopes are multiplied by themselves to increase the curve of the envelope. This can be useful for transient based sounds such as percussion or plucked sounds.</p>
 
-<h3 id="modulation">Modulation</h3>
-
-<h2 id="velocity">Velocity</h2>
-<p>So far the velocity information has been used to modulate the amplitude of the oscillator output with each keypress.</p>
-<h3 id="modulation-1">Modulation</h3>
-<h3 id="sensitivity">Sensitivity</h3>
-
+<div class="footnotes">
+  <ol>
+    <li id="fn:exp">
+      <p>There are a number of ways to create exponential envelopes in Max; this is simply one of the quickest and most CPU-friendly methods of doing so <a href="#fnref:exp" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
+</article></div>
 
 </div>
 

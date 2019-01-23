@@ -36,7 +36,6 @@
       <li><a href="#many-to-many">Many-to-Many</a>
         <ul>
           <li><a href="#matrix">matrix~</a></li>
-          <li><a href="#router">router</a></li>
         </ul>
       </li>
       <li><a href="#cordless-connections">Cordless Connections</a></li>
@@ -50,7 +49,7 @@
 
 		</div>
 
-		<div class="item4"><h1 id="section-overview">Section Overview</h1>
+		<div class="item4"><article><h1 id="section-overview">Section Overview</h1>
 <p>There are a number of methods of routing within Max; direct point-to-point connections, ‘cordless’, dynamic; one-to-many, many-to-many, and so on. This section covers each with examples and a context.</p>
 
 <hr />
@@ -62,8 +61,6 @@
 <p>The selector~/selector object permits a ‘many-to-one’ signal selection. The arguments for the object dictate how many inputs there are and which is being passed through the object upon load. i.e <code class="highlighter-rouge">selector~ 4 1</code> would create 4 inputs with the first input signal being passed through. Note that there will be 5 inlets in the object with the first being reserved for the selection choice.</p>
 
 <p>The selection occurs when an integer is sent to the first inlet. With the <code class="highlighter-rouge">selector~ 4 1</code> example, sending ‘1’ to the object lets thorugh the first, and so on. Sending a ‘0’ however will block all signals from passing through.</p>
-
-<h4 id="example-patch">Example Patch</h4>
 
 <h4 id="common-errors">Common Errors</h4>
 
@@ -80,27 +77,11 @@
 
 <p>The <code class="highlighter-rouge">gate~</code> object, and its counterparts, are the ‘one-to-many’ equivilent of <code class="highlighter-rouge">selector~</code>. The arguments are similar i.e <code class="highlighter-rouge">gate~ 4</code> would create a gate with four outlets for the single input.</p>
 
-<p><code class="highlighter-rouge">gate~</code> / <code class="highlighter-rouge">gate</code> / <code class="highlighter-rouge">ggate</code></p>
-
-<h4 id="example-patch-1">Example Patch</h4>
-
 <hr />
 
 <h2 id="many-to-many">Many-to-Many</h2>
 
 <h3 id="matrix">matrix~</h3>
-
-<p>Overview text here</p>
-
-<h4 id="example-patch-2">Example Patch</h4>
-
-<h4 id="common-errors-1">Common Errors</h4>
-
-<h3 id="router">router</h3>
-
-<h4 id="example-patch-3">Example Patch</h4>
-
-<h4 id="common-errors-2">Common Errors</h4>
 
 <hr />
 
@@ -131,7 +112,7 @@
 <p>Notice that the <code class="highlighter-rouge">receive~</code> and <code class="highlighter-rouge">receive</code> objects have a top-left inlet. This is used to ‘over-ride’ the allocated ‘cordless’ source.</p>
 
 <hr />
-</div>
+</article></div>
 
 </div>
 

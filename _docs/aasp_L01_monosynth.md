@@ -89,6 +89,8 @@ There are some playability issues with the patch as it is at the moment relating
 
 
 
+---
+
 ## Envelopes
 The envelope of a sound is how it's amplitude changes over time and is typically described via a the following stages; the attack, decay, sustain and release.
 
@@ -96,7 +98,7 @@ The envelope of a sound is how it's amplitude changes over time and is typically
 
 There are a number of ways to create an envelope in Max, each of varying levels of complexity and features. In this example, a standard Attack, Decay, Sustain, Release envelope will be implemented.
 
-### Standard
+### Linear Envelopes
 The `adsr~` object is an envelope generator. There are five inlets, the first is allocated to starting the envelope and to what peak amplitide it should go to - this will be fed from the velocity data in the patch. The remaining inlets are for the Attack and Decay times, the sustain level, and the releaes time.
 
 [![adsr~ Object](/assets/img/aasp_monosynth_08_adsr01.png)*adsr~ Object*](/assets/img/aasp_monosynth_08_adsr01.png)
@@ -112,27 +114,19 @@ In the example above, the envelope would be a more percussive sound with no sust
 [![adsr~ Envelope](/assets/img/aasp_monosynth_09_env.png)*adsr~ Envelope*](/assets/img/aasp_monosynth_09_env.png)
 
 
-### Exponential
-The output from `adsr~` is linear by design i.e straight lines between the stages. Exponential envelopes, i.e curved, can sound more natural and are better for persussive sounds in particular.
+### Exponential Envelopes
+The output from `adsr~` is linear by design i.e straight lines between the stages. Exponential envelopes, i.e curved, can sound more natural and are better for persussive sounds in particular:
 
 [![Exponential ADSR Envelope](/assets/img/aasp_monosynth_07_env.png)*Exponential ADSR Envelope*](/assets/img/aasp_monosynth_07_env.png)
 
 
 
-A quick way to achieve this is to multiply the output of the `adsr~` envelope by itself:
+A quick way to achieve this is to multiply the output of the `adsr~` envelope by itself[^exp]:
 
 [![Exponential adsr~ Envelope](/assets/img/aasp_monosynth_11_env.png)*Exponential adsr~ Envelope*](/assets/img/aasp_monosynth_11_env.png)
 
-Note the change in the curve as the amplitude moves from one value to the next. This curvature would also be present in the attack stages of the envelope too. In this example above, the output from the envelopes are multiplied by themselves to increase the curve of the envelope. This can be useful for transient based sounds such as percussive elements.  
-
-
-### Modulation
-
-## Velocity
-So far the velocity information has been used to modulate the amplitude of the oscillator output with each keypress.
-### Modulation
-### Sensitivity
+Note the change in the curve of the envelopes. This curvature would also be present in the attack stages of the envelope too. In this example above, the output from the envelopes are multiplied by themselves to increase the curve of the envelope. This can be useful for transient based sounds such as percussion or plucked sounds.
 
 
 
-[^vel]: conversion required as signal amplitudes run from 0. (full attenuation) to 1.(unity gain)
+[^exp]: There are a number of ways to create exponential envelopes in Max; this is simply one of the quickest and most CPU-friendly methods of doing so
