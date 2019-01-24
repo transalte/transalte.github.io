@@ -15,10 +15,13 @@ In recording and mixing, a similar effect can be produced by layering multiple r
 
 > This lesson requires that the [delay](/delays) and [LFO](/lfos) lessons have been followed.
 
+---
+
 ## Chorus Theory
 In Max, a simple chorus can be created by modulating the delay-time parameter of a delay patch with an LFO. When the time parameter of a `tapin~`/`tapout~`-based delay patch is constantly adjusted, the sound will pitch up and down, falling behind and catching up with the original signal. When this 'drifting' sound is combined with the dry signal, the effect is the 'shimmering' or pulsing sound associated with the chorus sound. The core concept of the effect is shown in the image below:
 
 [![Chorus Diagram](/assets/img/ch_04.png)*Basic Chorus*](/assets/img/ch_04.png)
+
 
 ### Audio Examples
 
@@ -36,7 +39,7 @@ In the following synth example[^1], the chorus effect can be heard blending in w
 Your browser does not support the audio element.
 </audio>
 
-
+---
 
 ## Topologies
 
@@ -90,6 +93,8 @@ The red waveform is the 'offset' waveform and the green is the standard output.
 To implement this in a patch;
 
 [![Stereo Chorus](/assets/img/ch_03a.png)*Stereo Chorus*](/assets/img/ch_03a.png)
+
+---
 
 ## Further Research
 
