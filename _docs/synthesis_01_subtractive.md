@@ -1,7 +1,7 @@
 ---
 title: Synthesis Methods
 layout: content
-category: aasp_lessons
+category: TBC
 order: 1
 permalink: /synthesis/
 summary: An overview of different synthesis methods
