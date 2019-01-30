@@ -4,7 +4,7 @@ layout: content
 category: aasp_lessons
 order: 1
 permalink: /monosynth/
-summary: An introduction to instruments
+summary: Building a basic monophonic subtractive synth. MIDI data processing, oscillators, envelopes and tuning.
 lastupdate: 14-12-2018
 ---
 
