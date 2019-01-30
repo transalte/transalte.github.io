@@ -127,6 +127,8 @@ A quick way to achieve this is to multiply the output of the `adsr~` envelope by
 
 Note the change in the curve of the envelopes. This curvature would also be present in the attack stages of the envelope too. In this example above, the output from the envelopes are multiplied by themselves to increase the curve of the envelope. This can be useful for transient based sounds such as percussion or plucked sounds.
 
+## Tuning
+
 
 
 [^exp]: There are a number of ways to create exponential envelopes in Max; this is simply one of the quickest and most CPU-friendly methods of doing so
