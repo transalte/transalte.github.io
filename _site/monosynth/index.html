@@ -34,6 +34,13 @@
           <li><a href="#exponential-envelopes">Exponential Envelopes</a></li>
         </ul>
       </li>
+      <li><a href="#tuning-oscillators">Tuning Oscillators</a>
+        <ul>
+          <li><a href="#semi-tones">Semi-tones</a></li>
+          <li><a href="#octaves">Octaves</a></li>
+          <li><a href="#de-tune">De-tune</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -156,6 +163,38 @@ MIDI Note 127 = G9
 <p><a href="/assets/img/aasp_monosynth_11_env.png"><img src="/assets/img/aasp_monosynth_11_env.png" alt="Exponential adsr~ Envelope" /><em>Exponential adsr~ Envelope</em></a></p>
 
 <p>Note the change in the curve of the envelopes. This curvature would also be present in the attack stages of the envelope too. In this example above, the output from the envelopes are multiplied by themselves to increase the curve of the envelope. This can be useful for transient based sounds such as percussion or plucked sounds.</p>
+
+<h2 id="tuning-oscillators">Tuning Oscillators</h2>
+<p>Tuning oscillators is generally kept to three areas:</p>
+
+<ul>
+  <li>Semi-tones</li>
+  <li>Octaves</li>
+  <li>De-tune (Hz)</li>
+</ul>
+
+<p>All areas can be controlled by simple number manipulation of the MIDI notes received by the patch.</p>
+
+<h3 id="semi-tones">Semi-tones</h3>
+
+<p>Semi-tone tuning can be achieved by simply adding or subtracting to the incoming MIDI note by the desired amount:</p>
+
+<p><a href="/assets/img/aasp_monosynth_16.png"><img src="/assets/img/aasp_monosynth_16.png" alt="Semi-tone Tuning" /><em>Semi-tone Tuning</em></a></p>
+
+<p>In the patch above, a <code class="highlighter-rouge">live.numbox</code> UI object has been used with a <em>Range/Enum</em> of <em>-12</em> to <em>12</em> to provide an octave up and down in semi-tones. The <em>Type</em> has been set to <em>Int</em> to avoid any fractional numbers being added which wouold confuse the <code class="highlighter-rouge">mtof</code> object. The ‘st’, comes from the <em>Unit Style</em> being selected as ‘Semitones’ in the inspector.</p>
+
+<h3 id="octaves">Octaves</h3>
+<p>As an octave consists of 12 semi-tones, a simple multipier can be utilised:</p>
+
+<p><a href="/assets/img/aasp_monosynth_17.png"><img src="/assets/img/aasp_monosynth_17.png" alt="Octave Tuning" /><em>Octave Tuning</em></a></p>
+
+<p>In this case, the <code class="highlighter-rouge">live.numbox</code> has a range of -4 to 4, and configured in the same way as the semi-tone tuning object. The only difference here is that the <em>Unit Style</em> was set to <em>Custom</em> and ‘Oct’ was added as the unit.</p>
+
+<h3 id="de-tune">De-tune</h3>
+
+<p>As detune dials are normally in Hertz, the patch must be adjusted to allow the pitch manipulation to occur after the MIDI note has been conferted to a frequency via the <code class="highlighter-rouge">mtof</code> object:</p>
+
+<p><a href="/assets/img/aasp_monosynth_18.png"><img src="/assets/img/aasp_monosynth_18.png" alt="De-tune in Hz" /><em>De-tune in Hz</em></a></p>
 
 <div class="footnotes">
   <ol>

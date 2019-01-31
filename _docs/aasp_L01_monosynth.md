@@ -4,7 +4,7 @@ layout: content
 category: aasp_lessons
 order: 1
 permalink: /monosynth/
-summary: Building a basic monophonic subtractive synth. MIDI data processing, oscillators, envelopes and tuning.
+summary: MIDI data, oscillators, envelopes and tuning.
 lastupdate: 14-12-2018
 ---
 
@@ -127,7 +127,38 @@ A quick way to achieve this is to multiply the output of the `adsr~` envelope by
 
 Note the change in the curve of the envelopes. This curvature would also be present in the attack stages of the envelope too. In this example above, the output from the envelopes are multiplied by themselves to increase the curve of the envelope. This can be useful for transient based sounds such as percussion or plucked sounds.
 
-## Tuning
+## Tuning Oscillators
+Tuning oscillators is generally kept to three areas:
+
+* Semi-tones
+* Octaves
+* De-tune (Hz)
+
+All areas can be controlled by simple number manipulation of the MIDI notes received by the patch.
+
+### Semi-tones
+
+Semi-tone tuning can be achieved by simply adding or subtracting to the incoming MIDI note by the desired amount:
+
+[![Semi-tone Tuning](/assets/img/aasp_monosynth_16.png)*Semi-tone Tuning*](/assets/img/aasp_monosynth_16.png)
+
+In the patch above, a `live.numbox` UI object has been used with a *Range/Enum* of *-12* to *12* to provide an octave up and down in semi-tones. The *Type* has been set to *Int* to avoid any fractional numbers being added which wouold confuse the `mtof` object. The 'st', comes from the *Unit Style* being selected as 'Semitones' in the inspector.
+
+### Octaves
+As an octave consists of 12 semi-tones, a simple multipier can be utilised:
+
+[![Octave Tuning](/assets/img/aasp_monosynth_17.png)*Octave Tuning*](/assets/img/aasp_monosynth_17.png)
+
+In this case, the `live.numbox` has a range of -4 to 4, and configured in the same way as the semi-tone tuning object. The only difference here is that the *Unit Style* was set to *Custom* and 'Oct' was added as the unit.
+
+### De-tune
+
+As detune dials are normally in Hertz, the patch must be adjusted to allow the pitch manipulation to occur after the MIDI note has been conferted to a frequency via the `mtof` object:
+
+[![De-tune in Hz](/assets/img/aasp_monosynth_18.png)*De-tune in Hz*](/assets/img/aasp_monosynth_18.png)
+
+
+
 
 
 
