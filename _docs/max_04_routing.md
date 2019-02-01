@@ -17,16 +17,17 @@ There are a number of methods of routing within Max; direct point-to-point conne
 
 ### selector~ / switch
 
-The selector~/selector object permits a 'many-to-one' signal selection. The arguments for the object dictate how many inputs there are and which is being passed through the object upon load. i.e `selector~ 4 1` would create 4 inputs with the first input signal being passed through. Note that there will be 5 inlets in the object with the first being reserved for the selection choice.
+The `selector~` object permits a 'many-to-one' signal selection. The arguments for the object dictate how many inputs there are and which is being passed through the object upon load. i.e `selector~ 4 1` would create 4 inputs with the first input signal being passed through. Note that there will be 5 inlets in the object with the first being reserved for the selection choice.
 
 [![Signal Routing with `selector~`](/assets/img/asp_menuSelector.png)*Signal Routing with `selector~`*](/assets/img/asp_menuSelector.png)
 
 The selection occurs when an integer is sent to the first inlet. With the `selector~ 4 1` example, sending '1' to the object lets thorugh the first, and so on. Sending a '0' however will block all signals from passing through.
 
+The `switch` object is the message/data equivilent of `selector~` and works in the same way.
 
 #### Common Errors
 
-- Forgetting the `+ 1` after the selection method i.e `live.menu` > `+ 1` > `selector 4 1`
+- Forgetting the `+ 1` after the selection method i.e `live.menu` > `+ 1` > `selector~ 4 1`
 - Connecting an input into the first inlet as it is reserved for the routing selection.
 
 ---

@@ -58,16 +58,18 @@
 
 <h3 id="selector--switch">selector~ / switch</h3>
 
-<p>The selector~/selector object permits a ‘many-to-one’ signal selection. The arguments for the object dictate how many inputs there are and which is being passed through the object upon load. i.e <code class="highlighter-rouge">selector~ 4 1</code> would create 4 inputs with the first input signal being passed through. Note that there will be 5 inlets in the object with the first being reserved for the selection choice.</p>
+<p>The <code class="highlighter-rouge">selector~</code> object permits a ‘many-to-one’ signal selection. The arguments for the object dictate how many inputs there are and which is being passed through the object upon load. i.e <code class="highlighter-rouge">selector~ 4 1</code> would create 4 inputs with the first input signal being passed through. Note that there will be 5 inlets in the object with the first being reserved for the selection choice.</p>
 
 <p><a href="/assets/img/asp_menuSelector.png"><img src="/assets/img/asp_menuSelector.png" alt="Signal Routing with `selector~`" /><em>Signal Routing with <code class="highlighter-rouge">selector~</code></em></a></p>
 
 <p>The selection occurs when an integer is sent to the first inlet. With the <code class="highlighter-rouge">selector~ 4 1</code> example, sending ‘1’ to the object lets thorugh the first, and so on. Sending a ‘0’ however will block all signals from passing through.</p>
 
+<p>The <code class="highlighter-rouge">switch</code> object is the message/data equivilent of <code class="highlighter-rouge">selector~</code> and works in the same way.</p>
+
 <h4 id="common-errors">Common Errors</h4>
 
 <ul>
-  <li>Forgetting the <code class="highlighter-rouge">+ 1</code> after the selection method i.e <code class="highlighter-rouge">live.menu</code> &gt; <code class="highlighter-rouge">+ 1</code> &gt; <code class="highlighter-rouge">selector 4 1</code></li>
+  <li>Forgetting the <code class="highlighter-rouge">+ 1</code> after the selection method i.e <code class="highlighter-rouge">live.menu</code> &gt; <code class="highlighter-rouge">+ 1</code> &gt; <code class="highlighter-rouge">selector~ 4 1</code></li>
   <li>Connecting an input into the first inlet as it is reserved for the routing selection.</li>
 </ul>
 
