@@ -60,6 +60,8 @@
 
 <p>The selector~/selector object permits a ‘many-to-one’ signal selection. The arguments for the object dictate how many inputs there are and which is being passed through the object upon load. i.e <code class="highlighter-rouge">selector~ 4 1</code> would create 4 inputs with the first input signal being passed through. Note that there will be 5 inlets in the object with the first being reserved for the selection choice.</p>
 
+<p><a href="/assets/img/asp_menuSelector.png"><img src="/assets/img/asp_menuSelector.png" alt="Signal Routing with `selector~`" /><em>Signal Routing with <code class="highlighter-rouge">selector~</code></em></a></p>
+
 <p>The selection occurs when an integer is sent to the first inlet. With the <code class="highlighter-rouge">selector~ 4 1</code> example, sending ‘1’ to the object lets thorugh the first, and so on. Sending a ‘0’ however will block all signals from passing through.</p>
 
 <h4 id="common-errors">Common Errors</h4>
