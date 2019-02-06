@@ -8,7 +8,7 @@ summary: Building LFO's for modulation
 lastupdate: 03-12-2018
 ---
 
-# Overview
+# LFO Modulation
 Signals and parameter values can be controlled and manipulated automatically in realtime through *modulation* instead of using automation or manually changing a control by hand.
 
 A simple example of this can be found in a tremelo effect whereby the gain of a signal is manipulated in real-time (modulated in other words) via an LFO (Low Frequency Oscillator) to rise and fall rhythmically. The standard controls over the volume in such an effect would be the shape of the movement (the selected waveform), the speed of the movement (rate) and the intensity (the depth).

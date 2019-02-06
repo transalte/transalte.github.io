@@ -9,7 +9,7 @@ summary: MIDI data, oscillators, envelopes and tuning.
 lastupdate: 14-12-2018
 ---
 
-# Monosynth Overview
+# Basic Monosynth Overview
 
 This lession is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.
 

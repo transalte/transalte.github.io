@@ -8,7 +8,7 @@ summary: Routing messages, signals, bypassing, selecting
 lastupdate: 29-11-2018
 ---
 
-# Section Overview
+# Routing in Max
 There are a number of methods of routing within Max; direct point-to-point connections, 'cordless', dynamic; one-to-many, many-to-many, and so on. This section covers each with examples and a context.
 
 ---

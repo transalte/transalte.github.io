@@ -8,7 +8,7 @@ summary: An overview of the MIDI specification
 lastupdate: 20-12-2018
 ---
 
-# What Is MIDI?
+# MIDI Summary
 
 MIDI, (Musical Instrument Digital Interface) is a technical standard developed to permit the communication between digital musical instruments, computers, tablets, and smartphones. The specification comprises three main elements:
 

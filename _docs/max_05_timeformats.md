@@ -7,7 +7,7 @@ permalink: /timeformats/
 summary: Details on how Max deals with timing formats
 ---
 
-# Overview
+# Max Time Formats
 
 **Max Time Formats** are how Max describes time and there are two areas to consider:
 
@@ -24,7 +24,7 @@ Notevalues are one of the most common tempo-relative time formats, the table bel
 
 | Note Value | Tempo |
 |:--|:--|
-1nd | Dotted whole note | 
+1nd | Dotted whole note |
 1n | Whole note |
 1nt |Whole note triplet|
 2nd|Dotted half note|
@@ -60,7 +60,7 @@ translate notevalues ms
 
 In the context of a delay patch, the object would be configured and connected as follows:
 
-[![Translate Example](/assets/img/timeformats_02.png)*Converting Notevalues to Milliseconds*](/assets/img/timeformats_02.png) 
+[![Translate Example](/assets/img/timeformats_02.png)*Converting Notevalues to Milliseconds*](/assets/img/timeformats_02.png)
 
 
 It is possible to convert between any timeformat which can create added flexability for creating devices. A few examples:
@@ -75,7 +75,6 @@ It is possible to convert between any timeformat which can create added flexabil
 
 The patch below shows a few examples of conversions using multiple `translate` objects:
 
-[![Time Format Conversion](/assets/img/timeformats_01.png)*Time Format Conversion with translate*](/assets/img/timeformats_01.png)   
+[![Time Format Conversion](/assets/img/timeformats_01.png)*Time Format Conversion with translate*](/assets/img/timeformats_01.png)
 
 ---
-

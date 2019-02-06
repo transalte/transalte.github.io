@@ -8,7 +8,7 @@ summary: Building a basic filter
 lastupdate: 29-11-2018
 ---
 
-# Section Overview
+# First Device
 
 This lesson is an introduction to **Max For Live** covering the main mechanics of the application by creating a complete device. This device will be a straight-forward stereo filter with the following features:
 

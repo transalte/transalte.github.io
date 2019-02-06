@@ -8,7 +8,8 @@ summary: Working with sub-patches
 lastupdate: 03-12-2018
 ---
 
-# Overview 
+# Encapsulation
+
 Max patches can regulary become busy and hard-to-follow as they increase in complexity. One method of dealing with this is the concept of *encapsulation*, or, the creation of sub-patches within a patch.
 
 An example would be a complex LFO being 'encapsulated' from many objects and connections down to a single `p LFO` object. The screenshot below shows a basic LFO on the left with the encapsulated version on the right.
