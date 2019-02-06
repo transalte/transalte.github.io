@@ -2,6 +2,7 @@
 title: Basic Monosynth
 layout: content
 category: aasp_lessons
+author: Robert Goldie
 order: 1
 permalink: /monosynth/
 summary: MIDI data, oscillators, envelopes and tuning.
