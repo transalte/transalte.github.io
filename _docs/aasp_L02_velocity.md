@@ -69,7 +69,7 @@ The concept here is to gain control over the incoming velocity values. Consider 
 | ------------------------------------ | ------------------------------------------------------- |
 | No sensitivity                       | Outgoing velocity fixed regardless of incoming velocity |
 | Normal sensitivity (linear)          | Outgoing velocity = incoming velocity                   |
-| Exagerated sensitivity (exponential) | Velocity is not mapped linearly against the incoming    |
+| Exaggerated sensitivity (exponential) | Velocity is not mapped linearly against the incoming    |
 
 ### No Sensitivity
 In the patch above, to create a 'no sensitivity' scaling, simply set the **Min Vel Out** and **Max Vel Out** to the same value i.e **64** and press the `button` object. Look at the graph will show how the input and output are mapped
@@ -83,7 +83,7 @@ To create a non-linearly mapped output, a few changes are made to the patch:
 
  [![Velocity Sensitivity Example 02](/assets/img/aasp_velSen_02.png)*Velocity Sensitivity Example 02*](/assets/img/aasp_velSen_02.png)
 
- The final inlet of `scale` is being used to add a concave, or convex, curve to the previously linear mapping. The **@classic 0** argument, provides control over that curve, **1** being linear, **< 0** logarithmic and **> 1** exponential. The effects of this curvature are easily heard when applied to the velocity modulation of and envelope modulating a filter frequency.  
+ The final inlet of `scale` is being used to add a concave, or convex, curve to the previously linear mapping. The **@classic 0** argument, provides control over that curve, **1** being linear, **< 0** logarithmic and **> 1** exponential. The effects of this curvature are easily heard when applied to the velocity modulation of and envelope modulating a filter frequency.
 
 ## Further Research
 Look into existing synths (hardware or software) for examples of where, and how, velocity can be utilised.
