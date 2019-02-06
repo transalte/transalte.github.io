@@ -83,7 +83,9 @@ To create a non-linearly mapped output, a few changes are made to the patch:
 
  [![Velocity Sensitivity Example 02](/assets/img/aasp_velSen_02.png)*Velocity Sensitivity Example 02*](/assets/img/aasp_velSen_02.png)
 
- The final inlet of `scale` is being used to add a concave, or convex, curve to the previously linear mapping. The **@classic 0** argument, provides control over that curve, **1** being linear, **< 0** logarithmic and **> 1** exponential. The effects of this curvature are easily heard when applied to the velocity modulation of and envelope modulating a filter frequency.
+ The final inlet of `scale` is being used to add a concave, or convex, curve to the previously linear mapping. The **@classic 0** argument, provides control over that curve, **1** being linear, **< 0** logarithmic and **> 1** exponential.
+
+ The effects of this curvature are easily heard when applied to the modulation of a filter's frequency via a velocity sensitive envelope.
 
 ## Further Research
 Look into existing synths (hardware or software) for examples of where, and how, velocity can be utilised.
