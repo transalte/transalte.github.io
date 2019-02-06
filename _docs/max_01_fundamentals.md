@@ -69,6 +69,22 @@ An example of this is the `metro` object configured as `metro @active 250`. This
 
 Another example of an arguments-only object is `selector~ 4 1`; in this instance the object will have 4 inlets with the first being active.
 
+### Hot and Cold Inlets
+
+[![Hot and Cold Inlets](/assets/img/max_inlets.png)*Hot and Cold Inlets*](/assets/img/max_inlets.png)
+
+In the example above, changing the left number box causes the `+` calculation to be executed. However, changing the right number box results in no output from the `+` object. Why is this? Max has a concept of 'hot' and 'cold' inlets; only data being passed to a 'hot' inlet will trigger the function of an object. The inlets of the `+` object in this case show the left inlet as red (hot) and the right as blue (cold). This means that only when information is sent to the left inlet will the calculation occur.
+
+To make both inlets 'hot', so that a change in any of the inlets will trigger the calulation, can be achieved by sending a bang to the left inlet. From Tutorial 6 in the Max documentation:
+
+>"It is common practice, when a cold inlet needs to produce output, to apply a bang message (via a button or trigger object) into the left-most inlet to force output."
+
+[![Hot and Cold Triggers](/assets/img/max_inlets_2.png)*Hot and Cold Triggers*](/assets/img/max_inlets_2.png)
+
+The `t` object is the `trigger` object and is used to send multiple messages based on a single input. Note that the order of transmission is from **right-to-left**. In this exampe, the integer from the right number box (i) is sent to the right inlet of `~`, then a bang (b) is sent to the left inlet of `+` to retrigger the calculation. Effectively, `+` will carry out its function with the last value sent into the left inlet when it receives a bang.
+
+
+
 ### Help Files and Details
 
 There are a number of ways to gain further insight into an objects properties and parameters. For each object, the **Inspector** can be opened which will detail all of the parameters, arguments and attributes associated with that object.

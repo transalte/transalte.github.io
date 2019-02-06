@@ -30,6 +30,15 @@
           <li><a href="#modulation-amount">Modulation Amount</a></li>
         </ul>
       </li>
+      <li><a href="#velocity-sensitivity">Velocity Sensitivity</a>
+        <ul>
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#no-sensitivity">No Sensitivity</a></li>
+          <li><a href="#linear-sensitivity">Linear Sensitivity</a></li>
+          <li><a href="#non-linear">Non-Linear</a></li>
+        </ul>
+      </li>
+      <li><a href="#further-research">Further Research</a></li>
     </ul>
   </li>
 </ul>
@@ -80,6 +89,65 @@
 <p>Even though this method of <strong>velocity &gt; envelope &gt; parameter</strong> modulation works, the modulation amount is directly related to the velocity; there is no method of attenuating or intensifying the effect. As the envelope is the driving force behind the filter frequency’s values (static or otherwise), it would make sense that being able to increase or decrease the range of the envelope would provide this level of control:</p>
 
 <p><a href="/assets/img/aasp_monosynth_15.png"><img src="/assets/img/aasp_monosynth_15.png" alt="Filter Envelope Amount" /><em>Filter Envelope Amount</em></a></p>
+
+<h2 id="velocity-sensitivity">Velocity Sensitivity</h2>
+<p>In addition to offering velocity sensitivity, many synths also offer control over how subtle or intense any velocity based modulation is.</p>
+
+<p>The image below shows a very basic form of velocity sensitivity:</p>
+
+<p><a href="/assets/img/aasp_velSen_01.png"><img src="/assets/img/aasp_velSen_01.png" alt="Velocity Sensitivity Example 01" /><em>Velocity Sensitivity Example 01</em></a></p>
+
+<p>The key object here is the <code class="highlighter-rouge">scale</code> object which allows for the scaling of the range being passed further down the patch (in this case, to the <code class="highlighter-rouge">adsr~</code> object).</p>
+
+<blockquote>
+  <p>The <code class="highlighter-rouge">uzi</code>, <code class="highlighter-rouge">b</code>, <code class="highlighter-rouge">zl.group</code> and <code class="highlighter-rouge">multislider</code> objects are here to demonstrate the outcome of the patch. These can all be removed without affecting the function of the patch.</p>
+</blockquote>
+
+<h3 id="concept">Concept</h3>
+<p>The concept here is to gain control over the incoming velocity values. Consider three ‘levels’ of sensitivity:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensitivity Level</th>
+      <th>Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>No sensitivity</td>
+      <td>Outgoing velocity fixed regardless of incoming velocity</td>
+    </tr>
+    <tr>
+      <td>Normal sensitivity (linear)</td>
+      <td>Outgoing velocity = incoming velocity</td>
+    </tr>
+    <tr>
+      <td>Exagerated sensitivity (exponential)</td>
+      <td>Velocity is not mapped linearly against the incoming</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="no-sensitivity">No Sensitivity</h3>
+<p>In the patch above, to create a ‘no sensitivity’ scaling, simply set the <strong>Min Vel Out</strong> and <strong>Max Vel Out</strong> to the same value i.e <strong>64</strong> and press the <code class="highlighter-rouge">button</code> object. Look at the graph will show how the input and output are mapped</p>
+
+<h3 id="linear-sensitivity">Linear Sensitivity</h3>
+<p>For ‘normal sensitivity’, set the <strong>Min Vel Out</strong> to ‘<strong>0</strong>’ and the <strong>Max Vel Out</strong> to ‘<strong>127</strong>’. Press the <code class="highlighter-rouge">button</code> object again and observe the graph.</p>
+
+<h3 id="non-linear">Non-Linear</h3>
+<p>To create a non-linearly mapped output, a few changes are made to the patch:</p>
+
+<p><a href="/assets/img/aasp_velSen_02.png"><img src="/assets/img/aasp_velSen_02.png" alt="Velocity Sensitivity Example 02" /><em>Velocity Sensitivity Example 02</em></a></p>
+
+<p>The final inlet of <code class="highlighter-rouge">scale</code> is being used to add a concave, or convex, curve to the previously linear mapping. The <strong>@classic 0</strong> argument, provides control over that curve, <strong>1</strong> being linear, <strong>&lt; 0</strong> logarithmic and <strong>&gt; 1</strong> exponential. The effects of this curvature are easily heard when applied to the velocity modulation of and envelope modulating a filter frequency.</p>
+
+<h2 id="further-research">Further Research</h2>
+<p>Look into existing synths (hardware or software) for examples of where, and how, velocity can be utilised.</p>
+
+<p>Additionally, consider how the MIDI notes themselves can be utilised as a similar modulation source.</p>
+
+<hr />
 </article></div>
 
 </div>

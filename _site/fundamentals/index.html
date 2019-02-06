@@ -34,6 +34,7 @@
         <ul>
           <li><a href="#connecting-objects">Connecting Objects</a></li>
           <li><a href="#attributes-and-arguments">Attributes and Arguments</a></li>
+          <li><a href="#hot-and-cold-inlets">Hot and Cold Inlets</a></li>
           <li><a href="#help-files-and-details">Help Files and Details</a></li>
         </ul>
       </li>
@@ -121,6 +122,22 @@
 <p>An example of this is the <code class="highlighter-rouge">metro</code> object configured as <code class="highlighter-rouge">metro @active 250</code>. This metro is configured to be automaticaly generate ‘bang’ upon load at a rate of one bang per 250ms. The ‘@’ indicates the attribute and the agrument is the integer.</p>
 
 <p>Another example of an arguments-only object is <code class="highlighter-rouge">selector~ 4 1</code>; in this instance the object will have 4 inlets with the first being active.</p>
+
+<h3 id="hot-and-cold-inlets">Hot and Cold Inlets</h3>
+
+<p><a href="/assets/img/max_inlets.png"><img src="/assets/img/max_inlets.png" alt="Hot and Cold Inlets" /><em>Hot and Cold Inlets</em></a></p>
+
+<p>In the example above, changing the left number box causes the <code class="highlighter-rouge">+</code> calculation to be executed. However, changing the right number box results in no output from the <code class="highlighter-rouge">+</code> object. Why is this? Max has a concept of ‘hot’ and ‘cold’ inlets; only data being passed to a ‘hot’ inlet will trigger the function of an object. The inlets of the <code class="highlighter-rouge">+</code> object in this case show the left inlet as red (hot) and the right as blue (cold). This means that only when information is sent to the left inlet will the calculation occur.</p>
+
+<p>To make both inlets ‘hot’, so that a change in any of the inlets will trigger the calulation, can be achieved by sending a bang to the left inlet. From Tutorial 6 in the Max documentation:</p>
+
+<blockquote>
+  <p>“It is common practice, when a cold inlet needs to produce output, to apply a bang message (via a button or trigger object) into the left-most inlet to force output.”</p>
+</blockquote>
+
+<p><a href="/assets/img/max_inlets_2.png"><img src="/assets/img/max_inlets_2.png" alt="Hot and Cold Triggers" /><em>Hot and Cold Triggers</em></a></p>
+
+<p>The <code class="highlighter-rouge">t</code> object is the <code class="highlighter-rouge">trigger</code> object and is used to send multiple messages based on a single input. Note that the order of transmission is from <strong>right-to-left</strong>. In this exampe, the integer from the right number box (i) is sent to the right inlet of <code class="highlighter-rouge">~</code>, then a bang (b) is sent to the left inlet of <code class="highlighter-rouge">+</code> to retrigger the calculation. Effectively, <code class="highlighter-rouge">+</code> will carry out its function with the last value sent into the left inlet when it receives a bang.</p>
 
 <h3 id="help-files-and-details">Help Files and Details</h3>
 

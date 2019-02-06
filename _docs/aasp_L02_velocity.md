@@ -50,3 +50,44 @@ Now, the filter frequency will still initially run from 0Hz minimum to 150Hz max
 Even though this method of **velocity > envelope > parameter** modulation works, the modulation amount is directly related to the velocity; there is no method of attenuating or intensifying the effect. As the envelope is the driving force behind the filter frequency's values (static or otherwise), it would make sense that being able to increase or decrease the range of the envelope would provide this level of control:
 
 [![Filter Envelope Amount](/assets/img/aasp_monosynth_15.png)*Filter Envelope Amount*](/assets/img/aasp_monosynth_15.png)
+
+## Velocity Sensitivity
+In addition to offering velocity sensitivity, many synths also offer control over how subtle or intense any velocity based modulation is.
+
+The image below shows a very basic form of velocity sensitivity:
+
+[![Velocity Sensitivity Example 01](/assets/img/aasp_velSen_01.png)*Velocity Sensitivity Example 01*](/assets/img/aasp_velSen_01.png)
+
+The key object here is the `scale` object which allows for the scaling of the range being passed further down the patch (in this case, to the `adsr~` object).
+
+>The `uzi`, `b`, `zl.group` and `multislider` objects are here to demonstrate the outcome of the patch. These can all be removed without affecting the function of the patch.
+
+### Concept
+The concept here is to gain control over the incoming velocity values. Consider three 'levels' of sensitivity:
+
+| Sensitivity Level                    | Outcome                                                 |
+| ------------------------------------ | ------------------------------------------------------- |
+| No sensitivity                       | Outgoing velocity fixed regardless of incoming velocity |
+| Normal sensitivity (linear)          | Outgoing velocity = incoming velocity                   |
+| Exagerated sensitivity (exponential) | Velocity is not mapped linearly against the incoming    |
+
+### No Sensitivity
+In the patch above, to create a 'no sensitivity' scaling, simply set the **Min Vel Out** and **Max Vel Out** to the same value i.e **64** and press the `button` object. Look at the graph will show how the input and output are mapped
+
+### Linear Sensitivity
+For 'normal sensitivity', set the **Min Vel Out** to '**0**' and the **Max Vel Out** to '**127**'. Press the `button` object again and observe the graph.
+
+
+### Non-Linear
+To create a non-linearly mapped output, a few changes are made to the patch:
+
+ [![Velocity Sensitivity Example 02](/assets/img/aasp_velSen_02.png)*Velocity Sensitivity Example 02*](/assets/img/aasp_velSen_02.png)
+
+ The final inlet of `scale` is being used to add a concave, or convex, curve to the previously linear mapping. The **@classic 0** argument, provides control over that curve, **1** being linear, **< 0** logarithmic and **> 1** exponential. The effects of this curvature are easily heard when applied to the velocity modulation of and envelope modulating a filter frequency.  
+
+## Further Research
+Look into existing synths (hardware or software) for examples of where, and how, velocity can be utilised.
+
+Additionally, consider how the MIDI notes themselves can be utilised as a similar modulation source.
+
+---

@@ -21,7 +21,7 @@
 				<div class="sidenav">
 					<p>Basic Monosynth</p>
 						<ul>
-  <li><a href="#overview">Overview</a>
+  <li><a href="#monosynth-overview">Monosynth Overview</a>
     <ul>
       <li><a href="#first-steps">First Steps</a>
         <ul>
@@ -39,8 +39,10 @@
           <li><a href="#semi-tones">Semi-tones</a></li>
           <li><a href="#octaves">Octaves</a></li>
           <li><a href="#de-tune">De-tune</a></li>
+          <li><a href="#alternative-method">Alternative Method</a></li>
         </ul>
       </li>
+      <li><a href="#oscillator-waveforms">Oscillator Waveforms</a></li>
     </ul>
   </li>
 </ul>
@@ -50,7 +52,7 @@
 
 		</div>
 
-		<div class="item4"><article><h1 id="overview">Overview</h1>
+		<div class="item4"><article><h1 id="monosynth-overview">Monosynth Overview</h1>
 
 <p>This lession is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.</p>
 
@@ -173,7 +175,7 @@ MIDI Note 127 = G9
   <li>De-tune (Hz)</li>
 </ul>
 
-<p>All areas can be controlled by simple number manipulation of the MIDI notes received by the patch.</p>
+<p>Semi-tones and Octaves can be adjusted by manipulating the MIDI note information directly, de-tuning can occur after the MIDI note has been converted to pitch.</p>
 
 <h3 id="semi-tones">Semi-tones</h3>
 
@@ -195,6 +197,45 @@ MIDI Note 127 = G9
 <p>As detune dials are normally in Hertz, the patch must be adjusted to allow the pitch manipulation to occur after the MIDI note has been conferted to a frequency via the <code class="highlighter-rouge">mtof</code> object:</p>
 
 <p><a href="/assets/img/aasp_monosynth_18.png"><img src="/assets/img/aasp_monosynth_18.png" alt="De-tune in Hz" /><em>De-tune in Hz</em></a></p>
+
+<h3 id="alternative-method">Alternative Method</h3>
+
+<p>The above method works fine for the octave and semitone manipulation, however there are a number of drawbacks:</p>
+
+<ul>
+  <li>The change in tuning only takes place on a fresh note i.e the pitch change will never occur in the sustain stage of a key-press</li>
+  <li>The de-tune amount in never in tune with the current note i.e. the amount of ‘drift’ is inconsistant musically; even though the amount of de-tuning is fixed, it is not exponential like the musical scale therefore at different octaves, the amount of ‘drift’ can be more or less.</li>
+</ul>
+
+<p>The alternative method is to adjust the tuning in Hz, i.e add ‘n’ to the incoming notes in Hz to shift them up an octave or a 7th:</p>
+
+<p><a href="/assets/img/aasp_monosynth_19.png"><img src="/assets/img/aasp_monosynth_19.png" alt="Fixed Tuning Example" /><em>Fixed Tuning Example</em></a></p>
+
+<p>This way of tuning the MIDI note being being converted to Hz and then into a signal to be manipulated. It could be done while remaining a message, but moving into the signal realm allows the tuning to take place in real-time i.e there is no need to wait for a new note in order to hear the change in tuning.</p>
+
+<p>The <code class="highlighter-rouge">live.numbox</code> objects are for entering the amount of tuning in semi-tones and percents of a semi-tone.</p>
+
+<p>The <code class="highlighter-rouge">sig~</code> object converts the frequency from the message format (only transmits on change) into an audio signal (transmitted at audio rate).</p>
+
+<p>The change of pitch occurs from the <code class="highlighter-rouge">*~ 0.</code> object which is fed from the <code class="highlighter-rouge">expr</code> object. The function of the <code class="highlighter-rouge">expr</code> in this case is to convert a linear semitone value into a logarithmic range that works in Hz for the tuning.</p>
+
+<p>The <code class="highlighter-rouge">t</code> or <code class="highlighter-rouge">trigger</code> object here is used to retrigger the calculation <code class="highlighter-rouge">+</code>.  More details on inlets and the trigger object can be found <a href="/fundamentals/#hot-and-cold-inlets">here</a>.</p>
+
+<h2 id="oscillator-waveforms">Oscillator Waveforms</h2>
+<p>There are a range of pre-built oscillators that can be used as the sound-source for a synth.</p>
+
+<p><a href="/assets/img/waveforms.png"><img src="/assets/img/waveforms.png" alt="Waveforms" /><em>Standard Waveforms</em></a></p>
+
+<p>Use these in conjunction with the <a href="/routing/#selector--switch"><code class="highlighter-rouge">selector~</code></a> object to provide more sound design options:</p>
+
+<ul>
+  <li>Sinusoidal - <code class="highlighter-rouge">cycle~</code></li>
+  <li>Sawtooth - <code class="highlighter-rouge">saw~</code></li>
+  <li>Triangle - `tri~: pay attention to the <strong>Duty Cycle</strong>  argument.</li>
+  <li>Square - <code class="highlighter-rouge">rect~</code>: pay attention to the <strong>Pulse Width</strong> argument.</li>
+  <li>White Noise - <code class="highlighter-rouge">noise~</code></li>
+  <li>Pink Noise - <code class="highlighter-rouge">pink~</code></li>
+</ul>
 
 <div class="footnotes">
   <ol>

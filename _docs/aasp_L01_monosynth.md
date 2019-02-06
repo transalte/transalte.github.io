@@ -8,7 +8,7 @@ summary: MIDI data, oscillators, envelopes and tuning.
 lastupdate: 14-12-2018
 ---
 
-# Overview
+# Monosynth Overview
 
 This lession is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.
 
@@ -134,7 +134,7 @@ Tuning oscillators is generally kept to three areas:
 * Octaves
 * De-tune (Hz)
 
-All areas can be controlled by simple number manipulation of the MIDI notes received by the patch.
+Semi-tones and Octaves can be adjusted by manipulating the MIDI note information directly, de-tuning can occur after the MIDI note has been converted to pitch.
 
 ### Semi-tones
 
@@ -156,6 +156,41 @@ In this case, the `live.numbox` has a range of -4 to 4, and configured in the sa
 As detune dials are normally in Hertz, the patch must be adjusted to allow the pitch manipulation to occur after the MIDI note has been conferted to a frequency via the `mtof` object:
 
 [![De-tune in Hz](/assets/img/aasp_monosynth_18.png)*De-tune in Hz*](/assets/img/aasp_monosynth_18.png)
+
+### Alternative Method
+
+The above method works fine for the octave and semitone manipulation, however there are a number of drawbacks:
+
+* The change in tuning only takes place on a fresh note i.e the pitch change will never occur in the sustain stage of a key-press
+* The de-tune amount in never in tune with the current note i.e. the amount of 'drift' is inconsistant musically; even though the amount of de-tuning is fixed, it is not exponential like the musical scale therefore at different octaves, the amount of 'drift' can be more or less.
+
+The alternative method is to adjust the tuning in Hz, i.e add 'n' to the incoming notes in Hz to shift them up an octave or a 7th:
+
+[![Fixed Tuning Example](/assets/img/aasp_monosynth_19.png)*Fixed Tuning Example*](/assets/img/aasp_monosynth_19.png)
+
+This way of tuning the MIDI note being being converted to Hz and then into a signal to be manipulated. It could be done while remaining a message, but moving into the signal realm allows the tuning to take place in real-time i.e there is no need to wait for a new note in order to hear the change in tuning.
+
+The `live.numbox` objects are for entering the amount of tuning in semi-tones and percents of a semi-tone.
+
+The `sig~` object converts the frequency from the message format (only transmits on change) into an audio signal (transmitted at audio rate).
+
+The change of pitch occurs from the `*~ 0.` object which is fed from the `expr` object. The function of the `expr` in this case is to convert a linear semitone value into a logarithmic range that works in Hz for the tuning.
+
+The `t` or `trigger` object here is used to retrigger the calculation `+`.  More details on inlets and the trigger object can be found [here](/fundamentals/#hot-and-cold-inlets).
+
+## Oscillator Waveforms
+There are a range of pre-built oscillators that can be used as the sound-source for a synth.
+
+[![Waveforms](/assets/img/waveforms.png)*Standard Waveforms*](/assets/img/waveforms.png)
+
+Use these in conjunction with the [`selector~`](/routing/#selector--switch) object to provide more sound design options:
+
+* Sinusoidal - `cycle~`
+* Sawtooth - `saw~`
+* Triangle - `tri~: pay attention to the **Duty Cycle**  argument.
+* Square - `rect~`: pay attention to the **Pulse Width** argument.
+* White Noise - `noise~`
+* Pink Noise - `pink~`
 
 
 
