@@ -51,10 +51,12 @@ Even though this method of **velocity > envelope > parameter** modulation works,
 
 [![Filter Envelope Amount](/assets/img/aasp_monosynth_15.png)*Filter Envelope Amount*](/assets/img/aasp_monosynth_15.png)
 
-## Velocity Sensitivity
-In addition to offering velocity sensitivity, many synths also offer control over how subtle or intense any velocity based modulation is.
+---
 
-The image below shows a very basic form of velocity sensitivity:
+## Velocity Sensitivity
+In addition to offering velocity sensitivity, many synths also provide control over how subtle or intense any velocity based modulation is.
+
+The image below shows a very basic form of how this velocity sensitivity can be implemented:
 
 [![Velocity Sensitivity Example 01](/assets/img/aasp_velSen_01.png)*Velocity Sensitivity Example 01*](/assets/img/aasp_velSen_01.png)
 
