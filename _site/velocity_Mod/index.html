@@ -36,6 +36,7 @@
           <li><a href="#no-sensitivity">No Sensitivity</a></li>
           <li><a href="#linear-sensitivity">Linear Sensitivity</a></li>
           <li><a href="#non-linear">Non-Linear</a></li>
+          <li><a href="#implementation-1">Implementation</a></li>
         </ul>
       </li>
       <li><a href="#further-research">Further Research</a></li>
@@ -139,6 +140,8 @@
 
 <h3 id="non-linear">Non-Linear</h3>
 <p>The final inlet of <code class="highlighter-rouge">scale</code> is being used to add a concave, or convex, curve to the previously linear mapping. The <strong>@classic 0</strong> argument, provides control over that curve, <strong>1</strong> being linear, <strong>&lt; 0</strong> logarithmic and <strong>&gt; 1</strong> exponential.</p>
+
+<h3 id="implementation-1">Implementation</h3>
 
 <p>While this patch demonstrates the manipulation of the incoming velocities via the graph at the bottom, it will cause problems if the <strong>Min Vel Out</strong> is raised above 0, or the curve is set to 0. By raising the <strong>Min Vel Out</strong> the patch will lose the 0 velocity value required to ‘end’ a note. To get around this, a <code class="highlighter-rouge">sel 0</code> can be implemented:</p>
 

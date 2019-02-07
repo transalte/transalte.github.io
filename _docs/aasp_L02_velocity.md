@@ -83,6 +83,8 @@ For 'normal sensitivity', set the **Min Vel Out** to '**0**' and the **Max Vel O
 ### Non-Linear
 The final inlet of `scale` is being used to add a concave, or convex, curve to the previously linear mapping. The **@classic 0** argument, provides control over that curve, **1** being linear, **< 0** logarithmic and **> 1** exponential.
 
+### Implementation
+
 While this patch demonstrates the manipulation of the incoming velocities via the graph at the bottom, it will cause problems if the **Min Vel Out** is raised above 0, or the curve is set to 0. By raising the **Min Vel Out** the patch will lose the 0 velocity value required to 'end' a note. To get around this, a `sel 0` can be implemented:
 
 
