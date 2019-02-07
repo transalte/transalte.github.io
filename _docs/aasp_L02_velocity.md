@@ -62,7 +62,7 @@ The image below shows a very basic form of how this velocity sensitivity can be 
 
 The key object here is the `scale` object which allows for the scaling of the range being passed further down the patch (in this case, to the `adsr~` object).
 
->The `uzi`, `b`, `zl.group` and `multislider` objects are here to demonstrate the outcome of the patch. These can all be removed without affecting the function of the patch.
+>The `uzi`, `b`, `zl.group` and `multislider` objects are here to demonstrate the outcome of the patch. These can all be removed when implementing into an actual synth patch without affecting the function of velocity sensitivity method.
 
 ### Concept
 The concept here is to gain control over the incoming velocity values. Consider three 'levels' of sensitivity:
@@ -81,13 +81,16 @@ For 'normal sensitivity', set the **Min Vel Out** to '**0**' and the **Max Vel O
 
 
 ### Non-Linear
-To create a non-linearly mapped output, a few changes are made to the patch:
+The final inlet of `scale` is being used to add a concave, or convex, curve to the previously linear mapping. The **@classic 0** argument, provides control over that curve, **1** being linear, **< 0** logarithmic and **> 1** exponential.
 
- [![Velocity Sensitivity Example 02](/assets/img/aasp_velSen_02.png)*Velocity Sensitivity Example 02*](/assets/img/aasp_velSen_02.png)
+While this patch demonstrates the manipulation of the incoming velocities via the graph at the bottom, it will cause problems if the **Min Vel Out** is raised above 0, or the curve is set to 0. By raising the **Min Vel Out** the patch will lose the 0 velocity value required to 'end' a note. To get around this, a `sel 0` can be implemented:
 
- The final inlet of `scale` is being used to add a concave, or convex, curve to the previously linear mapping. The **@classic 0** argument, provides control over that curve, **1** being linear, **< 0** logarithmic and **> 1** exponential.
 
- The effects of this curvature are easily heard when applied to the modulation of a filter's frequency via a velocity sensitive envelope.
+[![Velocity Sensitivity Example 02](/assets/img/aasp_velSen_02.png)*Velocity Sensitivity Example 02*](/assets/img/aasp_velSen_02.png)
+
+The `sel 0` object basically routes all values that are not 0 out of the right outlet (and this into the scaling section in this patch). If a 0 is received by `sel 0` then a 'bang' is sent from the left outlet of `sel`. In this patch, that 'bang' leads to the `t 0` object which will then trigger a '0' message that is unscaled. When being implemented in a synth, the scaled velocities and the '0' messages would be connected to an `adsr~` object.
+
+>The effects of this curvature are easily heard when applied to the modulation of a filter's frequency via a velocity sensitive envelope.
 
 ## Further Research
 Look into existing synths (hardware or software) for examples of where, and how, velocity can be utilised.

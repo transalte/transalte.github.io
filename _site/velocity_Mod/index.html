@@ -102,7 +102,7 @@
 <p>The key object here is the <code class="highlighter-rouge">scale</code> object which allows for the scaling of the range being passed further down the patch (in this case, to the <code class="highlighter-rouge">adsr~</code> object).</p>
 
 <blockquote>
-  <p>The <code class="highlighter-rouge">uzi</code>, <code class="highlighter-rouge">b</code>, <code class="highlighter-rouge">zl.group</code> and <code class="highlighter-rouge">multislider</code> objects are here to demonstrate the outcome of the patch. These can all be removed without affecting the function of the patch.</p>
+  <p>The <code class="highlighter-rouge">uzi</code>, <code class="highlighter-rouge">b</code>, <code class="highlighter-rouge">zl.group</code> and <code class="highlighter-rouge">multislider</code> objects are here to demonstrate the outcome of the patch. These can all be removed when implementing into an actual synth patch without affecting the function of velocity sensitivity method.</p>
 </blockquote>
 
 <h3 id="concept">Concept</h3>
@@ -138,13 +138,17 @@
 <p>For ‘normal sensitivity’, set the <strong>Min Vel Out</strong> to ‘<strong>0</strong>’ and the <strong>Max Vel Out</strong> to ‘<strong>127</strong>’. Press the <code class="highlighter-rouge">button</code> object again and observe the graph.</p>
 
 <h3 id="non-linear">Non-Linear</h3>
-<p>To create a non-linearly mapped output, a few changes are made to the patch:</p>
+<p>The final inlet of <code class="highlighter-rouge">scale</code> is being used to add a concave, or convex, curve to the previously linear mapping. The <strong>@classic 0</strong> argument, provides control over that curve, <strong>1</strong> being linear, <strong>&lt; 0</strong> logarithmic and <strong>&gt; 1</strong> exponential.</p>
+
+<p>While this patch demonstrates the manipulation of the incoming velocities via the graph at the bottom, it will cause problems if the <strong>Min Vel Out</strong> is raised above 0, or the curve is set to 0. By raising the <strong>Min Vel Out</strong> the patch will lose the 0 velocity value required to ‘end’ a note. To get around this, a <code class="highlighter-rouge">sel 0</code> can be implemented:</p>
 
 <p><a href="/assets/img/aasp_velSen_02.png"><img src="/assets/img/aasp_velSen_02.png" alt="Velocity Sensitivity Example 02" /><em>Velocity Sensitivity Example 02</em></a></p>
 
-<p>The final inlet of <code class="highlighter-rouge">scale</code> is being used to add a concave, or convex, curve to the previously linear mapping. The <strong>@classic 0</strong> argument, provides control over that curve, <strong>1</strong> being linear, <strong>&lt; 0</strong> logarithmic and <strong>&gt; 1</strong> exponential.</p>
+<p>The <code class="highlighter-rouge">sel 0</code> object basically routes all values that are not 0 out of the right outlet (and this into the scaling section in this patch). If a 0 is received by <code class="highlighter-rouge">sel 0</code> then a ‘bang’ is sent from the left outlet of <code class="highlighter-rouge">sel</code>. In this patch, that ‘bang’ leads to the <code class="highlighter-rouge">t 0</code> object which will then trigger a ‘0’ message that is unscaled. When being implemented in a synth, the scaled velocities and the ‘0’ messages would be connected to an <code class="highlighter-rouge">adsr~</code> object.</p>
 
-<p>The effects of this curvature are easily heard when applied to the modulation of a filter’s frequency via a velocity sensitive envelope.</p>
+<blockquote>
+  <p>The effects of this curvature are easily heard when applied to the modulation of a filter’s frequency via a velocity sensitive envelope.</p>
+</blockquote>
 
 <h2 id="further-research">Further Research</h2>
 <p>Look into existing synths (hardware or software) for examples of where, and how, velocity can be utilised.</p>
