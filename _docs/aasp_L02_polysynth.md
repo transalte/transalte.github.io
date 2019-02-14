@@ -4,7 +4,7 @@ layout: content
 category: aasp_lessons
 author: Robert Goldie
 order: 1
-permalink: /polysynthsynth/
+permalink: /polysynth/
 summary: Creating a polyphonic synth
 lastupdate: 14/02/2019
 ---
