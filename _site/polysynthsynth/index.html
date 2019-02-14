@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+			<title>Polyphonic Synth</title>
+		</head>
+		<body>
+
+<div class="grid-container">
+
+<div class="item1">
+<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
+
+</div>
+
+		<div class="item2">
+
+		</div>
+
+		<div class="item3">
+				<div class="sidenav">
+					<!-- <p>Polyphonic Synth</p> -->
+						<ul>
+  <li><a href="#polyphony-overview">POLYPHONY OVERVIEW</a>
+    <ul>
+      <li><a href="#patch-structure">Patch Structure</a>
+        <ul>
+          <li><a href="#poly-arguments">Poly Arguments</a></li>
+        </ul>
+      </li>
+      <li><a href="#implementation">Implementation</a>
+        <ul>
+          <li><a href="#mysynth-polyamxd">MySynth Poly.amxd</a></li>
+          <li><a href="#mysynthcoremaxpat">MySynthCore.maxpat</a></li>
+        </ul>
+      </li>
+      <li><a href="#synth-structure">Synth Structure</a></li>
+    </ul>
+  </li>
+</ul>
+
+					</div>
+
+
+		</div>
+
+		<div class="item4"><article><h1 id="polyphony-overview">POLYPHONY OVERVIEW</h1>
+<p>Polyphony in synths refers to the ability to play more than one note at a time i.e chords. The previous monophonic synth only permitted a single note to played <sup id="fnref:poly"><a href="#fn:poly" class="footnote">1</a></sup>.</p>
+
+<p>Polyphony is achieved in Max by having a top level patch which, in addition to the user-interface elements, MIDI and audio outputs, also contains a <code class="highlighter-rouge">poly~</code> object which holds the ‘guts’ of a single-voice (monophonic) synth. The <code class="highlighter-rouge">poly~</code> object effectively provides an instance of this ‘voice’ for each key pressed or note received.</p>
+
+<hr />
+
+<h2 id="patch-structure">Patch Structure</h2>
+
+<p>In <strong>Max For Live</strong>, it is best to work within a folder layout out as follows:</p>
+
+<ul>
+  <li><strong>MySynth</strong> (folder)
+    <ul>
+      <li><strong>MySynth.amxd</strong> (main patch)</li>
+      <li><strong>MySynthCore.maxpat</strong> (patch that contains the guts of the synth)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The <code class="highlighter-rouge">poly~</code> object, instead of containing the actual synth content like an encapsulation, <em>references</em> a separate <strong>*.maxpat</strong> file.</p>
+
+<p>The syntax for <code class="highlighter-rouge">poly~</code> can explain how it works:</p>
+
+<p><code class="highlighter-rouge">poly~ MySynthCore.maxpat 8 @steal 1 @target 0</code></p>
+
+<p>In this example, external patch ‘MySynthCore’ is being referred to and the synth would have a maximum of 8 voices, or instances allowing the user to play 8 notes and hear them. If more notes are played, depending on the <strong>steal</strong> argument, priority can be given to the first or last notes in terms of what notes to kill to allow the new notes to be heard…</p>
+
+<h3 id="poly-arguments">Poly Arguments</h3>
+<p>There are a number of arguments and attributes for the <code class="highlighter-rouge">poly~</code> object; listed below are the most relevent for this patch. More details can be found in the <code class="highlighter-rouge">poly~</code> reference file <a href="https://docs.cycling74.com/max7/maxobject/poly~">here</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Type</th>
+      <th>Example</th>
+      <th>Function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>patcher-name</td>
+      <td>symbol</td>
+      <td>MySynthCore.maxpat</td>
+      <td>name of patcher to be loaded</td>
+    </tr>
+    <tr>
+      <td>@voices</td>
+      <td>integer</td>
+      <td>16</td>
+      <td>Corresponds to the number of available voices</td>
+    </tr>
+    <tr>
+      <td>@steal</td>
+      <td>integer</td>
+      <td>@steal 1</td>
+      <td>will send incoming data to currently busy notes cutting them off</td>
+    </tr>
+    <tr>
+      <td>@target</td>
+      <td>integer</td>
+      <td>@target 0</td>
+      <td>sends input to all voices</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Referring to the previous example</p>
+
+<p><code class="highlighter-rouge">poly~ MySynthCore.maxpat @voices 8 @steal 1 @target 0</code></p>
+
+<p>The patch will allow for 8 voices, note stealing is enabled and any parameter changes/information is being sent to each of those 8 voices i.e if the user changes an oscillator tuning or a filter frequency, that change will be reflected on each voice.</p>
+
+<hr />
+
+<h2 id="implementation">Implementation</h2>
+
+<p>The screenshot(s) below show the top level <strong>.amxd</strong> and the core <strong>.maxpat</strong> files of a basic polyphonic synth. Note that in the example, wireless send and receives are used for transmitting the amp envelope and filter parameters:</p>
+
+<p><a href="/assets/img/aasp_poly_01.png"><img src="/assets/img/aasp_poly_01.png" alt="Polyphonic Patch" /><em>Polyphonic Patch</em></a></p>
+
+<p><a href="/assets/img/aasp_poly_01b.png"><img src="/assets/img/aasp_poly_01b.png" alt="Polyphonic Voice" /><em>Polyphonic Voice</em></a></p>
+
+<h3 id="mysynth-polyamxd">MySynth Poly.amxd</h3>
+<p>On the top level <strong>*.amxd</strong> patch, in addition to the new <code class="highlighter-rouge">poly~</code> object, there is a <code class="highlighter-rouge">prepend</code> object with the argument <strong>midinote</strong>. The ‘midinote’ symbol (text) is placed in front of each ‘note-on/off velocity’ message from <code class="highlighter-rouge">midiparse</code> letting the <code class="highlighter-rouge">poly~</code> object know that the incoming data in that particular inlet is note information.</p>
+
+<p>For the envelope and filter controls, all the parameters are joined together in a ‘list’message i.e ‘attack decay sustain release’ (1. 125. 0. 150. for example) with the <code class="highlighter-rouge">pan</code> object. These lists are then transmitted into the <code class="highlighter-rouge">poly~</code> object arriving at <code class="highlighter-rouge">r ---AmpEnv</code> and <code class="highlighter-rouge">r ---FltControls</code> . The messages are then split up via the <code class="highlighter-rouge">unpack 0. 0. 0. 0.</code> object and connected to the relevant inlets.</p>
+
+<blockquote>
+  <p>Note that as the values being packed together are floats, the ‘<strong>.</strong>’ must be included with the placeholder arguments. Likewise, at the unpacking stage, the ‘<strong>.</strong>’ must also be included in a <code class="highlighter-rouge">unpack</code> object to avoid converting a float to an integer.</p>
+</blockquote>
+
+<p>There are two objects for creating lists that are similarly named; the aforementioned <code class="highlighter-rouge">pak</code>, and <code class="highlighter-rouge">pack</code>. The difference between the objects is when the list is sent; items collated together with <code class="highlighter-rouge">pack</code> will only get sent as a list when data is received in it’s <em>first</em> inlet. With <code class="highlighter-rouge">pak</code>, the entire list is transmitted when data is received in <em>any</em> inlet (including any placeholder arguments).</p>
+
+<h3 id="mysynthcoremaxpat">MySynthCore.maxpat</h3>
+<p>To re-open the referenced patch from the top level, double-click the <code class="highlighter-rouge">poly~</code> object while the patch is locked (similar to sub patches).</p>
+
+<p>The main difference between this external patch and a standalone mono synth is that the input and output objects are slightly different. In a standard encapsulated subpath the ins are outs are <code class="highlighter-rouge">inlet</code> and <code class="highlighter-rouge">outlet</code> and the numbering happens automatically. In <code class="highlighter-rouge">poly</code> this changed to <code class="highlighter-rouge">in</code>, <code class="highlighter-rouge">out</code> (for message information) and <code class="highlighter-rouge">in~</code> and <code class="highlighter-rouge">out~</code> with a number manually entered afterwards i.e <code class="highlighter-rouge">out~ 1</code> and <code class="highlighter-rouge">in 1</code> in this example.</p>
+
+<p>The main addition of importance here is the <code class="highlighter-rouge">thispoly~</code> object which handles the status of voices being active/busy (in use from a note press) or not. This object is used to switch voices on and off. When used in tandem with the <strong>@target 0</strong> argument in <code class="highlighter-rouge">poly~</code>, every voice in the patch will receive the same parameter changes. The <code class="highlighter-rouge">thispoly~</code> voice on/off function can be controlled by using the the 1st and 3rd outlets of <code class="highlighter-rouge">adsr~</code>; the 3rd outlet will turn the voice on an off while when an audio signal enters <code class="highlighter-rouge">thispoly~</code> the voice is activated, when the gain of that signal reaches 0 , the voice is deactivated. Both are connected in this instance as a fail safe but it is possible to use either or.</p>
+
+<h2 id="synth-structure">Synth Structure</h2>
+
+<p>Now the structure of the synth is as follows:</p>
+
+<p>MIDI In &gt; <code class="highlighter-rouge">poly~</code> for voices &gt; Audio Effects &gt; <code class="highlighter-rouge">plugout~</code></p>
+
+<p>Note that depending on the features included, the audio signal path may change to stereo either inside <code class="highlighter-rouge">poly~</code> or at the Audio Effects stages.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:poly">
+      <p>Although chords can be played by tuning oscillators in various combinations of semitones, this is not polyphony. <a href="#fnref:poly" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+</article></div>
+
+</div>
+
+
+
+
+</body>
+</html>
