@@ -11,7 +11,7 @@ lastupdate: 14-12-2018
 
 # Basic Monosynth Overview
 
-This lession is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.
+This lesson is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.
 
 ---
 
@@ -33,7 +33,7 @@ The raw MIDI data from the `midiin` contains a range of information:
 
 To access these values individually, the `midiparse` object unpacks and converts the raw data into standard messages that can be utilised easily. The most commonly used parameters are Note-On/Off & Velocity (for pitch and volume) and Control Change (for control of other parameters such as filters, effects and so on).
 
->Similar to the note information, Control Changes contain two elements; a controller number and the value. Dials, sliders and/or pads on a MIDI device will each be allocated a controller number and interacting with them will change the value (running from 0 to 127). These controllers can be mapped to different elements of a device, or DAW in Live's case, i.e a filter, a delay's feedback and so on.
+>Similar to the[^exp] note information, Control Changes contain two elements; a controller number and the value. Dials, sliders and/or pads on a MIDI device will each be allocated a controller number and interacting with them will change the value (running from 0 to 127). These controllers can be mapped to different elements of a device, or DAW in Live's case, i.e a filter, a delay's feedback and so on.
 
 When pressing keys, MIDI information relating to the note(s) pressed is transmitted in two stages:
 
