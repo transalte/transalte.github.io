@@ -54,7 +54,7 @@
 
 		<div class="item4"><article><h1 id="basic-monosynth-overview">Basic Monosynth Overview</h1>
 
-<p>This lession is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.</p>
+<p>This lesson is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.</p>
 
 <hr />
 
@@ -78,7 +78,7 @@
 <p>To access these values individually, the <code class="highlighter-rouge">midiparse</code> object unpacks and converts the raw data into standard messages that can be utilised easily. The most commonly used parameters are Note-On/Off &amp; Velocity (for pitch and volume) and Control Change (for control of other parameters such as filters, effects and so on).</p>
 
 <blockquote>
-  <p>Similar to the note information, Control Changes contain two elements; a controller number and the value. Dials, sliders and/or pads on a MIDI device will each be allocated a controller number and interacting with them will change the value (running from 0 to 127). These controllers can be mapped to different elements of a device, or DAW in Live’s case, i.e a filter, a delay’s feedback and so on.</p>
+  <p>Similar to the<sup id="fnref:exp"><a href="#fn:exp" class="footnote">1</a></sup> note information, Control Changes contain two elements; a controller number and the value. Dials, sliders and/or pads on a MIDI device will each be allocated a controller number and interacting with them will change the value (running from 0 to 127). These controllers can be mapped to different elements of a device, or DAW in Live’s case, i.e a filter, a delay’s feedback and so on.</p>
 </blockquote>
 
 <p>When pressing keys, MIDI information relating to the note(s) pressed is transmitted in two stages:</p>
@@ -160,7 +160,7 @@ MIDI Note 127 = G9
 
 <p><a href="/assets/img/aasp_monosynth_07_env.png"><img src="/assets/img/aasp_monosynth_07_env.png" alt="Exponential ADSR Envelope" /><em>Exponential ADSR Envelope</em></a></p>
 
-<p>A quick way to achieve this is to multiply the output of the <code class="highlighter-rouge">adsr~</code> envelope by itself<sup id="fnref:exp"><a href="#fn:exp" class="footnote">1</a></sup>:</p>
+<p>A quick way to achieve this is to multiply the output of the <code class="highlighter-rouge">adsr~</code> envelope by itself<sup id="fnref:exp:1"><a href="#fn:exp" class="footnote">1</a></sup>:</p>
 
 <p><a href="/assets/img/aasp_monosynth_11_env.png"><img src="/assets/img/aasp_monosynth_11_env.png" alt="Exponential adsr~ Envelope" /><em>Exponential adsr~ Envelope</em></a></p>
 
@@ -240,7 +240,7 @@ MIDI Note 127 = G9
 <div class="footnotes">
   <ol>
     <li id="fn:exp">
-      <p>There are a number of ways to create exponential envelopes in Max; this is simply one of the quickest and most CPU-friendly methods of doing so <a href="#fnref:exp" class="reversefootnote">&#8617;</a></p>
+      <p>There are a number of ways to create exponential envelopes in Max; this is simply one of the quickest and most CPU-friendly methods of doing so <a href="#fnref:exp" class="reversefootnote">&#8617;</a> <a href="#fnref:exp:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
     </li>
   </ol>
 </div>

@@ -27,21 +27,25 @@
 
 
 				<h3>Max/Max For Live Fundamentals</h3>
-						<details><div class="homenav">
-								<ul>
+						<div class="homenav">
+						<details>		<ul>
 								{% for doc in site.docs %}
 					      	{% if doc.category == "Max" %}
 					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
 					      	{% endif %}
 					    	{% endfor %}</p>
-							</ul></details>
+							</ul>
+							</details>
 							</div>
+
 
 
 
 				<h3>Audio Effects</h3>
 
+
 				<div class="homenav">
+					<details>
 					<ul>
 						{% for doc in site.docs %}
 						{% if doc.category == "asp_lessons" %}
@@ -49,18 +53,21 @@
 						{% endif %}
 						{% endfor %}
 						</ul>
+						</details>
 						</div>
 
 				<h3>Instruments</h3>
 
 						<div class="homenav">
-								<ul>
+								<details>
+									<ul>
 								{% for doc in site.docs %}
 					      	{% if doc.category == "aasp_lessons" %}
 					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
 					      	{% endif %}
 					    	{% endfor %}
 							</ul>
+						</details>
 							</div>
 
 		</div>
