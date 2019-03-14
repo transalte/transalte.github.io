@@ -1,7 +1,7 @@
 ---
 title: User Interface
 layout: content
-category: qqMax
+category: Max
 order: 1
 permalink: /gui/
 summary: User Interface, Layout, GUI Techniques
