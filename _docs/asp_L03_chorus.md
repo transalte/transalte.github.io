@@ -8,7 +8,7 @@ summary: Creating chorus-related effects
 lastupdate: 14-12-2018
 ---
 
-# Chorus Effects
+## Overview
 
 The chorus effect is a time-domain based effect that when applied to a signal gives the sound a 'layered' or 'thickened' sound. An 'organic' chorus effect can occur naturally in choirs or orchestras where there are multiple similar sound sources playing simultaneously. The 'thickening' effect itself comes from the subtle variations in pitch and time that occur from the different performances and performers.
 

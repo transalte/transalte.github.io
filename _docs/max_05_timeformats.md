@@ -7,7 +7,7 @@ permalink: /timeformats/
 summary: Details on how Max deals with timing formats
 ---
 
-# Max Time Formats
+## Overview
 
 **Max Time Formats** are how Max describes time and there are two areas to consider:
 

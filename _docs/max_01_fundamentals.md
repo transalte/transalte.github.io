@@ -7,7 +7,9 @@ permalink: /fundamentals/
 summary: A reference for the fundamentals of Max / Max For Live
 lastupdate: 03-12-2018
 ---
-# Max Overview
+
+## Overview
+
 Max is classed as a [visual programming language](https://en.wikipedia.org/wiki/Visual_programming_language) for music and multimedia. It has been used in a number of areas for composition, performance and research purposes.
 
 Programmmes made in Max, refered to as *patches* are constructed by connecting objects within a *patcher*. These objects, which perform a range of different functions, are seen as boxes within the user-interface connected via inlets (at the top of the box) and outlets (at the bottom of the box) by 'cords'.
@@ -35,12 +37,12 @@ Max patchers (from the standalone version) can also be converted into standalone
 ### Data Formats
 There are six basic data formats that are utilised in Max that are transmitted between the objects.
 
-- Integers (full numbers)
-- Floats (numbers with a decimal point)
-- Symbols (text)
-- Lists (made of multiple Integers, Floats and/or Symbols)
-- Bangs (to trigger a function)
-- Signals (audio)
+* Integers (full numbers)
+* Floats (numbers with a decimal point)
+* Symbols (text)
+* Lists (made of multiple Integers, Floats and/or Symbols)
+* Bangs (to trigger a function)
+* Signals (audio)
 
 
 ### Objects

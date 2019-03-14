@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
+			<link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
 			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
 			<title>{{ page.title }}</title>
 		</head>
@@ -8,79 +9,57 @@
 
 <div class="grid-container">
 
-
-		<div class="item1">
-			<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
-		</div>
-
-
-		<div class="item2"> </div>
+		<div class="item1"<a href>="/index.html"<h1>transalte~</h1></a></div>
+		<div class="item2">max overview :: audio effects :: instruments</div>
+		<div class="item3"><h1>About These Notes</h1>
+							<p>If you are new to Max / Max For Live, (or needing a refresh) it is recommended to read through the <b>Max Fundamentals</b> section.</p>
 
 
-			<div class="item3">			</div>
-
-		<div class="item4">
-
-
-<h1>About These Notes</h1>
-				<p>If you are new to Max / Max For Live, (or needing a refresh) it is recommended to read through the <b>Max Fundamentals</b> section.</p>
-
-
-				<h3>Max/Max For Live Fundamentals</h3>
-						<div class="homenav">
-						<details>		<ul>
-								{% for doc in site.docs %}
-					      	{% if doc.category == "Max" %}
-					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
-					      	{% endif %}
-					    	{% endfor %}</p>
-							</ul>
-							</details>
-							</div>
+							<h3>Max/Max For Live Fundamentals</h3>
+									<div class="homenav">
+									<details>		<ul>
+											{% for doc in site.docs %}
+								      	{% if doc.category == "Max" %}
+								        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+								      	{% endif %}
+								    	{% endfor %}</p>
+										</ul>
+										</details>
+										</div>
 
 
-
-
-				<h3>Audio Effects</h3>
-
-
-				<div class="homenav">
-					<details>
-					<ul>
-						{% for doc in site.docs %}
-						{% if doc.category == "asp_lessons" %}
-						<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
-						{% endif %}
-						{% endfor %}
-						</ul>
-						</details>
-						</div>
-
-				<h3>Instruments</h3>
-
-						<div class="homenav">
+							<h3>Audio Effects</h3>
+							<div class="homenav">
 								<details>
-									<ul>
-								{% for doc in site.docs %}
-					      	{% if doc.category == "aasp_lessons" %}
-					        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
-					      	{% endif %}
-					    	{% endfor %}
-							</ul>
-						</details>
-							</div>
+								<ul>
+									{% for doc in site.docs %}
+									{% if doc.category == "asp_lessons" %}
+									<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
+									{% endif %}
+									{% endfor %}
+									</ul>
+									</details>
+									</div>
+
+							<h3>Instruments</h3>
+
+									<div class="homenav">
+											<details>
+												<ul>
+											{% for doc in site.docs %}
+								      	{% if doc.category == "aasp_lessons" %}
+								        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
+								      	{% endif %}
+								    	{% endfor %}
+										</ul>
+									</details>
+										</div>
+
+									</div>
+
+		<div class="item4">		</div>
 
 		</div>
-
-		</div>
-
-</div>
-
-
-
-
-
-
 
 </body>
 </html>

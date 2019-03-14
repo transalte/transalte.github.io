@@ -1,12 +1,33 @@
 ---
+title: transalte~
 layout: default
-title: Welcome.
+category: none
+order: 1
+permalink:
+summary: Front Page
+lastupdate: 20-12-2018
 ---
 
-# Header 01
-## Header 02
 
-This is the normal text here.
+## About These Notes...
+
+If you are new to Max/M4L, or needing a refresh, it is recommended that you read through the Max Fundamentals section. For L08 (ASP) and L09 (AASP). 
+
+<details><summary>Max / Max For Live Fundamentals</summary><ul>{% for doc in site.docs %}
+{% if doc.category == "Max" %}
+<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+          {% endif %}
+        {% endfor %}</ul></details>
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porttitor eget lacus eget facilisis. Sed sed convallis nunc. Nulla aliquet volutpat libero, quis tincidunt ligula elementum quis. Etiam a blandit augue, in scelerisque justo. Nullam ac vehicula justo, et scelerisque ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam sed mi justo. Proin ut tortor tincidunt, posuere nibh et, rutrum risus.
+<details><summary>Audio Effects</summary><ul>{% for doc in site.docs %}
+{% if doc.category == "asp_lessons" %}
+<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+          {% endif %}
+        {% endfor %}</ul></details>
+
+<details><summary>Instruments</summary><ul>{% for doc in site.docs %}
+{% if doc.category == "aasp_lessons" %}
+<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+          {% endif %}
+      {% endfor %}</ul></details>

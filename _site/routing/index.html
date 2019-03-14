@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
+<link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
 			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
 			<title>Routing</title>
 		</head>
@@ -8,48 +9,9 @@
 
 <div class="grid-container">
 
-<div class="item1">
-<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
-
-</div>
-
-		<div class="item2">
-
-		</div>
-
-		<div class="item3">
-				<div class="sidenav">
-					<!-- <p>Routing</p> -->
-						<ul>
-  <li><a href="#routing-in-max">Routing in Max</a>
-    <ul>
-      <li><a href="#many-to-one">Many-to-One</a>
-        <ul>
-          <li><a href="#selector--switch">selector~ / switch</a></li>
-        </ul>
-      </li>
-      <li><a href="#one-to-many">One-to-Many</a>
-        <ul>
-          <li><a href="#gates">Gates</a></li>
-        </ul>
-      </li>
-      <li><a href="#many-to-many">Many-to-Many</a>
-        <ul>
-          <li><a href="#matrix">matrix~</a></li>
-        </ul>
-      </li>
-      <li><a href="#cordless-connections">Cordless Connections</a></li>
-      <li><a href="#dynamic-cordless">Dynamic Cordless</a></li>
-    </ul>
-  </li>
-</ul>
-
-					</div>
-
-
-		</div>
-
-		<div class="item4"><article><h1 id="routing-in-max">Routing in Max</h1>
+	<div class="item1"><a href="../index.html"><h1>transalte~</h1></a></div>
+	<div class="item2">max overview // audio effects // instruments</div>
+	<div class="item3"><article><h2 id="overview">Overview</h2>
 <p>There are a number of methods of routing within Max; direct point-to-point connections, ‘cordless’, dynamic; one-to-many, many-to-many, and so on. This section covers each with examples and a context.</p>
 
 <hr />
@@ -77,9 +39,13 @@
 
 <h2 id="one-to-many">One-to-Many</h2>
 
-<h3 id="gates">Gates</h3>
+<h3 id="gate--gate">gate~ / gate</h3>
 
 <p>The <code class="highlighter-rouge">gate~</code> object, and its counterparts, are the ‘one-to-many’ equivilent of <code class="highlighter-rouge">selector~</code>. The arguments are similar i.e <code class="highlighter-rouge">gate~ 4</code> would create a gate with four outlets for the single input.</p>
+
+<p><a href="/assets/img/gateSig.png"><img src="/assets/img/gateSig.png" alt="gate~" /><em>1-in 4-Out gate~</em></a></p>
+
+<p>Similar to <code class="highlighter-rouge">selector~</code>, sending <code class="highlighter-rouge">gate~</code> a value of <strong>0</strong> will prevent <em>any</em> signal being passed through.</p>
 
 <hr />
 
@@ -91,11 +57,11 @@
 
 <h2 id="cordless-connections">Cordless Connections</h2>
 
-<p>Concept overview</p>
+<p>The standard method connecting objects is point-to-point via the cords. A ‘wireless’ connection can be made by using the following objects:</p>
 
-<p><code class="highlighter-rouge">send~</code> &amp; <code class="highlighter-rouge">receive~</code></p>
+<p><code class="highlighter-rouge">send~</code> &amp; <code class="highlighter-rouge">receive~</code> - for sending signals</p>
 
-<p><code class="highlighter-rouge">send</code> &amp; <code class="highlighter-rouge">receive</code></p>
+<p><code class="highlighter-rouge">send</code> &amp; <code class="highlighter-rouge">receive</code> - for messages (note that for messages, the objects can be truncated to <code class="highlighter-rouge">s</code> and <code class="highlighter-rouge">r</code>)</p>
 
 <p><img src="/assets/img/d10.png" alt="Cordless Connections" /><em>Cordless Connections</em></p>
 
@@ -117,6 +83,31 @@
 
 <hr />
 </article></div>
+	<div class="item4"><h2>Routing</h2>
+				<div class="sidenav"><ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#many-to-one">Many-to-One</a>
+    <ul>
+      <li><a href="#selector--switch">selector~ / switch</a></li>
+    </ul>
+  </li>
+  <li><a href="#one-to-many">One-to-Many</a>
+    <ul>
+      <li><a href="#gate--gate">gate~ / gate</a></li>
+    </ul>
+  </li>
+  <li><a href="#many-to-many">Many-to-Many</a>
+    <ul>
+      <li><a href="#matrix">matrix~</a></li>
+    </ul>
+  </li>
+  <li><a href="#cordless-connections">Cordless Connections</a></li>
+  <li><a href="#dynamic-cordless">Dynamic Cordless</a></li>
+</ul>
+</div>
+	</div>
+
+	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

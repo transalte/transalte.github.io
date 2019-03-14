@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
+<link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
 			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
 			<title>Polyphonic Synth</title>
 		</head>
@@ -8,43 +9,9 @@
 
 <div class="grid-container">
 
-<div class="item1">
-<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
-
-</div>
-
-		<div class="item2">
-
-		</div>
-
-		<div class="item3">
-				<div class="sidenav">
-					<!-- <p>Polyphonic Synth</p> -->
-						<ul>
-  <li><a href="#polyphony-overview">POLYPHONY OVERVIEW</a>
-    <ul>
-      <li><a href="#patch-structure">Patch Structure</a>
-        <ul>
-          <li><a href="#poly-arguments">Poly Arguments</a></li>
-        </ul>
-      </li>
-      <li><a href="#implementation">Implementation</a>
-        <ul>
-          <li><a href="#mysynth-polyamxd">MySynth Poly.amxd</a></li>
-          <li><a href="#mysynthcoremaxpat">MySynthCore.maxpat</a></li>
-        </ul>
-      </li>
-      <li><a href="#synth-structure">Synth Structure</a></li>
-    </ul>
-  </li>
-</ul>
-
-					</div>
-
-
-		</div>
-
-		<div class="item4"><article><h1 id="polyphony-overview">POLYPHONY OVERVIEW</h1>
+	<div class="item1"><a href="../index.html"><h1>transalte~</h1></a></div>
+	<div class="item2">max overview // audio effects // instruments</div>
+	<div class="item3"><article><h2 id="overview">Overview</h2>
 <p>Polyphony in synths refers to the ability to play more than one note at a time i.e chords. The previous monophonic synth only permitted a single note to played <sup id="fnref:poly"><a href="#fn:poly" class="footnote">1</a></sup>.</p>
 
 <p>Polyphony is achieved in Max by having a top level patch which, in addition to the user-interface elements, MIDI and audio outputs, also contains a <code class="highlighter-rouge">poly~</code> object which holds the ‘guts’ of a single-voice (monophonic) synth. The <code class="highlighter-rouge">poly~</code> object effectively provides an instance of this ‘voice’ for each key pressed or note received.</p>
@@ -162,6 +129,26 @@
   </ol>
 </div>
 </article></div>
+	<div class="item4"><h2>Polyphonic Synth</h2>
+				<div class="sidenav"><ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#patch-structure">Patch Structure</a>
+    <ul>
+      <li><a href="#poly-arguments">Poly Arguments</a></li>
+    </ul>
+  </li>
+  <li><a href="#implementation">Implementation</a>
+    <ul>
+      <li><a href="#mysynth-polyamxd">MySynth Poly.amxd</a></li>
+      <li><a href="#mysynthcoremaxpat">MySynthCore.maxpat</a></li>
+    </ul>
+  </li>
+  <li><a href="#synth-structure">Synth Structure</a></li>
+</ul>
+</div>
+	</div>
+
+	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

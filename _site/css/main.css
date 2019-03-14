@@ -1,199 +1,112 @@
-@import url('//fonts.googleapis.com/css?family=Open+Sans:300,400');
+/* ---------- TYPOGRAPHY ---------- */
 
-/*
+@import url('//fonts.googleapis.com/css?family=Roboto:100,300,400');
 
-@import url('//fonts.googleapis.com/css?family=Roboto Mono:300,400');
+html {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 300;
+  color: #555555;
 
-*/
-
-/* STRUCTURE */
-
-* { box-sizing: border-box;}
-
-html{
-    font-size: 14px;
-    font-family: 'Open Sans', sans-serif;
-    /* font-family: 'Roboto Mono', monospace; */
-    font-weight: 300;
-    line-height: 1.5rem;
-    color: black;
-}
-
-body {
-  background-color: whitesmoke;
-  margin: 0;
-  padding: 0;
 }
 
 
-/********** GRID CONFIGURATION **********/
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+h1 {
+  display: inline;
+}
+
+h2, h3 {
+  color: #34515E;
+}
+
+
+/* ---------- LAYOUT ---------- */
+
+* {
+  box-sizing: border-box;
+}
 
 .grid-container {
   display: grid;
   grid-template-areas:
-    'logo header header header header'
-    'sidenav main main main main'
-    'footer footer footer footer footer';
-    margin-right: 0vw;
-    margin-left: 0vw;
-    background-color: white;
+  'header header header'
+  'menu menu menu'
+  'nav main main'
+  'footer footer footer';
+  width: auto;
+  padding-left: 15vw;
+  padding-right: 15vw;
 }
-
 
 .grid-container > div {
-	padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 10px;
 }
 
-
 .item1 {
-	grid-area: logo;
+  grid-area: header;
+  text-align: right;
   height: 50px;
-  min-height: 50px;
-  background-color: whitesmoke;
 }
 
 .item2 {
-  grid-area: header;
-  height: 50px;
-  min-height: 50px;
-  background-color: white;
+  grid-area: menu;
   text-align: right;
-
+  font-size: 0.9rem;
+  height: 50px;
 }
 
 .item3 {
-  grid-area: sidenav;
-  padding-right: 0rem;
+  grid-area: main;
   overflow-y: auto;
-  height: calc(100vh - 50px);
-  background-color: whitesmoke;
+  height: calc(100vh - 170px); /* 50+50+50+10padding top and 1-padding bottom */
 }
 
 .item4 {
-	  grid-area: main;
-    overflow-y: auto;
-    height: calc(100vh - 50px);
-    background-color: white;
-    width: 100ch;
-}
-
-/* LINKS */
-
-p a:link {
-    color: blue;
-    text-decoration: none;
-}
-
-
-p a:visited {
-    color: blue;
-}
-
-
-p a:hover {
-    color: blue;
-    text-decoration: underline;
-
-}
-
-
-p a:active {
-    color: blue;
-}
-
-
-
-
-
-/* TYPOGRAPHY */
-
-h1, h2, h3, h4, h5, h6 {
-font-weight: 300;
-/*letter-spacing: .25rem;*/
-color: black;
-}
-
-h1 {
-  text-transform: uppercase;
-  font-size: 1.5rem;
-}
-
-h2 {
-  font-size: 1.3rem;
-  padding-top: 1rem;
-
-
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: -.5rem;
-  /* text-decoration: underline; */
-}
-
-h4 {
-  font-size: 1rem;
-  margin-bottom: -.875rem;
-}
-
-
-p {
-  font-size: 1rem;
-  line-height: 2rem;
-}
-
-code {
-  font-size: 0.9rem;
-  background-color: whitesmoke;
-  padding: 2px;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-pre > code {
-  display: inline-block;
-  background-color:whitesmoke;
-  padding:0;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  border: 0;
-  border-radius: 0;
-}
-
-.logo {
-  font-size: 1rem;
-  letter-spacing: .5rem;
-  /* padding-top: 1rem; */
+  grid-area: nav;
+  border-right: 1px solid lightgrey;
+  display: block;
   text-align: left;
+  overflow-y: auto;
+  height: calc(100vh - 170px);
 }
 
-.logo  a, a:hover, a:visited {
-  text-decoration: none;
-  color: black;
+.item5 {
+  grid-area: footer;
+  font-size: .9rem;
+  text-align: center;
+  color: darkgrey;
+  height: 50px;
+}
+
+/* ---------- IMAGE STYLE ---------- */
+
+img {
+  display: block;
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;
+}
+
+img + em {
+  	display: block;
+  	text-align: center;
+  	font-size: .75rem;
+  	color: grey;
 }
 
 
+/* ---------- HR & FOOTNOTE STYLE ---------- */
 
-
-ul {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 100;
-}
-
-li {
-  font-size: 1rem;
-  font-weight: 100;
-}
-
-blockquote {
-  border-left: 4px solid #999;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  background-color: rgba(0,0,0,0.05);
-  font-size: 1rem;
-  line-height: 1.5rem;
+hr {
+    border: 0;
+    height: 0;
+    width: 75%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .footnotes {
@@ -208,11 +121,8 @@ blockquote {
   color:grey;
 }
 
-.footnote {
-	color: red;
-}
 
-
+/* ---------- TABLE STYLE ---------- */
 
 table {
     border-collapse: collapse;
@@ -233,178 +143,81 @@ th {
   font-weight:500;
 }
 
-img {
-	display: block;
-	border: 1px solid grey;
-  max-width: 400px;
-  max-height: 400px;
-  margin: 0 auto;
+/* ----------- CODE STYLE ---------- */
+
+code {
+  background-color: whitesmoke;
 }
 
-img + em {
-	display: block;
-	text-align: center;
-	font-size: .75rem;
-	color: grey;
+pre > code {
+  display: inline-block;
+  background-color:whitesmoke;
 }
 
-
-hr {
-    margin-top: 2rem;
-    border: 0;
-    height: 0;
-    width: 75%;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+blockquote {
+  border-left: 4px solid #999;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  background-color: rgba(0,0,0,0.05);
 }
 
+/* ---------- LIST STYLES ---------- */
 
-
-/* Typography */
-
-.topnav {
-    overflow: hidden;
-
+ul {
+  font-size: 1rem;
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: right;
-    color: darkgrey;
-    text-align: center;
-    padding-top: 1rem;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 400;
-    padding-left: 5px;
+ul ul {
+  padding-left: 1rem;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: whitesmoke;
-    color: darkgrey;
+li {
+  font-size: 1rem;
 }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #4CAF50;
-    color: darkgrey;
-}
+/* SIDENAV STYLES */
 
-
-/****************** SIDENAV *****************/
-
-
-.sidenav {
-    overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
 .sidenav a {
-    padding: 0px;
-    text-decoration: none;
-    font-weight: 300;
-    font-size: .875rem;
-    color: black;
+  color: purple;
 }
+
 
 .sidenav ul {
-  list-style-type: none;;
-  margin: 5px;
-  padding-left: 5px;
-  line-height: 1.5rem;
-}
-
-
-
-/* Change the color of links on hover */
-.sidenav a:hover {
-    color: red;
-    text-decoration: underline;
-
-}
-
-.sidenav a:visited {
-    color: black;
-}
-
-/* Add a color to the active/current link */
-.sidenav a.active {
-    background-color: #4CAF50;
-    color: black;
-}
-
-/* home lists */
-
-.homenav {
-    overflow: hidden;
-    line-height: 1.5rem;
-    padding-top: 1rem;
-}
-
-/* Style the links inside the navigation bar */
-.homenav a {
-    padding: 0px 0px;
-    text-decoration: none;
-    font-weight: 200;
-    font-size: 1rem;
-    color: black;
-}
-
-.homenav ul {
+  font-size: 1rem;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  padding-left: 0;
 }
 
-/* Change the color of links on hover */
-.homenav a:hover {
-    color: red;
-
+.sidenav ul ul {
+  padding-left: 1rem;
 }
 
-.homenav a:visited {
-    color: dimgrey;
-}
-
-/* Add a color to the active/current link */
-.homenav a.active {
-    background-color: #4CAF50;
-    color: dimgrey;
+.sidenav li {
+  font-size: 1rem;
 }
 
 
 
-@media only screen and (max-width: 600px) {
-    body {
+/* ---------- LINK STYLES----------  */
 
-    }
-    .grid-container {
-      display: grid;
-      grid-template-areas:
-      'logo header'
-      'sidenav sidenav'
-      'main main'
-      'footer footer';
-      margin: 0;
-    }
 
-    .item1 {
-      height: 100%;
-      }
+a {
+  text-decoration: none;
+}
 
-    .item2 {
-      height: 100%;
-      background-color: whitesmoke;
-    }
 
-    .item3 {
-      border: 0px;
-      height: 100%;
-    }
-    .item4 {
-      grid-area: main;
-      overflow: visible;height: 100%;
-      width: 100%;
+/* ---------- LINKS INSIDE A PARAGRAPH ---------- */
 
+p > a {
+  text-decoration: underline;
+  color: black;
+  font-weight: 400;
+
+}
+
+a:visited > h1 {
+  color: #222;
+}
+a:hover > h1 {
+  text-decoration: none;
 }

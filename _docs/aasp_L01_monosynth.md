@@ -9,11 +9,9 @@ summary: MIDI data, oscillators, envelopes and tuning.
 lastupdate: 14-12-2018
 ---
 
-# Basic Monosynth Overview
+## Overview
 
 This lesson is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.
-
----
 
 
 ## First Steps
@@ -41,7 +39,6 @@ When pressing keys, MIDI information relating to the note(s) pressed is transmit
 2. Release key on keyboard - transmits the same midi note again with a velocity of 0
 
 
-
 The patch below demonstrates how this information is generated from a key being pressed and released on a MIDI keyboard (or from a note drawn in to a clip in Live).
 
 [![MIDI Information Parse](/assets/img/aasp_monosynth_03.png)*MIDI Information Parse*](/assets/img/aasp_monosynth_03.png)
@@ -62,9 +59,7 @@ The velocity, calculated from how quickly the key is pressed down, is also given
 
 
 
----
-
-### Simple Monosynth
+## Simple Monosynth
 
 The patch below demonstrates an extremely basic monosynth using only the Note On/Off and Velocity data with the order of processing as follows:
 
@@ -88,9 +83,6 @@ There are some playability issues with the patch as it is at the moment relating
 
 [![Note Priority with ddg.mono](/assets/img/aasp_monosynth_05.png)*Note priority with ddg.mono*](/assets/img/aasp_monosynth_05.png)
 
-
-
----
 
 ## Envelopes
 The envelope of a sound is how it's amplitude changes over time and is typically described via a the following stages; the attack, decay, sustain and release.
@@ -188,7 +180,7 @@ Use these in conjunction with the [`selector~`](/routing/#selector--switch) obje
 
 * Sinusoidal - `cycle~`
 * Sawtooth - `saw~`
-* Triangle - `tri~: pay attention to the **Duty Cycle**  argument.
+* Triangle - `tri~`: pay attention to the **Duty Cycle**  argument.
 * Square - `rect~`: pay attention to the **Pulse Width** argument.
 * White Noise - `noise~`
 * Pink Noise - `pink~`

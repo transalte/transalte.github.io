@@ -8,7 +8,7 @@ summary: Utilising velocity for modulation
 lastupdate: 21-01-2019
 ---
 
-# Velocity Modulation
+## Overview
 
 In addition to amplitude control, velocity is regularly utilised as a modulation source for other parameters such as filter frequency, resonance and so on. As an example to introduce more expressiveness into a synthesiser, velocity could be used to modulate the amount of saturation, or chorus that is applied to a sound according to how hard/fast a key has been pressed.
 

@@ -8,7 +8,7 @@ summary: Working with sub-patches
 lastupdate: 03-12-2018
 ---
 
-# Encapsulation
+## Overview
 
 Max patches can regulary become busy and hard-to-follow as they increase in complexity. One method of dealing with this is the concept of *encapsulation*, or, the creation of sub-patches within a patch.
 

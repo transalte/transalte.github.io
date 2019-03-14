@@ -8,7 +8,7 @@ summary: Creating delays
 lastupdate: 03-12-2018
 ---
 
-# Delay Effect
+## Overview
 
 While there are a number of different types of delays, they are all based around the same concept; a signal comes in and passes through to the output while it is also sent through a delay block to be joined with the dry signal. What happens in the delay circuit is where the differences lie. Standard controls found on these effects are **delay time**, **feedback**, **mix/blend**, and depending on the signal flow (topology) the output can vary wildly between one design and another.
 
@@ -113,7 +113,7 @@ This can be emulated by using the ***~** object before the signal returns to **t
 ![d03](/assets/img/d03.png)*d03*
 
 Note that there is an argument of **0.5** as a default for the gain control ***~**.
-If a signal is now passed through the device the repeating echoes should be audible. If a singular hit was played it would be delayed and then heard, then heard again but at half of the volume from the ***~ 0.5**) then heard again at a 1/4 of the original gain, then 1/8 and so on. This is due to the accumulative effect of the feedback loop processing.
+If a signal is now passed through the device the repeating echoes should be audible. If a singular hit was played it would be delayed and then heard, then heard again but at half of the volume from the **~ 0.5**) then heard again at a 1/4 of the original gain, then 1/8 and so on. This is due to the accumulative effect of the feedback loop processing.
 
 As the gain here is 0. to 1., it is possible to use the right-outlet of a **live.dial** for this parameter control:
 

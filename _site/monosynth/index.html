@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
+<link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
 			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
 			<title>Basic Monosynth</title>
 		</head>
@@ -8,55 +9,11 @@
 
 <div class="grid-container">
 
-<div class="item1">
-<div class="logo"><a href="/asp/"><p>TRANSALTE~</p></a></div>
-
-</div>
-
-		<div class="item2">
-
-		</div>
-
-		<div class="item3">
-				<div class="sidenav">
-					<!-- <p>Basic Monosynth</p> -->
-						<ul>
-  <li><a href="#basic-monosynth-overview">Basic Monosynth Overview</a>
-    <ul>
-      <li><a href="#first-steps">First Steps</a>
-        <ul>
-          <li><a href="#simple-monosynth">Simple Monosynth</a></li>
-        </ul>
-      </li>
-      <li><a href="#envelopes">Envelopes</a>
-        <ul>
-          <li><a href="#linear-envelopes">Linear Envelopes</a></li>
-          <li><a href="#exponential-envelopes">Exponential Envelopes</a></li>
-        </ul>
-      </li>
-      <li><a href="#tuning-oscillators">Tuning Oscillators</a>
-        <ul>
-          <li><a href="#semi-tones">Semi-tones</a></li>
-          <li><a href="#octaves">Octaves</a></li>
-          <li><a href="#de-tune">De-tune</a></li>
-          <li><a href="#alternative-method">Alternative Method</a></li>
-        </ul>
-      </li>
-      <li><a href="#oscillator-waveforms">Oscillator Waveforms</a></li>
-    </ul>
-  </li>
-</ul>
-
-					</div>
-
-
-		</div>
-
-		<div class="item4"><article><h1 id="basic-monosynth-overview">Basic Monosynth Overview</h1>
+	<div class="item1"><a href="../index.html"><h1>transalte~</h1></a></div>
+	<div class="item2">max overview // audio effects // instruments</div>
+	<div class="item3"><article><h2 id="overview">Overview</h2>
 
 <p>This lesson is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.</p>
-
-<hr />
 
 <h2 id="first-steps">First Steps</h2>
 
@@ -105,9 +62,7 @@ MIDI Note 127 = G9
 
 <p>The velocity, calculated from how quickly the key is pressed down, is also given a value from 0 to 127.</p>
 
-<hr />
-
-<h3 id="simple-monosynth">Simple Monosynth</h3>
+<h2 id="simple-monosynth">Simple Monosynth</h2>
 
 <p>The patch below demonstrates an extremely basic monosynth using only the Note On/Off and Velocity data with the order of processing as follows:</p>
 
@@ -128,8 +83,6 @@ MIDI Note 127 = G9
 <p>There are some playability issues with the patch as it is at the moment relating to how the patch copes with overlapping notes. This can be solved by introducing the <code class="highlighter-rouge">ddg.mono</code> object which provides note priority handling:</p>
 
 <p><a href="/assets/img/aasp_monosynth_05.png"><img src="/assets/img/aasp_monosynth_05.png" alt="Note Priority with ddg.mono" /><em>Note priority with ddg.mono</em></a></p>
-
-<hr />
 
 <h2 id="envelopes">Envelopes</h2>
 <p>The envelope of a sound is how it’s amplitude changes over time and is typically described via a the following stages; the attack, decay, sustain and release.</p>
@@ -231,7 +184,7 @@ MIDI Note 127 = G9
 <ul>
   <li>Sinusoidal - <code class="highlighter-rouge">cycle~</code></li>
   <li>Sawtooth - <code class="highlighter-rouge">saw~</code></li>
-  <li>Triangle - `tri~: pay attention to the <strong>Duty Cycle</strong>  argument.</li>
+  <li>Triangle - <code class="highlighter-rouge">tri~</code>: pay attention to the <strong>Duty Cycle</strong>  argument.</li>
   <li>Square - <code class="highlighter-rouge">rect~</code>: pay attention to the <strong>Pulse Width</strong> argument.</li>
   <li>White Noise - <code class="highlighter-rouge">noise~</code></li>
   <li>Pink Noise - <code class="highlighter-rouge">pink~</code></li>
@@ -245,6 +198,31 @@ MIDI Note 127 = G9
   </ol>
 </div>
 </article></div>
+	<div class="item4"><h2>Basic Monosynth</h2>
+				<div class="sidenav"><ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#first-steps">First Steps</a></li>
+  <li><a href="#simple-monosynth">Simple Monosynth</a></li>
+  <li><a href="#envelopes">Envelopes</a>
+    <ul>
+      <li><a href="#linear-envelopes">Linear Envelopes</a></li>
+      <li><a href="#exponential-envelopes">Exponential Envelopes</a></li>
+    </ul>
+  </li>
+  <li><a href="#tuning-oscillators">Tuning Oscillators</a>
+    <ul>
+      <li><a href="#semi-tones">Semi-tones</a></li>
+      <li><a href="#octaves">Octaves</a></li>
+      <li><a href="#de-tune">De-tune</a></li>
+      <li><a href="#alternative-method">Alternative Method</a></li>
+    </ul>
+  </li>
+  <li><a href="#oscillator-waveforms">Oscillator Waveforms</a></li>
+</ul>
+</div>
+	</div>
+
+	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

@@ -8,7 +8,7 @@ summary: A list of regular shortcuts in Max
 lastupdate: 29-11-2018
 ---
 
-# Shortcuts and Navigation
+## Shortcuts and Navigation
 
 ## Keyboard Shortcuts
 
@@ -42,7 +42,7 @@ lastupdate: 29-11-2018
 
 ## Patch Organisation
 
-**Multiple Object Selection**:   **Option-drag** (Mac) or **Alt-drag** (Windows) allows you to select multiple cords, or objects, at the same time 
+**Multiple Object Selection**:   **Option-drag** (Mac) or **Alt-drag** (Windows) allows you to select multiple cords, or objects, at the same time
 
 **Color Changes**:  Click on a cord (or multiple cords, see above) and right click to bring up the menu and select color.
 
@@ -53,4 +53,3 @@ To change the color of all cords simultanously: Right click on a blank space of 
 **Encapsulation**:  Select all the objects for encasulation; `cmd + shift + e`
 
 ---
-

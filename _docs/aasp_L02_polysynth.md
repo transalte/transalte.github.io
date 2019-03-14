@@ -9,7 +9,7 @@ summary: Creating a polyphonic synth
 lastupdate: 14/02/2019
 ---
 
-# POLYPHONY OVERVIEW
+## Overview
 Polyphony in synths refers to the ability to play more than one note at a time i.e chords. The previous monophonic synth only permitted a single note to played [^poly].
 
 Polyphony is achieved in Max by having a top level patch which, in addition to the user-interface elements, MIDI and audio outputs, also contains a `poly~` object which holds the 'guts' of a single-voice (monophonic) synth. The `poly~` object effectively provides an instance of this 'voice' for each key pressed or note received.

@@ -8,7 +8,7 @@ summary: Routing messages, signals, bypassing, selecting
 lastupdate: 29-11-2018
 ---
 
-# Routing in Max
+## Overview
 There are a number of methods of routing within Max; direct point-to-point connections, 'cordless', dynamic; one-to-many, many-to-many, and so on. This section covers each with examples and a context.
 
 ---
@@ -34,9 +34,13 @@ The `switch` object is the message/data equivilent of `selector~` and works in t
 
 ## One-to-Many
 
-### Gates
+### gate~ / gate
 
 The `gate~` object, and its counterparts, are the 'one-to-many' equivilent of `selector~`. The arguments are similar i.e `gate~ 4` would create a gate with four outlets for the single input.
+
+[![gate~](/assets/img/gateSig.png)*1-in 4-Out gate~*](/assets/img/gateSig.png)
+
+Similar to `selector~`, sending `gate~` a value of **0** will prevent *any* signal being passed through.
 
 ---
 
@@ -49,11 +53,11 @@ The `gate~` object, and its counterparts, are the 'one-to-many' equivilent of `s
 
 ## Cordless Connections
 
-Concept overview
+The standard method connecting objects is point-to-point via the cords. A 'wireless' connection can be made by using the following objects:
 
-`send~` & `receive~`
+`send~` & `receive~` - for sending signals
 
-`send` & `receive`
+`send` & `receive` - for messages (note that for messages, the objects can be truncated to `s` and `r`)
 
 ![Cordless Connections](/assets/img/d10.png)*Cordless Connections*
 

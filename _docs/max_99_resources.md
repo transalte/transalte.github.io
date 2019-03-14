@@ -7,7 +7,7 @@ permalink: /resources/
 summary: Related online resources, books and articles.
 ---
 
-# Resource List
+## Resource List
 
 ## Online
 
