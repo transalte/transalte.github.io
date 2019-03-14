@@ -59,14 +59,18 @@ Similar to the expansion example above, the user presses a button to open up a w
 
 [![UI Pop-out Window Patch](/assets/img/ui_popout_01.png)*UI Pop-out Window Patch*](/assets/img/ui_popout_01.png)
 
-Effectively, the entire device is [encapsulated](/encapsulation/) into its own sub-patch[^In this example, `plugin~` and `plugout~` are outside of the patch, but they could also be in the subpatch.]. There are two elements to this functionality; the button in the top level used for launching the window, and the receiving `thispatcher` object in the sub-patch.
+Effectively, the entire device is [encapsulated](/encapsulation/) into its own sub-patch[^pop1]. There are two elements to this functionality; the button in the top level used for launching the window, and the receiving `thispatcher` object in the sub-patch.
 
 When these are configured as in the example, it is important that the **Inspector** for both the top level *and* the sub-patch is configured so that the box for  **Open In Presentation** is checked.
 
 > At the top-level, this will ensure that the button/toggle etc. is visible to the user. In the sub-patch, this means that the window will open up in Presenation Mode. If the subpatch is not configured in tehi way, the user will simply see the Max Editor view with cords and object etc.
 
-Once the **Inspector** is configured, make sure that the subpatch is in **Presentation Mode** (click the whiteboard icon at the bottom), and resize the window to fit the UI accordingly[^Refer to the full help files on `thispatcher` for other methods included specifiying where the window will popo-up]:
+Once the **Inspector** is configured, make sure that the subpatch is in **Presentation Mode** (click the whiteboard icon at the bottom), and resize the window to fit the UI accordingly[^pres]:
 
 [![UI Pop-out Window UI](/assets/img/ui_popout_02.png)*UI Pop-out Window UI*](/assets/img/ui_popout_02.png)
 
 This resized sub-patch will be the size of the window that opens up containing the patch.
+
+[^pop1]: In this example, `plugin~` and `plugout~` are outside of the patch, but they could also be in the subpatch.
+
+[^pres]: Refer to the full help files on `thispatcher` for other methods included specifiying where the window will popo-up

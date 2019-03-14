@@ -62,7 +62,7 @@
 
 <p><a href="/assets/img/ui_popout_01.png"><img src="/assets/img/ui_popout_01.png" alt="UI Pop-out Window Patch" /><em>UI Pop-out Window Patch</em></a></p>
 
-<p>Effectively, the entire device is <a href="/encapsulation/">encapsulated</a> into its own sub-patch[^In this example, <code class="highlighter-rouge">plugin~</code> and <code class="highlighter-rouge">plugout~</code> are outside of the patch, but they could also be in the subpatch.]. There are two elements to this functionality; the button in the top level used for launching the window, and the receiving <code class="highlighter-rouge">thispatcher</code> object in the sub-patch.</p>
+<p>Effectively, the entire device is <a href="/encapsulation/">encapsulated</a> into its own sub-patch<sup id="fnref:pop1"><a href="#fn:pop1" class="footnote">1</a></sup>. There are two elements to this functionality; the button in the top level used for launching the window, and the receiving <code class="highlighter-rouge">thispatcher</code> object in the sub-patch.</p>
 
 <p>When these are configured as in the example, it is important that the <strong>Inspector</strong> for both the top level <em>and</em> the sub-patch is configured so that the box for  <strong>Open In Presentation</strong> is checked.</p>
 
@@ -70,11 +70,22 @@
   <p>At the top-level, this will ensure that the button/toggle etc. is visible to the user. In the sub-patch, this means that the window will open up in Presenation Mode. If the subpatch is not configured in tehi way, the user will simply see the Max Editor view with cords and object etc.</p>
 </blockquote>
 
-<p>Once the <strong>Inspector</strong> is configured, make sure that the subpatch is in <strong>Presentation Mode</strong> (click the whiteboard icon at the bottom), and resize the window to fit the UI accordingly[^Refer to the full help files on <code class="highlighter-rouge">thispatcher</code> for other methods included specifiying where the window will popo-up]:</p>
+<p>Once the <strong>Inspector</strong> is configured, make sure that the subpatch is in <strong>Presentation Mode</strong> (click the whiteboard icon at the bottom), and resize the window to fit the UI accordingly<sup id="fnref:pres"><a href="#fn:pres" class="footnote">2</a></sup>:</p>
 
 <p><a href="/assets/img/ui_popout_02.png"><img src="/assets/img/ui_popout_02.png" alt="UI Pop-out Window UI" /><em>UI Pop-out Window UI</em></a></p>
 
 <p>This resized sub-patch will be the size of the window that opens up containing the patch.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:pop1">
+      <p>In this example, <code class="highlighter-rouge">plugin~</code> and <code class="highlighter-rouge">plugout~</code> are outside of the patch, but they could also be in the subpatch. <a href="#fnref:pop1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:pres">
+      <p>Refer to the full help files on <code class="highlighter-rouge">thispatcher</code> for other methods included specifiying where the window will popo-up <a href="#fnref:pres" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 </article></div>
 	<div class="item4"><h2>User Interface</h2>
 				<div class="sidenav"><ul>
