@@ -18,7 +18,8 @@ If you are new to Max/M4L, or needing a refresh, it is recommended that you read
 
 <div class="gridItem">
 
-Max / Max For Live Fundamentals
+<h3>Max / Max For Live Fundamentals</h3>
+
 <ul>{% for doc in site.docs %}
 {% if doc.category == "Max" %}
 <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
@@ -28,7 +29,7 @@ Max / Max For Live Fundamentals
 
 <div class="gridItem">
 
-Audio Effects
+<h3>Audio Effects</h3>
 
 <ul>{% for doc in site.docs %}
 {% if doc.category == "asp_lessons" %}
@@ -40,7 +41,7 @@ Audio Effects
 
 
 <div class="gridItem">
-Instruments
+<h3>Instruments</h3>
 
 <ul>{% for doc in site.docs %}
 {% if doc.category == "aasp_lessons" %}
