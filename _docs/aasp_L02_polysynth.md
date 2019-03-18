@@ -85,5 +85,11 @@ MIDI In > `poly~` for voices > Audio Effects > `plugout~`
 
 Note that depending on the features included, the audio signal path may change to stereo either inside `poly~` or at the Audio Effects stages.
 
+## Saving
+As this patch relies on more than the top-level **.amxd** file, the device must be saved properly to ensure that it can be opened on another user's machine. When in the 'Max Editor', a device can be **frozen** which will collate all of the dependant files together in a single **.amxd** file. This is similar in concept to the 'Collect All and Save' function in **Live**. This can be accessed from the lower-left of the editor screen and pressing the **snowflake** icon:
+
+[![Freeze Device](/assets/img/max_freeze.png)*Freeze Device Icon*](/assets/img/max_freeze.png)
+
+
 
 [^poly]:Although chords can be played by tuning oscillators in various combinations of semitones, this is not polyphony.
