@@ -11,23 +11,41 @@ lastupdate: 20-12-2018
 
 ## About These Notes...
 
-If you are new to Max/M4L, or needing a refresh, it is recommended that you read through the Max Fundamentals section. For L08 (ASP) and L09 (AASP). 
+If you are new to Max/M4L, or needing a refresh, it is recommended that you read through the Max Fundamentals section. For L08 (ASP) and L09 (AASP).
 
-<details><summary>Max / Max For Live Fundamentals</summary><ul>{% for doc in site.docs %}
+
+<div class="contentGrid">
+
+<div class="gridItem">
+
+Max / Max For Live Fundamentals
+<ul>{% for doc in site.docs %}
 {% if doc.category == "Max" %}
 <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
           {% endif %}
-        {% endfor %}</ul></details>
+        {% endfor %}</ul>
+</div>
 
+<div class="gridItem">
 
-<details><summary>Audio Effects</summary><ul>{% for doc in site.docs %}
+Audio Effects
+
+<ul>{% for doc in site.docs %}
 {% if doc.category == "asp_lessons" %}
 <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
           {% endif %}
-        {% endfor %}</ul></details>
+        {% endfor %}</ul>
 
-<details><summary>Instruments</summary><ul>{% for doc in site.docs %}
+</div>
+
+
+<div class="gridItem">
+Instruments
+
+<ul>{% for doc in site.docs %}
 {% if doc.category == "aasp_lessons" %}
 <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
           {% endif %}
-      {% endfor %}</ul></details>
+      {% endfor %}</ul>
+</div>
+</div>

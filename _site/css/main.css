@@ -82,6 +82,20 @@ h2, h3 {
   height: 50px;
 }
 
+
+/* FLEX CONTAINER */
+
+.contentGrid {
+  display: grid;
+  width: auto;
+  grid-template-columns: auto auto auto;
+}
+
+.gridItem {
+  
+}
+
+
 /* ---------- IMAGE STYLE ---------- */
 
 img {

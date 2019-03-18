@@ -14,37 +14,43 @@
 		<div class="item3"><h1>About These Notes</h1>
 							<p>If you are new to Max / Max For Live, (or needing a refresh) it is recommended to read through the <b>Max Fundamentals</b> section.</p>
 
+							<div class="flex-container">
+								<div>
 
-							<h3>Max/Max For Live Fundamentals</h3>
-									<div class="homenav">
-									<details>		<ul>
+									<h3>Max/Max For Live Fundamentals</h3>
+										<div class="homenav">
+											<!-- <details>		 -->
+												<ul>
 											{% for doc in site.docs %}
 								      	{% if doc.category == "Max" %}
 								        	<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a></li>
 								      	{% endif %}
 								    	{% endfor %}</p>
-										</ul>
-										</details>
+											</ul>
+											<!-- </details> -->
 										</div>
+								</div>
 
+								<div>
 
-							<h3>Audio Effects</h3>
-							<div class="homenav">
-								<details>
-								<ul>
-									{% for doc in site.docs %}
-									{% if doc.category == "asp_lessons" %}
-									<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
-									{% endif %}
-									{% endfor %}
-									</ul>
-									</details>
-									</div>
-
-							<h3>Instruments</h3>
-
+									<h3>Audio Effects</h3>
 									<div class="homenav">
-											<details>
+										<!-- <details> -->
+											<ul>
+												{% for doc in site.docs %}
+												{% if doc.category == "asp_lessons" %}
+												<li> <p><a href="{{ doc.url }}">{{ doc.title }}</a> : {{doc.summary}}</li>
+													{% endif %}
+													{% endfor %}
+												</ul>
+										<!-- </details> -->
+									</div>
+								</div>
+
+								<div>
+									<h3>Instruments</h3>
+										<div class="homenav">
+										<!-- <details> -->
 												<ul>
 											{% for doc in site.docs %}
 								      	{% if doc.category == "aasp_lessons" %}
@@ -52,10 +58,12 @@
 								      	{% endif %}
 								    	{% endfor %}
 										</ul>
-									</details>
+									<!-- </details> -->
 										</div>
+							</div>
 
-									</div>
+							</div>
+				</div>
 
 		<div class="item4">		</div>
 
