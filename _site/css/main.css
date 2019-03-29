@@ -77,7 +77,7 @@ h2, h3 {
 
 .item5 {
   grid-area: footer;
-  font-size: .9rem;
+  font-size: .75rem;
   text-align: center;
   color: darkgrey;
   height: 50px;
