@@ -37,8 +37,8 @@ h2, h3 {
   'menu menu menu'
   'nav main main'
   'footer footer footer';
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 15vw;
+  padding-right: 15vw;
 }
 
 .grid-container > div {
