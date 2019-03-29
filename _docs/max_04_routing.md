@@ -8,14 +8,14 @@ summary: Routing messages, signals, bypassing, selecting
 lastupdate: 29-11-2018
 ---
 
-## Overview
+## Routing Signals and Messages
 There are a number of methods of routing within Max; direct point-to-point connections, 'cordless', dynamic; one-to-many, many-to-many, and so on. This section covers each with examples and a context.
 
 ---
 
-## Many-to-One
+### Many-to-One
 
-### selector~ / switch
+#### selector~ / switch
 
 The `selector~` object permits a 'many-to-one' signal selection. The arguments for the object dictate how many inputs there are and which is being passed through the object upon load. i.e `selector~ 4 1` would create 4 inputs with the first input signal being passed through. Note that there will be 5 inlets in the object with the first being reserved for the selection choice.
 
@@ -25,16 +25,16 @@ The selection occurs when an integer is sent to the first inlet. With the `selec
 
 The `switch` object is the message/data equivilent of `selector~` and works in the same way.
 
-#### Common Errors
+##### Common Errors
 
 - Forgetting the `+ 1` after the selection method i.e `live.menu` > `+ 1` > `selector~ 4 1`
 - Connecting an input into the first inlet as it is reserved for the routing selection.
 
 ---
 
-## One-to-Many
+### One-to-Many
 
-### gate~ / gate
+#### gate~ / gate
 
 The `gate~` object, and its counterparts, are the 'one-to-many' equivilent of `selector~`. The arguments are similar i.e `gate~ 4` would create a gate with four outlets for the single input.
 
@@ -44,15 +44,14 @@ Similar to `selector~`, sending `gate~` a value of **0** will prevent *any* sign
 
 ---
 
-## Many-to-Many
+### Many-to-Many
 
-### matrix~
+#### matrix~
 
 
 ---
 
-## Cordless Connections
-
+### Cordless Connections
 The standard method connecting objects is point-to-point via the cords. A 'wireless' connection can be made by using the following objects:
 
 `send~` & `receive~` - for sending signals
@@ -61,7 +60,8 @@ The standard method connecting objects is point-to-point via the cords. A 'wirel
 
 ![Cordless Connections](/assets/img/d10.png)*Cordless Connections*
 
-#### Common Mistakes and Errors
+**Common Mistakes and Errors**
+
 The most common problems with using cordless connections are typos:
 
 - Including spaces in the name of the send and receives;
@@ -72,7 +72,7 @@ Losing connections; double-click on the send or receive to see a list of all the
 
 ---
 
-## Dynamic Cordless
+### Dynamic Cordless
 Notice that the `receive~` and `receive` objects have a top-left inlet. This is used to 'over-ride' the allocated 'cordless' source.
 
 ---

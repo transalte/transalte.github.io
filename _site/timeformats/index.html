@@ -10,18 +10,18 @@
 <div class="grid-container">
 
 	<div class="header"><a href="../index.html"><h1>transalte~</h1></a></div>
-	<div class="item2">max overview // audio effects // instruments</div>
-	<div class="item3"><article><h2 id="overview">Overview</h2>
+	<div class="menu">max overview // audio effects // instruments</div>
+	<div class="main"><article><h2 id="time-formats-in-max">Time Formats in Max</h2>
 
 <p><strong>Max Time Formats</strong> are how Max describes time and there are two areas to consider:</p>
 
-<h2 id="time-formats">Time Formats</h2>
+<h3 id="fixed-time-values">Fixed Time Values</h3>
 
-<p><strong>Fixed Time Values</strong> - those which stay the same regardless of the tempo of the track ie. Milliseconds; Hours/Minutes/Seconds; Samples; Frequency (Hz). For example, a millisecond is always a millisecond if the tempo is 147 or 98BPM.</p>
+<p>Values that stay the same regardless of the tempo of the track ie. Milliseconds; Hours/Minutes/Seconds; Samples; Frequency (Hz). For example, a millisecond is always a millisecond if the tempo is 147 or 98BPM.</p>
 
-<p>and</p>
+<h3 id="tempo-relative-time-values">Tempo-Relative Time Values</h3>
 
-<p><strong>Tempo-Relative Time Values</strong> - lengths of time which will change accordingly in relation to the tempo ie. Bars/Beats/Units (BBU); Ticks; Note Values. For example, 1 bar at 3BPM is obviously longer than 1 bar at 300BPM. Also, when using tempo-related time values, if the BPM of a project changes, so will the timing of the objects, i.e if a delay is controlled with BBU or note values, when the tempo changes, the delay times will change along with it to reflect the change of tempo.</p>
+<p>Values of time which will change accordingly in relation to the tempo ie. Bars/Beats/Units (BBU); Ticks; Note Values. For example, 1 bar at 3BPM is obviously longer than 1 bar at 300BPM. Also, when using tempo-related time values, if the BPM of a project changes, so will the timing of the objects, i.e if a delay is controlled with BBU or note values, when the tempo changes, the delay times will change along with it to reflect the change of tempo.</p>
 
 <p>Notevalues are one of the most common tempo-relative time formats, the table below shows the syntax and what each symbol corresponds to:</p>
 
@@ -122,7 +122,7 @@
 
 <hr />
 
-<h2 id="conversion">Conversion</h2>
+<h3 id="conversion">Conversion</h3>
 
 <p>Depending on the project, it may be necessary to have a user select a time in a tempo-relative format but the object being controlled only accepts milliseconds as a valid input format. This can happen when using <code class="highlighter-rouge">tapin~</code> and <code class="highlighter-rouge">tapout~</code> for a delay patch. To convert from one time-format to another the main object is <code class="highlighter-rouge">translate</code>:</p>
 
@@ -145,7 +145,7 @@
 
 <hr />
 
-<h2 id="further-conversions">Further Conversions</h2>
+<h4 id="further-conversions">Further Conversions</h4>
 
 <p>The patch below shows a few examples of conversions using multiple <code class="highlighter-rouge">translate</code> objects:</p>
 
@@ -153,17 +153,20 @@
 
 <hr />
 </article></div>
-	<div class="item4"><h2>Max Time Formats</h2>
-				<div class="sidenav"><ul>
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#time-formats">Time Formats</a></li>
-  <li><a href="#conversion">Conversion</a></li>
-  <li><a href="#further-conversions">Further Conversions</a></li>
+	<div class="nav">
+				<ul>
+  <li><a href="#fixed-time-values">Fixed Time Values</a></li>
+  <li><a href="#tempo-relative-time-values">Tempo-Relative Time Values</a></li>
+  <li><a href="#conversion">Conversion</a>
+    <ul>
+      <li><a href="#further-conversions">Further Conversions</a></li>
+    </ul>
+  </li>
 </ul>
-</div>
+
 	</div>
 
-	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
+	<div class="footer"><footer>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

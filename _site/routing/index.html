@@ -10,15 +10,15 @@
 <div class="grid-container">
 
 	<div class="header"><a href="../index.html"><h1>transalte~</h1></a></div>
-	<div class="item2">max overview // audio effects // instruments</div>
-	<div class="item3"><article><h2 id="overview">Overview</h2>
+	<div class="menu">max overview // audio effects // instruments</div>
+	<div class="main"><article><h2 id="routing-signals-and-messages">Routing Signals and Messages</h2>
 <p>There are a number of methods of routing within Max; direct point-to-point connections, ‘cordless’, dynamic; one-to-many, many-to-many, and so on. This section covers each with examples and a context.</p>
 
 <hr />
 
-<h2 id="many-to-one">Many-to-One</h2>
+<h3 id="many-to-one">Many-to-One</h3>
 
-<h3 id="selector--switch">selector~ / switch</h3>
+<h4 id="selector--switch">selector~ / switch</h4>
 
 <p>The <code class="highlighter-rouge">selector~</code> object permits a ‘many-to-one’ signal selection. The arguments for the object dictate how many inputs there are and which is being passed through the object upon load. i.e <code class="highlighter-rouge">selector~ 4 1</code> would create 4 inputs with the first input signal being passed through. Note that there will be 5 inlets in the object with the first being reserved for the selection choice.</p>
 
@@ -28,7 +28,7 @@
 
 <p>The <code class="highlighter-rouge">switch</code> object is the message/data equivilent of <code class="highlighter-rouge">selector~</code> and works in the same way.</p>
 
-<h4 id="common-errors">Common Errors</h4>
+<h5 id="common-errors">Common Errors</h5>
 
 <ul>
   <li>Forgetting the <code class="highlighter-rouge">+ 1</code> after the selection method i.e <code class="highlighter-rouge">live.menu</code> &gt; <code class="highlighter-rouge">+ 1</code> &gt; <code class="highlighter-rouge">selector~ 4 1</code></li>
@@ -37,9 +37,9 @@
 
 <hr />
 
-<h2 id="one-to-many">One-to-Many</h2>
+<h3 id="one-to-many">One-to-Many</h3>
 
-<h3 id="gate--gate">gate~ / gate</h3>
+<h4 id="gate--gate">gate~ / gate</h4>
 
 <p>The <code class="highlighter-rouge">gate~</code> object, and its counterparts, are the ‘one-to-many’ equivilent of <code class="highlighter-rouge">selector~</code>. The arguments are similar i.e <code class="highlighter-rouge">gate~ 4</code> would create a gate with four outlets for the single input.</p>
 
@@ -49,14 +49,13 @@
 
 <hr />
 
-<h2 id="many-to-many">Many-to-Many</h2>
+<h3 id="many-to-many">Many-to-Many</h3>
 
-<h3 id="matrix">matrix~</h3>
+<h4 id="matrix">matrix~</h4>
 
 <hr />
 
-<h2 id="cordless-connections">Cordless Connections</h2>
-
+<h3 id="cordless-connections">Cordless Connections</h3>
 <p>The standard method connecting objects is point-to-point via the cords. A ‘wireless’ connection can be made by using the following objects:</p>
 
 <p><code class="highlighter-rouge">send~</code> &amp; <code class="highlighter-rouge">receive~</code> - for sending signals</p>
@@ -65,7 +64,8 @@
 
 <p><img src="/assets/img/d10.png" alt="Cordless Connections" /><em>Cordless Connections</em></p>
 
-<h4 id="common-mistakes-and-errors">Common Mistakes and Errors</h4>
+<p><strong>Common Mistakes and Errors</strong></p>
+
 <p>The most common problems with using cordless connections are typos:</p>
 
 <ul>
@@ -78,17 +78,20 @@
 
 <hr />
 
-<h2 id="dynamic-cordless">Dynamic Cordless</h2>
+<h3 id="dynamic-cordless">Dynamic Cordless</h3>
 <p>Notice that the <code class="highlighter-rouge">receive~</code> and <code class="highlighter-rouge">receive</code> objects have a top-left inlet. This is used to ‘over-ride’ the allocated ‘cordless’ source.</p>
 
 <hr />
 </article></div>
-	<div class="item4"><h2>Routing</h2>
-				<div class="sidenav"><ul>
-  <li><a href="#overview">Overview</a></li>
+	<div class="nav">
+				<ul>
   <li><a href="#many-to-one">Many-to-One</a>
     <ul>
-      <li><a href="#selector--switch">selector~ / switch</a></li>
+      <li><a href="#selector--switch">selector~ / switch</a>
+        <ul>
+          <li><a href="#common-errors">Common Errors</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#one-to-many">One-to-Many</a>
@@ -104,10 +107,10 @@
   <li><a href="#cordless-connections">Cordless Connections</a></li>
   <li><a href="#dynamic-cordless">Dynamic Cordless</a></li>
 </ul>
-</div>
+
 	</div>
 
-	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
+	<div class="footer"><footer>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

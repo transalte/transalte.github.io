@@ -10,8 +10,8 @@
 <div class="grid-container">
 
 	<div class="header"><a href="../index.html"><h1>transalte~</h1></a></div>
-	<div class="item2">max overview // audio effects // instruments</div>
-	<div class="item3"><article><h2 id="overview">Overview</h2>
+	<div class="menu">max overview // audio effects // instruments</div>
+	<div class="main"><article><h2 id="max-fundamentals">Max Fundamentals</h2>
 
 <p>Max is classed as a <a href="https://en.wikipedia.org/wiki/Visual_programming_language">visual programming language</a> for music and multimedia. It has been used in a number of areas for composition, performance and research purposes.</p>
 
@@ -23,9 +23,9 @@
 
 <hr />
 
-<h2 id="the-basics">The Basics</h2>
+<h3 id="the-basics">The Basics</h3>
 
-<h3 id="patches">Patches</h3>
+<h4 id="patches">Patches</h4>
 <p>Patches are the files that are generated from Max; a patch could be a filter, an instrument, an arpegiator, a synth, a sampler and so on. There are two main formats to be aware of:</p>
 
 <ul>
@@ -39,7 +39,7 @@
 
 <p>Max patchers (from the standalone version) can also be converted into standalone executable files that can be run without the main programme being installed.</p>
 
-<h3 id="data-formats">Data Formats</h3>
+<h4 id="data-formats">Data Formats</h4>
 <p>There are six basic data formats that are utilised in Max that are transmitted between the objects.</p>
 
 <ul>
@@ -51,7 +51,7 @@
   <li>Signals (audio)</li>
 </ul>
 
-<h3 id="objects">Objects</h3>
+<h4 id="objects">Objects</h4>
 <p>As stated, the core functionality of Max is based on ‘objects’, the connections between them and the data being transmitted.</p>
 
 <p>Objects are boxes within the programme that perform functions. These can range from simple mathematical calculations to complex filtering or routing.</p>
@@ -62,21 +62,21 @@
 
 <hr />
 
-<h2 id="object-details">Object Details</h2>
+<h3 id="object-details">Object Details</h3>
 
-<h3 id="connecting-objects">Connecting Objects</h3>
+<h4 id="connecting-objects">Connecting Objects</h4>
 
-<h4 id="standard-connections">Standard Connections</h4>
+<h5 id="standard-connections">Standard Connections</h5>
 <p>Click on the <em>inlet</em> or <em>outlet</em> of an object and drag the cord to the <em>inlet</em> or <em>outlet</em> of another object. Upon release, the connection will be made. If the connection is not made, this is an indication that the data being sent from one object to another is not valid for those particular objects.</p>
 
-<h3 id="attributes-and-arguments">Attributes and Arguments</h3>
+<h4 id="attributes-and-arguments">Attributes and Arguments</h4>
 <p>Attributes for an object are settings or parameters that dictate how an object is to function. An attribute would change or set a function of the object and an argument would be the value attached.</p>
 
 <p>An example of this is the <code class="highlighter-rouge">metro</code> object configured as <code class="highlighter-rouge">metro @active 250</code>. This metro is configured to be automaticaly generate ‘bang’ upon load at a rate of one bang per 250ms. The ‘@’ indicates the attribute and the agrument is the integer.</p>
 
 <p>Another example of an arguments-only object is <code class="highlighter-rouge">selector~ 4 1</code>; in this instance the object will have 4 inlets with the first being active.</p>
 
-<h3 id="hot-and-cold-inlets">Hot and Cold Inlets</h3>
+<h4 id="hot-and-cold-inlets">Hot and Cold Inlets</h4>
 
 <p><a href="/assets/img/max_inlets.png"><img src="/assets/img/max_inlets.png" alt="Hot and Cold Inlets" /><em>Hot and Cold Inlets</em></a></p>
 
@@ -92,7 +92,7 @@
 
 <p>The <code class="highlighter-rouge">t</code> object is the <code class="highlighter-rouge">trigger</code> object and is used to send multiple messages based on a single input. Note that the order of transmission is from <strong>right-to-left</strong>. In this exampe, the integer from the right number box (i) is sent to the right inlet of <code class="highlighter-rouge">~</code>, then a bang (b) is sent to the left inlet of <code class="highlighter-rouge">+</code> to retrigger the calculation. Effectively, <code class="highlighter-rouge">+</code> will carry out its function with the last value sent into the left inlet when it receives a bang.</p>
 
-<h3 id="help-files-and-details">Help Files and Details</h3>
+<h4 id="help-files-and-details">Help Files and Details</h4>
 
 <p>There are a number of ways to gain further insight into an objects properties and parameters. For each object, the <strong>Inspector</strong> can be opened which will detail all of the parameters, arguments and attributes associated with that object.</p>
 
@@ -106,7 +106,7 @@
 
 <hr />
 
-<h2 id="patch-cords">Patch Cords</h2>
+<h3 id="patch-cords">Patch Cords</h3>
 
 <p>There are two types of cord in Max for connecting objects when building effects or instruments. Each are coloured differenctly according to the information being transmitted.</p>
 
@@ -115,25 +115,25 @@
   <li>Data (symbols, lists, numbers): solid</li>
 </ul>
 
-<h3 id="patch-organisation">Patch Organisation</h3>
+<h4 id="patch-organisation">Patch Organisation</h4>
 
 <p>Cord connections can be ‘angled’, or ‘segmented’ to make them easier to position and to avoid overlaps and making patches easier to follow. Simply click on a cord to highlight it and press <strong>cmd+y</strong>.</p>
 
 <p>For more options, right-clicking on a cord will display the contextual menu where there are options for deleting, aligning, routing (segmenting) and removing segments. It is also possible to change the colour of the cords. Cords can also be disabled and re-enabled from this menu.</p>
 
-<h4 id="selecting-multiple-cords">Selecting Multiple Cords</h4>
+<h5 id="selecting-multiple-cords">Selecting Multiple Cords</h5>
 
 <p>Option+click (Mac) or Alt+click (Win) and drag over a number of cords.</p>
 
 <hr />
 
-<h2 id="patcher-details">Patcher Details</h2>
+<h3 id="patcher-details">Patcher Details</h3>
 
-<h3 id="configuring-max-for-live">Configuring Max For Live</h3>
+<h4 id="configuring-max-for-live">Configuring Max For Live</h4>
 
 <p>To configure Max For Live, if required, refer to the <a href="https://www.ableton.com/en/manual/max-for-live/#25-1-setting-up-max-for-live">help file</a> that comes with Live.</p>
 
-<h3 id="creating-devices">Creating Devices</h3>
+<h4 id="creating-devices">Creating Devices</h4>
 
 <p>When developing in <em>Max For Live</em>, patchers are referred to as devices and come in three ‘flavours’:</p>
 
@@ -159,7 +159,7 @@
 
 <hr />
 
-<h2 id="default-values">Default Values</h2>
+<h3 id="default-values">Default Values</h3>
 <p>One issue with patches that utilise a lot of Live UI elements (and even standard Max UI objects) is that when the patch or device is first loaded, all the dials, menus, number boxes, tabs etc. all resort to the default (usually lowest) value. This can be problematic in a device with a filter for example whereby the first filter type is a lowpass and the minimum cut-off frequency on a dial is 20Hz - when the user opens the patch there will most likely be no sound as it is being filtered out.</p>
 
 <p>To solve this issue a default value can be defined for each UI object in the inspector. To enter a default value, or an initial value as Max refers to it:</p>
@@ -192,9 +192,8 @@
   </ol>
 </div>
 </article></div>
-	<div class="item4"><h2>Max Fundamentals</h2>
-				<div class="sidenav"><ul>
-  <li><a href="#overview">Overview</a></li>
+	<div class="nav">
+				<ul>
   <li><a href="#the-basics">The Basics</a>
     <ul>
       <li><a href="#patches">Patches</a></li>
@@ -204,7 +203,11 @@
   </li>
   <li><a href="#object-details">Object Details</a>
     <ul>
-      <li><a href="#connecting-objects">Connecting Objects</a></li>
+      <li><a href="#connecting-objects">Connecting Objects</a>
+        <ul>
+          <li><a href="#standard-connections">Standard Connections</a></li>
+        </ul>
+      </li>
       <li><a href="#attributes-and-arguments">Attributes and Arguments</a></li>
       <li><a href="#hot-and-cold-inlets">Hot and Cold Inlets</a></li>
       <li><a href="#help-files-and-details">Help Files and Details</a></li>
@@ -212,7 +215,11 @@
   </li>
   <li><a href="#patch-cords">Patch Cords</a>
     <ul>
-      <li><a href="#patch-organisation">Patch Organisation</a></li>
+      <li><a href="#patch-organisation">Patch Organisation</a>
+        <ul>
+          <li><a href="#selecting-multiple-cords">Selecting Multiple Cords</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#patcher-details">Patcher Details</a>
@@ -223,10 +230,10 @@
   </li>
   <li><a href="#default-values">Default Values</a></li>
 </ul>
-</div>
+
 	</div>
 
-	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
+	<div class="footer"><footer>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

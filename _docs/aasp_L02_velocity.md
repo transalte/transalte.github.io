@@ -8,7 +8,7 @@ summary: Utilising velocity for modulation
 lastupdate: 21-01-2019
 ---
 
-## Overview
+## Velocity Modulation
 
 In addition to amplitude control, velocity is regularly utilised as a modulation source for other parameters such as filter frequency, resonance and so on. As an example to introduce more expressiveness into a synthesiser, velocity could be used to modulate the amount of saturation, or chorus that is applied to a sound according to how hard/fast a key has been pressed.
 
@@ -16,13 +16,13 @@ In this section, velocity will be used for filter frequency modulation but the t
 
 ---
 
-## Filter Envelope
+### Filter Envelope
 
 Filter envelopes work by taking a fixed value and modulating (changing that value over time). The shape of that modulation is dictated by an enveloped shape and the amount, or intensity, of the modulation is controlled by the velocity of the notes coming in. Commonly, there is an 'envelope amount' dial to further control how intense the modulation will be. The patch below shows an implementation of velocity modulation; the velocity modulation object additions have been highlighted in yellow.
 
 
 
-### Implementation
+#### Implementation
 
 [![Velocity Modulation](/assets/img/aasp_monosynth_12_velMod.png)*Velocity Modulation of Filter Frequency*](/assets/img/aasp_monosynth_12_velMod.png)
 
@@ -31,7 +31,7 @@ Velocity values are being pulled from `ddg.mono` in the same way as for the ampl
 
 Ideally, the filter envelope patch should simply ignore NoteOff velocities (0). This is achieved by the `sel` object. When a value passes into this object, if the value is 0 (as per the argument in this patch) then a 'bang' is passed out of the left outlet. Any other values that do not match the argument (greater than 0 i.e NoteOn velocities) are passed through the right outlet - these are the NoteOn values for this patch that will be utilised.
 
-### Modulation Offsets
+#### Modulation Offsets
 
 To acheive the modulation, the frequency control (`live.dial`) for the filter outputs a value that is being modulated (interfered with) by the output of the `adsr~` object. To achieve this modulation, the first thought may be to just multiply the output from the `live.dial` with the output of `adsr~` as follows:
 
@@ -45,7 +45,7 @@ Now, the filter frequency will still initially run from 0Hz minimum to 150Hz max
 
 > This method of modulation always follows the same proceedure: (Parameter * Modulation) + Parameter
 
-### Modulation Amount
+#### Modulation Amount
 
 Even though this method of **velocity > envelope > parameter** modulation works, the modulation amount is directly related to the velocity; there is no method of attenuating or intensifying the effect. As the envelope is the driving force behind the filter frequency's values (static or otherwise), it would make sense that being able to increase or decrease the range of the envelope would provide this level of control:
 
@@ -53,7 +53,7 @@ Even though this method of **velocity > envelope > parameter** modulation works,
 
 ---
 
-## Velocity Sensitivity
+### Velocity Sensitivity
 In addition to offering velocity sensitivity, many synths also provide control over how subtle or intense any velocity based modulation is.
 
 The image below shows a very basic form of how this velocity sensitivity can be implemented:
@@ -64,7 +64,7 @@ The key object here is the `scale` object which allows for the scaling of the ra
 
 >The `uzi`, `b`, `zl.group` and `multislider` objects are here to demonstrate the outcome of the patch. These can all be removed when implementing into an actual synth patch without affecting the function of velocity sensitivity method.
 
-### Concept
+#### Concept
 The concept here is to gain control over the incoming velocity values. Consider three 'levels' of sensitivity:
 
 | Sensitivity Level                    | Outcome                                                 |
@@ -73,17 +73,16 @@ The concept here is to gain control over the incoming velocity values. Consider 
 | Normal sensitivity (linear)          | Outgoing velocity = incoming velocity                   |
 | Exaggerated sensitivity (exponential) | Velocity is not mapped linearly against the incoming    |
 
-### No Sensitivity
+#### No Sensitivity
 In the patch above, to create a 'no sensitivity' scaling, simply set the **Min Vel Out** and **Max Vel Out** to the same value i.e **64** and press the `button` object. Look at the graph will show how the input and output are mapped
 
-### Linear Sensitivity
+#### Linear Sensitivity
 For 'normal sensitivity', set the **Min Vel Out** to '**0**' and the **Max Vel Out** to '**127**'. Press the `button` object again and observe the graph.
 
-
-### Non-Linear
+#### Non-Linear
 The final inlet of `scale` is being used to add a concave, or convex, curve to the previously linear mapping. The **@classic 0** argument, provides control over that curve, **1** being linear, **< 0** logarithmic and **> 1** exponential.
 
-### Implementation
+#### Implementation
 
 While this patch demonstrates the manipulation of the incoming velocities via the graph at the bottom, it will cause problems if the **Min Vel Out** is raised above 0, or the curve is set to 0. By raising the **Min Vel Out** the patch will lose the 0 velocity value required to 'end' a note. To get around this, a `sel 0` can be implemented:
 
@@ -94,7 +93,7 @@ The `sel 0` object basically routes all values that are not 0 out of the right o
 
 >The effects of this curvature are easily heard when applied to the modulation of a filter's frequency via a velocity sensitive envelope.
 
-## Further Research
+### Further Research
 Look into existing synths (hardware or software) for examples of where, and how, velocity can be utilised.
 
 Additionally, consider how the MIDI notes themselves can be utilised as a similar modulation source.

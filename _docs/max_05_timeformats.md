@@ -7,18 +7,18 @@ permalink: /timeformats/
 summary: Details on how Max deals with timing formats
 ---
 
-## Overview
+## Time Formats in Max
 
 **Max Time Formats** are how Max describes time and there are two areas to consider:
 
-## Time Formats
+### Fixed Time Values
 
-**Fixed Time Values** - those which stay the same regardless of the tempo of the track ie. Milliseconds; Hours/Minutes/Seconds; Samples; Frequency (Hz). For example, a millisecond is always a millisecond if the tempo is 147 or 98BPM.
-
-and
+Values that stay the same regardless of the tempo of the track ie. Milliseconds; Hours/Minutes/Seconds; Samples; Frequency (Hz). For example, a millisecond is always a millisecond if the tempo is 147 or 98BPM.
 
 
-**Tempo-Relative Time Values** - lengths of time which will change accordingly in relation to the tempo ie. Bars/Beats/Units (BBU); Ticks; Note Values. For example, 1 bar at 3BPM is obviously longer than 1 bar at 300BPM. Also, when using tempo-related time values, if the BPM of a project changes, so will the timing of the objects, i.e if a delay is controlled with BBU or note values, when the tempo changes, the delay times will change along with it to reflect the change of tempo.
+### Tempo-Relative Time Values
+
+Values of time which will change accordingly in relation to the tempo ie. Bars/Beats/Units (BBU); Ticks; Note Values. For example, 1 bar at 3BPM is obviously longer than 1 bar at 300BPM. Also, when using tempo-related time values, if the BPM of a project changes, so will the timing of the objects, i.e if a delay is controlled with BBU or note values, when the tempo changes, the delay times will change along with it to reflect the change of tempo.
 
 Notevalues are one of the most common tempo-relative time formats, the table below shows the syntax and what each symbol corresponds to:
 
@@ -48,7 +48,7 @@ Notevalues are one of the most common tempo-relative time formats, the table bel
 
 ---
 
-## Conversion
+### Conversion
 
 Depending on the project, it may be necessary to have a user select a time in a tempo-relative format but the object being controlled only accepts milliseconds as a valid input format. This can happen when using `tapin~` and `tapout~` for a delay patch. To convert from one time-format to another the main object is `translate`:
 
@@ -71,7 +71,7 @@ It is possible to convert between any timeformat which can create added flexabil
 
 ---
 
-## Further Conversions
+#### Further Conversions
 
 The patch below shows a few examples of conversions using multiple `translate` objects:
 

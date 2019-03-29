@@ -8,7 +8,7 @@ summary: A reference for the fundamentals of Max / Max For Live
 lastupdate: 03-12-2018
 ---
 
-## Overview
+## Max Fundamentals
 
 Max is classed as a [visual programming language](https://en.wikipedia.org/wiki/Visual_programming_language) for music and multimedia. It has been used in a number of areas for composition, performance and research purposes.
 
@@ -20,9 +20,9 @@ The difference between the versions as that 'Max' is a standalone product wheara
 
 ---
 
-## The Basics
+### The Basics
 
-### Patches
+#### Patches
 Patches are the files that are generated from Max; a patch could be a filter, an instrument, an arpegiator, a synth, a sampler and so on. There are two main formats to be aware of:
 
 - *.maxpat
@@ -34,7 +34,7 @@ Note that even though the file-format for a device built for Ableton Live is **.
 
 Max patchers (from the standalone version) can also be converted into standalone executable files that can be run without the main programme being installed.
 
-### Data Formats
+#### Data Formats
 There are six basic data formats that are utilised in Max that are transmitted between the objects.
 
 * Integers (full numbers)
@@ -45,7 +45,7 @@ There are six basic data formats that are utilised in Max that are transmitted b
 * Signals (audio)
 
 
-### Objects
+#### Objects
 As stated, the core functionality of Max is based on 'objects', the connections between them and the data being transmitted.
 
 Objects are boxes within the programme that perform functions. These can range from simple mathematical calculations to complex filtering or routing.
@@ -56,22 +56,22 @@ The majority of objects within Max have no graphical aspect. Unless the object's
 
 ---
 
-## Object Details
+### Object Details
 
-### Connecting Objects
+#### Connecting Objects
 
-#### Standard Connections
+##### Standard Connections
 Click on the *inlet* or *outlet* of an object and drag the cord to the *inlet* or *outlet* of another object. Upon release, the connection will be made. If the connection is not made, this is an indication that the data being sent from one object to another is not valid for those particular objects.
 
 
-### Attributes and Arguments
+#### Attributes and Arguments
 Attributes for an object are settings or parameters that dictate how an object is to function. An attribute would change or set a function of the object and an argument would be the value attached.
 
 An example of this is the `metro` object configured as `metro @active 250`. This metro is configured to be automaticaly generate 'bang' upon load at a rate of one bang per 250ms. The '@' indicates the attribute and the agrument is the integer.
 
 Another example of an arguments-only object is `selector~ 4 1`; in this instance the object will have 4 inlets with the first being active.
 
-### Hot and Cold Inlets
+#### Hot and Cold Inlets
 
 [![Hot and Cold Inlets](/assets/img/max_inlets.png)*Hot and Cold Inlets*](/assets/img/max_inlets.png)
 
@@ -87,7 +87,7 @@ The `t` object is the `trigger` object and is used to send multiple messages bas
 
 
 
-### Help Files and Details
+#### Help Files and Details
 
 There are a number of ways to gain further insight into an objects properties and parameters. For each object, the **Inspector** can be opened which will detail all of the parameters, arguments and attributes associated with that object.
 
@@ -101,33 +101,33 @@ Nb. A list of shortcuts can be found [here](/shortcuts)
 
 ---
 
-## Patch Cords
+### Patch Cords
 
 There are two types of cord in Max for connecting objects when building effects or instruments. Each are coloured differenctly according to the information being transmitted.
 
 - Signals (Audio): Hatched colors
 - Data (symbols, lists, numbers): solid
 
-### Patch Organisation
+#### Patch Organisation
 
 Cord connections can be 'angled', or 'segmented' to make them easier to position and to avoid overlaps and making patches easier to follow. Simply click on a cord to highlight it and press **cmd+y**.
 
 For more options, right-clicking on a cord will display the contextual menu where there are options for deleting, aligning, routing (segmenting) and removing segments. It is also possible to change the colour of the cords. Cords can also be disabled and re-enabled from this menu.
 
-#### Selecting Multiple Cords
+##### Selecting Multiple Cords
 
 Option+click (Mac) or Alt+click (Win) and drag over a number of cords.
 
 
 ---
 
-## Patcher Details
+### Patcher Details
 
-### Configuring Max For Live
+#### Configuring Max For Live
 
 To configure Max For Live, if required, refer to the [help file](https://www.ableton.com/en/manual/max-for-live/#25-1-setting-up-max-for-live) that comes with Live.
 
-### Creating Devices
+#### Creating Devices
 
 When developing in *Max For Live*, patchers are referred to as devices and come in three 'flavours':
 
@@ -149,7 +149,7 @@ The patch will open with the default input and outputs for that particular devic
 
 ---
 
-## Default Values
+### Default Values
 One issue with patches that utilise a lot of Live UI elements (and even standard Max UI objects) is that when the patch or device is first loaded, all the dials, menus, number boxes, tabs etc. all resort to the default (usually lowest) value. This can be problematic in a device with a filter for example whereby the first filter type is a lowpass and the minimum cut-off frequency on a dial is 20Hz - when the user opens the patch there will most likely be no sound as it is being filtered out.
 
 To solve this issue a default value can be defined for each UI object in the inspector. To enter a default value, or an initial value as Max refers to it:

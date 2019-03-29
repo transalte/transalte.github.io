@@ -10,8 +10,8 @@
 <div class="grid-container">
 
 	<div class="header"><a href="../index.html"><h1>transalte~</h1></a></div>
-	<div class="item2">max overview // audio effects // instruments</div>
-	<div class="item3"><article><h2 id="overview">Overview</h2>
+	<div class="menu">max overview // audio effects // instruments</div>
+	<div class="main"><article><h2 id="lfos-and-modulation">LFOs and Modulation</h2>
 <p>Signals and parameter values can be controlled and manipulated automatically in realtime through <em>modulation</em> instead of using automation or manually changing a control by hand.</p>
 
 <p>A simple example of this can be found in a tremelo effect whereby the gain of a signal is manipulated in real-time (modulated in other words) via an LFO (Low Frequency Oscillator) to rise and fall rhythmically. The standard controls over the volume in such an effect would be the shape of the movement (the selected waveform), the speed of the movement (rate) and the intensity (the depth).</p>
@@ -24,7 +24,7 @@
 
 <hr />
 
-<h2 id="what-is-an-lfo">What is an LFO?</h2>
+<h3 id="what-is-an-lfo">What is an LFO?</h3>
 
 <p>Similar to the audible oscillators found in synthesisers, LFOs will generate waveforms but generally run at speeds much slower and below the audible range - less than 20Hz is common.</p>
 
@@ -55,7 +55,7 @@
 
 <hr />
 
-<h2 id="creating-the-waveforms">Creating the Waveforms</h2>
+<h3 id="creating-the-waveforms">Creating the Waveforms</h3>
 
 <p>The most basic LFO set-up can be created by connecting a <code class="highlighter-rouge">flonum</code> (or <code class="highlighter-rouge">live.dial</code>) to a <code class="highlighter-rouge">cycle~</code> object for controlling the rate of a waveform:</p>
 
@@ -75,7 +75,7 @@
 
 <p><a href="/assets/img/lfoBuild_01.png"><img src="/assets/img/lfoBuild_01.png" alt="LFO Core" /><em>Core Section of LFO Waveforms</em></a></p>
 
-<h3 id="saw">Saw</h3>
+<h4 id="saw">Saw</h4>
 
 <p>To create a sawtooth waveform, the raw output from the <code class="highlighter-rouge">phasor~</code> object can be utilised. The object below showing the waveform is <code class="highlighter-rouge">scope~</code> and is connected directly to the outlet of <code class="highlighter-rouge">phasor~</code>.</p>
 
@@ -89,21 +89,21 @@
   <p>Note that the default amplitude range of the <code class="highlighter-rouge">scope~</code> runs from -1. to 1. and that the amplitude of the <code class="highlighter-rouge">phasor~</code> output runs from 0. to 1. This explains why the saw waveform is only in the top half of the scope.</p>
 </blockquote>
 
-<h3 id="sine">Sine</h3>
+<h4 id="sine">Sine</h4>
 <p>The <code class="highlighter-rouge">cycle~</code> object is a sinusoidal waveform generator. There are two inlets for control; the left inlet is utilised for receiving the rate in <strong>Hz</strong>. The second inlet is to set the <em>phase</em> of the waveform, in otherwords, where in the waveform’s shape the current output is. In more other-words, as the value going into the right inlet travels from 0. to 1., the cycle of the sine shape is generated accordingly, 0 being the start of the curved output and 1. being the end of the cycle! If the value coming in was a static 0.5, the <code class="highlighter-rouge">cycle~</code> object would also stop at halfway through its waveform’s cycle.</p>
 
 <p>As the output from <code class="highlighter-rouge">phasor~</code> runs from 0. to 1. this can be used to crank out the sine wave continually:</p>
 
 <p><a href="/assets/img/lfoBuild_03.png"><img src="/assets/img/lfoBuild_03.png" alt="Sine Wave from cycle~" /><em>cycle~ object driven by phasor~</em></a></p>
 
-<h3 id="triangle">Triangle</h3>
+<h4 id="triangle">Triangle</h4>
 <p>Similar to the <code class="highlighter-rouge">cycle~</code> object, <code class="highlighter-rouge">triangle~</code> can also be driven by <code class="highlighter-rouge">phasor~</code>. There is however an additional argument for <code class="highlighter-rouge">triangle~</code>.</p>
 
 <p>In the example below, the argument is ‘0.5’ - the argument itself is described as ‘<strong>peak-value-phase-offset</strong>’; a more obvious description of it’s function could be ‘<strong>slope</strong>’. In the exampe below, adjusting the value sent (from 0. to 1.) to the right inlet will override the <code class="highlighter-rouge">0.5</code> and the result will be the waveform ‘morphing’ between a positive saw shape to a triangle then to a negative saw shape.</p>
 
 <p><a href="/assets/img/lfoBuild_04.png"><img src="/assets/img/lfoBuild_04.png" alt="Triangle Waveform" /><em>Triangle Waveform</em></a></p>
 
-<h3 id="square">Square</h3>
+<h4 id="square">Square</h4>
 <p>There is an object specifically for generating square / rectangle waveforms called <code class="highlighter-rouge">rect~</code>, however, it functions better within the audio range for synthesis due to small spikes in the waveform at each positive-to-negative transition.</p>
 
 <p><a href="/assets/img/lfoBuild_05b.png"><img src="/assets/img/lfoBuild_05b.png" alt="Waveform from rect~" /><em>rect~ Output</em></a></p>
@@ -120,7 +120,7 @@
 
 <p><a href="/assets/img/lfoBuild_06.png"><img src="/assets/img/lfoBuild_06.png" alt="Pulse-width Control" /><em>Pulse Width Control</em></a></p>
 
-<h3 id="sample--hold">Sample &amp; Hold</h3>
+<h4 id="sample--hold">Sample &amp; Hold</h4>
 <p>The ‘Sample &amp; Hold’ waveform is similar to the square wave in terms of its rigid shape with the exception that the amplitudes are random instead of a simple 0. or 1,; this is what gives the waveform it’s ‘stepped’ appearance</p>
 
 <p>The waveform itself is generated through taking regular amplitude readings of a signal (in this case noise) and outputting them. The ‘randomness’ of the amplitudes here comes from sampling the <code class="highlighter-rouge">noise~</code> object.</p>
@@ -129,7 +129,7 @@
 
 <p>In the image above, the key objects are <code class="highlighter-rouge">sah~</code> (for the sampling) and <code class="highlighter-rouge">noise~</code> which is the source of the amplitude readings. Similar to the method of creating the square waveform, the <code class="highlighter-rouge">sah~</code> object also utilises a <strong>0.5</strong> argument. In this case, once the signal going into the right inlet of <code class="highlighter-rouge">sah~</code> goes above <strong>0.5</strong> a reading will be taking of the signal coming into it’s left inlet. This ‘trigger’ signal to be connected to the right inlet will come from <code class="highlighter-rouge">phasor~</code> meaning that the timing of when the readings take place will be syncronised with the other waveforms.</p>
 
-<h3 id="random">Random</h3>
+<h4 id="random">Random</h4>
 <p>A random waveform is produced by the <code class="highlighter-rouge">rand~</code> object; specifically the object generates random values between -1. and 1. and interpolates between them.</p>
 
 <p>The only inlet on the <code class="highlighter-rouge">rand~</code> object is for setting the rate at which the random values are generated. Therefore, there is no need for the <code class="highlighter-rouge">phasor~</code> object:</p>
@@ -138,14 +138,14 @@
 
 <hr />
 
-<h2 id="matching-amplitudes">Matching Amplitudes</h2>
+<h3 id="matching-amplitudes">Matching Amplitudes</h3>
 <p>A brief look at the <code class="highlighter-rouge">scope~</code> readout for the previous waveforms shows that the amplitude of the saw and square waveforms run from 0. to 1. while the rest range from -1. to 1.</p>
 
 <p><a href="/assets/img/lfoBuild_10.png"><img src="/assets/img/lfoBuild_10.png" alt="LFO Core" /><em>Matched LFO Waveform Outputs</em></a></p>
 
 <p>Using some basic maths objects this can be addressed so that the output from the LFO patch will be uniform.</p>
 
-<h3 id="saw-adjustment">Saw Adjustment</h3>
+<h4 id="saw-adjustment">Saw Adjustment</h4>
 <p>The screenshot below shows how the amplitude of the saw, from <code class="highlighter-rouge">phasor~</code>, is manipulated to run from -1. to 1. Each stage of the process has a <code class="highlighter-rouge">scope~</code> connected to visualise the effect of the math objects on the signal. Pay attention to the amplitudes.</p>
 
 <p><a href="/assets/img/lfoBuild_09.png"><img src="/assets/img/lfoBuild_09.png" alt="Adjusting Saw Output" /><em>Math adjustments for phasor~ output</em></a></p>
@@ -169,7 +169,7 @@
   </tbody>
 </table>
 
-<h3 id="square-adjustment">Square Adjustment</h3>
+<h4 id="square-adjustment">Square Adjustment</h4>
 <p>As the output from the square wave is also <strong>0. to 1.</strong> then the same math is required for making the range <strong>-1. to 1.</strong>:</p>
 
 <p><a href="/assets/img/lfoBuild_11.png"><img src="/assets/img/lfoBuild_11.png" alt="Adjusting Square Output " /><em>Square Wave Output Adjustment</em></a></p>
@@ -180,7 +180,7 @@
 
 <hr />
 
-<h2 id="waveform-selection">Waveform Selection</h2>
+<h3 id="waveform-selection">Waveform Selection</h3>
 <p>Selection of the LFO waveform is achieved by using the <code class="highlighter-rouge">selector~</code> object and <code class="highlighter-rouge">live.menu</code>. See the screenshot below and refer to the <a href="/routing/">routing section</a> for the workings.</p>
 
 <p><a href="/assets/img/lfoBuild_12.png"><img src="/assets/img/lfoBuild_12.png" alt="LFO Waveform Selection" /><em>LFO Waveform Selection</em></a></p>
@@ -192,7 +192,7 @@
 
 <hr />
 
-<h2 id="lfo-rate-control">LFO Rate Control</h2>
+<h3 id="lfo-rate-control">LFO Rate Control</h3>
 
 <p>The default rate, or speed, of an LFO is generally set to be in Hertz. However, other formats can be more useful. So far, a value in Hz has been used to dictate the rate of the <code class="highlighter-rouge">phasor~</code> output for driving the rest of the oscillators. The <code class="highlighter-rouge">phasor~</code> object also recognises and responds to <em>notevalues</em> and <em>BBU</em> (Bars/Beats/Units). The screenshot below shows how a default value for the speed of a <code class="highlighter-rouge">phasor~</code> can be ‘baked-in’ in both formats:</p>
 
@@ -214,7 +214,7 @@
   <p>Be aware that while patching with this method of sync the transport has to be running in Live also in order for the LFO’s to work.</p>
 </blockquote>
 
-<h3 id="user-control">User Control</h3>
+<h4 id="user-control">User Control</h4>
 <p>The method above shows a fixed rate being applied to the masterclock <code class="highlighter-rouge">phasor~</code> that is not the most user-friendly. One method of adding in a user-controllable rate in tempo-divisions is shown below and introduces a few new objects and concepts.</p>
 
 <p><a href="/assets/img/lfoBuild_14.png"><img src="/assets/img/lfoBuild_14.png" alt="phasor~ control" /><em>User Controllable phasor~</em></a></p>
@@ -243,7 +243,7 @@
 
 <hr />
 
-<h2 id="bipolar--unipolar-lfo">Bipolar / Unipolar LFO</h2>
+<h3 id="bipolar--unipolar-lfo">Bipolar / Unipolar LFO</h3>
 <p>So far, this LFO is <em>Bi-polar</em>, in otherwords, the signals generated are both in the negative and positive ranges passing through 0. The alternative is to have a <em>Uni-polar</em> output whereby the signals stay either in the negative to zero range or the zero to positive ranges. Both can be utilised for different purposes.</p>
 
 <p><a href="/assets/img/lfoBuild_17.png"><img src="/assets/img/lfoBuild_17.png" alt="LFO Polarity Examples" /><em>LFO Polarity Examples</em></a></p>
@@ -256,9 +256,9 @@
 
 <hr />
 
-<h2 id="lfo-implementation">LFO Implementation</h2>
+<h3 id="lfo-implementation">LFO Implementation</h3>
 
-<h3 id="parameter-modulation">Parameter Modulation</h3>
+<h4 id="parameter-modulation">Parameter Modulation</h4>
 <p>The remaining control for an LFO would be the ‘depth’, or how intense the effect of the LFO will be on the parameter that will be modulated. In order to demonstrate this, a quick example will be given of how to apply modulation.</p>
 
 <p>To apply modulation to a parameter multiply the chosen parameter’s value by the LFO output and then add the resulting signal with the original again. The example below shows how a uni-polar LFO can be utilised to modulate the Cut-Off frequency of a filter (<code class="highlighter-rouge">svf~</code>).</p>
@@ -267,7 +267,7 @@
 
 <p>In this example, the modulation is implemented so that the range of the modulation will always go above (postive uni-polar direction) the chosen frequency (44.4Hz) and return back down, never going below. This is achieved by using a uni-polar LFO output in combination with adding the orginal signal with the modulated signal. Without the inclusion of the <code class="highlighter-rouge">+~</code> towards the end, the frequency sweep would run <em>from</em> <strong>0 Hz</strong> up to the chosen cut-off frequency instead.</p>
 
-<h3 id="depth-control">Depth Control</h3>
+<h4 id="depth-control">Depth Control</h4>
 <p>The depth control for an LFO dictates how much modulation will occor on a signal, i.e how subtle or exagerrated effect of the LFO will have on a parameter. With a depth at <strong>0</strong> there should be no aubile modulation taking place and the paramater value should be static.</p>
 
 <p>A depth control, basically applies positive gain to an LFO signal and can be implemeted with a standard <code class="highlighter-rouge">*~</code> object (highlighted in yellow):</p>
@@ -282,19 +282,19 @@
 
 <hr />
 
-<h2 id="fixes">Fixes</h2>
+<h3 id="fixes">Fixes</h3>
 <p>The LFO is mostly complete at this point for use in patchesl however there are two issues that need to be addressed.</p>
 
 <p>The first is that on some waveforms, particularly those with abrupt and quick changes in amplitude (square, saw and triangle if the ‘slope’ is being used and the ‘sample and hold’), whereby an audible click can be heard during the modulation from one value to the next. These transitions must be smoothed out to avoid the audible jump.</p>
 
 <p>The second is that the modulated signal being sent can be out of the accepted range for the object parameter (in this case the svf~ may receive values in the cutoff frequency beyond 20000 Hz) and should be limited or <em>clipped</em>.</p>
 
-<h3 id="clipping-values">Clipping Values</h3>
+<h4 id="clipping-values">Clipping Values</h4>
 <p>Limiting or capping values in Max can be as straight-foward as intruding the <code class="highlighter-rouge">clip~</code> object with arguments for the minimum and maximum values permitting to pass through. In the case of the filter example above; the configuration would be <code class="highlighter-rouge">clip~ 20. 20000.</code> - the signal version must be used <code class="highlighter-rouge">~</code>.</p>
 
 <p><a href="/assets/img/lfoBuild_21.png"><img src="/assets/img/lfoBuild_21.png" alt="Clipping values" /><em>Clipping Values with clip~</em></a></p>
 
-<h3 id="smoothing-transitions">Smoothing Transitions</h3>
+<h4 id="smoothing-transitions">Smoothing Transitions</h4>
 <p>Smoothing out the transition from one value to another can be achieved by using the <code class="highlighter-rouge">rampsmooth~</code> object which arguments for the <em>ramp-up</em> time (for rising transitions) and the <em>ramp-down</em> time (for falling transitions). The times are set in samples so the object can be configured as <code class="highlighter-rouge">rampsmooth~ 100 100</code></p>
 
 <p>This will provide a ramp time of 100 sample if the signal is moving in an upwards directions, and 100 if it is falling.</p>
@@ -313,7 +313,7 @@
 
 <p><a href="/assets/img/lfoBuild_22.png"><img src="/assets/img/lfoBuild_22.png" alt="Smoothing Transitions" /><em>Smoothing Transitions</em></a></p>
 
-<h3 id="limiting-ranges">Limiting Ranges</h3>
+<h4 id="limiting-ranges">Limiting Ranges</h4>
 
 <p>The next issue can be found when using the triangle waveform and adjusting its ‘point 1’ parameter (‘slope’ from previous descriptions).</p>
 
@@ -353,9 +353,8 @@
   </ol>
 </div>
 </article></div>
-	<div class="item4"><h2>LFO Modulation</h2>
-				<div class="sidenav"><ul>
-  <li><a href="#overview">Overview</a></li>
+	<div class="nav">
+				<ul>
   <li><a href="#what-is-an-lfo">What is an LFO?</a></li>
   <li><a href="#creating-the-waveforms">Creating the Waveforms</a>
     <ul>
@@ -394,10 +393,10 @@
     </ul>
   </li>
 </ul>
-</div>
+
 	</div>
 
-	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
+	<div class="footer"><footer>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

@@ -9,12 +9,12 @@ summary: MIDI data, oscillators, envelopes and tuning.
 lastupdate: 14-12-2018
 ---
 
-## Overview
+## Monosynth
 
 This lesson is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.
 
 
-## First Steps
+### First Steps
 
 The first step is to create a new **Instrument Device** in Live. The main difference between this template and a **Audio Effect** device is that in place of `plugin~` at the input stage there is the `midiin` object. This object passes through all of the MIDI data coming from Live into the device that will be utilised to control the patch.
 
@@ -59,7 +59,7 @@ The velocity, calculated from how quickly the key is pressed down, is also given
 
 
 
-## Simple Monosynth
+### Simple Monosynth
 
 The patch below demonstrates an extremely basic monosynth using only the Note On/Off and Velocity data with the order of processing as follows:
 
@@ -84,14 +84,14 @@ There are some playability issues with the patch as it is at the moment relating
 [![Note Priority with ddg.mono](/assets/img/aasp_monosynth_05.png)*Note priority with ddg.mono*](/assets/img/aasp_monosynth_05.png)
 
 
-## Envelopes
+### Envelopes
 The envelope of a sound is how it's amplitude changes over time and is typically described via a the following stages; the attack, decay, sustain and release.
 
 [![Standard ADSR Envelope](/assets/img/aasp_monosynth_06_env.png)*Standard ADSR Envelope*](/assets/img/aasp_monosynth_06_env.png)
 
 There are a number of ways to create an envelope in Max, each of varying levels of complexity and features. In this example, a standard Attack, Decay, Sustain, Release envelope will be implemented.
 
-### Linear Envelopes
+#### Linear Envelopes
 The `adsr~` object is an envelope generator. There are five inlets, the first is allocated to starting the envelope and to what peak amplitide it should go to - this will be fed from the velocity data in the patch. The remaining inlets are for the Attack and Decay times, the sustain level, and the releaes time.
 
 [![adsr~ Object](/assets/img/aasp_monosynth_08_adsr01.png)*adsr~ Object*](/assets/img/aasp_monosynth_08_adsr01.png)
@@ -107,7 +107,7 @@ In the example above, the envelope would be a more percussive sound with no sust
 [![adsr~ Envelope](/assets/img/aasp_monosynth_09_env.png)*adsr~ Envelope*](/assets/img/aasp_monosynth_09_env.png)
 
 
-### Exponential Envelopes
+#### Exponential Envelopes
 The output from `adsr~` is linear by design i.e straight lines between the stages. Exponential envelopes, i.e curved, can sound more natural and are better for persussive sounds in particular:
 
 [![Exponential ADSR Envelope](/assets/img/aasp_monosynth_07_env.png)*Exponential ADSR Envelope*](/assets/img/aasp_monosynth_07_env.png)
@@ -120,7 +120,7 @@ A quick way to achieve this is to multiply the output of the `adsr~` envelope by
 
 Note the change in the curve of the envelopes. This curvature would also be present in the attack stages of the envelope too. In this example above, the output from the envelopes are multiplied by themselves to increase the curve of the envelope. This can be useful for transient based sounds such as percussion or plucked sounds.
 
-## Tuning Oscillators
+### Tuning Oscillators
 Tuning oscillators is generally kept to three areas:
 
 * Semi-tones
@@ -129,7 +129,7 @@ Tuning oscillators is generally kept to three areas:
 
 Semi-tones and Octaves can be adjusted by manipulating the MIDI note information directly, de-tuning can occur after the MIDI note has been converted to pitch.
 
-### Semi-tones
+#### Semi-tones
 
 Semi-tone tuning can be achieved by simply adding or subtracting to the incoming MIDI note by the desired amount:
 
@@ -137,14 +137,14 @@ Semi-tone tuning can be achieved by simply adding or subtracting to the incoming
 
 In the patch above, a `live.numbox` UI object has been used with a *Range/Enum* of *-12* to *12* to provide an octave up and down in semi-tones. The *Type* has been set to *Int* to avoid any fractional numbers being added which wouold confuse the `mtof` object. The 'st', comes from the *Unit Style* being selected as 'Semitones' in the inspector.
 
-### Octaves
+#### Octaves
 As an octave consists of 12 semi-tones, a simple multipier can be utilised:
 
 [![Octave Tuning](/assets/img/aasp_monosynth_17.png)*Octave Tuning*](/assets/img/aasp_monosynth_17.png)
 
 In this case, the `live.numbox` has a range of -4 to 4, and configured in the same way as the semi-tone tuning object. The only difference here is that the *Unit Style* was set to *Custom* and 'Oct' was added as the unit.
 
-### De-tune
+#### De-tune
 
 As detune dials are normally in Hertz, the patch must be adjusted to allow the pitch manipulation to occur after the MIDI note has been conferted to a frequency via the `mtof` object:
 
@@ -171,7 +171,7 @@ The change of pitch occurs from the `*~ 0.` object which is fed from the `expr` 
 
 The `t` or `trigger` object here is used to retrigger the calculation `+`.  More details on inlets and the trigger object can be found [here](/fundamentals/#hot-and-cold-inlets).
 
-## Oscillator Waveforms
+### Oscillator Waveforms
 There are a range of pre-built oscillators that can be used as the sound-source for a synth.
 
 [![Waveforms](/assets/img/waveforms.png)*Standard Waveforms*](/assets/img/waveforms.png)

@@ -9,14 +9,14 @@ summary: Creating a polyphonic synth
 lastupdate: 14/02/2019
 ---
 
-## Overview
+## Polyphonic Synth
 Polyphony in synths refers to the ability to play more than one note at a time i.e chords. The previous monophonic synth only permitted a single note to played [^poly].
 
 Polyphony is achieved in Max by having a top level patch which, in addition to the user-interface elements, MIDI and audio outputs, also contains a `poly~` object which holds the 'guts' of a single-voice (monophonic) synth. The `poly~` object effectively provides an instance of this 'voice' for each key pressed or note received.
 
 ---
 
-## Patch Structure
+### Patch Structure
 
 In **Max For Live**, it is best to work within a folder layout out as follows:
 
@@ -32,7 +32,7 @@ The syntax for `poly~` can explain how it works:
 
 In this example, external patch 'MySynthCore' is being referred to and the synth would have a maximum of 8 voices, or instances allowing the user to play 8 notes and hear them. If more notes are played, depending on the **steal** argument, priority can be given to the first or last notes in terms of what notes to kill to allow the new notes to be heard...
 
-### Poly Arguments
+#### Poly Arguments
 There are a number of arguments and attributes for the `poly~` object; listed below are the most relevent for this patch. More details can be found in the `poly~` reference file [here](https://docs.cycling74.com/max7/maxobject/poly~).
 
 |Argument|Type|Example|Function|
@@ -52,7 +52,7 @@ The patch will allow for 8 voices, note stealing is enabled and any parameter ch
 
 
 
-## Implementation
+### Implementation
 
 The screenshot(s) below show the top level **.amxd** and the core **.maxpat** files of a basic polyphonic synth. Note that in the example, wireless send and receives are used for transmitting the amp envelope and filter parameters:
 
@@ -61,7 +61,7 @@ The screenshot(s) below show the top level **.amxd** and the core **.maxpat** fi
 [![Polyphonic Voice](/assets/img/aasp_poly_01b.png)*Polyphonic Voice*](/assets/img/aasp_poly_01b.png)
 
 
-### MySynth Poly.amxd
+#### MySynth Poly.amxd
 On the top level ***.amxd** patch, in addition to the new `poly~` object, there is a `prepend` object with the argument **midinote**. The 'midinote' symbol (text) is placed in front of each 'note-on/off velocity' message from `midiparse` letting the `poly~` object know that the incoming data in that particular inlet is note information.
 
 For the envelope and filter controls, all the parameters are joined together in a 'list'message i.e 'attack decay sustain release' (1. 125. 0. 150. for example) with the `pan` object. These lists are then transmitted into the `poly~` object arriving at `r ---AmpEnv` and `r ---FltControls` . The messages are then split up via the `unpack 0. 0. 0. 0.` object and connected to the relevant inlets.
@@ -70,14 +70,14 @@ For the envelope and filter controls, all the parameters are joined together in 
 
 There are two objects for creating lists that are similarly named; the aforementioned `pak`, and `pack`. The difference between the objects is when the list is sent; items collated together with `pack` will only get sent as a list when data is received in it’s *first* inlet. With `pak`, the entire list is transmitted when data is received in *any* inlet (including any placeholder arguments).
 
-### MySynthCore.maxpat
+#### MySynthCore.maxpat
 To re-open the referenced patch from the top level, double-click the `poly~` object while the patch is locked (similar to sub patches).
 
 The main difference between this external patch and a standalone mono synth is that the input and output objects are slightly different. In a standard encapsulated subpath the ins are outs are `inlet` and `outlet` and the numbering happens automatically. In `poly` this changed to `in`, `out` (for message information) and `in~` and `out~` with a number manually entered afterwards i.e `out~ 1` and `in 1` in this example.
 
 The main addition of importance here is the `thispoly~` object which handles the status of voices being active/busy (in use from a note press) or not. This object is used to switch voices on and off. When used in tandem with the **@target 0** argument in `poly~`, every voice in the patch will receive the same parameter changes. The `thispoly~` voice on/off function can be controlled by using the the 1st and 3rd outlets of `adsr~`; the 3rd outlet will turn the voice on an off while when an audio signal enters `thispoly~` the voice is activated, when the gain of that signal reaches 0 , the voice is deactivated. Both are connected in this instance as a fail safe but it is possible to use either or.
 
-## Synth Structure
+### Synth Structure
 
 Now the structure of the synth is as follows:
 
@@ -85,7 +85,7 @@ MIDI In > `poly~` for voices > Audio Effects > `plugout~`
 
 Note that depending on the features included, the audio signal path may change to stereo either inside `poly~` or at the Audio Effects stages.
 
-## Saving
+### Saving
 As this patch relies on more than the top-level **.amxd** file, the device must be saved properly to ensure that it can be opened on another user's machine. When in the 'Max Editor', a device can be **frozen** which will collate all of the dependant files together in a single **.amxd** file. This is similar in concept to the 'Collect All and Save' function in **Live**. This can be accessed from the lower-left of the editor screen and pressing the **snowflake** icon:
 
 [![Freeze Device](/assets/img/max_freeze.png)*Freeze Device Icon*](/assets/img/max_freeze.png)

@@ -8,7 +8,7 @@ summary: Building LFO's for modulation
 lastupdate: 03-12-2018
 ---
 
-## Overview
+## LFOs and Modulation
 Signals and parameter values can be controlled and manipulated automatically in realtime through *modulation* instead of using automation or manually changing a control by hand.
 
 A simple example of this can be found in a tremelo effect whereby the gain of a signal is manipulated in real-time (modulated in other words) via an LFO (Low Frequency Oscillator) to rise and fall rhythmically. The standard controls over the volume in such an effect would be the shape of the movement (the selected waveform), the speed of the movement (rate) and the intensity (the depth).
@@ -19,7 +19,7 @@ A similar example would be an *auto-pan* effect whereby the pan position of a so
 
 ---
 
-## What is an LFO?
+### What is an LFO?
 
 Similar to the audible oscillators found in synthesisers, LFOs will generate waveforms but generally run at speeds much slower and below the audible range - less than 20Hz is common.
 
@@ -48,7 +48,7 @@ This section will cover how to create a range of different waveforms, all of whi
 
 ---
 
-## Creating the Waveforms
+### Creating the Waveforms
 
 The most basic LFO set-up can be created by connecting a `flonum` (or `live.dial`) to a `cycle~` object for controlling the rate of a waveform:
 
@@ -67,7 +67,7 @@ The screenshot below displays the core of the LFO patch about to be built:
 
 [![LFO Core](/assets/img/lfoBuild_01.png)*Core Section of LFO Waveforms*](/assets/img/lfoBuild_01.png)
 
-### Saw
+#### Saw
 
 To create a sawtooth waveform, the raw output from the `phasor~` object can be utilised. The object below showing the waveform is `scope~` and is connected directly to the outlet of `phasor~`.
 
@@ -79,7 +79,7 @@ The object with the '2.' is a `flonum` and is controlling the rate of the `phaso
 
 >Note that the default amplitude range of the `scope~` runs from -1. to 1. and that the amplitude of the `phasor~` output runs from 0. to 1. This explains why the saw waveform is only in the top half of the scope.
 
-### Sine
+#### Sine
 The `cycle~` object is a sinusoidal waveform generator. There are two inlets for control; the left inlet is utilised for receiving the rate in **Hz**. The second inlet is to set the *phase* of the waveform, in otherwords, where in the waveform's shape the current output is. In more other-words, as the value going into the right inlet travels from 0. to 1., the cycle of the sine shape is generated accordingly, 0 being the start of the curved output and 1. being the end of the cycle! If the value coming in was a static 0.5, the `cycle~` object would also stop at halfway through its waveform’s cycle.
 
 As the output from `phasor~` runs from 0. to 1. this can be used to crank out the sine wave continually:
@@ -87,14 +87,14 @@ As the output from `phasor~` runs from 0. to 1. this can be used to crank out th
 [![Sine Wave from cycle~](/assets/img/lfoBuild_03.png)*cycle~ object driven by phasor~*](/assets/img/lfoBuild_03.png)
 
 
-### Triangle
+#### Triangle
 Similar to the `cycle~` object, `triangle~` can also be driven by `phasor~`. There is however an additional argument for `triangle~`.
 
 In the example below, the argument is '0.5' - the argument itself is described as '**peak-value-phase-offset**'; a more obvious description of it's function could be '**slope**'. In the exampe below, adjusting the value sent (from 0. to 1.) to the right inlet will override the `0.5` and the result will be the waveform 'morphing' between a positive saw shape to a triangle then to a negative saw shape.
 
 [![Triangle Waveform](/assets/img/lfoBuild_04.png)*Triangle Waveform*](/assets/img/lfoBuild_04.png)
 
-### Square
+#### Square
 There is an object specifically for generating square / rectangle waveforms called `rect~`, however, it functions better within the audio range for synthesis due to small spikes in the waveform at each positive-to-negative transition.
 
 [![Waveform from rect~](/assets/img/lfoBuild_05b.png)*rect~ Output*](/assets/img/lfoBuild_05b.png)
@@ -111,7 +111,7 @@ Another common feature of square waveforms is the ability to change the length o
 
 [![Pulse-width Control](/assets/img/lfoBuild_06.png)*Pulse Width Control*](/assets/img/lfoBuild_06.png)
 
-### Sample & Hold
+#### Sample & Hold
 The 'Sample & Hold' waveform is similar to the square wave in terms of its rigid shape with the exception that the amplitudes are random instead of a simple 0. or 1,; this is what gives the waveform it's 'stepped' appearance
 
 The waveform itself is generated through taking regular amplitude readings of a signal (in this case noise) and outputting them. The 'randomness' of the amplitudes here comes from sampling the `noise~` object.
@@ -120,7 +120,7 @@ The waveform itself is generated through taking regular amplitude readings of a 
 
 In the image above, the key objects are `sah~` (for the sampling) and `noise~` which is the source of the amplitude readings. Similar to the method of creating the square waveform, the `sah~` object also utilises a **0.5** argument. In this case, once the signal going into the right inlet of `sah~` goes above **0.5** a reading will be taking of the signal coming into it's left inlet. This 'trigger' signal to be connected to the right inlet will come from `phasor~` meaning that the timing of when the readings take place will be syncronised with the other waveforms.
 
-### Random
+#### Random
 A random waveform is produced by the `rand~` object; specifically the object generates random values between -1. and 1. and interpolates between them.
 
 The only inlet on the `rand~` object is for setting the rate at which the random values are generated. Therefore, there is no need for the `phasor~` object:
@@ -129,14 +129,14 @@ The only inlet on the `rand~` object is for setting the rate at which the random
 
 ---
 
-## Matching Amplitudes
+### Matching Amplitudes
 A brief look at the `scope~` readout for the previous waveforms shows that the amplitude of the saw and square waveforms run from 0. to 1. while the rest range from -1. to 1.
 
 [![LFO Core](/assets/img/lfoBuild_10.png)*Matched LFO Waveform Outputs*](/assets/img/lfoBuild_10.png)
 
 Using some basic maths objects this can be addressed so that the output from the LFO patch will be uniform.
 
-### Saw Adjustment
+#### Saw Adjustment
 The screenshot below shows how the amplitude of the saw, from `phasor~`, is manipulated to run from -1. to 1. Each stage of the process has a `scope~` connected to visualise the effect of the math objects on the signal. Pay attention to the amplitudes.
 
 [![Adjusting Saw Output](/assets/img/lfoBuild_09.png)*Math adjustments for phasor~ output*](/assets/img/lfoBuild_09.png)
@@ -147,7 +147,7 @@ The first `scope~` shows the raw output from the `phasor~` with it's amplitude r
 |-|-|-|
 |0.(min) to 1. (max)|-0.5(min) to 0.5(max)|-1.(min) to 1.(max)|
 
-### Square Adjustment
+#### Square Adjustment
 As the output from the square wave is also **0. to 1.** then the same math is required for making the range **-1. to 1.**:
 
 [![Adjusting Square Output ](/assets/img/lfoBuild_11.png)*Square Wave Output Adjustment*](/assets/img/lfoBuild_11.png)
@@ -159,7 +159,7 @@ Again, notice that the `-~` moves the waveform down, and the `*~` amplifies it.
 ---
 
 
-## Waveform Selection
+### Waveform Selection
 Selection of the LFO waveform is achieved by using the `selector~` object and `live.menu`. See the screenshot below and refer to the [routing section](/routing/) for the workings.
 
 [![LFO Waveform Selection](/assets/img/lfoBuild_12.png)*LFO Waveform Selection*](/assets/img/lfoBuild_12.png)
@@ -172,7 +172,7 @@ SAW SIN TRI SQR SAH RND
 
 ---
 
-## LFO Rate Control
+### LFO Rate Control
 
 The default rate, or speed, of an LFO is generally set to be in Hertz. However, other formats can be more useful. So far, a value in Hz has been used to dictate the rate of the `phasor~` output for driving the rest of the oscillators. The `phasor~` object also recognises and responds to *notevalues* and *BBU* (Bars/Beats/Units). The screenshot below shows how a default value for the speed of a `phasor~` can be 'baked-in' in both formats:
 
@@ -190,7 +190,7 @@ With this configuration, the rate of the LFO's will be tempo-related **AND** syn
 
 >Be aware that while patching with this method of sync the transport has to be running in Live also in order for the LFO's to work.
 
-### User Control
+#### User Control
 The method above shows a fixed rate being applied to the masterclock `phasor~` that is not the most user-friendly. One method of adding in a user-controllable rate in tempo-divisions is shown below and introduces a few new objects and concepts.
 
 [![phasor~ control](/assets/img/lfoBuild_14.png)*User Controllable phasor~*](/assets/img/lfoBuild_14.png)
@@ -217,7 +217,7 @@ In the context of the LFO patch, the set-up would be as follows:
 
 ---
 
-## Bipolar / Unipolar LFO
+### Bipolar / Unipolar LFO
 So far, this LFO is *Bi-polar*, in otherwords, the signals generated are both in the negative and positive ranges passing through 0. The alternative is to have a *Uni-polar* output whereby the signals stay either in the negative to zero range or the zero to positive ranges. Both can be utilised for different purposes.
 
 [![LFO Polarity Examples](/assets/img/lfoBuild_17.png)*LFO Polarity Examples*](/assets/img/lfoBuild_17.png)
@@ -230,9 +230,9 @@ To provide the user with the option of choosing either method look at the patch 
 
 ---
 
-## LFO Implementation
+### LFO Implementation
 
-### Parameter Modulation
+#### Parameter Modulation
 The remaining control for an LFO would be the 'depth', or how intense the effect of the LFO will be on the parameter that will be modulated. In order to demonstrate this, a quick example will be given of how to apply modulation.
 
 To apply modulation to a parameter multiply the chosen parameter's value by the LFO output and then add the resulting signal with the original again. The example below shows how a uni-polar LFO can be utilised to modulate the Cut-Off frequency of a filter (`svf~`).
@@ -241,7 +241,7 @@ To apply modulation to a parameter multiply the chosen parameter's value by the 
 
 In this example, the modulation is implemented so that the range of the modulation will always go above (postive uni-polar direction) the chosen frequency (44.4Hz) and return back down, never going below. This is achieved by using a uni-polar LFO output in combination with adding the orginal signal with the modulated signal. Without the inclusion of the `+~` towards the end, the frequency sweep would run *from* **0 Hz** up to the chosen cut-off frequency instead.
 
-### Depth Control
+#### Depth Control
 The depth control for an LFO dictates how much modulation will occor on a signal, i.e how subtle or exagerrated effect of the LFO will have on a parameter. With a depth at **0** there should be no aubile modulation taking place and the paramater value should be static.
 
 A depth control, basically applies positive gain to an LFO signal and can be implemeted with a standard `*~` object (highlighted in yellow):
@@ -254,19 +254,19 @@ The range of the `live.dial` here has the standard **0. to 127** value but it co
 
 ---
 
-## Fixes
+### Fixes
 The LFO is mostly complete at this point for use in patchesl however there are two issues that need to be addressed.
 
 The first is that on some waveforms, particularly those with abrupt and quick changes in amplitude (square, saw and triangle if the 'slope' is being used and the 'sample and hold'), whereby an audible click can be heard during the modulation from one value to the next. These transitions must be smoothed out to avoid the audible jump.
 
 The second is that the modulated signal being sent can be out of the accepted range for the object parameter (in this case the svf~ may receive values in the cutoff frequency beyond 20000 Hz) and should be limited or *clipped*.
 
-### Clipping Values
+#### Clipping Values
 Limiting or capping values in Max can be as straight-foward as intruding the `clip~` object with arguments for the minimum and maximum values permitting to pass through. In the case of the filter example above; the configuration would be `clip~ 20. 20000.` - the signal version must be used `~`.
 
 [![Clipping values](/assets/img/lfoBuild_21.png)*Clipping Values with clip~*](/assets/img/lfoBuild_21.png)
 
-### Smoothing Transitions
+#### Smoothing Transitions
 Smoothing out the transition from one value to another can be achieved by using the `rampsmooth~` object which arguments for the *ramp-up* time (for rising transitions) and the *ramp-down* time (for falling transitions). The times are set in samples so the object can be configured as `rampsmooth~ 100 100`
 
 This will provide a ramp time of 100 sample if the signal is moving in an upwards directions, and 100 if it is falling.
@@ -283,7 +283,7 @@ By smoothing out the transitions, there should be less audible artefacts during 
 
 [![Smoothing Transitions](/assets/img/lfoBuild_22.png)*Smoothing Transitions*](/assets/img/lfoBuild_22.png)
 
-### Limiting Ranges
+#### Limiting Ranges
 
 The next issue can be found when using the triangle waveform and adjusting its ‘point 1’ parameter ('slope' from previous descriptions).
 

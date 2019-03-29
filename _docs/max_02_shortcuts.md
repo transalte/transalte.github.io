@@ -8,9 +8,10 @@ summary: A list of regular shortcuts in Max
 lastupdate: 29-11-2018
 ---
 
-## Shortcuts and Navigation
+## Max Shortcuts and Organisation
+### Shortcuts and Navigation
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 **b**:  button
 
@@ -32,7 +33,7 @@ lastupdate: 29-11-2018
 
 ---
 
-## Useful Shortcuts
+### Useful Shortcuts
 
 **Shift+cmd+p**: Add selected object(s) to presentation
 

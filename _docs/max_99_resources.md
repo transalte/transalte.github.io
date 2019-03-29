@@ -7,9 +7,9 @@ permalink: /resources/
 summary: Related online resources, books and articles.
 ---
 
-## Resource List
+## Resources for Max
 
-## Online
+### Online
 
 [Max 7 Documentation](https://docs.cycling74.com/max7/): Online version of the help files that come with Max
 
@@ -19,7 +19,7 @@ summary: Related online resources, books and articles.
 
 [Max For Live](http://www.maxforlive.com): Database of Max For Live devices for download
 
-## Books
+### Books
 
 [Electronic Music and Sound Design - Theory and Practice with Max 7 - Volume 1 (Third Edition)](http://amzn.eu/d/9Q0sgJN)
 by Alessandro Cipriani et al.

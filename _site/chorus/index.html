@@ -10,8 +10,8 @@
 <div class="grid-container">
 
 	<div class="header"><a href="../index.html"><h1>transalte~</h1></a></div>
-	<div class="item2">max overview // audio effects // instruments</div>
-	<div class="item3"><article><h2 id="overview">Overview</h2>
+	<div class="menu">max overview // audio effects // instruments</div>
+	<div class="main"><article><h2 id="chorus-effects">Chorus Effects</h2>
 
 <p>The chorus effect is a time-domain based effect that when applied to a signal gives the sound a ‘layered’ or ‘thickened’ sound. An ‘organic’ chorus effect can occur naturally in choirs or orchestras where there are multiple similar sound sources playing simultaneously. The ‘thickening’ effect itself comes from the subtle variations in pitch and time that occur from the different performances and performers.</p>
 
@@ -23,12 +23,12 @@
 
 <hr />
 
-<h2 id="chorus-theory">Chorus Theory</h2>
+<h3 id="chorus-theory">Chorus Theory</h3>
 <p>In Max, a simple chorus can be created by modulating the delay-time parameter of a delay patch with an LFO. When the time parameter of a <code class="highlighter-rouge">tapin~</code>/<code class="highlighter-rouge">tapout~</code>-based delay patch is constantly adjusted, the sound will pitch up and down, falling behind and catching up with the original signal. When this ‘drifting’ sound is combined with the dry signal, the effect is the ‘shimmering’ or pulsing sound associated with the chorus sound. The core concept of the effect is shown in the image below:</p>
 
 <p><a href="/assets/img/ch_04.png"><img src="/assets/img/ch_04.png" alt="Chorus Diagram" /><em>Basic Chorus</em></a></p>
 
-<h3 id="audio-examples">Audio Examples</h3>
+<h4 id="audio-examples">Audio Examples</h4>
 
 <p>The example below, a dry guitar loop is heard followed by the chorus effect.</p>
 
@@ -46,11 +46,11 @@ Your browser does not support the audio element.
 
 <hr />
 
-<h2 id="topologies">Topologies</h2>
+<h3 id="topologies">Topologies</h3>
 
 <p>As with the delay effects, there are a number of different topologies that can be applied for a chorus effect. Each will give different qualities textures to the effect.</p>
 
-<h3 id="mono">Mono</h3>
+<h4 id="mono">Mono</h4>
 
 <p>This first example below shows the effect theory in a very simplistic mono-chorus.</p>
 
@@ -77,14 +77,14 @@ Your browser does not support the audio element.
 
 <p>You should hear the sound speeding up and down and changing in pitch accordingly. When the Mix paramater is set to 50, the ‘drift’ in pitch and timing from the original is clearly audible.</p>
 
-<h3 id="psuedo-stereo">Psuedo-Stereo</h3>
+<h4 id="psuedo-stereo">Psuedo-Stereo</h4>
 <p>By changing the mono delay circuit above into a variation of a simple ‘ping-pong’ delay circuit, the chorus gain a psuedo-stereo characteristic:</p>
 
 <p><a href="/assets/img/ch_02.png"><img src="/assets/img/ch_02.png" alt="Psuedo-stereo Chorus" /><em>Psuedo-stereo Chorus</em></a></p>
 
 <p>Here, the first delay-line (the delay being modulated) is being sent out to <code class="highlighter-rouge">M4L.bal2~</code> object as before, it is also being sent into a second un-modulated delay-line (yellow cable) that shares the same delay time from the <strong>Delay/Offset</strong> control.</p>
 
-<h3 id="real-stereo">Real Stereo</h3>
+<h4 id="real-stereo">Real Stereo</h4>
 <p>Another topology option would be to have either the modulated signals on the left and right modulate inversely to each other. This requires inverting the output form the LFO so that as one delay paramater is falling the other is rising.</p>
 
 <p>The image below shows that by offsetting the output from <code class="highlighter-rouge">phasor~</code> by 0.5, it will be 180deg out of phase with an unadjusted output.</p>
@@ -103,7 +103,7 @@ Your browser does not support the audio element.
 
 <hr />
 
-<h2 id="further-research">Further Research</h2>
+<h3 id="further-research">Further Research</h3>
 
 <p><a href="https://www.soundonsound.com/techniques/more-creative-synthesis-delays#top">More Creative Synthesis With Delays</a>: Article with some interesting points for effect modifications</p>
 
@@ -115,9 +115,8 @@ Your browser does not support the audio element.
   </ol>
 </div>
 </article></div>
-	<div class="item4"><h2>Chorus Effect</h2>
-				<div class="sidenav"><ul>
-  <li><a href="#overview">Overview</a></li>
+	<div class="nav">
+				<ul>
   <li><a href="#chorus-theory">Chorus Theory</a>
     <ul>
       <li><a href="#audio-examples">Audio Examples</a></li>
@@ -132,10 +131,10 @@ Your browser does not support the audio element.
   </li>
   <li><a href="#further-research">Further Research</a></li>
 </ul>
-</div>
+
 	</div>
 
-	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
+	<div class="footer"><footer>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

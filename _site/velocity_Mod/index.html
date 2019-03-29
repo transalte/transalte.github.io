@@ -10,8 +10,8 @@
 <div class="grid-container">
 
 	<div class="header"><a href="../index.html"><h1>transalte~</h1></a></div>
-	<div class="item2">max overview // audio effects // instruments</div>
-	<div class="item3"><article><h2 id="overview">Overview</h2>
+	<div class="menu">max overview // audio effects // instruments</div>
+	<div class="main"><article><h2 id="velocity-modulation">Velocity Modulation</h2>
 
 <p>In addition to amplitude control, velocity is regularly utilised as a modulation source for other parameters such as filter frequency, resonance and so on. As an example to introduce more expressiveness into a synthesiser, velocity could be used to modulate the amount of saturation, or chorus that is applied to a sound according to how hard/fast a key has been pressed.</p>
 
@@ -19,11 +19,11 @@
 
 <hr />
 
-<h2 id="filter-envelope">Filter Envelope</h2>
+<h3 id="filter-envelope">Filter Envelope</h3>
 
 <p>Filter envelopes work by taking a fixed value and modulating (changing that value over time). The shape of that modulation is dictated by an enveloped shape and the amount, or intensity, of the modulation is controlled by the velocity of the notes coming in. Commonly, there is an ‘envelope amount’ dial to further control how intense the modulation will be. The patch below shows an implementation of velocity modulation; the velocity modulation object additions have been highlighted in yellow.</p>
 
-<h3 id="implementation">Implementation</h3>
+<h4 id="implementation">Implementation</h4>
 
 <p><a href="/assets/img/aasp_monosynth_12_velMod.png"><img src="/assets/img/aasp_monosynth_12_velMod.png" alt="Velocity Modulation" /><em>Velocity Modulation of Filter Frequency</em></a></p>
 
@@ -31,7 +31,7 @@
 
 <p>Ideally, the filter envelope patch should simply ignore NoteOff velocities (0). This is achieved by the <code class="highlighter-rouge">sel</code> object. When a value passes into this object, if the value is 0 (as per the argument in this patch) then a ‘bang’ is passed out of the left outlet. Any other values that do not match the argument (greater than 0 i.e NoteOn velocities) are passed through the right outlet - these are the NoteOn values for this patch that will be utilised.</p>
 
-<h3 id="modulation-offsets">Modulation Offsets</h3>
+<h4 id="modulation-offsets">Modulation Offsets</h4>
 
 <p>To acheive the modulation, the frequency control (<code class="highlighter-rouge">live.dial</code>) for the filter outputs a value that is being modulated (interfered with) by the output of the <code class="highlighter-rouge">adsr~</code> object. To achieve this modulation, the first thought may be to just multiply the output from the <code class="highlighter-rouge">live.dial</code> with the output of <code class="highlighter-rouge">adsr~</code> as follows:</p>
 
@@ -47,7 +47,7 @@
   <p>This method of modulation always follows the same proceedure: (Parameter * Modulation) + Parameter</p>
 </blockquote>
 
-<h3 id="modulation-amount">Modulation Amount</h3>
+<h4 id="modulation-amount">Modulation Amount</h4>
 
 <p>Even though this method of <strong>velocity &gt; envelope &gt; parameter</strong> modulation works, the modulation amount is directly related to the velocity; there is no method of attenuating or intensifying the effect. As the envelope is the driving force behind the filter frequency’s values (static or otherwise), it would make sense that being able to increase or decrease the range of the envelope would provide this level of control:</p>
 
@@ -55,7 +55,7 @@
 
 <hr />
 
-<h2 id="velocity-sensitivity">Velocity Sensitivity</h2>
+<h3 id="velocity-sensitivity">Velocity Sensitivity</h3>
 <p>In addition to offering velocity sensitivity, many synths also provide control over how subtle or intense any velocity based modulation is.</p>
 
 <p>The image below shows a very basic form of how this velocity sensitivity can be implemented:</p>
@@ -68,7 +68,7 @@
   <p>The <code class="highlighter-rouge">uzi</code>, <code class="highlighter-rouge">b</code>, <code class="highlighter-rouge">zl.group</code> and <code class="highlighter-rouge">multislider</code> objects are here to demonstrate the outcome of the patch. These can all be removed when implementing into an actual synth patch without affecting the function of velocity sensitivity method.</p>
 </blockquote>
 
-<h3 id="concept">Concept</h3>
+<h4 id="concept">Concept</h4>
 <p>The concept here is to gain control over the incoming velocity values. Consider three ‘levels’ of sensitivity:</p>
 
 <table>
@@ -94,16 +94,16 @@
   </tbody>
 </table>
 
-<h3 id="no-sensitivity">No Sensitivity</h3>
+<h4 id="no-sensitivity">No Sensitivity</h4>
 <p>In the patch above, to create a ‘no sensitivity’ scaling, simply set the <strong>Min Vel Out</strong> and <strong>Max Vel Out</strong> to the same value i.e <strong>64</strong> and press the <code class="highlighter-rouge">button</code> object. Look at the graph will show how the input and output are mapped</p>
 
-<h3 id="linear-sensitivity">Linear Sensitivity</h3>
+<h4 id="linear-sensitivity">Linear Sensitivity</h4>
 <p>For ‘normal sensitivity’, set the <strong>Min Vel Out</strong> to ‘<strong>0</strong>’ and the <strong>Max Vel Out</strong> to ‘<strong>127</strong>’. Press the <code class="highlighter-rouge">button</code> object again and observe the graph.</p>
 
-<h3 id="non-linear">Non-Linear</h3>
+<h4 id="non-linear">Non-Linear</h4>
 <p>The final inlet of <code class="highlighter-rouge">scale</code> is being used to add a concave, or convex, curve to the previously linear mapping. The <strong>@classic 0</strong> argument, provides control over that curve, <strong>1</strong> being linear, <strong>&lt; 0</strong> logarithmic and <strong>&gt; 1</strong> exponential.</p>
 
-<h3 id="implementation-1">Implementation</h3>
+<h4 id="implementation-1">Implementation</h4>
 
 <p>While this patch demonstrates the manipulation of the incoming velocities via the graph at the bottom, it will cause problems if the <strong>Min Vel Out</strong> is raised above 0, or the curve is set to 0. By raising the <strong>Min Vel Out</strong> the patch will lose the 0 velocity value required to ‘end’ a note. To get around this, a <code class="highlighter-rouge">sel 0</code> can be implemented:</p>
 
@@ -115,16 +115,15 @@
   <p>The effects of this curvature are easily heard when applied to the modulation of a filter’s frequency via a velocity sensitive envelope.</p>
 </blockquote>
 
-<h2 id="further-research">Further Research</h2>
+<h3 id="further-research">Further Research</h3>
 <p>Look into existing synths (hardware or software) for examples of where, and how, velocity can be utilised.</p>
 
 <p>Additionally, consider how the MIDI notes themselves can be utilised as a similar modulation source.</p>
 
 <hr />
 </article></div>
-	<div class="item4"><h2>Velocity Modulation</h2>
-				<div class="sidenav"><ul>
-  <li><a href="#overview">Overview</a></li>
+	<div class="nav">
+				<ul>
   <li><a href="#filter-envelope">Filter Envelope</a>
     <ul>
       <li><a href="#implementation">Implementation</a></li>
@@ -143,10 +142,10 @@
   </li>
   <li><a href="#further-research">Further Research</a></li>
 </ul>
-</div>
+
 	</div>
 
-	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
+	<div class="footer"><footer>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

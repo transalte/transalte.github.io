@@ -8,7 +8,7 @@ summary: Building a basic filter
 lastupdate: 29-11-2018
 ---
 
-## Overview
+## Max For Live Introduction
 
 This lesson is an introduction to **Max For Live** covering the main mechanics of the application by creating a complete device. This device will be a straight-forward stereo filter with the following features:
 
@@ -18,7 +18,7 @@ This lesson is an introduction to **Max For Live** covering the main mechanics o
 
 ---
 
-## Input Meters
+### Input Meters
 
 1. Create a new Max For Live **Audio Effect** device
 2. Place the mouse cursor over an area where there are no objects and press the **n** key. This will bring up a new object that is empty and is waiting for you to type the name of an object into it.
@@ -33,7 +33,7 @@ This lesson is an introduction to **Max For Live** covering the main mechanics o
 
 ---
 
-## The Filter
+### The Filter
 
 This next object to add is the object that performs the actual filtering of the audio signal: `svf~`.
 
@@ -86,14 +86,14 @@ The first outlet of `svf~` (the Low-Pass outlet) is then connected to both the l
 
 ---
 
-## Controls
+### Controls
 The next stage is to add controls for the filter’s frequency and resonance parameters. There are a number of objects that can be utilised as controls for objects but during the prototype stage the quickest ones to use are the number objects; the `flonum` (shortcut **f** on the keyboard) and the `integer` (shortcut **i**) objects.
 
 
-### Frequency
+#### Frequency
 By connecting either a float or integer number box to the second inlet of`svf~` you can control the cutoff frequency by entering the value into the box (when the patch is locked), or by clicking and holding on the number box and pushing the mouse/trackpad etc. up and down. Keep in the audible range (20Hz to 20kHz) to hear the effect of the filter.
 
-### Resonance
+#### Resonance
 For the Resonance control, use a `flonum` object as the resonance paramter runs from 0. to 1. meaning that it expects a float so that we can enter 0.004 or 0.9745. Be very careful to not go over 1. as the resonance may damage your hearing.
 
 ![Filter Controls](/assets/img/asp_filter03.png)*Filter Controls*
@@ -102,7 +102,7 @@ Once you have played an audio clip through this device and can hear the filter w
 
 ---
 
-## Live UI Elements
+### Live UI Elements
 
 From an end-user point of view these number boxes aren’t the most ergonomic, or familiar for Live users. A more recognisable object to use instead is `live.dial`.
 
@@ -130,7 +130,7 @@ For the second `live.dial`, for Resonance control, change the **Short** and **Lo
 
 ---
 
-## Stereo Implementation
+### Stereo Implementation
 
 Making this patch stereo is a case of duplicating the existing filter section or creating another `svf~` object and connecting the **Freq** and **Res** controls to both filters in the appropriate inlets. Note that the patch now utilises note the **L** and **R** channels coming from `plugin~`.
 
@@ -140,14 +140,14 @@ There could be separate dials for left and right but at this point it is best to
 
 ---
 
-## Cord Organisation
+### Cord Organisation
 Notice that in the example screenshot the cords look a bit tidier than in your patch. In the screenshot, the cords bend around the objects which make it tidier and easier to follow. To do this, click a cord (it will go blueish) and press **cmd+y.** You can then click and grab straight segments of the cord and move it about. The colour of the cords has also been changed, this makes it much easier to follow the signal paths. This is done by selecting a cord by clicking on it (shift and click others to add to the selection), right clicking on the cord and selecting Color from the context menu.
 
 Keeping your patches organised like this is a good habit to adopt as early as possible for ease of following signal flow and finding errors. Also, when you eventually hit a brick wall with a patch, tidying it up can lead to a moment of zen while being distracted with the drudgery of aligning objects and cords…
 
 ---
 
-## Filter Type Selection
+### Filter Type Selection
 As stated earlier, the `svf~` object has four outlets. The object that will allow the user to switch between these four signals is `selector~`.
 
 ![selector~ object](/assets/img/asp_selector01.png)*selector~ object*
@@ -168,7 +168,7 @@ Once the arguments are in place, add the `selector~` objects into the patch as f
 
 ---
 
-## Using Menus
+### Using Menus
 
 Using numbers for the filter selection will be fairly meaningless to the end-user so a better method is to use menus related to the parameters.
 
@@ -212,7 +212,7 @@ Now, an output of 0 from the `live.menu` triggers a 1 on `selector~` which lets 
 
 ---
 
-## Presentation Mode
+### Presentation Mode
 
 At this stage, the patch is only controllable inside the **Max Editor**. Back in **Live**, the interface for the device most-likely will show the top section of the patch instead of a porperly designed user-interface (UI).
 
@@ -249,7 +249,7 @@ In the screenshot below, some `comment` objects (press **c** on the keyboard to 
 
 ---
 
-## Smoothing Controls
+### Smoothing Controls
 There may be some audible clicks or jumps when changing the cut-off frequency abruptly either manually via the dial or through envelope automation in **Live**. This ‘tearing’ sound is due to the values changing abruptly from one value to another. The way to smooth the change from one frequency to another is to glide gradually between them over a short period time, preferably short enough so that the transition is not noticeable.
 
 To achieve this, make the following additions to the `live.dial` to `svf~` signal path:

@@ -8,7 +8,7 @@ summary: Creating delays
 lastupdate: 03-12-2018
 ---
 
-## Overview
+## Delay Effects
 
 While there are a number of different types of delays, they are all based around the same concept; a signal comes in and passes through to the output while it is also sent through a delay block to be joined with the dry signal. What happens in the delay circuit is where the differences lie. Standard controls found on these effects are **delay time**, **feedback**, **mix/blend**, and depending on the signal flow (topology) the output can vary wildly between one design and another.
 
@@ -18,7 +18,7 @@ For example, if a filter is placed in the feedback loop, the output can be simil
 
 The device being made in this section will be a basic delay, starting as a simple mono delay and ending up as a ping-pong filter delay with user controllable frequencies, filter types, delay times etc.
 
-## Delay Objects
+### Delay Objects
 There are two objects that can be used to delay audio; **delay~** and a more useful pair of objects **tapin~** and **tapout~**.
 
 The main difference between the object(s) is that the audio output from **delay~** cannot be fed back into itself to create a feedback loop. Another feature of **delay~** is that the delay time can be set in samples as opposed to milliseconds with the **tapin~** and **tapout~** combo.
@@ -37,14 +37,14 @@ The ***~ 0.5** object is there to sum the left and right inputs together and hal
 
 There are arguments in both the **tapin~** and **tapout~** objects. To understand these, consider that with digital hardware delays, such as guitar pedals, there is a maximum delay time limit that is usually stated in seconds. This is because the incoming signal has to be stored temporarily in a buffer before it is sent out. The **tapin~** object is the same and needs to be provided with a value dictating how long the maximum delay time can be. In the example above, the argument is **10000** providing a maximum delay time of **10 seconds**. The **tapout~** object is where we control the actual delay time we want to use also in milliseconds. Therefore, in this example the delayed signal occurs **250ms** after the dry signal.
 
-## Delay Times and Controls
+### Delay Times and Controls
 
-### Time
+#### Time
 The first of the controls to be added to this delay is going to be for controlling the delay time. There are a number of ways to carry this out, all of which require a direct connection to the **tapin~** object to override the argument and for the delay time to be in **milliseconds**.
 
 An integer number box ('**i**' on the keyboard for this shortcut) can be connected to **tapin~** and the user can enter the delay time in ms manually. This can be replaced later by a **live.dial** and so on for the UI. However, this can be less than ideal when working in a DAW as the user would have to either dial in the delay time by ear to get sync with the tempo of the song, or have to calculate the delay time manually. A better method would be using tempo-related time-divisions...
 
-### Max Time Formats
+#### Max Time Formats
 Max Time Formats are how Max understands and processes timing information and there are two main headings: **Fixed Time Values** and **Tempo-Relative Time Values**.
 
 
@@ -119,7 +119,7 @@ As the gain here is 0. to 1., it is possible to use the right-outlet of a **live
 
 ![d04](/assets/img/d04.png)*d04*
 
-### Mix Controls
+#### Mix Controls
 The last parameter to add in at this stage is a means of controlling the balance between the dry (original) audio and the delay line (wet). For most pedals and outboard effects, this is achieved by a single dial that adjusts the level of the wet/dry to achieve a blend of both at different amounts.
 
 There are a number of ways to achieve this, but in this example a new object (technically a subpatch) will be used instead for quickness. Add to the patch the **M4L.Bal2~** object and note that when mousing over the inlets and outlets there is no information supplied. The only way to see what this object requires and does it to hold down **cmd** and double-click it with the mouse to open it up like an encapsulated object from before.
@@ -144,17 +144,17 @@ Remember that as the value is not from 0. to 1. the right outlet of the **live.d
 
 
 
-## Topologies
+### Topologies
 There are number of different types of delay types on the market and with this basic delay up-and-running it is possible to re-use parts of the code to quickly prototype other options.
 
-### Stereo Delay
+#### Stereo Delay
 For example, to make a stereo variant with independent delay-times onto left and right the patch can be made as follows:
 
  ![d06](/assets/img/d06.png)*Stereo Delay*
 
 All that has really changed is that the 'delay-line' and time controls have been duplicated and are being fed by the left and right signals from **plugin~** instead of being summed together. The Feedback control however is now controlling the feedback for both sides but there could quite easily have been a control for feedback for each side.
 
-### Ping-Pong Delay
+#### Ping-Pong Delay
 The audible characteristics of a 'ping-pong' delay are that it is a stereo effect where the listener hears a delay 'tap' on the one speaker then again on the other. It can sound like a mono delay where the delays are being panned but in most cases the effected is produced from two separate delay-lines as follows:
 
 ![Ping Pong Delay](/assets/img/d07.png)*Ping Pong Delay*
@@ -168,7 +168,7 @@ Form a patching perspective, the incoming signal is converted to mono (***~ 0.5*
 As with the previous delays there is a feedback loop, and in this instance it occurs from the second delay line and feeds into the first.
 
 
-## Limiting
+### Limiting
 One of the problems with delay effects is that the feedback parameter can cause eventual boosts in level which although can result in pleasantly saturated sounds in the tape-world, can be problematic in DAWs or digital systems. Levels can clip digitally within the device and within the parent DAW. In order to prevent this from happening in this device, and to an extent mimic the compression and saturation from tape delays, a limiter will be introduced into the patch. Although possible to design and build a limiter from scratch, this example will use the built in limiter: **omx.peaklim~**.
 
 The limiter can be placed at various points and these should be experimented with, in these notes it will be placed between the delay-line(s) and the mix control stage.
@@ -185,7 +185,7 @@ In terms of what is audible, try both connection types and listen for any differ
 
 
 
-## Cordless Connections
+### Cordless Connections
 The patch is becoming larger at this point with numerous points of control via UI elements. As this is still a fairly basic patch, this is a good point to look at including the [cordless send and receive objects](/routing/#cordless-connections)
 
 By working with cordless connections, it becomes possible to move the UI elements out of the way of the patch making it more easy to follow. Look at the example below of the existing patch:
@@ -193,7 +193,7 @@ By working with cordless connections, it becomes possible to move the UI element
 ![d11](/assets/img/d11.png)*Delay patch with cordless connections*
 
 
-## Feedback Loop Processing
+### Feedback Loop Processing
 The final stage of process for this basic delay is to add in a filter from the previous section (or an edited version of it to reflect the mono-signal input of this device). This version uses an encasulated version of the L01 filter.
 
 Where the filter is positioned within our patch's signal flow will have a pronounced effect on the processing outcome. There are two main positions to consider; between the ***~ 0.5** and the first **tapin~** see below:
@@ -206,7 +206,7 @@ or in the same position but with the return from from feedback loop also being f
 
 ![d13](/assets/img/d13.png)*Filter inside feedback loop and on input stage to delay line*
 
-## Further Research
+### Further Research
 
 [Roland Space Echo](https://en.wikipedia.org/wiki/Roland_RE-201): Classic delay unit
 

@@ -10,12 +10,12 @@
 <div class="grid-container">
 
 	<div class="header"><a href="../index.html"><h1>transalte~</h1></a></div>
-	<div class="item2">max overview // audio effects // instruments</div>
-	<div class="item3"><article><h2 id="overview">Overview</h2>
+	<div class="menu">max overview // audio effects // instruments</div>
+	<div class="main"><article><h2 id="monosynth">Monosynth</h2>
 
 <p>This lesson is an introduction to building a basic monophonic subtractive synth. The fundamentals of a synth will be covered including MIDI data processing, oscillators, tuning and envelopes.</p>
 
-<h2 id="first-steps">First Steps</h2>
+<h3 id="first-steps">First Steps</h3>
 
 <p>The first step is to create a new <strong>Instrument Device</strong> in Live. The main difference between this template and a <strong>Audio Effect</strong> device is that in place of <code class="highlighter-rouge">plugin~</code> at the input stage there is the <code class="highlighter-rouge">midiin</code> object. This object passes through all of the MIDI data coming from Live into the device that will be utilised to control the patch.</p>
 
@@ -62,7 +62,7 @@ MIDI Note 127 = G9
 
 <p>The velocity, calculated from how quickly the key is pressed down, is also given a value from 0 to 127.</p>
 
-<h2 id="simple-monosynth">Simple Monosynth</h2>
+<h3 id="simple-monosynth">Simple Monosynth</h3>
 
 <p>The patch below demonstrates an extremely basic monosynth using only the Note On/Off and Velocity data with the order of processing as follows:</p>
 
@@ -84,14 +84,14 @@ MIDI Note 127 = G9
 
 <p><a href="/assets/img/aasp_monosynth_05.png"><img src="/assets/img/aasp_monosynth_05.png" alt="Note Priority with ddg.mono" /><em>Note priority with ddg.mono</em></a></p>
 
-<h2 id="envelopes">Envelopes</h2>
+<h3 id="envelopes">Envelopes</h3>
 <p>The envelope of a sound is how it’s amplitude changes over time and is typically described via a the following stages; the attack, decay, sustain and release.</p>
 
 <p><a href="/assets/img/aasp_monosynth_06_env.png"><img src="/assets/img/aasp_monosynth_06_env.png" alt="Standard ADSR Envelope" /><em>Standard ADSR Envelope</em></a></p>
 
 <p>There are a number of ways to create an envelope in Max, each of varying levels of complexity and features. In this example, a standard Attack, Decay, Sustain, Release envelope will be implemented.</p>
 
-<h3 id="linear-envelopes">Linear Envelopes</h3>
+<h4 id="linear-envelopes">Linear Envelopes</h4>
 <p>The <code class="highlighter-rouge">adsr~</code> object is an envelope generator. There are five inlets, the first is allocated to starting the envelope and to what peak amplitide it should go to - this will be fed from the velocity data in the patch. The remaining inlets are for the Attack and Decay times, the sustain level, and the releaes time.</p>
 
 <p><a href="/assets/img/aasp_monosynth_08_adsr01.png"><img src="/assets/img/aasp_monosynth_08_adsr01.png" alt="adsr~ Object" /><em>adsr~ Object</em></a></p>
@@ -108,7 +108,7 @@ MIDI Note 127 = G9
 
 <p><a href="/assets/img/aasp_monosynth_09_env.png"><img src="/assets/img/aasp_monosynth_09_env.png" alt="adsr~ Envelope" /><em>adsr~ Envelope</em></a></p>
 
-<h3 id="exponential-envelopes">Exponential Envelopes</h3>
+<h4 id="exponential-envelopes">Exponential Envelopes</h4>
 <p>The output from <code class="highlighter-rouge">adsr~</code> is linear by design i.e straight lines between the stages. Exponential envelopes, i.e curved, can sound more natural and are better for persussive sounds in particular:</p>
 
 <p><a href="/assets/img/aasp_monosynth_07_env.png"><img src="/assets/img/aasp_monosynth_07_env.png" alt="Exponential ADSR Envelope" /><em>Exponential ADSR Envelope</em></a></p>
@@ -119,7 +119,7 @@ MIDI Note 127 = G9
 
 <p>Note the change in the curve of the envelopes. This curvature would also be present in the attack stages of the envelope too. In this example above, the output from the envelopes are multiplied by themselves to increase the curve of the envelope. This can be useful for transient based sounds such as percussion or plucked sounds.</p>
 
-<h2 id="tuning-oscillators">Tuning Oscillators</h2>
+<h3 id="tuning-oscillators">Tuning Oscillators</h3>
 <p>Tuning oscillators is generally kept to three areas:</p>
 
 <ul>
@@ -130,7 +130,7 @@ MIDI Note 127 = G9
 
 <p>Semi-tones and Octaves can be adjusted by manipulating the MIDI note information directly, de-tuning can occur after the MIDI note has been converted to pitch.</p>
 
-<h3 id="semi-tones">Semi-tones</h3>
+<h4 id="semi-tones">Semi-tones</h4>
 
 <p>Semi-tone tuning can be achieved by simply adding or subtracting to the incoming MIDI note by the desired amount:</p>
 
@@ -138,14 +138,14 @@ MIDI Note 127 = G9
 
 <p>In the patch above, a <code class="highlighter-rouge">live.numbox</code> UI object has been used with a <em>Range/Enum</em> of <em>-12</em> to <em>12</em> to provide an octave up and down in semi-tones. The <em>Type</em> has been set to <em>Int</em> to avoid any fractional numbers being added which wouold confuse the <code class="highlighter-rouge">mtof</code> object. The ‘st’, comes from the <em>Unit Style</em> being selected as ‘Semitones’ in the inspector.</p>
 
-<h3 id="octaves">Octaves</h3>
+<h4 id="octaves">Octaves</h4>
 <p>As an octave consists of 12 semi-tones, a simple multipier can be utilised:</p>
 
 <p><a href="/assets/img/aasp_monosynth_17.png"><img src="/assets/img/aasp_monosynth_17.png" alt="Octave Tuning" /><em>Octave Tuning</em></a></p>
 
 <p>In this case, the <code class="highlighter-rouge">live.numbox</code> has a range of -4 to 4, and configured in the same way as the semi-tone tuning object. The only difference here is that the <em>Unit Style</em> was set to <em>Custom</em> and ‘Oct’ was added as the unit.</p>
 
-<h3 id="de-tune">De-tune</h3>
+<h4 id="de-tune">De-tune</h4>
 
 <p>As detune dials are normally in Hertz, the patch must be adjusted to allow the pitch manipulation to occur after the MIDI note has been conferted to a frequency via the <code class="highlighter-rouge">mtof</code> object:</p>
 
@@ -174,7 +174,7 @@ MIDI Note 127 = G9
 
 <p>The <code class="highlighter-rouge">t</code> or <code class="highlighter-rouge">trigger</code> object here is used to retrigger the calculation <code class="highlighter-rouge">+</code>.  More details on inlets and the trigger object can be found <a href="/fundamentals/#hot-and-cold-inlets">here</a>.</p>
 
-<h2 id="oscillator-waveforms">Oscillator Waveforms</h2>
+<h3 id="oscillator-waveforms">Oscillator Waveforms</h3>
 <p>There are a range of pre-built oscillators that can be used as the sound-source for a synth.</p>
 
 <p><a href="/assets/img/waveforms.png"><img src="/assets/img/waveforms.png" alt="Waveforms" /><em>Standard Waveforms</em></a></p>
@@ -198,9 +198,8 @@ MIDI Note 127 = G9
   </ol>
 </div>
 </article></div>
-	<div class="item4"><h2>Basic Monosynth</h2>
-				<div class="sidenav"><ul>
-  <li><a href="#overview">Overview</a></li>
+	<div class="nav">
+				<ul>
   <li><a href="#first-steps">First Steps</a></li>
   <li><a href="#simple-monosynth">Simple Monosynth</a></li>
   <li><a href="#envelopes">Envelopes</a>
@@ -214,15 +213,15 @@ MIDI Note 127 = G9
       <li><a href="#semi-tones">Semi-tones</a></li>
       <li><a href="#octaves">Octaves</a></li>
       <li><a href="#de-tune">De-tune</a></li>
-      <li><a href="#alternative-method">Alternative Method</a></li>
     </ul>
   </li>
+  <li><a href="#alternative-method">Alternative Method</a></li>
   <li><a href="#oscillator-waveforms">Oscillator Waveforms</a></li>
 </ul>
-</div>
+
 	</div>
 
-	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
+	<div class="footer"><footer>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

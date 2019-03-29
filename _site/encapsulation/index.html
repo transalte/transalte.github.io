@@ -10,9 +10,8 @@
 <div class="grid-container">
 
 	<div class="header"><a href="../index.html"><h1>transalte~</h1></a></div>
-	<div class="item2">max overview // audio effects // instruments</div>
-	<div class="item3"><article><h2 id="overview">Overview</h2>
-
+	<div class="menu">max overview // audio effects // instruments</div>
+	<div class="main"><article><h2 id="encapsulation">Encapsulation</h2>
 <p>Max patches can regulary become busy and hard-to-follow as they increase in complexity. One method of dealing with this is the concept of <em>encapsulation</em>, or, the creation of sub-patches within a patch.</p>
 
 <p>An example would be a complex LFO being ‘encapsulated’ from many objects and connections down to a single <code class="highlighter-rouge">p LFO</code> object. The screenshot below shows a basic LFO on the left with the encapsulated version on the right.</p>
@@ -23,7 +22,7 @@
 
 <hr />
 
-<h2 id="encapsulating">Encapsulating</h2>
+<h3 id="encapsulating">Encapsulating</h3>
 <p>Creating a sub-patch is straightforward; select all of the objects to be placed inside the sub-patch (in the majority of cases, non-UI objects) and from the Max menu, select <strong>Edit &gt; Encapsulate</strong>. The contents will be collapsed into a single object that begins with <code class="highlighter-rouge">p</code> to indicate this is a sub-patch. Any elements outside of the previous selection will be connected to automatically generated and numbered <code class="highlighter-rouge">inlet</code> and <code class="highlighter-rouge">outlet</code> objects within the patch.</p>
 
 <p><a href="/assets/img/encap_03.gif"><img src="/assets/img/encap_03.gif" alt="Encapusulating LFO" /><em>Encapsulating LFO</em></a></p>
@@ -34,10 +33,10 @@
 
 <hr />
 
-<h3 id="editing">Editing</h3>
+<h4 id="editing">Editing</h4>
 <p>To open an encapsulated patch, lock the patch and double-click it. Alternatively, hold down <strong>Cmd</strong> and double-click.</p>
 
-<h3 id="inletoutlet-info">Inlet/Outlet Info</h3>
+<h4 id="inletoutlet-info">Inlet/Outlet Info</h4>
 <p>To provide information on the inlet and outlets of the sub-patch similar to when hovering over standard objects in Max:</p>
 
 <ol>
@@ -52,14 +51,14 @@
 
 <hr />
 
-<h2 id="issues">Issues</h2>
+<h3 id="issues">Issues</h3>
 <p>Some re-arranging of the <code class="highlighter-rouge">inlet</code> and <code class="highlighter-rouge">outlet</code> objects may be required to re-order the connections. This can be done by clicking and dragging the inlets or outlets within the sub-patch left and right - the number will change to indicate the order. If there are missing inlets these can be added by creating a new <code class="highlighter-rouge">inlet</code> or <code class="highlighter-rouge">outlet</code> object.</p>
 
 <p>The gif below shows a new inlet being added for the triangle wave ‘slope’ control and the automatice re-numbering that happens:</p>
 
 <p><a href="/assets/img/encap_02.gif"><img src="/assets/img/encap_02.gif" alt="Inlets" /><em>Inlets and Re-arranging</em></a></p>
 
-<h2 id="common-errors">Common Errors</h2>
+<h3 id="common-errors">Common Errors</h3>
 <ul>
   <li>UI elements left inside the encapsualted sub-patch</li>
   <li>Long-names for thos elements not being adjusted (automation envelopes in Live would have a lot of similarly named parameters)</li>
@@ -67,9 +66,8 @@
 
 <hr />
 </article></div>
-	<div class="item4"><h2>Encapsulation</h2>
-				<div class="sidenav"><ul>
-  <li><a href="#overview">Overview</a></li>
+	<div class="nav">
+				<ul>
   <li><a href="#encapsulating">Encapsulating</a>
     <ul>
       <li><a href="#editing">Editing</a></li>
@@ -79,10 +77,10 @@
   <li><a href="#issues">Issues</a></li>
   <li><a href="#common-errors">Common Errors</a></li>
 </ul>
-</div>
+
 	</div>
 
-	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
+	<div class="footer"><footer>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 

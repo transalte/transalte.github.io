@@ -8,7 +8,7 @@ summary: Creating chorus-related effects
 lastupdate: 14-12-2018
 ---
 
-## Overview
+## Chorus Effects
 
 The chorus effect is a time-domain based effect that when applied to a signal gives the sound a 'layered' or 'thickened' sound. An 'organic' chorus effect can occur naturally in choirs or orchestras where there are multiple similar sound sources playing simultaneously. The 'thickening' effect itself comes from the subtle variations in pitch and time that occur from the different performances and performers.
 
@@ -18,13 +18,13 @@ In recording and mixing, a similar effect can be produced by layering multiple r
 
 ---
 
-## Chorus Theory
+### Chorus Theory
 In Max, a simple chorus can be created by modulating the delay-time parameter of a delay patch with an LFO. When the time parameter of a `tapin~`/`tapout~`-based delay patch is constantly adjusted, the sound will pitch up and down, falling behind and catching up with the original signal. When this 'drifting' sound is combined with the dry signal, the effect is the 'shimmering' or pulsing sound associated with the chorus sound. The core concept of the effect is shown in the image below:
 
 [![Chorus Diagram](/assets/img/ch_04.png)*Basic Chorus*](/assets/img/ch_04.png)
 
 
-### Audio Examples
+#### Audio Examples
 
 The example below, a dry guitar loop is heard followed by the chorus effect.
 
@@ -42,12 +42,12 @@ Your browser does not support the audio element.
 
 ---
 
-## Topologies
+### Topologies
 
 As with the delay effects, there are a number of different topologies that can be applied for a chorus effect. Each will give different qualities textures to the effect.
 
 
-### Mono
+#### Mono
 
 This first example below shows the effect theory in a very simplistic mono-chorus.
 
@@ -70,7 +70,7 @@ To hear the pitch/delay effect exagerated for a clearer understanding of the eff
 
 You should hear the sound speeding up and down and changing in pitch accordingly. When the Mix paramater is set to 50, the 'drift' in pitch and timing from the original is clearly audible.
 
-### Psuedo-Stereo
+#### Psuedo-Stereo
 By changing the mono delay circuit above into a variation of a simple 'ping-pong' delay circuit, the chorus gain a psuedo-stereo characteristic:
 
 [![Psuedo-stereo Chorus](/assets/img/ch_02.png)*Psuedo-stereo Chorus*](/assets/img/ch_02.png)
@@ -78,7 +78,7 @@ By changing the mono delay circuit above into a variation of a simple 'ping-pong
 Here, the first delay-line (the delay being modulated) is being sent out to `M4L.bal2~` object as before, it is also being sent into a second un-modulated delay-line (yellow cable) that shares the same delay time from the **Delay/Offset** control.
 
 
-### Real Stereo
+#### Real Stereo
 Another topology option would be to have either the modulated signals on the left and right modulate inversely to each other. This requires inverting the output form the LFO so that as one delay paramater is falling the other is rising.
 
 The image below shows that by offsetting the output from `phasor~` by 0.5, it will be 180deg out of phase with an unadjusted output.
@@ -97,7 +97,7 @@ To implement this in a patch;
 
 ---
 
-## Further Research
+### Further Research
 
 [More Creative Synthesis With Delays](https://www.soundonsound.com/techniques/more-creative-synthesis-delays#top): Article with some interesting points for effect modifications
 

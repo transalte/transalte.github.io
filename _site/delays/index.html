@@ -10,8 +10,8 @@
 <div class="grid-container">
 
 	<div class="header"><a href="../index.html"><h1>transalte~</h1></a></div>
-	<div class="item2">max overview // audio effects // instruments</div>
-	<div class="item3"><article><h2 id="overview">Overview</h2>
+	<div class="menu">max overview // audio effects // instruments</div>
+	<div class="main"><article><h2 id="delay-effects">Delay Effects</h2>
 
 <p>While there are a number of different types of delays, they are all based around the same concept; a signal comes in and passes through to the output while it is also sent through a delay block to be joined with the dry signal. What happens in the delay circuit is where the differences lie. Standard controls found on these effects are <strong>delay time</strong>, <strong>feedback</strong>, <strong>mix/blend</strong>, and depending on the signal flow (topology) the output can vary wildly between one design and another.</p>
 
@@ -21,7 +21,7 @@
 
 <p>The device being made in this section will be a basic delay, starting as a simple mono delay and ending up as a ping-pong filter delay with user controllable frequencies, filter types, delay times etc.</p>
 
-<h2 id="delay-objects">Delay Objects</h2>
+<h3 id="delay-objects">Delay Objects</h3>
 <p>There are two objects that can be used to delay audio; <strong>delay~</strong> and a more useful pair of objects <strong>tapin~</strong> and <strong>tapout~</strong>.</p>
 
 <p>The main difference between the object(s) is that the audio output from <strong>delay~</strong> cannot be fed back into itself to create a feedback loop. Another feature of <strong>delay~</strong> is that the delay time can be set in samples as opposed to milliseconds with the <strong>tapin~</strong> and <strong>tapout~</strong> combo.</p>
@@ -42,14 +42,14 @@
 
 <p>There are arguments in both the <strong>tapin~</strong> and <strong>tapout~</strong> objects. To understand these, consider that with digital hardware delays, such as guitar pedals, there is a maximum delay time limit that is usually stated in seconds. This is because the incoming signal has to be stored temporarily in a buffer before it is sent out. The <strong>tapin~</strong> object is the same and needs to be provided with a value dictating how long the maximum delay time can be. In the example above, the argument is <strong>10000</strong> providing a maximum delay time of <strong>10 seconds</strong>. The <strong>tapout~</strong> object is where we control the actual delay time we want to use also in milliseconds. Therefore, in this example the delayed signal occurs <strong>250ms</strong> after the dry signal.</p>
 
-<h2 id="delay-times-and-controls">Delay Times and Controls</h2>
+<h3 id="delay-times-and-controls">Delay Times and Controls</h3>
 
-<h3 id="time">Time</h3>
+<h4 id="time">Time</h4>
 <p>The first of the controls to be added to this delay is going to be for controlling the delay time. There are a number of ways to carry this out, all of which require a direct connection to the <strong>tapin~</strong> object to override the argument and for the delay time to be in <strong>milliseconds</strong>.</p>
 
 <p>An integer number box (‘<strong>i</strong>’ on the keyboard for this shortcut) can be connected to <strong>tapin~</strong> and the user can enter the delay time in ms manually. This can be replaced later by a <strong>live.dial</strong> and so on for the UI. However, this can be less than ideal when working in a DAW as the user would have to either dial in the delay time by ear to get sync with the tempo of the song, or have to calculate the delay time manually. A better method would be using tempo-related time-divisions…</p>
 
-<h3 id="max-time-formats">Max Time Formats</h3>
+<h4 id="max-time-formats">Max Time Formats</h4>
 <p>Max Time Formats are how Max understands and processes timing information and there are two main headings: <strong>Fixed Time Values</strong> and <strong>Tempo-Relative Time Values</strong>.</p>
 
 <blockquote>
@@ -216,7 +216,7 @@ If a signal is now passed through the device the repeating echoes should be audi
 
 <p><img src="/assets/img/d04.png" alt="d04" /><em>d04</em></p>
 
-<h3 id="mix-controls">Mix Controls</h3>
+<h4 id="mix-controls">Mix Controls</h4>
 <p>The last parameter to add in at this stage is a means of controlling the balance between the dry (original) audio and the delay line (wet). For most pedals and outboard effects, this is achieved by a single dial that adjusts the level of the wet/dry to achieve a blend of both at different amounts.</p>
 
 <p>There are a number of ways to achieve this, but in this example a new object (technically a subpatch) will be used instead for quickness. Add to the patch the <strong>M4L.Bal2~</strong> object and note that when mousing over the inlets and outlets there is no information supplied. The only way to see what this object requires and does it to hold down <strong>cmd</strong> and double-click it with the mouse to open it up like an encapsulated object from before.</p>
@@ -258,17 +258,17 @@ If a signal is now passed through the device the repeating echoes should be audi
 
 <p>Remember that as the value is not from 0. to 1. the right outlet of the <strong>live.dial</strong> is not in use this time. With the initial delay working, the UI elements can now be added to the Presentation Mode.</p>
 
-<h2 id="topologies">Topologies</h2>
+<h3 id="topologies">Topologies</h3>
 <p>There are number of different types of delay types on the market and with this basic delay up-and-running it is possible to re-use parts of the code to quickly prototype other options.</p>
 
-<h3 id="stereo-delay">Stereo Delay</h3>
+<h4 id="stereo-delay">Stereo Delay</h4>
 <p>For example, to make a stereo variant with independent delay-times onto left and right the patch can be made as follows:</p>
 
 <p><img src="/assets/img/d06.png" alt="d06" /><em>Stereo Delay</em></p>
 
 <p>All that has really changed is that the ‘delay-line’ and time controls have been duplicated and are being fed by the left and right signals from <strong>plugin~</strong> instead of being summed together. The Feedback control however is now controlling the feedback for both sides but there could quite easily have been a control for feedback for each side.</p>
 
-<h3 id="ping-pong-delay">Ping-Pong Delay</h3>
+<h4 id="ping-pong-delay">Ping-Pong Delay</h4>
 <p>The audible characteristics of a ‘ping-pong’ delay are that it is a stereo effect where the listener hears a delay ‘tap’ on the one speaker then again on the other. It can sound like a mono delay where the delays are being panned but in most cases the effected is produced from two separate delay-lines as follows:</p>
 
 <p><img src="/assets/img/d07.png" alt="Ping Pong Delay" /><em>Ping Pong Delay</em></p>
@@ -283,7 +283,7 @@ If a signal is now passed through the device the repeating echoes should be audi
 
 <p>As with the previous delays there is a feedback loop, and in this instance it occurs from the second delay line and feeds into the first.</p>
 
-<h2 id="limiting">Limiting</h2>
+<h3 id="limiting">Limiting</h3>
 <p>One of the problems with delay effects is that the feedback parameter can cause eventual boosts in level which although can result in pleasantly saturated sounds in the tape-world, can be problematic in DAWs or digital systems. Levels can clip digitally within the device and within the parent DAW. In order to prevent this from happening in this device, and to an extent mimic the compression and saturation from tape delays, a limiter will be introduced into the patch. Although possible to design and build a limiter from scratch, this example will use the built in limiter: <strong>omx.peaklim~</strong>.</p>
 
 <p>The limiter can be placed at various points and these should be experimented with, in these notes it will be placed between the delay-line(s) and the mix control stage.</p>
@@ -296,14 +296,14 @@ If a signal is now passed through the device the repeating echoes should be audi
 
 <p>In terms of what is audible, try both connection types and listen for any differences in the way that audio sounds when pushing the feedback.</p>
 
-<h2 id="cordless-connections">Cordless Connections</h2>
+<h3 id="cordless-connections">Cordless Connections</h3>
 <p>The patch is becoming larger at this point with numerous points of control via UI elements. As this is still a fairly basic patch, this is a good point to look at including the <a href="/routing/#cordless-connections">cordless send and receive objects</a></p>
 
 <p>By working with cordless connections, it becomes possible to move the UI elements out of the way of the patch making it more easy to follow. Look at the example below of the existing patch:</p>
 
 <p><img src="/assets/img/d11.png" alt="d11" /><em>Delay patch with cordless connections</em></p>
 
-<h2 id="feedback-loop-processing">Feedback Loop Processing</h2>
+<h3 id="feedback-loop-processing">Feedback Loop Processing</h3>
 <p>The final stage of process for this basic delay is to add in a filter from the previous section (or an edited version of it to reflect the mono-signal input of this device). This version uses an encasulated version of the L01 filter.</p>
 
 <p>Where the filter is positioned within our patch’s signal flow will have a pronounced effect on the processing outcome. There are two main positions to consider; between the <strong>*~ 0.5</strong> and the first <strong>tapin~</strong> see below:</p>
@@ -314,7 +314,7 @@ If a signal is now passed through the device the repeating echoes should be audi
 
 <p><img src="/assets/img/d13.png" alt="d13" /><em>Filter inside feedback loop and on input stage to delay line</em></p>
 
-<h2 id="further-research">Further Research</h2>
+<h3 id="further-research">Further Research</h3>
 
 <p><a href="https://en.wikipedia.org/wiki/Roland_RE-201">Roland Space Echo</a>: Classic delay unit</p>
 
@@ -322,9 +322,8 @@ If a signal is now passed through the device the repeating echoes should be audi
 
 <p><a href="https://www.soundonsound.com/techniques/creating-using-custom-delay-effects">Creating &amp; Using Custom Delay Effects</a>: Sound On Sound Article</p>
 </article></div>
-	<div class="item4"><h2>Delay Effects</h2>
-				<div class="sidenav"><ul>
-  <li><a href="#overview">Overview</a></li>
+	<div class="nav">
+				<ul>
   <li><a href="#delay-objects">Delay Objects</a></li>
   <li><a href="#delay-times-and-controls">Delay Times and Controls</a>
     <ul>
@@ -344,10 +343,10 @@ If a signal is now passed through the device the repeating echoes should be audi
   <li><a href="#feedback-loop-processing">Feedback Loop Processing</a></li>
   <li><a href="#further-research">Further Research</a></li>
 </ul>
-</div>
+
 	</div>
 
-	<div class="item5"><footer><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
+	<div class="footer"><footer>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</footer></div>
 
 </div>
 
