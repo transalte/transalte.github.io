@@ -5,18 +5,8 @@
 html {
   font-family: 'Roboto';
   font-size: 16px;
-  font-weight: 300;
-  color: #555555;
-
-}
-
-
-h1, h2, h3 {
-  font-weight: 300;
-}
-
-h1 {
-  display: inline;
+  font-weight: 100;
+  background-color: whitesmoke;
 }
 
 h2, h3 {
@@ -45,11 +35,8 @@ h2, h3 {
   padding: 10px;
 }
 
-.item1 {
-  grid-area: header;
-  text-align: right;
-  height: 50px;
-}
+.header {grid-area: header; text-align: right; height: 50px;}
+  .header h1 {font-weight: 100; display: inline;}
 
 .item2 {
   grid-area: menu;
