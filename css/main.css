@@ -38,8 +38,8 @@ h2, h3 {
   'nav main main'
   'footer footer footer';
   width: auto;
-  padding-left: 15vw;
-  padding-right: 15vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .grid-container > div {
