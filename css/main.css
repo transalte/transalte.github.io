@@ -4,7 +4,7 @@
 
 html {
   font-family: 'Roboto';
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 100;
   background-color: whitesmoke;
   color: #black;
@@ -20,14 +20,17 @@ html {
 
 .grid-container {
   display: grid;
+  grid-template-columns: 1fr minmax(10px,20ch) minmax(10px,80ch) 1fr;
   grid-template-areas:
-  'header header header'
-  'menu menu menu'
-  'nav main main'
-  'footer footer footer';
-  padding-left: 20vw;
-  padding-right: 20vw;
+  ". header header ."
+  ". menu menu ."
+  ". nav main ."
+  ". footer footer.";
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
+
+
 
 .grid-container > div {
   padding: 10px;
@@ -42,12 +45,13 @@ html {
 .menu { grid-area: menu; text-align: right; font-size: 0.9rem; height: 50px;}
 
 .main { grid-area: main; overflow-y: auto; height: calc(100vh - 170px); font-size: 0.9rem}
-  .main h3, h4, h5 {font-weight: 300; color: slategrey; }
-  .main h2 {color: black; font-weight: 100;}
+  .main h3, h4, h5 {font-weight: 400; color: slategrey; }
+  .main h2 {color: black; font-weight: 300;}
+  .main ul, li {font-size: 0.9rem;}
 
 .nav { grid-area: nav; border-right: 1px solid lightgrey; display: block; overflow-y: auto; height: calc(100vh - 170px);}
   .nav a {font-size: 0.875rem; color: dimgrey; text-decoration: none;}
-  .nav ul {list-style: none;}
+  .nav ul {list-style: none; padding-left: 1rem;}
 
 
 .footer { grid-area: footer; font-size: .75rem; text-align: center; color: darkgrey; height: 50px;}
@@ -70,7 +74,7 @@ html {
 
 img {
   display: block;
-  max-width: 400px;
+  max-width: 100%;
   max-height: 400px;
   margin: 0 auto;
 }
@@ -129,39 +133,14 @@ th {
 
 /* ----------- CODE STYLE ---------- */
 
-code {
-  background-color: whitesmoke;
-}
+code {background-color: lightgrey; padding-left: .2rem; padding-right: .2rem; font-size: .9rem;}
 
-pre > code {
-  display: inline-block;
-  background-color:whitesmoke;
-}
+pre > code
+  { display: inline-block; background-color: lightgrey; padding-left: .2rem; padding-right: .2rem; font-size: .9rem;}
 
-blockquote {
-  border-left: 4px solid #999;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  background-color: rgba(0,0,0,0.05);
-}
-
-/* ---------- LIST STYLES ---------- */
-
-ul {
-  font-size: 1rem;
-}
-
-ul ul {
-  padding-left: 1rem;
-}
-
-li {
-  font-size: 1rem;
-}
-
+blockquote { border-left: 4px solid #999; padding: .5rem; background-color: rgba(0,0,0,0.05);}
 
 /* ---------- LINK STYLES----------  */
-
 
 a {
   text-decoration: none;
@@ -172,7 +151,7 @@ a {
 
 p > a {
   text-decoration: underline;
-  color: black;
+  color: slategrey;
   font-weight: 100;
 
 }
