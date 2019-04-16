@@ -29,7 +29,7 @@ html {
   padding-right: 5vw;
 }
 
-@media (max-width: 720px) {
+@media (pointer: course) {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr;
