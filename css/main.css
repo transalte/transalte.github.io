@@ -46,9 +46,7 @@ html {
 }
 
 
-.grid-container > div {
-  padding: 10px;
-}
+.grid-container > div { padding: 10px; }
 
 .header {grid-area: header; text-align: right; height: 50px; display: block;}
   .header h1 {font-weight: 100; text-align: right; display: inline;}
@@ -156,16 +154,9 @@ blockquote { border-left: 4px solid #999; padding: .5rem; background-color: rgba
 
 /* ---------- LINK STYLES----------  */
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
 
 /* ---------- LINKS INSIDE A PARAGRAPH ---------- */
 
-p > a {
-  text-decoration: underline;
-  color: slategrey;
-  font-weight: 100;
-
-}
+p > a { text-decoration: underline; color: slategrey; font-weight: 100; }
