@@ -39,7 +39,7 @@ html {
     padding-left: 1vw;
     padding-right: 1vw;
   }
-  .header {height:auto;}
+  .header {height:10vh;}
   .menu { display: none;}
   .nav { display: none; }
   .footer { display: none; }
