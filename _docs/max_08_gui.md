@@ -36,7 +36,7 @@ This UI trick allows the designer to 'hide' certain elements of a device's UI 'o
 
 [![UI Expand](/assets/img/ui_expand_01.png)*UI Expand Patch*](/assets/img/ui_expand_01.png)
 
-### How It Works
+#### How It Works
 The user presses the `live.toggle` (generating a 0 or 1), that number passes through `sel 0`; a zero will bang the `t 100`, a 1 will trigger the `t 300`. These numbers then pass through the `messagebox` to create the message `set width 100` or `setwidth 300`. This message passes to `live.thisdevice` which adjusts the width.
 
 #### Presentation Mode
