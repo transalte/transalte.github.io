@@ -41,6 +41,7 @@ html {
     padding-right: 1vw;
   }
   .header { height: 2em; }
+  .menu {height: 20vh;}
   .nav { display: none; }
   .footer { display: none; }
   html { font-size: 3em; }
