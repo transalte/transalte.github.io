@@ -40,16 +40,16 @@ html {
   .header a: visited {color: black;}
   .header a: hover {color: black;}
 
-.menu { grid-area: menu; text-align: right; font-size: 0.9rem; height: 5vh; }
+.menu { grid-area: menu; text-align: right; font-size: 0.9em; height: 5vh; }
 
-.main { grid-area: main; overflow-y: auto; height: 85vh; font-size: 0.9rem}
+.main { grid-area: main; overflow-y: auto; height: 85vh; font-size: 1em;}
   .main h3, h4, h5 {font-weight: 400; color: slategrey; }
   .main h2 {color: black; font-weight: 300;}
   .main ul, li {font-size: 0.9rem;}
 
-.nav { grid-area: nav; border-right: 1px solid lightgrey; /*display: block;*/ overflow-y: auto; height: 85vh;}
-  .nav a {font-size: 0.875rem; color: dimgrey; text-decoration: none;}
-  .nav ul {list-style: none; padding-left: 1rem;}
+.nav { grid-area: nav; border-right: 1px solid lightgrey; /*display: block;*/ overflow-y: auto; height: 85vh; padding-right: 0; line-height: 1.5em;}
+  .nav a {color: dimgrey; text-decoration: none;}
+  .nav ul {list-style: none; padding-left: 1em;}
 
 
 .footer { grid-area: footer; font-size: .75rem; text-align: center; color: darkgrey; height: 5vh;}
@@ -161,7 +161,7 @@ p > a { text-decoration: underline; color: slategrey; font-weight: 100; }
     padding-left: 1vw;
     padding-right: 1vw;
   }
-  .header { height: 8vh; background-color: green;}
+  .header { height: 8vh;}
     .header h1 {font-size: 2em; padding: 0px; margin: 0px;}
   .menu { display: none;}
   .nav { display: none; }
