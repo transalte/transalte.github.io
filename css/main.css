@@ -37,8 +37,8 @@ html {
     "header"
     "menu"
     "main";
-    padding-left: 0vw;
-    padding-right: 0vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
   .nav{display: none;}
   .footer {display: none;}
