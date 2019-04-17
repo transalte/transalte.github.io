@@ -161,10 +161,10 @@ p > a { text-decoration: underline; color: slategrey; font-weight: 100; }
     padding-left: 1vw;
     padding-right: 1vw;
   }
-  .header { height: 10vh; background-color: orange;}
+  .header { height: 10vh; background-color: green;}
     .header h1 {font-size: 2em; padding: 0px; margin: 0px;}
   .menu { display: none;}
   .nav { display: none; }
   .footer { display: none; }
-  html { font-size: 2em; }
+  html { font-size: 2.2em; }
 }
