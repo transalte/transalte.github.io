@@ -40,34 +40,33 @@ html {
     padding-left: 1vw;
     padding-right: 1vw;
   }
-  .main {overflow-y:auto; height: auto; }
   .nav { display: none; }
   .footer { display: none; }
-  html { font-size: 3em; }
+  html { font-size: 2em; }
 }
 
 
 .grid-container > div { padding: 10px; }
 
-.header {grid-area: header; text-align: right; /* height: 50px; */}
+.header {grid-area: header; text-align: right; height: 5vh;}
   .header h1 {font-weight: 100; text-align: right; display: inline;}
   .header a {color: black; text-decoration: none;}
   .header a: visited {color: black;}
   .header a: hover {color: black;}
 
-.menu { grid-area: menu; text-align: right; font-size: 0.9rem; /* height: 50px; */}
+.menu { grid-area: menu; text-align: right; font-size: 0.9rem; height: 5vh; }
 
-.main { grid-area: main; overflow-y: auto; height: calc(100vh - 170px); font-size: 0.9rem}
+.main { grid-area: main; overflow-y: auto; height: 85vh; font-size: 0.9rem}
   .main h3, h4, h5 {font-weight: 400; color: slategrey; }
   .main h2 {color: black; font-weight: 300;}
   .main ul, li {font-size: 0.9rem;}
 
-.nav { grid-area: nav; border-right: 1px solid lightgrey; /*display: block;*/ overflow-y: auto; height: calc(100vh - 170px);}
+.nav { grid-area: nav; border-right: 1px solid lightgrey; /*display: block;*/ overflow-y: auto; height: 85vh;}
   .nav a {font-size: 0.875rem; color: dimgrey; text-decoration: none;}
   .nav ul {list-style: none; padding-left: 1rem;}
 
 
-.footer { grid-area: footer; font-size: .75rem; text-align: center; color: darkgrey; height: 50px;}
+.footer { grid-area: footer; font-size: .75rem; text-align: center; color: darkgrey; height: 5vh;}
 
 
 /* FLEX CONTAINER */
