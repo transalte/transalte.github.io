@@ -159,9 +159,10 @@ p > a { text-decoration: underline; color: slategrey; font-weight: 100; }
     padding-left: 1vw;
     padding-right: 1vw;
   }
-  .header { height: 10vh; background-color: red;}
+  .header { height: 10vh; background-color: orange;}
+  .header h1 {font-size: 2em;}
   .menu { display: none;}
   .nav { display: none; }
   .footer { display: none; }
-  html { font-size: 2.5em; }
+  html { font-size: 2em; }
 }
