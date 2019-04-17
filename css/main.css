@@ -40,8 +40,8 @@ html {
     padding-left: 1vw;
     padding-right: 1vw;
   }
-  .header { height: 2em; }
-  .menu {height: 20vh;}
+  .header { height: 0px; }
+  .menu {height: 0px;}
   .nav { display: none; }
   .footer { display: none; }
   html { font-size: 3em; }
