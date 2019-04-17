@@ -39,10 +39,11 @@ html {
     padding-left: 1vw;
     padding-right: 1vw;
   }
-  .menu {display: none;}
-  .nav{display: none;}
-  .footer {display: none;}
-  html {font-size: 2em;}
+  .header { background-color: whitesmoke; }
+  .menu { display: none; }
+  .nav{ display: none; }
+  .footer { display: none; }
+  html { font-size: 2em; }
 }
 
 
