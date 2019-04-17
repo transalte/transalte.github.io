@@ -40,8 +40,8 @@ html {
     padding-left: 1vw;
     padding-right: 1vw;
   }
-  .header { background-color: whitesmoke; }
-  .nav{ display: none; }
+  .header { height: 2em; }
+  .nav { display: none; }
   .footer { display: none; }
   html { font-size: 2em; }
 }
