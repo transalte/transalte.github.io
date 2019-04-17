@@ -1,170 +1,132 @@
-@import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600');
+/* ---------- TYPOGRAPHY ---------- */
 
-/* STRUCTURE */
+@import url('//fonts.googleapis.com/css?family=Roboto:100,300,400');
 
-* { box-sizing: border-box;}
-
-html{
-    font-size: 14px;
-    font-family: 'Open Sans', Helvetica, sans-serif;
-    /*font-family: Helvetica;*/
-    font-weight: 300;
-    line-height: 1.5rem;
-    color: darkslategrey;
-}
-
-body {
-  background-color: white;
-  margin: 0px;
+html {
+  font-family: 'Roboto';
+  font-size: .875em;
+  font-weight: 100;
+  background-color: whitesmoke;
+  color: black;
 }
 
 
-/********** GRID CONFIGURATION **********/
+/* ---------- LAYOUT ---------- */
+
+* {
+  box-sizing: border-box;
+}
 
 .grid-container {
   display: grid;
+  grid-template-columns: 1fr minmax(10px,20ch) minmax(10px,80ch) 1fr;
   grid-template-areas:
-    'logo header header header header'
-    'sidenav main main main main'
-    'footer footer footer footer footer';
-    margin-right: 20%;
+  ". header header ."
+  ". menu menu ."
+  ". nav main ."
+  ". footer footer.";
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+@media (pointer: coarse) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "menu"
+    "main";
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+
+  .header { height: 0px; }
+  .menu {height: 0px;}
+  .main {overflow-y:auto; height: auto; }
+  .nav { display: none; }
+  .footer { display: none; }
+  html { font-size: 3em; }
 }
 
 
-.grid-container > div {
-	padding-left: 1rem;
-  padding-right: 1rem;
+.grid-container > div { padding: 10px; }
+
+.header {grid-area: header; text-align: right; height: 50px; }
+  .header h1 {font-weight: 100; text-align: right; display: inline;}
+  .header a {color: black; text-decoration: none;}
+  .header a: visited {color: black;}
+  .header a: hover {color: black;}
+
+.menu { grid-area: menu; text-align: right; font-size: 0.9rem; height: 50px;}
+
+.main { grid-area: main; overflow-y: auto; height: calc(100vh - 170px); font-size: 0.9rem}
+  .main h3, h4, h5 {font-weight: 400; color: slategrey; }
+  .main h2 {color: black; font-weight: 300;}
+  .main ul, li {font-size: 0.9rem;}
+
+.nav { grid-area: nav; border-right: 1px solid lightgrey; /*display: block;*/ overflow-y: auto; height: calc(100vh - 170px);}
+  .nav a {font-size: 0.875rem; color: dimgrey; text-decoration: none;}
+  .nav ul {list-style: none; padding-left: 1rem;}
+
+
+.footer { grid-area: footer; font-size: .75rem; text-align: center; color: darkgrey; height: 50px;}
+
+
+/* FLEX CONTAINER */
+
+.contentGrid {
+  display: grid;
+  width: auto;
+  grid-template-columns: auto auto auto;
+}
+
+.gridItem {
+
 }
 
 
-.item1 {
-	grid-area: logo;
-  height:5vh;
-  background-color: #4F504A;
+/* ---------- IMAGE STYLE ---------- */
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 400px;
+  margin: 0 auto;
 }
 
-.item2 {
-  grid-area: header;
-  height: 5vh;
-  background-color: white;
-}
-
-.item3 {
-  grid-area: sidenav;
-  background-color: #4F504A;
-  color: white;
-}
-
-.item4 {
-	grid-area: main;
-    overflow-y: auto;
-    height: 95vh;
-    background-color: white;
+img + em {
+  	display: block;
+  	text-align: center;
+  	font-size: .75rem;
+  	color: grey;
 }
 
 
+/* ---------- HR & FOOTNOTE STYLE ---------- */
 
-
-
-
-
-
-/* TYPOGRAPHY */
-
-h1, h2, h3, h4, h5, h6 {
-font-weight: 400;
-/*letter-spacing: .25rem;*/
-color: #4F504A;
-}
-
-h1 {
-  text-transform: uppercase;
-  font-size: 1.5rem;
-}
-
-h2 {
-  font-size: 1.3rem;
-  padding-top: 1rem;
-  font-weight: 400;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: -.875rem;
-}
-
-h4 {
-  font-size: 1rem;
-  margin-bottom: -.875rem;
-}
-
-
-p {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 100;
-}
-
-code {
-  font-size: 1rem;
-  background-color: whitesmoke;
-  padding: 2px;
-  border: 1px solid lightgrey;
-  border-radius: 4px;
-}
-
-pre > code {
-  display:block;
-  background-color:whitesmoke;
-  padding:0;
-  padding-left: 1vw;
-  border: 0;
-  border-radius: 0;
-}
-
-.logo {
-  font-size: 1rem;
-  font-family: Helvetica;
-  font-weight: 100;
-  letter-spacing: .5rem;
-  color: white;
-  padding-top: 1rem;
-  text-align: left;
-}
-
-
-ul {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 100;
-}
-
-li {
-  font-size: 1rem;
-  font-weight: 100;
-}
-
-blockquote {
-  border-left: 4px solid #999;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  background-color: rgba(0,0,0,0.05);
-  font-size: 1rem;
-  line-height: 1.5rem;
+hr {
+    border: 0;
+    height: 0;
+    width: 75%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .footnotes {
-	border-top: 1px solid grey;
-  font-size: .875rem;
-	color: slategrey;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  border: 0;
+  height: 0;
+  width: 75%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color:grey;
 }
 
-.footnote {
-	font-size: .875rem;
-	color: slategrey;
-}
 
-
+/* ---------- TABLE STYLE ---------- */
 
 table {
     border-collapse: collapse;
@@ -175,171 +137,30 @@ table, th, td {
     border: 1px solid black;
     font-weight: 200;
     padding: 5px;
+    font-size: 0.875rem;
 }
 
 th {
 	background-color: whitesmoke;
 	text-transform: uppercase;
+  text-align: left;
+  font-weight: 300;
 }
 
-img {
-	display: block;
-	border: 1px solid grey;
-  max-width: 300px;
-}
+/* ----------- CODE STYLE ---------- */
 
-img + em {
-	display: block;
-	text-align: center;
-	font-size: .75rem;
-	color: grey;
-  margin-left: 30%;
-  margin-right: 30%;
-}
+code {background-color: lightgrey; padding-left: .2rem; padding-right: .2rem; font-size: .9rem;}
+
+pre > code
+  { display: inline-block; background-color: lightgrey; padding-left: .2rem; padding-right: .2rem; font-size: .9rem;}
+
+blockquote { border-left: 4px solid #999; padding: .5rem; background-color: rgba(0,0,0,0.05);}
+
+/* ---------- LINK STYLES----------  */
+
+a { text-decoration: none; }
 
 
+/* ---------- LINKS INSIDE A PARAGRAPH ---------- */
 
-
-
-
-/* Typography */
-
-.topnav {
-    overflow: hidden;
-
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: right;
-    color: black;
-    text-align: center;
-    padding-top: 1rem;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 200;
-    padding-left: 5px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: whitesmoke;
-    color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #4CAF50;
-    color: black;
-}
-
-
-/****************** SIDENAV *****************/
-
-
-.sidenav {
-    overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.sidenav a {
-    padding: 0px;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: .875rem;
-    color: white;
-}
-
-.sidenav ul {
-  list-style-type: none;;
-  margin: 5px;
-  padding-left: 5px;
-  line-height: 1.5rem;
-}
-
-
-
-/* Change the color of links on hover */
-.sidenav a:hover {
-    color: black;
-
-}
-
-.sidenav a:visited {
-    color: white;
-}
-
-/* Add a color to the active/current link */
-.sidenav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* home lists */
-
-.homenav {
-    overflow: hidden;
-    line-height: 1.5rem;
-    padding-top: 1rem;
-}
-
-/* Style the links inside the navigation bar */
-.homenav a {
-    padding: 0px 0px;
-    text-decoration: none;
-    font-weight: 200;
-    font-size: 1rem;
-    color: black;
-}
-
-.homenav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Change the color of links on hover */
-.homenav a:hover {
-    color: red;
-
-}
-
-.homenav a:visited {
-    color: dimgrey;
-}
-
-/* Add a color to the active/current link */
-.homenav a.active {
-    background-color: #4CAF50;
-    color: dimgrey;
-}
-
-
-
-@media only screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
-    .grid-container {
-      display: grid;
-      grid-template-areas: 
-      'logo header'
-      'sidenav sidenav'
-      'main main'
-      'footer footer';
-    }
-
-    .item1 {
-      height: 100%;   
-      }
-
-    .item2 {
-      height: 100%;
-    }
-    .item4 {
-      grid-area: main;
-      overflow: visible;height: 100%;
-
-}
-
-
+p > a { text-decoration: underline; color: slategrey; font-weight: 100; }
