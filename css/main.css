@@ -157,7 +157,7 @@ p > a { text-decoration: underline; color: slategrey; font-weight: 100; }
     padding-left: 1vw;
     padding-right: 1vw;
   }
-  .header { height: 15vh; }
+  .header { height: 15vh; background-color: yellow;}
   .menu { display: none;}
   .nav { display: none; }
   .footer { display: none; }
