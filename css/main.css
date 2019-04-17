@@ -29,22 +29,7 @@ html {
   padding-right: 5vw;
 }
 
-@media (pointer: coarse) {
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-    "header"
-    "main";
-    padding-left: 1vw;
-    padding-right: 1vw;
-  }
-  .header { height: 15vh; }
-  .menu { display: none;}
-  .nav { display: none; }
-  .footer { display: none; }
-  html { font-size: 2.5em; }
-}
+
 
 
 .grid-container > div { padding: 10px; }
@@ -161,3 +146,20 @@ a { text-decoration: none; }
 /* ---------- LINKS INSIDE A PARAGRAPH ---------- */
 
 p > a { text-decoration: underline; color: slategrey; font-weight: 100; }
+
+@media (pointer: coarse) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "main";
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .header { height: 15vh; }
+  .menu { display: none;}
+  .nav { display: none; }
+  .footer { display: none; }
+  html { font-size: 2.5em; }
+}
