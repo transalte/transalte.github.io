@@ -42,6 +42,7 @@ html {
   }
   .header { height: 0px; }
   .menu {height: 0px;}
+  .main {overflow-y:auto; height: auto; }
   .nav { display: none; }
   .footer { display: none; }
   html { font-size: 3em; }
