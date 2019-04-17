@@ -43,6 +43,7 @@ html {
   .nav { display: none; }
   .footer { display: none; }
   html { font-size: 2em; }
+  h1 { font-size: .875em;}
 }
 
 
