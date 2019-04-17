@@ -147,6 +147,8 @@ a { text-decoration: none; }
 
 p > a { text-decoration: underline; color: slategrey; font-weight: 100; }
 
+
+
 /* ---------- MOBILE FORMATTING ---------- */
 
 @media (pointer: coarse) {
@@ -165,4 +167,5 @@ p > a { text-decoration: underline; color: slategrey; font-weight: 100; }
   .nav { display: none; }
   .footer { display: none; }
   html { font-size: 2em; }
+  .main {overflow-y: auto;}
 }
