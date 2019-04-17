@@ -39,6 +39,7 @@ html {
     padding-left: 1vw;
     padding-right: 1vw;
   }
+  .header {height:auto;}
   .menu { display: none;}
   .nav { display: none; }
   .footer { display: none; }
@@ -49,7 +50,7 @@ html {
 .grid-container > div { padding: 10px; }
 
 .header {grid-area: header; text-align: right; height: 5vh;}
-  .header h1 {font-weight: 100; text-align: right; display: block;}
+  .header h1 {font-weight: 100; text-align: right; display: inline;}
   .header a {color: black; text-decoration: none;}
   .header a: visited {color: black;}
   .header a: hover {color: black;}
