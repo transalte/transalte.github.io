@@ -15,10 +15,10 @@ When developing in **Max For Live**, this is the front-end of the device that is
 
 There are a number of methods to make better use of the space available for **M4L** devices; tabs, expanding and retracting a device horizontally or having the device pop-out in it's own window are possible.
 
-### GUI Options
+## GUI Options
 There are a number of methods to make better use of the space available for **M4L** devices; tabs, expanding and retracting a device horizontally or having the device pop-out in it's own window are possible.
 
-#### Default M4L
+### Default M4L
 
 The normal way to create a UI is to work within the vertical limit of the **Live** effects pane. This approach is absolutely fine for those devices that can fit all their controls into reasonably compact, single layer UI.
 
@@ -30,31 +30,31 @@ For details of the fundamentals of **Presentation Mode**, refer to the [layout](
 
 For busier, more complex devices that require more screen-space consider the following options.
 
-#### X-Axis Expand
+### X-Axis Expand
 
 This UI trick allows the designer to 'hide' certain elements of a device's UI 'off-screen' until the user presses a button. This can be implemented to show or hide controls for effects, modulation etc. or any elements that do not need to visible at all times.
 
 [![UI Expand](/assets/img/ui_expand_01.png)*UI Expand Patch*](/assets/img/ui_expand_01.png)
 
-##### How It Works
+### How It Works
 The user presses the `live.toggle` (generating a 0 or 1), that number passes through `sel 0`; a zero will bang the `t 100`, a 1 will trigger the `t 300`. These numbers then pass through the `messagebox` to create the message `set width 100` or `setwidth 300`. This message passes to `live.thisdevice` which adjusts the width.
 
-##### Presentation Mode
+#### Presentation Mode
 This is how the Patch is layed out in the **Max Editor**. Note that the `live.dial` objects are more than 100 pixels out from the left of the device.
 
 [![UI Expand Presentation](/assets/img/ui_expand_02.png)*UI Expand Presentation*](/assets/img/ui_expand_02.png)
 
-##### Device in Live
+#### Device in Live
 The next two screenshots show the different views of the device when the toggle is used:
 
 [![UI Expand Demo Normal](/assets/img/ui_expand_03.png)*UI Expand Demo Normal*](/assets/img/ui_expand_03.png)
 
 [![UI Expand Demo Expanded](/assets/img/ui_expand_04.png)*UI Expand Demo Expanded*](/assets/img/ui_expand_04.png)
 
-#### Pop-out Window
+### Pop-out Window
 This method places the device into it's own pop-out window similar to how Audio Units or VSTs look when opened.
 
-##### How It Works
+#### How It Works
 Similar to the expansion example above, the user presses a button to open up a window that displays the device. The screenshot below shows how this is implemented.
 
 [![UI Pop-out Window Patch](/assets/img/ui_popout_01.png)*UI Pop-out Window Patch*](/assets/img/ui_popout_01.png)

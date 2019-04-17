@@ -18,10 +18,10 @@
 
 <p>There are a number of methods to make better use of the space available for <strong>M4L</strong> devices; tabs, expanding and retracting a device horizontally or having the device pop-out in it’s own window are possible.</p>
 
-<h3 id="gui-options">GUI Options</h3>
+<h2 id="gui-options">GUI Options</h2>
 <p>There are a number of methods to make better use of the space available for <strong>M4L</strong> devices; tabs, expanding and retracting a device horizontally or having the device pop-out in it’s own window are possible.</p>
 
-<h4 id="default-m4l">Default M4L</h4>
+<h3 id="default-m4l">Default M4L</h3>
 
 <p>The normal way to create a UI is to work within the vertical limit of the <strong>Live</strong> effects pane. This approach is absolutely fine for those devices that can fit all their controls into reasonably compact, single layer UI.</p>
 
@@ -33,31 +33,31 @@
 
 <p>For busier, more complex devices that require more screen-space consider the following options.</p>
 
-<h4 id="x-axis-expand">X-Axis Expand</h4>
+<h3 id="x-axis-expand">X-Axis Expand</h3>
 
 <p>This UI trick allows the designer to ‘hide’ certain elements of a device’s UI ‘off-screen’ until the user presses a button. This can be implemented to show or hide controls for effects, modulation etc. or any elements that do not need to visible at all times.</p>
 
 <p><a href="/assets/img/ui_expand_01.png"><img src="/assets/img/ui_expand_01.png" alt="UI Expand" /><em>UI Expand Patch</em></a></p>
 
-<h5 id="how-it-works">How It Works</h5>
+<h3 id="how-it-works">How It Works</h3>
 <p>The user presses the <code class="highlighter-rouge">live.toggle</code> (generating a 0 or 1), that number passes through <code class="highlighter-rouge">sel 0</code>; a zero will bang the <code class="highlighter-rouge">t 100</code>, a 1 will trigger the <code class="highlighter-rouge">t 300</code>. These numbers then pass through the <code class="highlighter-rouge">messagebox</code> to create the message <code class="highlighter-rouge">set width 100</code> or <code class="highlighter-rouge">setwidth 300</code>. This message passes to <code class="highlighter-rouge">live.thisdevice</code> which adjusts the width.</p>
 
-<h5 id="presentation-mode">Presentation Mode</h5>
+<h4 id="presentation-mode">Presentation Mode</h4>
 <p>This is how the Patch is layed out in the <strong>Max Editor</strong>. Note that the <code class="highlighter-rouge">live.dial</code> objects are more than 100 pixels out from the left of the device.</p>
 
 <p><a href="/assets/img/ui_expand_02.png"><img src="/assets/img/ui_expand_02.png" alt="UI Expand Presentation" /><em>UI Expand Presentation</em></a></p>
 
-<h5 id="device-in-live">Device in Live</h5>
+<h4 id="device-in-live">Device in Live</h4>
 <p>The next two screenshots show the different views of the device when the toggle is used:</p>
 
 <p><a href="/assets/img/ui_expand_03.png"><img src="/assets/img/ui_expand_03.png" alt="UI Expand Demo Normal" /><em>UI Expand Demo Normal</em></a></p>
 
 <p><a href="/assets/img/ui_expand_04.png"><img src="/assets/img/ui_expand_04.png" alt="UI Expand Demo Expanded" /><em>UI Expand Demo Expanded</em></a></p>
 
-<h4 id="pop-out-window">Pop-out Window</h4>
+<h3 id="pop-out-window">Pop-out Window</h3>
 <p>This method places the device into it’s own pop-out window similar to how Audio Units or VSTs look when opened.</p>
 
-<h5 id="how-it-works-1">How It Works</h5>
+<h4 id="how-it-works-1">How It Works</h4>
 <p>Similar to the expansion example above, the user presses a button to open up a window that displays the device. The screenshot below shows how this is implemented.</p>
 
 <p><a href="/assets/img/ui_popout_01.png"><img src="/assets/img/ui_popout_01.png" alt="UI Pop-out Window Patch" /><em>UI Pop-out Window Patch</em></a></p>
@@ -88,21 +88,17 @@
 </div>
 </article></div>
 	<div class="nav"> <ul>
-  <li><a href="#gui-options">GUI Options</a>
+  <li><a href="#default-m4l">Default M4L</a></li>
+  <li><a href="#x-axis-expand">X-Axis Expand</a></li>
+  <li><a href="#how-it-works">How It Works</a>
     <ul>
-      <li><a href="#default-m4l">Default M4L</a></li>
-      <li><a href="#x-axis-expand">X-Axis Expand</a>
-        <ul>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#presentation-mode">Presentation Mode</a></li>
-          <li><a href="#device-in-live">Device in Live</a></li>
-        </ul>
-      </li>
-      <li><a href="#pop-out-window">Pop-out Window</a>
-        <ul>
-          <li><a href="#how-it-works-1">How It Works</a></li>
-        </ul>
-      </li>
+      <li><a href="#presentation-mode">Presentation Mode</a></li>
+      <li><a href="#device-in-live">Device in Live</a></li>
+    </ul>
+  </li>
+  <li><a href="#pop-out-window">Pop-out Window</a>
+    <ul>
+      <li><a href="#how-it-works-1">How It Works</a></li>
     </ul>
   </li>
 </ul>
