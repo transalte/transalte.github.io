@@ -208,6 +208,8 @@ or in the same position but with the return from from feedback loop also being f
 
 ### Further Research
 
+What other elements or features could be included in a delay? Other inline effects? A multi-band delay? Multi-tap? Panning controls for the delay taps? Modulation for the filter, panning, feedback etc?
+
 [Roland Space Echo](https://en.wikipedia.org/wiki/Roland_RE-201): Classic delay unit
 
 [Strymon Timeline](https://www.strymon.net/products/timeline/): Multi Function Delay Pedal
