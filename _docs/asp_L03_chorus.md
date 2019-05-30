@@ -99,6 +99,8 @@ To implement this in a patch;
 
 ### Further Research
 
+What is involved in a multistage Chorus effect? What are the effects on the sound when the LFO has different waveforms? Are filters of any use in a chorus?
+
 [More Creative Synthesis With Delays](https://www.soundonsound.com/techniques/more-creative-synthesis-delays#top): Article with some interesting points for effect modifications
 
 [^1]: Taken from the [real stereo](#real-stereo) example.
